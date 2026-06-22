@@ -42,6 +42,8 @@ const launchAssets = [
   ["Amazon keywords", "42 candidates", "Metadata"],
 ];
 
+const localStack = ["Ollama", "llama.cpp", "vLLM", "Qdrant"];
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#f4f8f1] text-[#17201a]">
@@ -108,6 +110,24 @@ export default function Home() {
               <span className="rounded-md bg-white px-3 py-2 text-center font-medium">
                 Lore 88%
               </span>
+            </div>
+          </div>
+
+          <div className="mt-4 rounded-lg border border-[#d9e4d2] bg-white p-4">
+            <h2 className="font-semibold">Local-first AI</h2>
+            <p className="mt-2 text-sm leading-6 text-[#607064]">
+              No required paid AI APIs, no outside rate limits, and no manuscript
+              upload requirement for core writing tools.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {localStack.map((item) => (
+                <span
+                  className="rounded-full bg-[#eef7ea] px-2.5 py-1 text-xs font-semibold text-[#3f674b]"
+                  key={item}
+                >
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
         </aside>
@@ -337,9 +357,9 @@ export default function Home() {
                   Build the book package from the manuscript, not from guesswork.
                 </h3>
                 <p className="mt-4 text-sm leading-6 text-[#cfe7d4]">
-                  Booksmith can produce title options, blurbs, metadata, ad
-                  angles, press copy, and launch emails from the book&apos;s
-                  locked creative source.
+                  Booksmith can run against local open models to produce title
+                  options, blurbs, metadata, ad angles, press copy, and launch
+                  emails from the book&apos;s locked creative source.
                 </p>
                 <button className="mt-5 rounded-md bg-white px-4 py-2 text-sm font-semibold text-[#173322] transition hover:bg-[#e8f5e2]">
                   Generate package

@@ -5,6 +5,16 @@ The product direction is simple: give writers full creative control while AI
 handles the heavy support work around structure, continuity, revision, metadata,
 and marketing.
 
+## Open Source First
+
+Booksmith AI is designed to avoid required paid APIs, outside AI rate limits, and
+proprietary hosted services for core features. The default product direction is
+local-first and self-hostable, using open-source tools and carefully verified
+open-weight models.
+
+See [docs/open-source-strategy.md](docs/open-source-strategy.md) for the
+architecture rules.
+
 ## MVP
 
 - Bookshelf for active writing projects
@@ -21,6 +31,8 @@ and marketing.
 - TypeScript
 - Tailwind CSS
 - React
+- Local AI runtime adapter planned for Ollama, llama.cpp, or vLLM
+- PostgreSQL and Qdrant planned for self-hosted storage and retrieval
 
 ## Local Development
 
