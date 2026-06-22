@@ -12,6 +12,26 @@ $mainFile = Join-Path $projectPath "main.tex"
 $outputPath = Join-Path $repoRoot $OutDir
 $jobName = "booksmith-sample"
 
+function Add-SessionPathDir([string]$dir) {
+  if ((Test-Path $dir) -and (";$env:Path;" -notlike "*;$dir;*")) {
+    $env:Path = "$env:Path;$dir"
+  }
+}
+
+$booksmithTools = Join-Path $env:LOCALAPPDATA "BooksmithAI\tools"
+$strawberryRoot = Join-Path $booksmithTools "strawberry-perl"
+Add-SessionPathDir (Join-Path $strawberryRoot "perl\site\bin")
+Add-SessionPathDir (Join-Path $strawberryRoot "perl\bin")
+Add-SessionPathDir (Join-Path $strawberryRoot "c\bin")
+Add-SessionPathDir (Join-Path $booksmithTools "tectonic")
+
+$pandocRoot = Join-Path $booksmithTools "pandoc"
+if (Test-Path $pandocRoot) {
+  Get-ChildItem -Path $pandocRoot -Filter pandoc.exe -Recurse -ErrorAction SilentlyContinue |
+    Select-Object -First 1 |
+    ForEach-Object { Add-SessionPathDir (Split-Path $_.FullName -Parent) }
+}
+
 if (-not (Test-Path $mainFile)) {
   throw "No main.tex found at $mainFile"
 }
