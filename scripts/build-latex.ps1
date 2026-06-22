@@ -1,6 +1,6 @@
 param(
   [string]$Project = "templates/latex/booksmith-book",
-  [string]$Engine = "pdflatex",
+  [string]$Engine = "xelatex",
   [string]$OutDir = ".latex-build"
 )
 
@@ -41,11 +41,37 @@ New-Item -ItemType Directory -Force -Path $outputPath | Out-Null
 $latexmk = Get-Command latexmk -ErrorAction SilentlyContinue
 $compiler = Get-Command $Engine -ErrorAction SilentlyContinue
 $perl = Get-Command perl -ErrorAction SilentlyContinue
+$engineName = $Engine.ToLowerInvariant()
+$latexmkMode = switch ($engineName) {
+  "pdflatex" { "-pdf" }
+  "xelatex" { "-pdfxe" }
+  "lualatex" { "-pdflua" }
+  default { "-pdfxe" }
+}
 
 Push-Location $projectPath
 try {
+  if ($engineName -eq "tectonic") {
+    $tectonic = Get-Command tectonic -ErrorAction SilentlyContinue
+    if (-not $tectonic) {
+      throw "Tectonic was requested but not found."
+    }
+
+    & $tectonic.Source "--outdir" $outputPath "main.tex"
+    if ($LASTEXITCODE -ne 0) {
+      exit $LASTEXITCODE
+    }
+
+    $tectonicPdf = Join-Path $outputPath "main.pdf"
+    $namedPdf = Join-Path $outputPath "$jobName.pdf"
+    if ((Test-Path $tectonicPdf) -and ($tectonicPdf -ne $namedPdf)) {
+      Move-Item -LiteralPath $tectonicPdf -Destination $namedPdf -Force
+    }
+    exit 0
+  }
+
   if ($latexmk -and $perl) {
-    & $latexmk.Source "-pdf" "-interaction=nonstopmode" "-halt-on-error" "-outdir=$outputPath" "-jobname=$jobName" "main.tex"
+    & $latexmk.Source $latexmkMode "-interaction=nonstopmode" "-halt-on-error" "-outdir=$outputPath" "-jobname=$jobName" "main.tex"
     if ($LASTEXITCODE -eq 0) {
       exit 0
     }

@@ -47,11 +47,14 @@ const localStack = ["Ollama", "llama.cpp", "vLLM", "Qdrant"];
 const latexTools = ["latexmk", "XeLaTeX", "LuaLaTeX", "Tectonic"];
 
 const latexFeatures = [
-  "Editable .tex source",
+  "Unicode .tex source",
+  "OpenType font profiles",
   "6x9 paperback proof",
-  "Front/back matter builder",
+  "Full-page art plates",
   "Index, glossary, citations",
 ];
+
+const fontFamilies = ["Noto", "EB Garamond", "Cormorant", "Alegreya"];
 
 export default function Home() {
   return (
@@ -310,12 +313,13 @@ export default function Home() {
                       LaTeX Studio
                     </p>
                     <h3 className="mt-2 text-xl font-semibold">
-                      Beautiful books from editable source
+                      Unicode books from editable source
                     </h3>
                     <p className="mt-2 max-w-2xl text-sm leading-6 text-[#667368]">
                       Build print-ready proofs with local LaTeX tools, clean
-                      generated source, typography profiles, citations, indexes,
-                      and full author control over the final files.
+                      generated source, OpenType font profiles, multilingual
+                      text, full-page image plates, citations, indexes, and full
+                      author control over the final files.
                     </p>
                   </div>
                   <button className="rounded-md bg-[#17201a] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#284032]">
@@ -346,7 +350,7 @@ export default function Home() {
                     <div className="mt-4 space-y-2 text-sm text-[#526358]">
                       <p>Engine: XeLaTeX</p>
                       <p>Trim: 6 x 9 in</p>
-                      <p>Template: Literary novel</p>
+                      <p>Template: Visual literary book</p>
                       <p>Output: PDF + source folder</p>
                     </div>
                   </div>
@@ -424,6 +428,25 @@ export default function Home() {
                       key={tool}
                     >
                       {tool}
+                    </span>
+                  ))}
+                </div>
+              </section>
+
+              <section className="rounded-lg border border-[#d8e1d1] bg-white p-5 shadow-sm">
+                <h3 className="text-lg font-semibold">Unicode Font Studio</h3>
+                <p className="mt-2 text-sm leading-6 text-[#667368]">
+                  Authors can choose open font families, CJK fallbacks, math
+                  fonts, custom project fonts, and missing-glyph checks before
+                  building an art-book proof.
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {fontFamilies.map((family) => (
+                    <span
+                      className="rounded-full bg-[#f5f0e6] px-2.5 py-1 text-xs font-semibold text-[#67543c]"
+                      key={family}
+                    >
+                      {family}
                     </span>
                   ))}
                 </div>

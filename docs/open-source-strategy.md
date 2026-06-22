@@ -18,6 +18,8 @@ Core features include:
 - Manuscript editing workflows
 - Export and formatting
 - LaTeX typesetting and PDF proofing
+- Unicode/OpenType font workflows
+- Art book image layout workflows
 - Publishing metadata preparation
 - Launch asset generation
 
@@ -76,6 +78,8 @@ models.
 - Generate print-ready PDF through local LaTeX builds
 - Export editable `.tex` project folders for advanced authors
 - Support TeX Live, MiKTeX, Tectonic, latexmk, XeLaTeX, LuaLaTeX, and pdfLaTeX
+- Use XeLaTeX or LuaLaTeX by default for Unicode and OpenType font workflows
+- Prefer OFL/open fonts for default book templates
 - Validate metadata and export packages before users upload to retailers
 - Do not depend on retailer APIs for the MVP
 
@@ -119,12 +123,19 @@ Make LaTeX a first-class publishing mode with engine selection, editable source
 export, template controls, local build logs, PDF preview, citations, indexes,
 glossaries, equations, figures, and typography profiles.
 
+### Unicode Font Studio
+
+Let authors choose installed fonts, project-bundled open fonts, font pairings,
+OpenType features, CJK fallback fonts, math fonts, and missing-glyph checks
+before building a proof.
+
 ## Non-Goals
 
 - No required OpenAI, Anthropic, Google, Meta hosted API, or other paid AI API
 - No required hosted vector database
 - No required proprietary cloud editor
 - No required proprietary typesetting system
+- No proprietary fonts in default templates
 - No hard dependency on SaaS authentication for local use
 - No model whose license prevents commercial author use in the default setup
 
@@ -133,6 +144,7 @@ glossaries, equations, figures, and typography profiles.
 - Add new dependencies only when their license is compatible with commercial use
   and redistribution.
 - Prefer MIT, Apache 2.0, BSD, ISC, and PostgreSQL-style licenses.
+- Prefer SIL Open Font License fonts for bundled default typography.
 - Record major runtime/model choices in this document before implementation.
 - Keep AI calls behind internal interfaces so the app can change local runtimes
   without rewriting product features.

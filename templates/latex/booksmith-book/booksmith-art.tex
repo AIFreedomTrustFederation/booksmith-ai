@@ -1,0 +1,35 @@
+\usepackage{graphicx}
+
+\newcommand{\BooksmithPlaceholderPlate}[2]{%
+  \clearpage
+  \thispagestyle{empty}
+  \begingroup
+  \setlength{\fboxsep}{0pt}
+  \noindent\makebox[\textwidth][c]{%
+    \colorbox{BooksmithMist}{%
+      \parbox[c][0.70\paperheight][c]{\textwidth}{%
+        \centering
+        {\DisplayFont\Huge\color{BooksmithInk} #1\par}
+        \vspace{1.2em}
+        {\ArtCaptionFont\large\color{BooksmithGreen} #2\par}
+      }%
+    }%
+  }%
+  \endgroup
+  \clearpage
+}
+
+\newcommand{\BooksmithImagePlate}[3]{%
+  \clearpage
+  \thispagestyle{empty}
+  \IfFileExists{#1}{%
+    \noindent\makebox[\textwidth][c]{%
+      \includegraphics[width=\paperwidth,height=0.92\paperheight,keepaspectratio]{#1}%
+    }%
+    \vfill
+    {\ArtCaptionFont\small #2\par}
+  }{%
+    \BooksmithPlaceholderPlate{#2}{#3}%
+  }%
+  \clearpage
+}

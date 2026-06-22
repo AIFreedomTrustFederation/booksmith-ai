@@ -18,6 +18,8 @@ technical books, fiction, poetry, illustrated books, and premium editions.
 - The build pipeline must run locally or on self-hosted infrastructure.
 - Engine, template, package, bibliography, glossary, and index choices must be
   visible to the author.
+- Unicode, OpenType fonts, and art-book image layouts must be first-class
+  settings rather than hidden template hacks.
 
 ## Supported Local Tooling
 
@@ -42,6 +44,8 @@ The app should include a dedicated LaTeX Studio with:
 - Template selector: novel, nonfiction, academic, poetry, workbook, technical
 - Paper and trim controls: 5x8, 5.5x8.5, 6x9, A5, custom
 - Typography controls: font family, leading, margins, headers, drop caps
+- Font profile controls: text, display, sans, mono, math, and CJK fallback fonts
+- Unicode proofing: missing glyph checks and multilingual preview text
 - Chapter styling controls: part pages, openers, ornaments, running heads
 - Front matter builder: title page, copyright, dedication, epigraph, TOC
 - Back matter builder: acknowledgments, author bio, bibliography, index
@@ -49,6 +53,7 @@ The app should include a dedicated LaTeX Studio with:
 - Glossary and index manager
 - Equation and symbol support
 - Figure, table, caption, and cross-reference manager
+- Full-page art plates, image spreads, and captioned gallery layouts
 - Raw LaTeX block support for power users
 - Package manager for project-level LaTeX packages
 - Build logs with friendly error explanations
@@ -98,6 +103,8 @@ include:
 - `metadata.tex`
 - `chapters/`
 - optional `assets/`
+- optional `assets/art/`
+- optional `assets/fonts/`
 - optional `bibliography.bib`
 - optional `booksmith.sty` or class file
 - `README.md`
@@ -111,12 +118,15 @@ Local AI should help with LaTeX without hiding the source:
 
 - Explain compiler errors in plain language
 - Suggest package fixes
+- Suggest font pairings and OpenType settings for genre and trim size
+- Detect missing glyphs and font fallback risks
 - Convert messy manuscript structure into clean LaTeX
 - Generate front matter and copyright pages
 - Propose typography settings for genre and trim size
 - Detect overfull boxes and suggest wording or layout fixes
 - Build index term candidates from the manuscript
 - Generate figure captions and cross-reference labels
+- Generate art prompts, image captions, and image credit pages
 - Check that chapter titles, TOC, headers, and metadata agree
 
 ## MVP Build Order
@@ -125,9 +135,11 @@ Local AI should help with LaTeX without hiding the source:
 2. Add a local build script that prefers `latexmk`.
 3. Add UI cards for LaTeX Studio and publishing checks.
 4. Add a renderer that exports project metadata and chapters to `.tex`.
-5. Add build log parsing for common errors.
-6. Add PDF preview in the app.
-7. Add template customization and project overrides.
+5. Add Unicode font profiles with XeLaTeX/LuaLaTeX builds.
+6. Add art plate helpers and image asset folders.
+7. Add build log parsing for common errors.
+8. Add PDF preview in the app.
+9. Add template customization and project overrides.
 
 ## License Notes
 

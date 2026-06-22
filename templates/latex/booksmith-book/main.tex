@@ -3,9 +3,7 @@
 \input{metadata}
 
 \usepackage[paperwidth=6in,paperheight=9in,top=0.78in,bottom=0.82in,inner=0.82in,outer=0.68in]{geometry}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{lmodern}
+\input{booksmith-fonts}
 \usepackage{microtype}
 \usepackage{setspace}
 \usepackage{fancyhdr}
@@ -15,6 +13,9 @@
 
 \definecolor{BooksmithGreen}{HTML}{2F6B4A}
 \definecolor{BooksmithInk}{HTML}{17201A}
+\definecolor{BooksmithMist}{HTML}{E7F0E4}
+
+\input{booksmith-art}
 
 \setlength{\parindent}{1.2em}
 \setlength{\parskip}{0pt}
@@ -47,7 +48,7 @@
 \thispagestyle{empty}
 \begin{center}
   \vspace*{1.1in}
-  {\Huge\bfseries\color{BooksmithInk} \BookTitle\par}
+  {\DisplayFont\Huge\bfseries\color{BooksmithInk} \BookTitle\par}
   \vspace{0.25in}
   {\Large \BookSubtitle\par}
   \vfill
@@ -68,13 +69,17 @@
 ISBN: \BookISBN\\
 
 \vspace{1em}
-\noindent Typeset with Booksmith AI and LaTeX.
+\noindent Typeset with Booksmith AI and LaTeX.\\
+Engine profile: \BooksmithFontEngine.
 \clearpage
 
 \tableofcontents
 
 \mainmatter
 \input{chapters/01-opening}
+\BooksmithPlaceholderPlate
+  {Unicode Art Plate}
+  {OpenType typography, multilingual text, and full-page AI art belong in the same book pipeline.}
 
 \backmatter
 \chapter*{About This Edition}

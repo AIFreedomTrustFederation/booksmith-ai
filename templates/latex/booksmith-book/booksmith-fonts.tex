@@ -1,0 +1,74 @@
+\usepackage{iftex}
+
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{lmodern}
+  \newcommand{\BooksmithFontEngine}{pdfLaTeX compatibility}
+  \newcommand{\DisplayFont}{}
+  \newcommand{\ArtCaptionFont}{}
+  \newcommand{\CJKText}[1]{#1}
+\else
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+
+  \defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}
+
+  \newcommand{\BooksmithFontEngine}{XeLaTeX/LuaLaTeX Unicode}
+
+  \newcommand{\BooksmithUseLiteraryFonts}{%
+    \IfFontExistsTF{EB Garamond}
+      {\setmainfont{EB Garamond}[Ligatures=TeX, Numbers={OldStyle,Proportional}]}
+      {\setmainfont{TeX Gyre Pagella}[Ligatures=TeX]}%
+    \IfFontExistsTF{Alegreya Sans}
+      {\setsansfont{Alegreya Sans}[Ligatures=TeX]}
+      {\setsansfont{TeX Gyre Heros}[Ligatures=TeX]}%
+    \IfFontExistsTF{Noto Sans Mono}
+      {\setmonofont{Noto Sans Mono}}
+      {\setmonofont{TeX Gyre Cursor}}%
+  }
+
+  \newcommand{\BooksmithUseGlobalNotoFonts}{%
+    \IfFontExistsTF{Noto Serif}
+      {\setmainfont{Noto Serif}[Ligatures=TeX, Numbers={OldStyle,Proportional}]}
+      {\setmainfont{TeX Gyre Pagella}[Ligatures=TeX]}%
+    \IfFontExistsTF{Noto Sans}
+      {\setsansfont{Noto Sans}[Ligatures=TeX]}
+      {\setsansfont{TeX Gyre Heros}[Ligatures=TeX]}%
+    \IfFontExistsTF{Noto Sans Mono}
+      {\setmonofont{Noto Sans Mono}}
+      {\setmonofont{TeX Gyre Cursor}}%
+  }
+
+  \newcommand{\BooksmithUseArtBookFonts}{%
+    \IfFontExistsTF{Cormorant Garamond}
+      {\setmainfont{Cormorant Garamond}[Ligatures=TeX, Numbers={OldStyle,Proportional}]}
+      {\setmainfont{EB Garamond}[Ligatures=TeX, Numbers={OldStyle,Proportional}]}%
+    \IfFontExistsTF{Alegreya Sans}
+      {\setsansfont{Alegreya Sans}[Ligatures=TeX]}
+      {\setsansfont{Noto Sans}[Ligatures=TeX]}%
+    \IfFontExistsTF{Noto Sans Mono}
+      {\setmonofont{Noto Sans Mono}}
+      {\setmonofont{TeX Gyre Cursor}}%
+  }
+
+  \BooksmithUseArtBookFonts
+
+  \IfFontExistsTF{Cormorant Garamond}
+    {\newfontfamily\DisplayFont{Cormorant Garamond}[Ligatures=TeX]}
+    {\newfontfamily\DisplayFont{TeX Gyre Pagella}[Ligatures=TeX]}
+
+  \IfFontExistsTF{Alegreya Sans}
+    {\newfontfamily\ArtCaptionFont{Alegreya Sans}[Ligatures=TeX]}
+    {\newfontfamily\ArtCaptionFont{Noto Sans}[Ligatures=TeX]}
+
+  \IfFontExistsTF{Noto Serif CJK SC}
+    {\newfontfamily\CJKFont{Noto Serif CJK SC}}
+    {\newfontfamily\CJKFont{Noto Serif}}
+
+  \IfFontExistsTF{Libertinus Math}
+    {\setmathfont{Libertinus Math}}
+    {\IfFontExistsTF{TeX Gyre Pagella Math}{\setmathfont{TeX Gyre Pagella Math}}{}}
+
+  \newcommand{\CJKText}[1]{{\CJKFont #1}}
+\fi

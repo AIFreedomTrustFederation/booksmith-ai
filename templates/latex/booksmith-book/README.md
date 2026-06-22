@@ -8,7 +8,11 @@ output.
 
 - `main.tex` controls document structure and typography.
 - `metadata.tex` stores title, author, copyright, and edition metadata.
+- `booksmith-fonts.tex` defines Unicode/OpenType font profiles.
+- `booksmith-art.tex` defines reusable art plate helpers.
 - `chapters/01-opening.tex` is a sample chapter.
+- `assets/art/` stores generated or commissioned book art.
+- `assets/fonts/` stores project-specific open fonts when needed.
 
 ## Build
 
@@ -23,5 +27,9 @@ The generated PDF is written to `.latex-build/booksmith-sample.pdf`.
 ## Design Direction
 
 The template uses standard LaTeX packages that are widely available in TeX Live
-and MiKTeX. Booksmith should later generate clean project folders following this
-same shape, then let authors customize or replace the template.
+and MiKTeX. The default build uses XeLaTeX so authors can use Unicode,
+OpenType font features, multilingual text, and beautiful installed fonts through
+`fontspec`.
+
+Booksmith should later generate clean project folders following this same shape,
+then let authors customize or replace the template.

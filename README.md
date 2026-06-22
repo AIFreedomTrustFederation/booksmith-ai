@@ -22,9 +22,16 @@ tooling. The plan covers editable `.tex` project export, engine selection,
 templates, typography controls, citations, indexes, glossaries, build logs, and
 PDF proofing.
 
+The LaTeX path is Unicode-first: XeLaTeX/LuaLaTeX, `fontspec`, OpenType font
+profiles, CJK fallback fonts, math fonts, and full-page art layouts for visual
+books and AI-generated art books.
+
 See [docs/latex-integration.md](docs/latex-integration.md) for the LaTeX
 architecture and [templates/latex/booksmith-book](templates/latex/booksmith-book)
 for the first sample book template.
+
+See [docs/unicode-fonts-and-art-books.md](docs/unicode-fonts-and-art-books.md)
+for the font and art-book strategy.
 
 ## MVP
 
@@ -36,6 +43,7 @@ for the first sample book template.
 - Publishing Pipeline for manuscript, editorial, package, and launch progress
 - Launch Assets for blurbs, social hooks, emails, keywords, and retailer copy
 - LaTeX Studio for local book typesetting and proof builds
+- Unicode Font Studio for OpenType, multilingual, and art-book typography
 
 ## Tech Stack
 
@@ -47,6 +55,8 @@ for the first sample book template.
 - PostgreSQL and Qdrant planned for self-hosted storage and retrieval
 - TeX Live, MiKTeX, Tectonic, latexmk, XeLaTeX, LuaLaTeX, and pdfLaTeX planned
   for local LaTeX publishing workflows
+- Open/OFL font families such as Noto, EB Garamond, Cormorant Garamond,
+  Alegreya, Libertinus, and TeX Gyre for default typography
 
 ## Local Development
 
@@ -64,6 +74,7 @@ npm run latex:sample
 ```
 
 The PDF is written to `.latex-build/booksmith-sample.pdf`.
+The default build uses XeLaTeX for Unicode and OpenType font support.
 
 ## Product Notes
 
