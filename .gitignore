@@ -12,6 +12,7 @@
 
 # testing
 /coverage
+/tmp
 
 # next.js
 /.next/
@@ -19,6 +20,25 @@
 
 # production
 /build
+/.latex-build
+
+# latex
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
 
 # misc
 .DS_Store

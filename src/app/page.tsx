@@ -44,6 +44,15 @@ const launchAssets = [
 
 const localStack = ["Ollama", "llama.cpp", "vLLM", "Qdrant"];
 
+const latexTools = ["latexmk", "XeLaTeX", "LuaLaTeX", "Tectonic"];
+
+const latexFeatures = [
+  "Editable .tex source",
+  "6x9 paperback proof",
+  "Front/back matter builder",
+  "Index, glossary, citations",
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#f4f8f1] text-[#17201a]">
@@ -151,6 +160,9 @@ export default function Home() {
               <div className="flex flex-wrap gap-2">
                 <button className="rounded-md border border-[#cbd8c5] bg-white px-4 py-2 text-sm font-semibold text-[#2d3b31] transition hover:border-[#88a982]">
                   Export EPUB
+                </button>
+                <button className="rounded-md border border-[#cbd8c5] bg-white px-4 py-2 text-sm font-semibold text-[#2d3b31] transition hover:border-[#88a982]">
+                  Export LaTeX
                 </button>
                 <button className="rounded-md border border-[#cbd8c5] bg-white px-4 py-2 text-sm font-semibold text-[#2d3b31] transition hover:border-[#88a982]">
                   Share editor
@@ -292,6 +304,56 @@ export default function Home() {
               </section>
 
               <section className="rounded-lg border border-[#d8e1d1] bg-white p-5 shadow-sm">
+                <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#48725b]">
+                      LaTeX Studio
+                    </p>
+                    <h3 className="mt-2 text-xl font-semibold">
+                      Beautiful books from editable source
+                    </h3>
+                    <p className="mt-2 max-w-2xl text-sm leading-6 text-[#667368]">
+                      Build print-ready proofs with local LaTeX tools, clean
+                      generated source, typography profiles, citations, indexes,
+                      and full author control over the final files.
+                    </p>
+                  </div>
+                  <button className="rounded-md bg-[#17201a] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#284032]">
+                    Build proof PDF
+                  </button>
+                </div>
+
+                <div className="mt-5 grid gap-4 lg:grid-cols-[minmax(0,1fr)_260px]">
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {latexFeatures.map((feature) => (
+                      <div
+                        className="rounded-md border border-[#dfe8da] bg-[#f9fcf7] px-3 py-2 text-sm font-medium text-[#3f5045]"
+                        key={feature}
+                      >
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="rounded-lg border border-[#dfe8da] bg-[#f4faf1] p-4">
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="text-sm font-semibold text-[#405145]">
+                        Active profile
+                      </span>
+                      <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[#3f674b]">
+                        Print
+                      </span>
+                    </div>
+                    <div className="mt-4 space-y-2 text-sm text-[#526358]">
+                      <p>Engine: XeLaTeX</p>
+                      <p>Trim: 6 x 9 in</p>
+                      <p>Template: Literary novel</p>
+                      <p>Output: PDF + source folder</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section className="rounded-lg border border-[#d8e1d1] bg-white p-5 shadow-sm">
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <h3 className="text-lg font-semibold">Launch Assets</h3>
@@ -345,6 +407,24 @@ export default function Home() {
                         </p>
                       </div>
                     </div>
+                  ))}
+                </div>
+              </section>
+
+              <section className="rounded-lg border border-[#d8e1d1] bg-white p-5 shadow-sm">
+                <h3 className="text-lg font-semibold">LaTeX Toolchain</h3>
+                <p className="mt-2 text-sm leading-6 text-[#667368]">
+                  Booksmith should detect local open-source typesetting tools and
+                  explain build errors without hiding the `.tex` source.
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {latexTools.map((tool) => (
+                    <span
+                      className="rounded-full bg-[#eef7ea] px-2.5 py-1 text-xs font-semibold text-[#3f674b]"
+                      key={tool}
+                    >
+                      {tool}
+                    </span>
                   ))}
                 </div>
               </section>

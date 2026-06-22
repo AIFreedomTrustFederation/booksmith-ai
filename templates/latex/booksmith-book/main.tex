@@ -1,0 +1,86 @@
+\documentclass[11pt,openany]{book}
+
+\input{metadata}
+
+\usepackage[paperwidth=6in,paperheight=9in,top=0.78in,bottom=0.82in,inner=0.82in,outer=0.68in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{BooksmithGreen}{HTML}{2F6B4A}
+\definecolor{BooksmithInk}{HTML}{17201A}
+
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0pt}
+\onehalfspacing
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\scshape \BookAuthor}
+\fancyhead[RO]{\small\scshape \BookTitle}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\color{BooksmithInk}}
+  {\filright\MakeUppercase{\chaptertitlename}\ \thechapter}
+  {1.2ex}
+  {\titlerule\vspace{1.2ex}\filright}
+  [\vspace{1.2ex}\titlerule]
+
+\hypersetup{
+  pdftitle={\BookTitle},
+  pdfauthor={\BookAuthor},
+  pdfsubject={\BookSubtitle},
+  pdfcreator={Booksmith AI}
+}
+
+\begin{document}
+
+\frontmatter
+\thispagestyle{empty}
+\begin{center}
+  \vspace*{1.1in}
+  {\Huge\bfseries\color{BooksmithInk} \BookTitle\par}
+  \vspace{0.25in}
+  {\Large \BookSubtitle\par}
+  \vfill
+  {\Large \BookAuthor\par}
+  \vspace{0.4in}
+  {\small \BookPublisher\par}
+\end{center}
+
+\clearpage
+\thispagestyle{empty}
+\vspace*{\fill}
+\noindent \BookTitle\\
+\BookSubtitle\\
+\BookEdition\\
+
+\vspace{1em}
+\noindent Copyright \textcopyright\ \BookCopyrightYear\ \BookAuthor. All rights reserved.\\
+ISBN: \BookISBN\\
+
+\vspace{1em}
+\noindent Typeset with Booksmith AI and LaTeX.
+\clearpage
+
+\tableofcontents
+
+\mainmatter
+\input{chapters/01-opening}
+
+\backmatter
+\chapter*{About This Edition}
+\addcontentsline{toc}{chapter}{About This Edition}
+This proof edition demonstrates how Booksmith AI can emit clean LaTeX source for
+beautiful book production while leaving the author in control of the manuscript,
+metadata, typography, and final files.
+
+\end{document}

@@ -17,6 +17,7 @@ Core features include:
 - Continuity checks
 - Manuscript editing workflows
 - Export and formatting
+- LaTeX typesetting and PDF proofing
 - Publishing metadata preparation
 - Launch asset generation
 
@@ -72,7 +73,9 @@ models.
 ### Publishing
 
 - Generate EPUB with open-source libraries
-- Generate print-ready PDF with open-source libraries
+- Generate print-ready PDF through local LaTeX builds
+- Export editable `.tex` project folders for advanced authors
+- Support TeX Live, MiKTeX, Tectonic, latexmk, XeLaTeX, LuaLaTeX, and pdfLaTeX
 - Validate metadata and export packages before users upload to retailers
 - Do not depend on retailer APIs for the MVP
 
@@ -110,11 +113,18 @@ user-managed.
 Exports should be generated from project data through deterministic templates so
 the same manuscript creates the same EPUB, PDF, metadata sheet, and launch kit.
 
+### LaTeX Studio
+
+Make LaTeX a first-class publishing mode with engine selection, editable source
+export, template controls, local build logs, PDF preview, citations, indexes,
+glossaries, equations, figures, and typography profiles.
+
 ## Non-Goals
 
 - No required OpenAI, Anthropic, Google, Meta hosted API, or other paid AI API
 - No required hosted vector database
 - No required proprietary cloud editor
+- No required proprietary typesetting system
 - No hard dependency on SaaS authentication for local use
 - No model whose license prevents commercial author use in the default setup
 

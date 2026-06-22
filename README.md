@@ -15,6 +15,17 @@ open-weight models.
 See [docs/open-source-strategy.md](docs/open-source-strategy.md) for the
 architecture rules.
 
+## LaTeX First-Class Publishing
+
+Booksmith AI will support beautiful book production through local LaTeX
+tooling. The plan covers editable `.tex` project export, engine selection,
+templates, typography controls, citations, indexes, glossaries, build logs, and
+PDF proofing.
+
+See [docs/latex-integration.md](docs/latex-integration.md) for the LaTeX
+architecture and [templates/latex/booksmith-book](templates/latex/booksmith-book)
+for the first sample book template.
+
 ## MVP
 
 - Bookshelf for active writing projects
@@ -24,6 +35,7 @@ architecture rules.
 - Continuity Watch for contradictions and manuscript risks
 - Publishing Pipeline for manuscript, editorial, package, and launch progress
 - Launch Assets for blurbs, social hooks, emails, keywords, and retailer copy
+- LaTeX Studio for local book typesetting and proof builds
 
 ## Tech Stack
 
@@ -33,6 +45,8 @@ architecture rules.
 - React
 - Local AI runtime adapter planned for Ollama, llama.cpp, or vLLM
 - PostgreSQL and Qdrant planned for self-hosted storage and retrieval
+- TeX Live, MiKTeX, Tectonic, latexmk, XeLaTeX, LuaLaTeX, and pdfLaTeX planned
+  for local LaTeX publishing workflows
 
 ## Local Development
 
@@ -42,6 +56,14 @@ npm run dev
 ```
 
 Then open `http://localhost:3000`.
+
+To build the sample LaTeX book:
+
+```powershell
+npm run latex:sample
+```
+
+The PDF is written to `.latex-build/booksmith-sample.pdf`.
 
 ## Product Notes
 
