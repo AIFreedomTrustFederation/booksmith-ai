@@ -1,0 +1,12 @@
+{
+  "slug": "federation-theory",
+  "title": "Federation Theory",
+  "series": "Federation",
+  "status": "seed",
+  "version": "0.1.0",
+  "purpose": "Develop sovereignty, subsidiarity, decentralization, trust structures, federated governance, collective intelligence, and unity without uniformity.",
+  "relatedBooks": ["dynastylink", "aift-constitution-and-doctrine", "civilizational-resilience"],
+  "canonicalTerms": ["Federation", "Sovereignty", "Subsidiarity", "Collective Intelligence", "Trust"],
+  "publishingTargets": ["markdown", "latex", "pdf", "epub", "publishing-packet"],
+  "provenanceRequired": true
+}
