@@ -9,7 +9,8 @@
     "lint": "eslint",
     "latex:sample": "powershell -ExecutionPolicy Bypass -File scripts/build-latex.ps1",
     "latex:sample:lua": "powershell -ExecutionPolicy Bypass -File scripts/build-latex.ps1 -Engine lualatex",
-    "fhqcm:images": "node scripts/generate-fhqcm-images.mjs"
+    "fhqcm:images": "node scripts/generate-fhqcm-images.mjs",
+    "fhqcm:polish": "node scripts/fhqcm-polish-and-validate.mjs"
   },
   "dependencies": {
     "next": "16.2.9",
