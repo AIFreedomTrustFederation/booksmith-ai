@@ -1,0 +1,12 @@
+{
+  "slug": "library-of-the-federation",
+  "title": "The Library of the Federation",
+  "series": "Publishing",
+  "status": "seed",
+  "version": "0.1.0",
+  "purpose": "Document the archive, knowledge graph, canon, memory system, source preservation, cross-references, and federated learning network.",
+  "relatedBooks": ["booksmith-ai-manual", "civilizational-resilience", "dynastylink"],
+  "canonicalTerms": ["Federation Library", "Knowledge Graph", "Canon", "Archive", "Cross-References"],
+  "publishingTargets": ["markdown", "latex", "pdf", "epub", "publishing-packet"],
+  "provenanceRequired": true
+}
