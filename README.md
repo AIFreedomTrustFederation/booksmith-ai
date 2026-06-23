@@ -89,6 +89,30 @@ books/<book-slug>/
 
 The current seed projects are metadata-first. Manuscripts, source packets, LaTeX projects, and exports should be added as each book enters active production.
 
+## Shared Reference Library
+
+Booksmith AI uses one shared citation system for the whole federation library instead of recreating references inside every book.
+
+```text
+library/
+├── references/
+│   ├── federation-canon.bib
+│   ├── physics.bib
+│   ├── mathematics.bib
+│   ├── biology.bib
+│   ├── consciousness.bib
+│   ├── philosophy.bib
+│   ├── theology.bib
+│   ├── ai.bib
+│   ├── sociology.bib
+│   └── civilization.bib
+├── thinker-registry.json
+├── reference-registry.json
+└── concept-registry.json
+```
+
+See [docs/shared-reference-library.md](docs/shared-reference-library.md) and [library/references/README.md](library/references/README.md) for the LaTeX import pattern and reference quality workflow.
+
 ## Open Source First
 
 Booksmith AI is designed to avoid required paid APIs, outside AI rate limits, and proprietary hosted services for core features. The default product direction is local-first and self-hostable, using open-source tools and carefully verified open-weight models.
