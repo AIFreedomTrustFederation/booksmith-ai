@@ -44,6 +44,10 @@ library/
 
 Trust law, dynasty trusts, securities, insurance, and jurisdiction-specific governance sources require a separate legal quality pass before becoming canon references.
 
+## Production Foundation
+
+This reference system is the real foundation of the Federation Library. It is structured to let Booksmith AI produce many books from one shared canon. It is still seed-quality in the bibliographic sense: every reference must be checked for edition, translator, publisher, DOI/URL, and citation style before final publication.
+
 ## LaTeX Pattern
 
 A book's LaTeX project should import shared references like this:
