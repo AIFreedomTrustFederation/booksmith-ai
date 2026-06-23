@@ -1,0 +1,12 @@
+{
+  "slug": "towards-a-unified-reality",
+  "title": "Towards a Unified Reality",
+  "series": "Foundational Doctrine",
+  "status": "seed",
+  "version": "0.1.0",
+  "purpose": "Develop the physics-to-metaphysics bridge, including equivalence, relativity, quantum theory, emergence, information, and disciplined metaphysical interpretation.",
+  "relatedBooks": ["universal-process-theosophy", "coincidence-and-the-eternal-now", "krystal-spiral"],
+  "canonicalTerms": ["Meta-Equivalence Principle", "Unified Reality", "Physics TOE", "Metaphysics"],
+  "publishingTargets": ["markdown", "latex", "pdf", "epub", "publishing-packet"],
+  "provenanceRequired": true
+}
