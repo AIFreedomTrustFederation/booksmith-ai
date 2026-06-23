@@ -1,0 +1,33 @@
+% FHQCM Figure Include Macros
+% Canonical image root from manuscript/main.tex:
+% ../assets/images
+
+\usepackage{graphicx}
+\usepackage{caption}
+
+\newcommand{\FHQCMImageRoot}{../assets/images}
+
+\newcommand{\FHQCMFigure}[4]{%
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=#1\textwidth]{\FHQCMImageRoot/#2}
+    \caption{#3}
+    \label{fig:#4}
+  \end{figure}
+}
+
+% Usage:
+% \FHQCMFigure{0.95}{source/F001-fhqcm-overview.svg}{Overview of the FHQCM model.}{F001-fhqcm-overview}
+%
+% Prefer print assets for final PDF:
+% \FHQCMFigure{0.95}{print/F001-fhqcm-overview-print.png}{Overview of the FHQCM model.}{F001-fhqcm-overview}
+
+% Draft placeholders. These can be used before final images exist.
+\newcommand{\FHQCMFigurePlaceholder}[3]{%
+  \begin{figure}[htbp]
+    \centering
+    \fbox{\parbox{0.86\textwidth}{\centering\vspace{1.5em}\textbf{Figure Placeholder: #1}\\#2\vspace{1.5em}}}
+    \caption{#2}
+    \label{fig:#3}
+  \end{figure}
+}
