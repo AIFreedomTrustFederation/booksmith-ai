@@ -1,0 +1,12 @@
+{
+  "slug": "universal-process-theosophy",
+  "title": "Universal Process Theosophy",
+  "series": "Foundational Doctrine",
+  "status": "seed",
+  "version": "0.1.0",
+  "purpose": "Define the foundational metaphysical framework of Spirit, process, coherence, nonduality, creation, evolution, and universal becoming.",
+  "relatedBooks": ["towards-a-unified-reality", "coincidence-and-the-eternal-now", "federation-theory"],
+  "canonicalTerms": ["Universal Process Theosophy", "Meta-Equivalence Principle", "Coherence", "Eternal Now"],
+  "publishingTargets": ["markdown", "latex", "pdf", "epub", "publishing-packet"],
+  "provenanceRequired": true
+}
