@@ -39,6 +39,10 @@ Then add book-specific references when needed:
 2. Subject files — discipline-specific references used by many books.
 3. Book-specific references — sources unique to one manuscript.
 
+## Production Foundation Status
+
+This is the real production foundation for the Federation Library, not a throwaway draft. The entries are intended to seed the canon and make the books buildable as a unified library. Every entry should still receive normal publishing-quality bibliographic verification before print release.
+
 ## Legal and Regulated Domains
 
 Trust law, securities, insurance, tax, medical, and jurisdiction-specific sources require separate specialist review before they become canon references. Add them only after verifying editions, jurisdiction, date, and professional-use boundaries.
@@ -62,4 +66,4 @@ ostrom1990Governing
 
 ## Quality Passes Still Required
 
-This is a seed reference library. Before print publication, every entry should receive a bibliography quality pass for edition, publisher, translator, DOI/URL, date, and citation style consistency.
+This is a production seed reference library. Before print publication, every entry should receive a bibliography quality pass for edition, publisher, translator, DOI/URL, date, and citation style consistency.
