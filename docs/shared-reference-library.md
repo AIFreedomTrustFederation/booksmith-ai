@@ -28,13 +28,21 @@ library/
 │   ├── consciousness.bib
 │   ├── philosophy.bib
 │   ├── theology.bib
+│   ├── process-theology.bib
+│   ├── patristics.bib
+│   ├── universal-reconciliation.bib
 │   ├── ai.bib
+│   ├── open-source-ai.bib
+│   ├── systems-cybernetics.bib
 │   ├── sociology.bib
+│   ├── indigenous-red-road.bib
 │   └── civilization.bib
 ├── thinker-registry.json
 ├── reference-registry.json
 └── concept-registry.json
 ```
+
+Trust law, dynasty trusts, securities, insurance, and jurisdiction-specific governance sources require a separate legal quality pass before becoming canon references.
 
 ## LaTeX Pattern
 
@@ -48,8 +56,14 @@ A book's LaTeX project should import shared references like this:
 \addbibresource{../../library/references/consciousness.bib}
 \addbibresource{../../library/references/philosophy.bib}
 \addbibresource{../../library/references/theology.bib}
+\addbibresource{../../library/references/process-theology.bib}
+\addbibresource{../../library/references/patristics.bib}
+\addbibresource{../../library/references/universal-reconciliation.bib}
 \addbibresource{../../library/references/ai.bib}
+\addbibresource{../../library/references/open-source-ai.bib}
+\addbibresource{../../library/references/systems-cybernetics.bib}
 \addbibresource{../../library/references/sociology.bib}
+\addbibresource{../../library/references/indigenous-red-road.bib}
 \addbibresource{../../library/references/civilization.bib}
 ```
 
