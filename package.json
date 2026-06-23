@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "latex:sample": "powershell -ExecutionPolicy Bypass -File scripts/build-latex.ps1",
-    "latex:sample:lua": "powershell -ExecutionPolicy Bypass -File scripts/build-latex.ps1 -Engine lualatex"
+    "latex:sample:lua": "powershell -ExecutionPolicy Bypass -File scripts/build-latex.ps1 -Engine lualatex",
+    "fhqcm:images": "node scripts/generate-fhqcm-images.mjs"
   },
   "dependencies": {
     "next": "16.2.9",
