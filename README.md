@@ -103,6 +103,8 @@ npm run dev
 
 Then open `http://localhost:3000`.
 
+The public landing page is available at `/`. The interactive product mockup is available at `/studio`.
+
 To build the sample LaTeX book:
 
 ```powershell
@@ -124,4 +126,6 @@ npm run latex:sample:tectonic
 
 ## Product Notes
 
-The first screen is intentionally an app workspace rather than a landing page. Booksmith AI should feel like an operating system for authors: the manuscript, story bible, editorial logic, publishing package, launch campaign, imprint metadata, and proof pipeline all share one source of truth.
+The first screen is now a public landing page for visitors, contributors, and federation partners. It explains the author-sovereignty mission and links into the live studio workspace.
+
+The studio workspace lives at `/studio` and should feel like an operating system for authors: the manuscript, story bible, editorial logic, publishing package, launch campaign, imprint metadata, and proof pipeline all share one source of truth.
