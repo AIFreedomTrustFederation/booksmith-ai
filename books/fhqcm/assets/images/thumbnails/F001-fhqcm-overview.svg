@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">F001 Fhqcm Overview</title>
+  <desc id="desc">Draft FHQCM visual canon figure for Fhqcm Overview.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#172554"/>
+      <stop offset="55%" stop-color="#0b1020"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <text x="800" y="92" text-anchor="middle" fill="#f8fafc" font-family="Georgia,serif" font-size="48">F001 — Fhqcm Overview</text>
+  <text x="800" y="145" text-anchor="middle" fill="#d7b56d" font-family="Georgia,serif" font-size="23">FHQCM Visual Canon · AI Freedom Trust Publishing · BookSmith AI</text>
+  <circle cx="800" cy="525" r="285" fill="none" stroke="#d7b56d" stroke-width="5" opacity="0.78"/><circle cx="800" cy="525" r="140" fill="none" stroke="#38bdf8" stroke-width="4" opacity="0.72"/><path d="M800 185 C1220 285 1220 765 800 890 C380 765 380 285 800 185" fill="none" stroke="#38bdf8" stroke-width="4" opacity="0.65"/><rect x="645" y="192" width="310" height="76" rx="22" fill="#111827" stroke="#d7b56d" stroke-width="3"/><text x="800" y="240" text-anchor="middle" fill="#f8fafc" font-family="Georgia,serif" font-size="22">Source</text><rect x="955" y="352" width="310" height="76" rx="22" fill="#111827" stroke="#d7b56d" stroke-width="3"/><text x="1110" y="400" text-anchor="middle" fill="#f8fafc" font-family="Georgia,serif" font-size="22">Pattern</text><rect x="880" y="672" width="310" height="76" rx="22" fill="#111827" stroke="#d7b56d" stroke-width="3"/><text x="1035" y="720" text-anchor="middle" fill="#f8fafc" font-family="Georgia,serif" font-size="22">Field</text><rect x="645" y="797" width="310" height="76" rx="22" fill="#111827" stroke="#d7b56d" stroke-width="3"/><text x="800" y="845" text-anchor="middle" fill="#f8fafc" font-family="Georgia,serif" font-size="22">Relation</text><rect x="410" y="672" width="310" height="76" rx="22" fill="#111827" stroke="#d7b56d" stroke-width="3"/><text x="565" y="720" text-anchor="middle" fill="#f8fafc" font-family="Georgia,serif" font-size="22">Coherence</text><rect x="335" y="352" width="310" height="76" rx="22" fill="#111827" stroke="#d7b56d" stroke-width="3"/><text x="490" y="400" text-anchor="middle" fill="#f8fafc" font-family="Georgia,serif" font-size="22">Return</text><text x="800" y="505" text-anchor="middle" fill="#d7b56d" font-family="Georgia,serif" font-size="56">F001</text><text x="800" y="565" text-anchor="middle" fill="#f8fafc" font-family="Georgia,serif" font-size="34">Fhqcm Overview</text>
+</svg>
