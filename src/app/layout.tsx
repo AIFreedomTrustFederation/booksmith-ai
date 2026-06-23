@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Booksmith AI",
+  title: "Booksmith AI | Sovereign Publishing Studio",
   description:
-    "An AI-powered book writing, editing, publishing, and launch studio for authors.",
+    "A local-first writing, editing, publishing, and launch studio for sovereign authorship inside the AI Freedom Trust Federation ecosystem.",
 };
 
 export default function RootLayout({
