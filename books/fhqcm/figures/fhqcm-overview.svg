@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">FHQCM Overview</title>
+  <desc id="desc">A circular flow diagram showing consciousness, observation, quantum field, fractal time, torus recursion, manifest reality, and return to consciousness.</desc>
+  <rect width="1200" height="800" fill="#0b1020"/>
+  <circle cx="600" cy="400" r="255" fill="none" stroke="#d7b56d" stroke-width="4" stroke-dasharray="12 10"/>
+  <circle cx="600" cy="400" r="115" fill="none" stroke="#7dd3fc" stroke-width="3"/>
+  <text x="600" y="390" fill="#ffffff" font-family="serif" font-size="38" text-anchor="middle">FHQCM</text>
+  <text x="600" y="430" fill="#d7b56d" font-family="serif" font-size="22" text-anchor="middle">recursive consciousness field</text>
+  <g fill="#ffffff" font-family="serif" font-size="26" text-anchor="middle">
+    <text x="600" y="110">Consciousness</text>
+    <text x="860" y="250">Observation</text>
+    <text x="860" y="560">Quantum Field</text>
+    <text x="600" y="715">Fractal Time</text>
+    <text x="340" y="560">Torus Recursion</text>
+    <text x="340" y="250">Manifest Reality</text>
+  </g>
+  <g stroke="#d7b56d" stroke-width="5" fill="none" marker-end="url(#arrow)">
+    <path d="M660 125 C760 145 835 190 855 225"/>
+    <path d="M875 285 C925 385 925 475 875 525"/>
+    <path d="M835 590 C760 660 685 700 630 705"/>
+    <path d="M570 705 C470 685 390 630 350 590"/>
+    <path d="M325 525 C275 430 275 330 325 285"/>
+    <path d="M355 225 C430 155 520 120 570 115"/>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#d7b56d"/>
+    </marker>
+  </defs>
+</svg>
