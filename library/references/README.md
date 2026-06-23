@@ -16,8 +16,14 @@ From a book-level LaTeX project, import the shared references first:
 \addbibresource{../../library/references/consciousness.bib}
 \addbibresource{../../library/references/philosophy.bib}
 \addbibresource{../../library/references/theology.bib}
+\addbibresource{../../library/references/process-theology.bib}
+\addbibresource{../../library/references/patristics.bib}
+\addbibresource{../../library/references/universal-reconciliation.bib}
 \addbibresource{../../library/references/ai.bib}
+\addbibresource{../../library/references/open-source-ai.bib}
+\addbibresource{../../library/references/systems-cybernetics.bib}
 \addbibresource{../../library/references/sociology.bib}
+\addbibresource{../../library/references/indigenous-red-road.bib}
 \addbibresource{../../library/references/civilization.bib}
 ```
 
@@ -32,6 +38,10 @@ Then add book-specific references when needed:
 1. `federation-canon.bib` — core thinkers and works that recur across the canon.
 2. Subject files — discipline-specific references used by many books.
 3. Book-specific references — sources unique to one manuscript.
+
+## Legal and Regulated Domains
+
+Trust law, securities, insurance, tax, medical, and jurisdiction-specific sources require separate specialist review before they become canon references. Add them only after verifying editions, jurisdiction, date, and professional-use boundaries.
 
 ## Key Naming Rule
 
