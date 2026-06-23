@@ -1,0 +1,26 @@
+{
+  "registryId": "aift-federation-thinker-registry",
+  "version": "0.1.0",
+  "description": "Structured intellectual genealogy for the AI Freedom Trust Federation Library. Entries identify canonical thinkers, domains, core concepts, and books where their work is especially relevant.",
+  "qualityNote": "This registry is a seed. Future quality passes should add exact works, editions, citation keys, and verification notes.",
+  "thinkers": [
+    {"id":"einstein","name":"Albert Einstein","domain":"Physics","importance":"foundational","concepts":["relativity","equivalence principle","observer frames"],"relatedBooks":["towards-a-unified-reality","universal-process-theosophy"]},
+    {"id":"jung","name":"C. G. Jung","domain":"Consciousness","importance":"foundational","concepts":["synchronicity","archetypes","collective unconscious","individuation"],"relatedBooks":["coincidence-and-the-eternal-now","krystal-spiral","the-green-zone"]},
+    {"id":"whitehead","name":"Alfred North Whitehead","domain":"Process Philosophy","importance":"foundational","concepts":["process","actual occasions","relational becoming"],"relatedBooks":["universal-process-theosophy","panentheism","towards-a-unified-reality"]},
+    {"id":"hartshorne","name":"Charles Hartshorne","domain":"Process Theology","importance":"foundational","concepts":["process panentheism","divine relativity"],"relatedBooks":["panentheism","universal-process-theosophy"]},
+    {"id":"bohm","name":"David Bohm","domain":"Physics and Philosophy","importance":"foundational","concepts":["implicate order","wholeness","dialogue"],"relatedBooks":["towards-a-unified-reality","coincidence-and-the-eternal-now"]},
+    {"id":"teilhard","name":"Pierre Teilhard de Chardin","domain":"Evolutionary Theology","importance":"foundational","concepts":["Omega Point","evolutionary Christology","noosphere"],"relatedBooks":["universal-process-theosophy","panentheism","civilizational-resilience"]},
+    {"id":"godel","name":"Kurt Godel","domain":"Logic and Mathematics","importance":"foundational","concepts":["incompleteness","formal limits"],"relatedBooks":["towards-a-unified-reality","ai-stewardship-and-alignment"]},
+    {"id":"ostrom","name":"Elinor Ostrom","domain":"Governance","importance":"foundational","concepts":["commons governance","polycentric systems","institutional design"],"relatedBooks":["federation-theory","aift-constitution-and-doctrine","civilizational-resilience"]},
+    {"id":"kauffman","name":"Stuart Kauffman","domain":"Complexity and Biology","importance":"foundational","concepts":["self-organization","emergence","complex systems"],"relatedBooks":["universal-process-theosophy","greenshift-theory","civilizational-resilience"]},
+    {"id":"gebser","name":"Jean Gebser","domain":"Consciousness Studies","importance":"foundational","concepts":["structures of consciousness","integral consciousness"],"relatedBooks":["krystal-spiral","coincidence-and-the-eternal-now"]},
+    {"id":"wilber","name":"Ken Wilber","domain":"Integral Theory","importance":"major-reference","concepts":["integral theory","levels of consciousness","quadrants"],"relatedBooks":["universal-process-theosophy","library-of-the-federation"]},
+    {"id":"gregory-nyssa","name":"Gregory of Nyssa","domain":"Theology","importance":"foundational","concepts":["infinite ascent","theosis","mystical theology"],"relatedBooks":["panentheism","universal-process-theosophy","the-green-zone"]},
+    {"id":"maximus-confessor","name":"Maximus the Confessor","domain":"Theology","importance":"foundational","concepts":["Cosmic Christ","logos/logoi","theosis"],"relatedBooks":["panentheism","universal-process-theosophy","federation-theory"]},
+    {"id":"turing","name":"Alan Turing","domain":"Computation and AI","importance":"foundational","concepts":["computation","machine intelligence","formal machines"],"relatedBooks":["ai-stewardship-and-alignment","booksmith-ai-manual"]},
+    {"id":"wiener","name":"Norbert Wiener","domain":"Cybernetics","importance":"foundational","concepts":["feedback","control","communication"],"relatedBooks":["ai-stewardship-and-alignment","federation-theory"]},
+    {"id":"margulis","name":"Lynn Margulis","domain":"Biology","importance":"major-reference","concepts":["symbiosis","endosymbiosis","evolutionary cooperation"],"relatedBooks":["federation-theory","civilizational-resilience"]},
+    {"id":"prigogine","name":"Ilya Prigogine","domain":"Thermodynamics and Complexity","importance":"major-reference","concepts":["dissipative structures","order out of chaos"],"relatedBooks":["greenshift-theory","towards-a-unified-reality"]},
+    {"id":"hofstadter","name":"Douglas Hofstadter","domain":"Cognitive Science","importance":"major-reference","concepts":["strange loops","self-reference","recursive mind"],"relatedBooks":["krystal-spiral","ai-stewardship-and-alignment"]}
+  ]
+}
