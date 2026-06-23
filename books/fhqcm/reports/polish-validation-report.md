@@ -1,6 +1,6 @@
 # FHQCM Polish and Validation Report
 
-Generated: 2026-06-23T09:11:41.143Z
+Generated: 2026-06-23T19:06:10.270Z
 
 ## Chapter Check
 - OK 00-preface.tex
