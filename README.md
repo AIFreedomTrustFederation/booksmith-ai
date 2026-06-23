@@ -4,6 +4,21 @@ Booksmith AI is an author-first writing, editing, publishing, and launch studio 
 
 The product direction is simple: give writers full creative control while AI handles the heavy support work around structure, continuity, revision, metadata, typesetting, publishing packets, and launch assets.
 
+## Website
+
+This repo is configured to publish a static GitHub Pages site from the Next.js app.
+
+After the GitHub Pages workflow is enabled and merged to `main`, the public website will be:
+
+```text
+https://aifreedomtrustfederation.github.io/booksmith-ai/
+```
+
+Routes:
+
+- `/` — public Booksmith AI landing page
+- `/studio` — interactive product workspace mockup
+
 ## Ecosystem Role
 
 Booksmith AI is the authoring and production studio. AI Freedom Trust Publishing is the publishing imprint and book-commerce arm. The Federation provides the long-term doctrine, standards, and sovereign infrastructure vision.
@@ -89,6 +104,7 @@ features to build.
 - TypeScript
 - Tailwind CSS
 - React
+- Static GitHub Pages export
 - Local AI runtime adapter planned for Ollama, llama.cpp, or vLLM
 - PostgreSQL and Qdrant planned for self-hosted storage and retrieval
 - TeX Live, MiKTeX, Tectonic, latexmk, XeLaTeX, LuaLaTeX, and pdfLaTeX planned for local LaTeX publishing workflows
@@ -104,6 +120,22 @@ npm run dev
 Then open `http://localhost:3000`.
 
 The public landing page is available at `/`. The interactive product mockup is available at `/studio`.
+
+## Static Build
+
+```bash
+npm run build
+```
+
+Next.js writes the static export to `out/` because `next.config.ts` sets `output: "export"`.
+
+For GitHub Pages, the workflow builds with:
+
+```bash
+GITHUB_PAGES=true npm run build
+```
+
+That applies the `/booksmith-ai` base path used by the hosted GitHub Pages URL.
 
 To build the sample LaTeX book:
 
