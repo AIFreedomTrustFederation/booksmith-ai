@@ -1,0 +1,12 @@
+{
+  "slug": "booksmith-ai-manual",
+  "title": "Booksmith AI Manual",
+  "series": "Publishing",
+  "status": "seed",
+  "version": "0.1.0",
+  "purpose": "Document sovereign authorship, project setup, manuscript workflows, citations, publishing packets, provenance, launch assets, and library production.",
+  "relatedBooks": ["library-of-the-federation", "ai-stewardship-and-alignment", "aift-constitution-and-doctrine"],
+  "canonicalTerms": ["Booksmith AI", "Publishing Packet", "Provenance Log", "Author Sovereignty", "Library Monorepo"],
+  "publishingTargets": ["markdown", "latex", "pdf", "epub", "publishing-packet"],
+  "provenanceRequired": true
+}
