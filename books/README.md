@@ -24,6 +24,7 @@ books/<book-slug>/
 
 ## Seed Library
 
+- `panentheism`
 - `universal-process-theosophy`
 - `towards-a-unified-reality`
 - `coincidence-and-the-eternal-now`
