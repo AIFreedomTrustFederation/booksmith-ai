@@ -1,0 +1,12 @@
+{
+  "slug": "the-green-zone",
+  "title": "The Green Zone",
+  "series": "Recovery and Integration",
+  "status": "seed",
+  "version": "0.1.0",
+  "purpose": "Translate regeneration, emotional sobriety, trauma integration, recovery, Red Road practice, and spiritual growth into practical lived guidance.",
+  "relatedBooks": ["greenshift-theory", "universal-process-theosophy", "civilizational-resilience"],
+  "canonicalTerms": ["Green Zone", "Emotional Sobriety", "Recovery", "Regeneration", "Integration"],
+  "publishingTargets": ["markdown", "latex", "pdf", "epub", "publishing-packet"],
+  "provenanceRequired": true
+}
