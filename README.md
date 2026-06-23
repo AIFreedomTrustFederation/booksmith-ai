@@ -40,25 +40,11 @@ See [docs/ai-freedom-trust-publishing.md](docs/ai-freedom-trust-publishing.md) f
 
 ## Federated Book Library
 
-Booksmith AI now treats the repository as a library monorepo for sovereign but cross-referenced books.
+Booksmith AI now treats the repository as a production library monorepo for sovereign but cross-referenced books.
 
 ```text
 booksmith-ai/
 ├── books/                      # individualized book projects
-│   ├── panentheism/
-│   ├── universal-process-theosophy/
-│   ├── towards-a-unified-reality/
-│   ├── coincidence-and-the-eternal-now/
-│   ├── krystal-spiral/
-│   ├── greenshift-theory/
-│   ├── the-green-zone/
-│   ├── federation-theory/
-│   ├── dynastylink/
-│   ├── aift-constitution-and-doctrine/
-│   ├── ai-stewardship-and-alignment/
-│   ├── booksmith-ai-manual/
-│   ├── civilizational-resilience/
-│   └── library-of-the-federation/
 ├── library/                    # shared canon, registry, glossary, references
 ├── templates/book/             # reusable book project template
 └── docs/                       # product and architecture documentation
@@ -97,22 +83,6 @@ Booksmith AI uses one shared citation system for the whole federation library in
 ```text
 library/
 ├── references/
-│   ├── federation-canon.bib
-│   ├── physics.bib
-│   ├── mathematics.bib
-│   ├── biology.bib
-│   ├── consciousness.bib
-│   ├── philosophy.bib
-│   ├── theology.bib
-│   ├── process-theology.bib
-│   ├── patristics.bib
-│   ├── universal-reconciliation.bib
-│   ├── ai.bib
-│   ├── open-source-ai.bib
-│   ├── systems-cybernetics.bib
-│   ├── sociology.bib
-│   ├── indigenous-red-road.bib
-│   └── civilization.bib
 ├── thinker-registry.json
 ├── reference-registry.json
 └── concept-registry.json
