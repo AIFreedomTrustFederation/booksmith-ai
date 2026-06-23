@@ -1,0 +1,13 @@
+{
+  "slug": "panentheism",
+  "title": "Panentheism",
+  "subtitle": "God, Cosmos, Consciousness, and the Infinite Process of Becoming",
+  "series": "Foundational Doctrine",
+  "status": "seed",
+  "version": "0.1.0",
+  "purpose": "Develop the universe-in-God framework that anchors Spirit, matter, consciousness, creation, evolution, transcendence, immanence, science, and philosophy within the Federation canon.",
+  "relatedBooks": ["universal-process-theosophy", "towards-a-unified-reality", "coincidence-and-the-eternal-now", "federation-theory"],
+  "canonicalTerms": ["Panentheism", "Process Theology", "Theosis", "Christ Consciousness", "Transcendence", "Immanence"],
+  "publishingTargets": ["markdown", "latex", "pdf", "epub", "publishing-packet"],
+  "provenanceRequired": true
+}
