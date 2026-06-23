@@ -6,6 +6,7 @@
   "preparedWith": "Booksmith AI",
   "version": "0.1.0",
   "books": [
+    {"slug":"panentheism","title":"Panentheism","series":"Foundational Doctrine","status":"seed","purpose":"God, cosmos, consciousness, Spirit, matter, transcendence, immanence, and the universe-in-God framework that anchors the canon."},
     {"slug":"universal-process-theosophy","title":"Universal Process Theosophy","series":"Foundational Doctrine","status":"seed","purpose":"Foundational metaphysical framework for process, Spirit, coherence, creation, evolution, and nonduality."},
     {"slug":"towards-a-unified-reality","title":"Towards a Unified Reality","series":"Foundational Doctrine","status":"seed","purpose":"Physics-to-metaphysics bridge grounded in equivalence, relativity, quantum theory, emergence, and systems thinking."},
     {"slug":"coincidence-and-the-eternal-now","title":"Coincidence, Synchronicity, and the Eternal Now","series":"Foundational Doctrine","status":"seed","purpose":"Meaning, coincidence, coherence, synchronicity, observer frames, and the Eternal Now."},
