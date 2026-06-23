@@ -1,0 +1,23 @@
+{
+  "libraryId": "ai-freedom-trust-federated-library",
+  "title": "AI Freedom Trust Federation Library",
+  "description": "A federated library of sovereign but cross-referenced books, manuals, guides, theories, and publishing packets produced through Booksmith AI.",
+  "defaultImprint": "AI Freedom Trust Publishing",
+  "preparedWith": "Booksmith AI",
+  "version": "0.1.0",
+  "books": [
+    {"slug":"universal-process-theosophy","title":"Universal Process Theosophy","series":"Foundational Doctrine","status":"seed","purpose":"Foundational metaphysical framework for process, Spirit, coherence, creation, evolution, and nonduality."},
+    {"slug":"towards-a-unified-reality","title":"Towards a Unified Reality","series":"Foundational Doctrine","status":"seed","purpose":"Physics-to-metaphysics bridge grounded in equivalence, relativity, quantum theory, emergence, and systems thinking."},
+    {"slug":"coincidence-and-the-eternal-now","title":"Coincidence, Synchronicity, and the Eternal Now","series":"Foundational Doctrine","status":"seed","purpose":"Meaning, coincidence, coherence, synchronicity, observer frames, and the Eternal Now."},
+    {"slug":"krystal-spiral","title":"The Krystal Spiral","series":"Consciousness","status":"seed","purpose":"Recursive consciousness, harmonic observation, spiral return, memory, and toroidal symbolic geometry."},
+    {"slug":"greenshift-theory","title":"Greenshift Theory","series":"Consciousness","status":"seed","purpose":"Regenerative coherence where redshift and blueshift, coherence and decoherence, death and resurrection meet."},
+    {"slug":"the-green-zone","title":"The Green Zone","series":"Recovery and Integration","status":"seed","purpose":"Emotional sobriety, trauma integration, recovery practice, spiritual growth, and lived regeneration."},
+    {"slug":"federation-theory","title":"Federation Theory","series":"Federation","status":"seed","purpose":"Sovereignty, subsidiarity, decentralization, trust structures, federated governance, and collective intelligence."},
+    {"slug":"dynastylink","title":"DynastyLink","series":"Federation","status":"seed","purpose":"Trust identity, family legacy, federated trust membership, and intergenerational continuity."},
+    {"slug":"aift-constitution-and-doctrine","title":"AI Freedom Trust Federation Constitution and Doctrine","series":"Federation","status":"seed","purpose":"Operational doctrine, governance principles, rights, responsibilities, and federation alignment."},
+    {"slug":"ai-stewardship-and-alignment","title":"AI Stewardship and Alignment","series":"AI","status":"seed","purpose":"Human-AI cooperation, local-first AI, auditability, alignment, rights, responsibilities, and federation readiness."},
+    {"slug":"booksmith-ai-manual","title":"Booksmith AI Manual","series":"Publishing","status":"seed","purpose":"Operating manual for sovereign authorship, publishing packets, provenance, citations, and library production."},
+    {"slug":"civilizational-resilience","title":"Civilizational Resilience","series":"Civilization","status":"seed","purpose":"Extinction risk, resilience, cooperation, evolutionary stability, continuity, and regenerative systems."},
+    {"slug":"library-of-the-federation","title":"The Library of the Federation","series":"Publishing","status":"seed","purpose":"Knowledge preservation, archives, memory systems, canonical references, and federated learning networks."}
+  ]
+}
