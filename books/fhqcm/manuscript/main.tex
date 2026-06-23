@@ -1,0 +1,78 @@
+\documentclass[11pt,oneside]{book}
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{microtype}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{csquotes}
+
+\geometry{
+  paperwidth=6in,
+  paperheight=9in,
+  inner=0.75in,
+  outer=0.75in,
+  top=0.75in,
+  bottom=0.85in
+}
+
+\setmainfont{TeX Gyre Pagella}
+\setsansfont{TeX Gyre Heros}
+\setmonofont{TeX Gyre Cursor}
+\setmathfont{TeX Gyre Pagella Math}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue,
+  pdftitle={The Fractal-Holographic Quantum Consciousness Model},
+  pdfauthor={Seth Aether Ricord and Zechariah Edwards},
+  pdfsubject={Consciousness, fractals, holography, quantum philosophy, panentheism},
+  pdfkeywords={FHQCM, fractal consciousness, holographic consciousness, torus field, Eternal Now, AI Freedom Trust Publishing}
+}
+
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}
+  {\chaptertitlename\ \thechapter}
+  {20pt}
+  {\Huge}
+
+\begin{document}
+
+\frontmatter
+
+\begin{titlepage}
+\centering
+\vspace*{1.2in}
+{\Huge\bfseries The Fractal-Holographic\\ Quantum Consciousness Model\par}
+\vspace{0.35in}
+{\Large A Unified Framework for Matter, Energy, Consciousness, and the Eternal Now\par}
+\vspace{0.6in}
+{\large Seth Aether Ricord \& Zechariah Edwards\par}
+\vfill
+{\large AI Freedom Trust Publishing\par}
+{\small An AI Freedom Trust Federation imprint\par}
+{\small Prepared with Booksmith AI\par}
+\end{titlepage}
+
+\input{frontmatter/publisher.tex}
+
+\tableofcontents
+
+\mainmatter
+
+\input{chapters/00-preface.tex}
+\input{chapters/01-introduction.tex}
+\input{chapters/02-source-map.tex}
+
+\backmatter
+
+\bibliographystyle{plain}
+\bibliography{../bibliography/references}
+
+\end{document}
