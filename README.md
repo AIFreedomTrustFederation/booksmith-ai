@@ -45,6 +45,7 @@ Booksmith AI now treats the repository as a library monorepo for sovereign but c
 ```text
 booksmith-ai/
 ├── books/                      # individualized book projects
+│   ├── panentheism/
 │   ├── universal-process-theosophy/
 │   ├── towards-a-unified-reality/
 │   ├── coincidence-and-the-eternal-now/
@@ -103,8 +104,14 @@ library/
 │   ├── consciousness.bib
 │   ├── philosophy.bib
 │   ├── theology.bib
+│   ├── process-theology.bib
+│   ├── patristics.bib
+│   ├── universal-reconciliation.bib
 │   ├── ai.bib
+│   ├── open-source-ai.bib
+│   ├── systems-cybernetics.bib
 │   ├── sociology.bib
+│   ├── indigenous-red-road.bib
 │   └── civilization.bib
 ├── thinker-registry.json
 ├── reference-registry.json
