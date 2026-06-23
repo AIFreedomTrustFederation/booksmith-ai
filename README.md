@@ -66,6 +66,9 @@ See [docs/latex-integration.md](docs/latex-integration.md) for the LaTeX archite
 
 See [docs/unicode-fonts-and-art-books.md](docs/unicode-fonts-and-art-books.md) for the font and art-book strategy.
 
+See [docs/product-roadmap.md](docs/product-roadmap.md) for the next high-value
+features to build.
+
 ## MVP
 
 - Bookshelf for active writing projects
@@ -111,6 +114,13 @@ The PDF is written to `.latex-build/booksmith-sample.pdf`. The default build use
 ## Agent And Contributor Guidance
 
 Read [AGENTS.md](AGENTS.md) before changing code. The repo is aligned around author sovereignty, local-first architecture, open-source defaults, inspectable exports, and AI Freedom Trust Publishing as the publishing imprint.
+
+Alternative engines:
+
+```powershell
+npm run latex:sample:lua
+npm run latex:sample:tectonic
+```
 
 ## Product Notes
 

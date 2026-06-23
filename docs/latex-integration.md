@@ -94,6 +94,10 @@ Planned providers:
 The manuscript renderer should not call shell commands directly. It should emit
 source files, then let a provider perform the build.
 
+The `TectonicProvider` should generate a local fontconfig file before builds so
+Tectonic can find project fonts and known open-font directories without scanning
+the full system font library.
+
 ## Template System
 
 Templates should be source-controlled and user-copyable. A template should

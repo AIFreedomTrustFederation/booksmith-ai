@@ -102,6 +102,23 @@ The sample template at `templates/latex/booksmith-book` now uses:
 - Unicode proof text in the sample chapter
 - `assets/art/` and `assets/fonts/` folders for project assets
 
+## Tectonic Fontconfig
+
+Tectonic runs in a more isolated way than MiKTeX's XeLaTeX/LuaLaTeX commands, so
+Booksmith generates a local `fonts.conf` at build time when `-Engine tectonic` is
+used.
+
+The generated config includes:
+
+- project fonts from `assets/fonts/`
+- known open-font directories installed by MiKTeX
+- a local fontconfig cache under `.latex-build/fontconfig-cache`
+
+This lets Tectonic find the same Unicode font families used by the sample
+template. For fully reproducible public release packages, copy the selected
+OFL/open fonts into `assets/fonts/` instead of depending on absolute local
+MiKTeX font paths.
+
 ## License Guardrails
 
 Open-source software is not enough; font licenses matter separately. Booksmith

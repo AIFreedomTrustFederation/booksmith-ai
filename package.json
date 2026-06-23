@@ -10,7 +10,8 @@
     "latex:sample": "powershell -ExecutionPolicy Bypass -File scripts/build-latex.ps1",
     "latex:sample:lua": "powershell -ExecutionPolicy Bypass -File scripts/build-latex.ps1 -Engine lualatex",
     "fhqcm:images": "node scripts/generate-fhqcm-images.mjs",
-    "fhqcm:polish": "node scripts/fhqcm-polish-and-validate.mjs"
+    "fhqcm:polish": "node scripts/fhqcm-polish-and-validate.mjs",
+    "latex:sample:tectonic": "powershell -ExecutionPolicy Bypass -File scripts/build-latex.ps1 -Engine tectonic"
   },
   "dependencies": {
     "next": "16.2.9",

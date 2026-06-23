@@ -18,6 +18,62 @@ function Add-SessionPathDir([string]$dir) {
   }
 }
 
+function Convert-ToFontconfigPath([string]$path) {
+  return ($path -replace "\\", "/")
+}
+
+function Add-UniqueExistingDir([System.Collections.Generic.List[string]]$dirs, [string]$dir) {
+  if ((Test-Path $dir) -and -not $dirs.Contains($dir)) {
+    $dirs.Add($dir)
+  }
+}
+
+function Write-BooksmithFontconfig([string]$configDir, [string]$projectPath, [string]$outputPath) {
+  New-Item -ItemType Directory -Force -Path $configDir | Out-Null
+
+  $fontDirs = [System.Collections.Generic.List[string]]::new()
+  Add-UniqueExistingDir $fontDirs (Join-Path $projectPath "assets\fonts")
+
+  $miktexCommand = Get-Command xelatex -ErrorAction SilentlyContinue
+  if ($miktexCommand) {
+    $miktexRoot = $miktexCommand.Source -replace "\\miktex\\bin\\x64\\xelatex\.exe$", ""
+    $knownOpenFontDirs = @(
+      "fonts\truetype\catharsis\cormorantgaramond",
+      "fonts\opentype\huerta\alegreya",
+      "fonts\opentype\public\ebgaramond",
+      "fonts\opentype\public\notocjksc",
+      "fonts\opentype\public\libertinus-fonts",
+      "fonts\opentype\public\tex-gyre",
+      "fonts\opentype\public\tex-gyre-math",
+      "fonts\truetype\google\noto"
+    )
+
+    foreach ($relativeDir in $knownOpenFontDirs) {
+      Add-UniqueExistingDir $fontDirs (Join-Path $miktexRoot $relativeDir)
+    }
+  }
+
+  $cacheDir = Join-Path $outputPath "fontconfig-cache"
+  New-Item -ItemType Directory -Force -Path $cacheDir | Out-Null
+
+  $dirXml = $fontDirs |
+    ForEach-Object { "  <dir>$(Convert-ToFontconfigPath $_)</dir>" }
+
+  $fontconfig = @"
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+$($dirXml -join "`n")
+  <cachedir>$(Convert-ToFontconfigPath $cacheDir)</cachedir>
+  <config></config>
+</fontconfig>
+"@
+
+  $configPath = Join-Path $configDir "fonts.conf"
+  Set-Content -LiteralPath $configPath -Value $fontconfig -Encoding UTF8
+  return $configPath
+}
+
 $booksmithTools = Join-Path $env:LOCALAPPDATA "BooksmithAI\tools"
 $strawberryRoot = Join-Path $booksmithTools "strawberry-perl"
 Add-SessionPathDir (Join-Path $strawberryRoot "perl\site\bin")
@@ -56,6 +112,11 @@ try {
     if (-not $tectonic) {
       throw "Tectonic was requested but not found."
     }
+
+    $fontconfigDir = Join-Path $outputPath "fontconfig"
+    $fontconfigFile = Write-BooksmithFontconfig $fontconfigDir $projectPath $outputPath
+    $env:FONTCONFIG_FILE = $fontconfigFile
+    $env:FONTCONFIG_PATH = $fontconfigDir
 
     & $tectonic.Source "--outdir" $outputPath "main.tex"
     if ($LASTEXITCODE -ne 0) {
