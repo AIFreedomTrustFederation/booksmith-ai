@@ -1,3 +1,5 @@
+import registry from "../../../library/book-registry.json";
+
 export default function StudioPage() {
-  return <main>Studio</main>;
+  return <main>{registry.title}</main>;
 }
