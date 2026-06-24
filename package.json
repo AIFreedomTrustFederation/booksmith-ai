@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "ensure:book-folders": "node scripts/ensure-book-folders.mjs",
     "validate:library": "node scripts/validate-library.mjs",
     "latex:sample": "powershell -ExecutionPolicy Bypass -File scripts/build-latex.ps1",
     "latex:sample:lua": "powershell -ExecutionPolicy Bypass -File scripts/build-latex.ps1 -Engine lualatex",
