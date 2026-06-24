@@ -1,0 +1,13 @@
+{
+  "slug": "fhqcm",
+  "title": "The Fractal-Holographic Quantum Consciousness Model",
+  "subtitle": "A Unified Framework for Matter, Energy, Consciousness, and the Eternal Now",
+  "series": "Active Manuscripts",
+  "status": "active",
+  "version": "0.1.0",
+  "purpose": "Active Booksmith manuscript for the FHQCM book project, including LaTeX source, PDF proof workflow, citation review, scientific integrity appendices, figure registry, equation registry, and publishing metadata.",
+  "relatedBooks": ["panentheism", "universal-process-theosophy", "towards-a-unified-reality", "coincidence-and-the-eternal-now", "ai-stewardship-and-alignment", "federation-theory"],
+  "canonicalTerms": ["FHQCM", "Eternal Now", "Coherence", "Coincidence", "Panentheism", "Christic Equivalency", "AI Stewardship"],
+  "publishingTargets": ["latex", "pdf", "epub", "web", "publishing-packet"],
+  "provenanceRequired": true
+}
