@@ -1,0 +1,34 @@
+{
+  "registryId": "aift-booksmith-source-registry",
+  "version": "0.1.0",
+  "description": "Real source intake registry for Booksmith AI. Records should reference actual repository files, Drive documents, local imports, manuscripts, source packets, or honest pending states.",
+  "sources": [
+    {
+      "sourceId": "fhqcm-latex-main",
+      "bookSlug": "fhqcm",
+      "sourceType": "latex",
+      "location": "books/fhqcm/manuscript/main.tex",
+      "rightsStatus": "owned-review-required",
+      "status": "connected",
+      "notes": "Primary FHQCM LaTeX manuscript source currently present in the repository."
+    },
+    {
+      "sourceId": "fhqcm-metadata",
+      "bookSlug": "fhqcm",
+      "sourceType": "metadata",
+      "location": "books/fhqcm/publishing/metadata.md",
+      "rightsStatus": "owned-review-required",
+      "status": "connected",
+      "notes": "Publishing metadata source for the active FHQCM book project."
+    },
+    {
+      "sourceId": "federated-book-registry",
+      "bookSlug": "library-of-the-federation",
+      "sourceType": "registry",
+      "location": "library/book-registry.json",
+      "rightsStatus": "owned",
+      "status": "connected",
+      "notes": "Root registry for the AI Freedom Trust Federation Library."
+    }
+  ]
+}
