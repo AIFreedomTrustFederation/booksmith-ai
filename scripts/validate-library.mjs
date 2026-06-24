@@ -93,6 +93,35 @@ for (const book of registry.books) {
   }
 }
 
+if (exists("library/source-registry.json")) {
+  const sourceRegistry = readJson(path.join(root, "library", "source-registry.json"));
+  if (!Array.isArray(sourceRegistry.sources)) fail("source-registry.json must contain sources array");
+  for (const source of sourceRegistry.sources || []) {
+    for (const field of ["sourceId", "bookSlug", "sourceType", "location", "rightsStatus", "status"]) {
+      if (!source[field]) fail(`Source record missing ${field}: ${JSON.stringify(source)}`);
+    }
+    if (!slugs.has(source.bookSlug)) fail(`Source references unknown bookSlug: ${source.bookSlug}`);
+    if (source.status === "connected" && !exists(source.location)) {
+      fail(`Connected source location does not exist: ${source.location}`);
+    }
+  }
+} else {
+  warn("Missing library/source-registry.json");
+}
+
+if (exists("library/citation-registry.json")) {
+  const citationRegistry = readJson(path.join(root, "library", "citation-registry.json"));
+  if (!Array.isArray(citationRegistry.citationSets)) fail("citation-registry.json must contain citationSets array");
+  for (const set of citationRegistry.citationSets || []) {
+    for (const field of ["id", "path", "domain", "status"]) {
+      if (!set[field]) fail(`Citation set missing ${field}: ${JSON.stringify(set)}`);
+    }
+    if (!exists(set.path)) fail(`Citation set path does not exist: ${set.path}`);
+  }
+} else {
+  warn("Missing library/citation-registry.json");
+}
+
 if (process.exitCode) {
   console.error("Booksmith library validation failed.");
   process.exit(process.exitCode);
