@@ -1,0 +1,17 @@
+{
+  "registryId": "aift-booksmith-citation-registry",
+  "version": "0.1.0",
+  "description": "Shared citation registry for Booksmith AI. This file maps discipline reference files and citation review status without replacing the BibTeX source files.",
+  "citationSets": [
+    {"id":"federation-canon","path":"library/references/federation-canon.bib","domain":"core canon","status":"seed-review-required"},
+    {"id":"physics","path":"library/references/physics.bib","domain":"physics","status":"seed-review-required"},
+    {"id":"mathematics","path":"library/references/mathematics.bib","domain":"mathematics","status":"seed-review-required"},
+    {"id":"biology","path":"library/references/biology.bib","domain":"biology","status":"seed-review-required"},
+    {"id":"consciousness","path":"library/references/consciousness.bib","domain":"consciousness","status":"seed-review-required"},
+    {"id":"philosophy","path":"library/references/philosophy.bib","domain":"philosophy","status":"seed-review-required"},
+    {"id":"theology","path":"library/references/theology.bib","domain":"theology","status":"seed-review-required"},
+    {"id":"process-theology","path":"library/references/process-theology.bib","domain":"process theology","status":"seed-review-required"},
+    {"id":"ai","path":"library/references/ai.bib","domain":"artificial intelligence","status":"seed-review-required"},
+    {"id":"civilization","path":"library/references/civilization.bib","domain":"civilization","status":"seed-review-required"}
+  ]
+}
