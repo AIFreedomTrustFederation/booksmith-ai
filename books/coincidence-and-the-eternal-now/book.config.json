@@ -1,0 +1,12 @@
+{
+  "slug": "coincidence-and-the-eternal-now",
+  "title": "Coincidence, Synchronicity, and the Eternal Now",
+  "series": "Foundational Doctrine",
+  "status": "seed",
+  "version": "0.1.0",
+  "purpose": "Develop coincidence as coherence becoming visible through apparent decoherence, with synchronicity, meaning, observer frames, and Eternal Now theory.",
+  "relatedBooks": ["universal-process-theosophy", "towards-a-unified-reality", "greenshift-theory"],
+  "canonicalTerms": ["Coincidence", "Synchronicity", "Eternal Now", "Coherence", "Decoherence"],
+  "publishingTargets": ["markdown", "latex", "pdf", "epub", "publishing-packet"],
+  "provenanceRequired": true
+}

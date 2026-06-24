@@ -1,0 +1,17 @@
+{
+  "slug": "example-book-slug",
+  "title": "Example Book Title",
+  "subtitle": "Optional Subtitle",
+  "series": "Example Series",
+  "status": "seed",
+  "version": "0.1.0",
+  "imprint": "AI Freedom Trust Publishing",
+  "preparedWith": "Booksmith AI",
+  "purpose": "Define the book's purpose here.",
+  "audience": ["general readers", "federation contributors"],
+  "canonicalTerms": [],
+  "relatedBooks": [],
+  "sourceLineage": [],
+  "publishingTargets": ["markdown", "latex", "pdf", "epub", "publishing-packet"],
+  "provenanceRequired": true
+}

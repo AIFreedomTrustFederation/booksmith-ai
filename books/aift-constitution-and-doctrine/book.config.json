@@ -1,0 +1,12 @@
+{
+  "slug": "aift-constitution-and-doctrine",
+  "title": "AI Freedom Trust Federation Constitution and Doctrine",
+  "series": "Federation",
+  "status": "seed",
+  "version": "0.1.0",
+  "purpose": "Define operational doctrine, governance principles, rights, responsibilities, federation membership, and alignment standards.",
+  "relatedBooks": ["federation-theory", "dynastylink", "ai-stewardship-and-alignment"],
+  "canonicalTerms": ["Doctrine", "Constitution", "Federation", "Rights", "Responsibilities"],
+  "publishingTargets": ["markdown", "latex", "pdf", "epub", "publishing-packet"],
+  "provenanceRequired": true
+}

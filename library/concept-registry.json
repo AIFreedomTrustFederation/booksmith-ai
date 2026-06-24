@@ -1,0 +1,22 @@
+{
+  "registryId": "aift-federation-concept-registry",
+  "version": "0.2.0",
+  "description": "Shared semantic map for canon concepts used across Booksmith AI books. This compact pass adds expanded production concepts while preserving the seed map direction.",
+  "concepts": [
+    {"id":"panentheism","label":"Panentheism","domain":"theology","relatedBooks":["panentheism","universal-process-theosophy","towards-a-unified-reality"],"referenceKeys":["hartshorne1948DivineRelativity","whitehead1929Process","teilhard1959Phenomenon"]},
+    {"id":"process-theology","label":"Process Theology","domain":"theology-metaphysics","relatedBooks":["panentheism","universal-process-theosophy"],"referenceKeys":["whitehead1929Process","cobbGriffin1976ProcessTheology","hartshorne1948DivineRelativity"]},
+    {"id":"theosis","label":"Theosis","domain":"theology","relatedBooks":["panentheism","universal-process-theosophy","the-green-zone"],"referenceKeys":["athanasius2011Incarnation","maximus2003CosmicMystery","gregory2012LifeMoses"]},
+    {"id":"universal-reconciliation","label":"Universal Reconciliation","domain":"theology","relatedBooks":["panentheism","universal-process-theosophy","the-green-zone"],"referenceKeys":["talbott1999Inescapable","hart2019ThatAll","ramelli2013ChristianDoctrine"]},
+    {"id":"meta-equivalence-principle","label":"Meta-Equivalence Principle","domain":"metaphysics","relatedBooks":["towards-a-unified-reality","universal-process-theosophy","coincidence-and-the-eternal-now"],"referenceKeys":["einstein1952Relativity","whitehead1929Process"]},
+    {"id":"coherence","label":"Coherence","domain":"systems","relatedBooks":["universal-process-theosophy","greenshift-theory","federation-theory","civilizational-resilience"],"referenceKeys":["bohm1980Wholeness","kauffman1995AtHome","prigogine1984Order"]},
+    {"id":"synchronicity","label":"Synchronicity","domain":"consciousness","relatedBooks":["coincidence-and-the-eternal-now","krystal-spiral"],"referenceKeys":["jung1960Synchronicity","jung1968Archetypes"]},
+    {"id":"eternal-now","label":"Eternal Now","domain":"time-metaphysics","relatedBooks":["coincidence-and-the-eternal-now","universal-process-theosophy","panentheism"],"referenceKeys":["augustine1991Confessions","boethius1969Consolation","einstein1952Relativity"]},
+    {"id":"krystal-spiral","label":"Krystal Spiral","domain":"consciousness-symbolism","relatedBooks":["krystal-spiral","greenshift-theory"],"referenceKeys":["hofstadter1979GEB","gebser1985EverPresent"]},
+    {"id":"greenshift","label":"Greenshift","domain":"regeneration-symbolism","relatedBooks":["greenshift-theory","the-green-zone"],"referenceKeys":["prigogine1984Order","kauffman1995AtHome"]},
+    {"id":"red-road","label":"Red Road","domain":"recovery-indigenous","relatedBooks":["the-green-zone","civilizational-resilience"],"referenceKeys":["whiteBison2002RedRoad","wilson2008Research","kimmerer2013Braiding"]},
+    {"id":"federation","label":"Federation","domain":"governance","relatedBooks":["federation-theory","dynastylink","aift-constitution-and-doctrine"],"referenceKeys":["ostrom1990Governing","mcluhan1964UnderstandingMedia","fuller1969OperatingManual"]},
+    {"id":"ai-singularity","label":"AI Singularity","domain":"ai-futures","relatedBooks":["ai-stewardship-and-alignment","civilizational-resilience"],"referenceKeys":["kurzweil2005Singularity","bostrom2014Superintelligence","russell2019HumanCompatible"]},
+    {"id":"open-source-ai","label":"Open-Source AI","domain":"ai-infrastructure","relatedBooks":["ai-stewardship-and-alignment","booksmith-ai-manual"],"referenceKeys":["mitchell2019ModelCards","gebru2021Datasheets","wolf2020Transformers"]},
+    {"id":"game-theory","label":"Game Theory","domain":"mathematics-governance-ai","relatedBooks":["federation-theory","ai-stewardship-and-alignment","civilizational-resilience"],"referenceKeys":["vonneumann1944Games","ostrom1990Governing"]}
+  ]
+}

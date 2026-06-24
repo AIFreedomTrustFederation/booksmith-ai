@@ -1,0 +1,27 @@
+{
+  "registryId": "aift-federation-reference-registry",
+  "version": "0.1.0",
+  "description": "Maps canonical citation keys to domains, importance, and books that should consider the reference.",
+  "qualityNote": "This is a seed map. Future passes should validate each BibTeX entry against authoritative bibliographic sources.",
+  "references": [
+    {"key":"einstein1952Relativity","domain":"physics","importance":"foundational","books":["towards-a-unified-reality","universal-process-theosophy"]},
+    {"key":"jung1960Synchronicity","domain":"consciousness","importance":"foundational","books":["coincidence-and-the-eternal-now","krystal-spiral"]},
+    {"key":"jung1968Archetypes","domain":"consciousness","importance":"foundational","books":["coincidence-and-the-eternal-now","krystal-spiral","the-green-zone"]},
+    {"key":"whitehead1929Process","domain":"philosophy","importance":"foundational","books":["universal-process-theosophy","panentheism","towards-a-unified-reality"]},
+    {"key":"hartshorne1948DivineRelativity","domain":"theology","importance":"foundational","books":["panentheism","universal-process-theosophy"]},
+    {"key":"bohm1980Wholeness","domain":"physics","importance":"foundational","books":["towards-a-unified-reality","coincidence-and-the-eternal-now"]},
+    {"key":"teilhard1959Phenomenon","domain":"theology","importance":"foundational","books":["universal-process-theosophy","panentheism","civilizational-resilience"]},
+    {"key":"godel1992Incompleteness","domain":"mathematics","importance":"foundational","books":["towards-a-unified-reality","ai-stewardship-and-alignment"]},
+    {"key":"ostrom1990Governing","domain":"sociology","importance":"foundational","books":["federation-theory","aift-constitution-and-doctrine"]},
+    {"key":"kauffman1995AtHome","domain":"biology","importance":"foundational","books":["universal-process-theosophy","greenshift-theory"]},
+    {"key":"gebser1985EverPresent","domain":"consciousness","importance":"foundational","books":["krystal-spiral","coincidence-and-the-eternal-now"]},
+    {"key":"wilber2000IntegralPsychology","domain":"philosophy","importance":"major-reference","books":["universal-process-theosophy","library-of-the-federation"]},
+    {"key":"turing1950ComputingMachinery","domain":"ai","importance":"foundational","books":["ai-stewardship-and-alignment","booksmith-ai-manual"]},
+    {"key":"wiener1948Cybernetics","domain":"ai","importance":"foundational","books":["ai-stewardship-and-alignment","federation-theory"]},
+    {"key":"margulis1998Symbiotic","domain":"biology","importance":"major-reference","books":["federation-theory","civilizational-resilience"]},
+    {"key":"prigogine1984Order","domain":"physics","importance":"major-reference","books":["greenshift-theory","towards-a-unified-reality"]},
+    {"key":"vonneumann1944Games","domain":"mathematics","importance":"major-reference","books":["federation-theory","ai-stewardship-and-alignment","civilizational-resilience"]},
+    {"key":"russell2019HumanCompatible","domain":"ai","importance":"major-reference","books":["ai-stewardship-and-alignment"]},
+    {"key":"ord2020Precipice","domain":"civilization","importance":"major-reference","books":["civilizational-resilience","ai-stewardship-and-alignment"]}
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "slug": "ai-stewardship-and-alignment",
+  "title": "AI Stewardship and Alignment",
+  "series": "AI",
+  "status": "seed",
+  "version": "0.1.0",
+  "purpose": "Develop human-AI cooperation, local-first AI, auditability, alignment, rights, responsibilities, inspectability, and federation readiness.",
+  "relatedBooks": ["booksmith-ai-manual", "aift-constitution-and-doctrine", "universal-process-theosophy"],
+  "canonicalTerms": ["AI Stewardship", "Alignment", "Local-First AI", "Auditability", "Human Agency"],
+  "publishingTargets": ["markdown", "latex", "pdf", "epub", "publishing-packet"],
+  "provenanceRequired": true
+}

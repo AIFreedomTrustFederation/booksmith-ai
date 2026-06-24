@@ -1,0 +1,12 @@
+{
+  "slug": "dynastylink",
+  "title": "DynastyLink",
+  "series": "Federation",
+  "status": "seed",
+  "version": "0.1.0",
+  "purpose": "Document trust identity, federated trusts, family legacy, dynasty trust onboarding, member pathways, and intergenerational continuity.",
+  "relatedBooks": ["federation-theory", "aift-constitution-and-doctrine", "library-of-the-federation"],
+  "canonicalTerms": ["DynastyLink", "Trust Identity", "Federated Trust", "Legacy", "Onboarding"],
+  "publishingTargets": ["markdown", "latex", "pdf", "epub", "publishing-packet"],
+  "provenanceRequired": true
+}

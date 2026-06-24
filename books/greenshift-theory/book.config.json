@@ -1,0 +1,12 @@
+{
+  "slug": "greenshift-theory",
+  "title": "Greenshift Theory",
+  "series": "Consciousness",
+  "status": "seed",
+  "version": "0.1.0",
+  "purpose": "Develop Greenshift as the regenerative center where redshift and blueshift, coherence and decoherence, death and resurrection meet within toroidal symbolism.",
+  "relatedBooks": ["krystal-spiral", "the-green-zone", "coincidence-and-the-eternal-now"],
+  "canonicalTerms": ["Greenshift", "Green Zone", "Coherence", "Decoherence", "Regeneration"],
+  "publishingTargets": ["markdown", "latex", "pdf", "epub", "publishing-packet"],
+  "provenanceRequired": true
+}

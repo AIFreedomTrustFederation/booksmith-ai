@@ -1,0 +1,12 @@
+{
+  "slug": "civilizational-resilience",
+  "title": "Civilizational Resilience",
+  "series": "Civilization",
+  "status": "seed",
+  "version": "0.1.0",
+  "purpose": "Apply federation, coherence, cooperation, and regenerative systems to extinction risk, adaptation, continuity, and long-term survival.",
+  "relatedBooks": ["federation-theory", "the-green-zone", "library-of-the-federation"],
+  "canonicalTerms": ["Resilience", "Extinction Risk", "Cooperation", "Continuity", "Regeneration"],
+  "publishingTargets": ["markdown", "latex", "pdf", "epub", "publishing-packet"],
+  "provenanceRequired": true
+}
