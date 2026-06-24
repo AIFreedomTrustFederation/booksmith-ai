@@ -4,8 +4,9 @@
   "description": "A federated library of sovereign but cross-referenced books, manuals, guides, theories, and publishing packets produced through Booksmith AI.",
   "defaultImprint": "AI Freedom Trust Publishing",
   "preparedWith": "Booksmith AI",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "books": [
+    {"slug":"fhqcm","title":"The Fractal-Holographic Quantum Consciousness Model","series":"Active Manuscripts","status":"active","purpose":"Active Booksmith manuscript with LaTeX source, PDF proofing, citations, figures, equations, metadata, and publishing packet readiness."},
     {"slug":"panentheism","title":"Panentheism","series":"Foundational Doctrine","status":"seed","purpose":"God, cosmos, consciousness, Spirit, matter, transcendence, immanence, and the universe-in-God framework that anchors the canon."},
     {"slug":"universal-process-theosophy","title":"Universal Process Theosophy","series":"Foundational Doctrine","status":"seed","purpose":"Foundational metaphysical framework for process, Spirit, coherence, creation, evolution, and nonduality."},
     {"slug":"towards-a-unified-reality","title":"Towards a Unified Reality","series":"Foundational Doctrine","status":"seed","purpose":"Physics-to-metaphysics bridge grounded in equivalence, relativity, quantum theory, emergence, and systems thinking."},
