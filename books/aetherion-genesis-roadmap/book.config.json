@@ -1,0 +1,48 @@
+{
+  "slug": "aetherion-genesis-roadmap",
+  "title": "The Aetherion Genesis Roadmap",
+  "subtitle": "From AIcoin Launch to the AI Freedom Trust Federation",
+  "series": "Federation Constitutional Monographs",
+  "status": "active-draft",
+  "edition": "Genesis Research Draft 0.1.0",
+  "authors": [
+    "Zechariah D. Edwards",
+    "Booksmith AI",
+    "Mysterion Knowledge Base"
+  ],
+  "publisher": "AI Freedom Trust Publishing",
+  "imprint": "An AI Freedom Trust Federation imprint",
+  "preparedWith": "Booksmith AI",
+  "formatTargets": ["latex", "pdf", "epub", "web", "knowledge-pack"],
+  "citationStyle": "APA 7",
+  "primaryPurpose": "Define the legally grounded, cryptographically verifiable, publicly auditable, and implementation-oriented roadmap from speculative AIcoin launch through Aetherion, DAO/federation infrastructure, trust stewardship, Booksmith/Mysterion knowledge systems, and long-term Biozoecurrency evolution.",
+  "claimBoundaries": [
+    "research-draft",
+    "not-legal-advice",
+    "not-tax-advice",
+    "not-investment-advice",
+    "not-token-offering-document",
+    "implementation-status-must-be-explicit",
+    "public-claims-require-human-review"
+  ],
+  "canonicalInputs": [
+    "AIFreedomTrustFederation/mobox/federation/federation.manifest.json",
+    "AIFreedomTrustFederation/mobox/federation/index/repositories.json",
+    "AIFreedomTrustFederation/mobox/federation/index/concepts.json",
+    "AIFreedomTrustFederation/mobox/federation/index/implementations.json",
+    "AIFreedomTrustFederation/mobox/federation/index/agents.json",
+    "AIFreedomTrustFederation/mobox/federation/knowledge-base/mysterion-seed.md",
+    "AIFreedomTrustFederation/Aether_Coin_biozonecurrency/updated_whitepaper/FractalCoin_Toroidal_Economics_Whitepaper.md",
+    "AIFreedomTrustFederation/Aether_Coin_biozonecurrency/updated_whitepaper/AI_Agent_Network_Section.md"
+  ],
+  "roadmapPhases": [
+    "AIcoin bootstrap launch",
+    "DAO and treasury governance",
+    "Aetherion infrastructure",
+    "Mysterion and Booksmith knowledge architecture",
+    "Trust and holding-entity legal stewardship planning",
+    "Biozoecurrency contribution economy",
+    "Federation consciousness stream",
+    "Public-safe website and publishing pipeline"
+  ]
+}
