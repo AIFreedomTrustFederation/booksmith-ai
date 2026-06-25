@@ -1,0 +1,91 @@
+\documentclass[11pt,openany]{book}
+
+\usepackage[paperwidth=6in,paperheight=9in,top=0.78in,bottom=0.82in,inner=0.82in,outer=0.68in]{geometry}
+\usepackage{fontspec}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{csquotes}
+\usepackage[hidelinks]{hyperref}
+\usepackage[style=apa,backend=biber,sortcites=true,sorting=nyt]{biblatex}
+\addbibresource{references.bib}
+
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,calc}
+\pgfplotsset{compat=1.18}
+
+\setmainfont{EB Garamond}
+\setsansfont{Noto Sans}
+\setmonofont{Noto Sans Mono}
+
+\definecolor{AetherInk}{HTML}{14211C}
+\definecolor{AetherGold}{HTML}{B8893B}
+\definecolor{AetherGreen}{HTML}{2F6B4A}
+\definecolor{AetherMist}{HTML}{E7F0E4}
+\definecolor{AetherBlue}{HTML}{2E5E88}
+
+\newcommand{\BookTitle}{The Aetherion Genesis Roadmap}
+\newcommand{\BookSubtitle}{From Launch to the AI Freedom Trust Federation}
+\newcommand{\BookAuthor}{Zechariah D. Edwards, Booksmith AI, and the Mysterion Knowledge Base}
+\newcommand{\BookPublisher}{AI Freedom Trust Publishing}
+\newcommand{\BookEdition}{Genesis Research Draft 0.1.0}
+
+\onehalfspacing
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\scshape \BookAuthor}
+\fancyhead[RO]{\small\scshape \BookTitle}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\color{AetherInk}}
+  {\filright\MakeUppercase{\chaptertitlename}\ \thechapter}
+  {1.2ex}
+  {\titlerule\vspace{1.2ex}\filright}
+  [\vspace{1.2ex}\titlerule]
+
+\begin{document}
+\frontmatter
+\begin{titlepage}
+\begin{center}
+\vspace*{0.7in}
+{\Huge\bfseries\color{AetherInk} \BookTitle\par}
+\vspace{0.25in}
+{\Large \BookSubtitle\par}
+\vfill
+{\Large \BookAuthor\par}
+\vspace{0.4in}
+{\small \BookPublisher\par}
+{\small \BookEdition\par}
+\end{center}
+\end{titlepage}
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+This research monograph defines a staged roadmap for the Aetherion ecosystem, the AI Freedom Trust Federation, Booksmith AI, Mysterion, Mobox, VPS infrastructure, and the long-term Biozoecurrency architecture. It is designed as a source-cited, LaTeX-first, professionally reviewable draft that separates current implementation, planned architecture, and future vision.
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\mainmatter
+\input{chapters/00-executive-summary}
+\input{chapters/01-genesis-roadmap}
+\input{chapters/02-legal-governance}
+\input{chapters/03-technical-architecture}
+\input{chapters/04-token-economics}
+\input{chapters/05-compliance-and-risk}
+\input{chapters/06-implementation-roadmap}
+
+\backmatter
+\printbibliography[title={References}]
+\end{document}
