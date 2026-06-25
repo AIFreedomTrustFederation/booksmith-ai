@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import registry from "../../library/book-registry.json";
+import { loadFederatedLibrary } from "@/lib/library/load-library";
 
 const pillars = [
   {
@@ -26,9 +26,11 @@ const workflow = [
   "Launch with metadata, blurbs, campaign assets, and approval records",
 ];
 
-export default function Home() {
-  const bookCount = registry.books.length;
-  const seriesCount = new Set(registry.books.map((book) => book.series)).size;
+export default async function Home() {
+  const library = await loadFederatedLibrary();
+  const bookCount = library.books.length;
+  const seriesCount = library.series.length;
+  const configuredBooks = library.books.filter((book) => book.config).length;
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#101811] text-[#f8fbf4]">
@@ -72,7 +74,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-14 lg:grid-cols-[minmax(0,1fr)_480px] lg:px-8 lg:pb-28 lg:pt-20">
           <div>
             <p className="inline-flex rounded-full border border-[#bde8bd]/30 bg-white/10 px-4 py-2 text-sm font-semibold text-[#d7f5d4] shadow-2xl backdrop-blur">
-              {registry.title} · {bookCount} seed books · {seriesCount} series
+              {library.registry.title} · {bookCount} books · {configuredBooks} configs · {seriesCount} series
             </p>
             <h1 className="mt-8 max-w-5xl text-5xl font-black tracking-[-0.04em] text-white sm:text-7xl lg:text-8xl">
               Forge books without surrendering the soul of the manuscript.
@@ -116,22 +118,29 @@ export default function Home() {
               </div>
 
               <div className="mt-6 space-y-3">
-                {registry.books.slice(0, 6).map((book) => (
-                  <div
-                    className="rounded-2xl border border-[#dfe8da] bg-white px-4 py-3 shadow-sm"
-                    key={book.slug}
-                  >
-                    <div className="flex items-center justify-between gap-3">
-                      <span className="font-semibold">{book.title}</span>
-                      <span className="rounded-full bg-[#eef7ea] px-2.5 py-1 text-xs font-bold text-[#3f674b]">
-                        {book.status}
-                      </span>
+                {library.books.slice(0, 6).map((book) => {
+                  const display = book.config ?? book.registry;
+
+                  return (
+                    <div
+                      className="rounded-2xl border border-[#dfe8da] bg-white px-4 py-3 shadow-sm"
+                      key={book.registry.slug}
+                    >
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="font-semibold">{display.title}</span>
+                        <span className="rounded-full bg-[#eef7ea] px-2.5 py-1 text-xs font-bold text-[#3f674b]">
+                          {display.status}
+                        </span>
+                      </div>
+                      <p className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#607064]">
+                        {display.series}
+                      </p>
+                      <p className="mt-2 text-xs text-[#607064]">
+                        {book.config ? book.configPath : "Missing book.config.json"} · {book.connectedSources.length} sources
+                      </p>
                     </div>
-                    <p className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#607064]">
-                      {book.series}
-                    </p>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
               <div className="mt-6 rounded-2xl bg-[#173322] p-5 text-white">
