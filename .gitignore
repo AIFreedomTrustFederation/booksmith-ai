@@ -67,3 +67,7 @@ debug-bundles/
 books/*/exports/zips/
 books/*/exports/pdf/
 books/*/exports/publishing-packet/
+termux-output-bundles/
+books/*/exports/
+books/*/exports/latex/
+books/*/exports/proof-inspector/

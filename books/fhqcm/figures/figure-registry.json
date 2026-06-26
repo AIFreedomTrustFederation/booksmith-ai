@@ -1,0 +1,430 @@
+{
+  "slug": "fhqcm",
+  "generatedAt": "2026-06-26T10:23:01.258Z",
+  "policy": {
+    "placeholdersAllowedInDraft": true,
+    "placeholdersAllowedInPublication": false,
+    "aiImagesRequireLedger": true,
+    "provenanceRequired": true
+  },
+  "figures": [
+    {
+      "id": "F001-fhqcm-overview",
+      "title": "F001 — FHQCM Overview",
+      "caption": "Overview of the Fractal-Holographic Quantum Consciousness Model as a recursive flow between consciousness, observation, quantum potential, fractal time, toroidal becoming, manifest reality, and return.",
+      "sourceFile": "chapters/01-introduction.tex",
+      "sourceLine": 5,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F002-participatory-cosmos",
+      "title": "F002 — The Participatory Cosmos",
+      "caption": "Observer and reality are presented as a reciprocal feedback loop in which observation, information, interpretation, and manifestation are carefully distinguished.",
+      "sourceFile": "chapters/01-introduction.tex",
+      "sourceLine": 9,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F008-eternal-now",
+      "title": "F008 — Eternal Now",
+      "caption": "Past, present, future, and the timeless center are represented as a unified field rather than a merely linear sequence.",
+      "sourceFile": "chapters/01-introduction.tex",
+      "sourceLine": 13,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F003-fractal-holographic-reality",
+      "title": "F003 — Fractal-Holographic Reality",
+      "caption": "The part reflects the whole through self-similar and holographic patterning, while scientific and symbolic meanings remain distinct.",
+      "sourceFile": "chapters/01-introduction.tex",
+      "sourceLine": 17,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F012-observation-collapse",
+      "title": "F012 — Observation Collapse",
+      "caption": "Potential states narrow into an experienced outcome through measurement or observation, with careful distinction between physics and metaphysical interpretation.",
+      "sourceFile": "chapters/01-introduction.tex",
+      "sourceLine": 23,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F011-wave-function",
+      "title": "F011 — Wave Function",
+      "caption": "A visual primer for potential states, probability, and quantum description before measurement.",
+      "sourceFile": "chapters/03-quantum-observation.tex",
+      "sourceLine": 11,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F012-observation-collapse",
+      "title": "F012 — Observation Collapse",
+      "caption": "Potential states narrow into an experienced outcome through measurement or observation, with careful distinction between physics and metaphysical interpretation.",
+      "sourceFile": "chapters/03-quantum-observation.tex",
+      "sourceLine": 53,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F013-wheeler-participatory-universe",
+      "title": "F013 — Wheeler Participatory Universe",
+      "caption": "The observer and universe are shown as mutually implicated through information, distinction, question, and response.",
+      "sourceFile": "chapters/03-quantum-observation.tex",
+      "sourceLine": 71,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F014-delayed-choice-experiment",
+      "title": "F014 — Delayed Choice Experiment",
+      "caption": "A source, possible paths, late measurement choice, and detector are mapped to show how the experimental arrangement affects what can be known.",
+      "sourceFile": "chapters/03-quantum-observation.tex",
+      "sourceLine": 85,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F018-observer-recursion",
+      "title": "F018 — Observer Recursion",
+      "caption": "Nested observation is represented as awareness reflecting upon awareness within wider informational frames.",
+      "sourceFile": "chapters/03-quantum-observation.tex",
+      "sourceLine": 119,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F025-holographic-memory",
+      "title": "F025 — Holographic Memory",
+      "caption": "Each fragment reflects the whole, introducing the whole-in-each-part language used throughout the model.",
+      "sourceFile": "chapters/04-holographic-brain.tex",
+      "sourceLine": 9,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F030-basic-torus-geometry",
+      "title": "F030 — Basic Torus Geometry",
+      "caption": "The major radius, minor radius, angular parameters, and central axis define the basic torus used as the model's geometric language.",
+      "sourceFile": "chapters/05-spiral-torus-field.tex",
+      "sourceLine": 9,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F031-dynamic-toroidal-flow",
+      "title": "F031 — Dynamic Toroidal Flow",
+      "caption": "Toroidal flow is shown as circulation through center, boundary, return, and renewed emergence.",
+      "sourceFile": "chapters/05-spiral-torus-field.tex",
+      "sourceLine": 35,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F038-christic-equivalency",
+      "title": "F038 — Christic Equivalency",
+      "caption": "Wave and particle, spirit and matter, past and future, self and other are held through symbolic reconciliation rather than collapsed into sameness.",
+      "sourceFile": "chapters/06-christic-equivalency.tex",
+      "sourceLine": 9,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F041-unity-without-collapse",
+      "title": "F041 — Unity Without Collapse",
+      "caption": "Distinct centers remain themselves while participating in shared coherence.",
+      "sourceFile": "chapters/06-christic-equivalency.tex",
+      "sourceLine": 52,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F043-divided-heart",
+      "title": "F043 — Divided Heart",
+      "caption": "The divided heart is mapped as fear, shame, resentment, longing, grace, and healing seeking integration.",
+      "sourceFile": "chapters/07-emotional-sobriety.tex",
+      "sourceLine": 9,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F046-recovery-spiral",
+      "title": "F046 — Recovery Spiral",
+      "caption": "Recovery is represented as a spiral rather than a straight line, allowing return, repetition, and growth.",
+      "sourceFile": "chapters/07-emotional-sobriety.tex",
+      "sourceLine": 33,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F049-human-ai-stewardship",
+      "title": "F049 — Human-AI Stewardship",
+      "caption": "Human wisdom and AI capability are shown in reciprocal service under ethical stewardship.",
+      "sourceFile": "chapters/08-ai-stewardship.tex",
+      "sourceLine": 9,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F050-federation-architecture",
+      "title": "F050 — Federation Architecture",
+      "caption": "AI Freedom Trust Federation is mapped as a living organizational torus of publishing, tooling, identity, infrastructure, and knowledge stewardship.",
+      "sourceFile": "chapters/09-federation-consciousness.tex",
+      "sourceLine": 7,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F008-eternal-now",
+      "title": "F008 — Eternal Now",
+      "caption": "Past, present, future, and the timeless center are represented as a unified field rather than a merely linear sequence.",
+      "sourceFile": "chapters/11-coincidence-coherence-eternal-now.tex",
+      "sourceLine": 19,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F048-love-as-harmonic-coherence",
+      "title": "F048 — Love as Harmonic Coherence",
+      "caption": "Dissonant waves become coherent through listening, repair, relation, and love.",
+      "sourceFile": "chapters/11-coincidence-coherence-eternal-now.tex",
+      "sourceLine": 79,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    },
+    {
+      "id": "F031-dynamic-toroidal-flow",
+      "title": "F031 — Dynamic Toroidal Flow",
+      "caption": "Toroidal flow is shown as circulation through center, boundary, return, and renewed emergence.",
+      "sourceFile": "chapters/11-coincidence-coherence-eternal-now.tex",
+      "sourceLine": 103,
+      "status": "needs-ai-figure",
+      "asset": null,
+      "rights": {
+        "license": "pending",
+        "source": "pending",
+        "credit": "pending"
+      },
+      "print": {
+        "targetDpi": 300,
+        "minWidthPx": 2400,
+        "minHeightPx": 1800
+      }
+    }
+  ]
+}
