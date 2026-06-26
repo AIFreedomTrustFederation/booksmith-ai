@@ -97,7 +97,11 @@
     "figures:registry": "node scripts/figure-registry-v1.mjs",
     "figures:registry:fhqcm": "node scripts/figure-registry-v1.mjs fhqcm",
     "registry:build": "node scripts/build-federation-library-registry.mjs",
-    "validate:library:v2": "node scripts/validate-library-v2.mjs"
+    "validate:library:v2": "node scripts/validate-library-v2.mjs",
+    "publication:gate:v2": "node scripts/publication-gate-v2.mjs",
+    "publication:gate:v2:fhqcm": "node scripts/publication-gate-v2.mjs fhqcm",
+    "booksmith:stabilize-submit": "bash scripts/booksmith-stabilize-and-submit.sh",
+    "booksmith:stabilize-submit:fhqcm": "bash scripts/booksmith-stabilize-and-submit.sh fhqcm"
   },
   "dependencies": {
     "next": "16.2.9",
