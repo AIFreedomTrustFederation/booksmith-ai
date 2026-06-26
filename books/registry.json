@@ -1,0 +1,224 @@
+{
+  "schema": "booksmith.federation-library-registry.v1",
+  "generatedAt": "2026-06-26T10:26:05.951Z",
+  "policy": {
+    "knownBookStatuses": [
+      "active",
+      "draft",
+      "planned",
+      "archived"
+    ],
+    "plannedBooksSatisfyRelatedBookReferences": true,
+    "unknownRelatedBooksFailValidation": true
+  },
+  "books": {
+    "library-of-the-federation": {
+      "slug": "library-of-the-federation",
+      "title": "The Library of the Federation",
+      "status": "seed",
+      "version": "0.1.0",
+      "path": "books/library-of-the-federation",
+      "purpose": "Document the archive, knowledge graph, canon, memory system, source preservation, cross-references, and federated learning network.",
+      "relatedBooks": [
+        "booksmith-ai-manual",
+        "civilizational-resilience",
+        "dynastylink"
+      ]
+    },
+    "civilizational-resilience": {
+      "slug": "civilizational-resilience",
+      "title": "Civilizational Resilience",
+      "status": "seed",
+      "version": "0.1.0",
+      "path": "books/civilizational-resilience",
+      "purpose": "Apply federation, coherence, cooperation, and regenerative systems to extinction risk, adaptation, continuity, and long-term survival.",
+      "relatedBooks": [
+        "federation-theory",
+        "the-green-zone",
+        "library-of-the-federation"
+      ]
+    },
+    "dynastylink": {
+      "slug": "dynastylink",
+      "title": "DynastyLink",
+      "status": "seed",
+      "version": "0.1.0",
+      "path": "books/dynastylink",
+      "purpose": "Document trust identity, federated trusts, family legacy, dynasty trust onboarding, member pathways, and intergenerational continuity.",
+      "relatedBooks": [
+        "federation-theory",
+        "aift-constitution-and-doctrine",
+        "library-of-the-federation"
+      ]
+    },
+    "aift-constitution-and-doctrine": {
+      "slug": "aift-constitution-and-doctrine",
+      "title": "AI Freedom Trust Federation Constitution and Doctrine",
+      "status": "seed",
+      "version": "0.1.0",
+      "path": "books/aift-constitution-and-doctrine",
+      "purpose": "Define operational doctrine, governance principles, rights, responsibilities, federation membership, and alignment standards.",
+      "relatedBooks": [
+        "federation-theory",
+        "dynastylink",
+        "ai-stewardship-and-alignment"
+      ]
+    },
+    "ai-stewardship-and-alignment": {
+      "slug": "ai-stewardship-and-alignment",
+      "title": "AI Stewardship and Alignment",
+      "status": "seed",
+      "version": "0.1.0",
+      "path": "books/ai-stewardship-and-alignment",
+      "purpose": "Develop human-AI cooperation, local-first AI, auditability, alignment, rights, responsibilities, inspectability, and federation readiness.",
+      "relatedBooks": [
+        "booksmith-ai-manual",
+        "aift-constitution-and-doctrine",
+        "universal-process-theosophy"
+      ]
+    },
+    "federation-theory": {
+      "slug": "federation-theory",
+      "title": "Federation Theory",
+      "status": "seed",
+      "version": "0.1.0",
+      "path": "books/federation-theory",
+      "purpose": "Develop sovereignty, subsidiarity, decentralization, trust structures, federated governance, collective intelligence, and unity without uniformity.",
+      "relatedBooks": [
+        "dynastylink",
+        "aift-constitution-and-doctrine",
+        "civilizational-resilience"
+      ]
+    },
+    "greenshift-theory": {
+      "slug": "greenshift-theory",
+      "title": "Greenshift Theory",
+      "status": "seed",
+      "version": "0.1.0",
+      "path": "books/greenshift-theory",
+      "purpose": "Develop Greenshift as the regenerative center where redshift and blueshift, coherence and decoherence, death and resurrection meet within toroidal symbolism.",
+      "relatedBooks": [
+        "krystal-spiral",
+        "the-green-zone",
+        "coincidence-and-the-eternal-now"
+      ]
+    },
+    "the-green-zone": {
+      "slug": "the-green-zone",
+      "title": "The Green Zone",
+      "status": "seed",
+      "version": "0.1.0",
+      "path": "books/the-green-zone",
+      "purpose": "Translate regeneration, emotional sobriety, trauma integration, recovery, Red Road practice, and spiritual growth into practical lived guidance.",
+      "relatedBooks": [
+        "greenshift-theory",
+        "universal-process-theosophy",
+        "civilizational-resilience"
+      ]
+    },
+    "booksmith-ai-manual": {
+      "slug": "booksmith-ai-manual",
+      "title": "Booksmith AI Manual",
+      "status": "seed",
+      "version": "0.1.0",
+      "path": "books/booksmith-ai-manual",
+      "purpose": "Document sovereign authorship, project setup, manuscript workflows, citations, publishing packets, provenance, launch assets, and library production.",
+      "relatedBooks": [
+        "library-of-the-federation",
+        "ai-stewardship-and-alignment",
+        "aift-constitution-and-doctrine"
+      ]
+    },
+    "krystal-spiral": {
+      "slug": "krystal-spiral",
+      "title": "The Krystal Spiral",
+      "status": "seed",
+      "version": "0.1.0",
+      "path": "books/krystal-spiral",
+      "purpose": "Develop recursive consciousness, harmonic observation, spiral return, memory, toroidal symbolism, and conscientious consciousness language.",
+      "relatedBooks": [
+        "towards-a-unified-reality",
+        "greenshift-theory",
+        "coincidence-and-the-eternal-now"
+      ]
+    },
+    "coincidence-and-the-eternal-now": {
+      "slug": "coincidence-and-the-eternal-now",
+      "title": "Coincidence, Synchronicity, and the Eternal Now",
+      "status": "seed",
+      "version": "0.1.0",
+      "path": "books/coincidence-and-the-eternal-now",
+      "purpose": "Develop coincidence as coherence becoming visible through apparent decoherence, with synchronicity, meaning, observer frames, and Eternal Now theory.",
+      "relatedBooks": [
+        "universal-process-theosophy",
+        "towards-a-unified-reality",
+        "greenshift-theory"
+      ]
+    },
+    "aetherion-genesis-roadmap": {
+      "slug": "aetherion-genesis-roadmap",
+      "title": "The Aetherion Genesis Roadmap",
+      "status": "active-draft",
+      "version": "0.1.0",
+      "path": "books/aetherion-genesis-roadmap",
+      "purpose": "",
+      "relatedBooks": []
+    },
+    "fhqcm": {
+      "slug": "fhqcm",
+      "title": "The Fractal-Holographic Quantum Consciousness Model",
+      "status": "active",
+      "version": "0.1.0",
+      "path": "books/fhqcm",
+      "purpose": "Active Booksmith manuscript for the FHQCM book project, including LaTeX source, PDF proof workflow, citation review, scientific integrity appendices, figure registry, equation registry, and publishing metadata.",
+      "relatedBooks": [
+        "panentheism",
+        "universal-process-theosophy",
+        "towards-a-unified-reality",
+        "coincidence-and-the-eternal-now",
+        "ai-stewardship-and-alignment",
+        "federation-theory"
+      ]
+    },
+    "panentheism": {
+      "slug": "panentheism",
+      "title": "Panentheism",
+      "status": "seed",
+      "version": "0.1.0",
+      "path": "books/panentheism",
+      "purpose": "Develop the universe-in-God framework that anchors Spirit, matter, consciousness, creation, evolution, transcendence, immanence, science, and philosophy within the Federation canon.",
+      "relatedBooks": [
+        "universal-process-theosophy",
+        "towards-a-unified-reality",
+        "coincidence-and-the-eternal-now",
+        "federation-theory"
+      ]
+    },
+    "towards-a-unified-reality": {
+      "slug": "towards-a-unified-reality",
+      "title": "Towards a Unified Reality",
+      "status": "seed",
+      "version": "0.1.0",
+      "path": "books/towards-a-unified-reality",
+      "purpose": "Develop the physics-to-metaphysics bridge, including equivalence, relativity, quantum theory, emergence, information, and disciplined metaphysical interpretation.",
+      "relatedBooks": [
+        "universal-process-theosophy",
+        "coincidence-and-the-eternal-now",
+        "krystal-spiral"
+      ]
+    },
+    "universal-process-theosophy": {
+      "slug": "universal-process-theosophy",
+      "title": "Universal Process Theosophy",
+      "status": "seed",
+      "version": "0.1.0",
+      "path": "books/universal-process-theosophy",
+      "purpose": "Define the foundational metaphysical framework of Spirit, process, coherence, nonduality, creation, evolution, and universal becoming.",
+      "relatedBooks": [
+        "towards-a-unified-reality",
+        "coincidence-and-the-eternal-now",
+        "federation-theory"
+      ]
+    }
+  }
+}

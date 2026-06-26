@@ -95,7 +95,9 @@
     "phase1:figure-audit:v1": "bash scripts/phase1-figure-audit-v1.sh",
     "phase1:figure-audit:v1:fhqcm": "bash scripts/phase1-figure-audit-v1.sh fhqcm",
     "figures:registry": "node scripts/figure-registry-v1.mjs",
-    "figures:registry:fhqcm": "node scripts/figure-registry-v1.mjs fhqcm"
+    "figures:registry:fhqcm": "node scripts/figure-registry-v1.mjs fhqcm",
+    "registry:build": "node scripts/build-federation-library-registry.mjs",
+    "validate:library:v2": "node scripts/validate-library-v2.mjs"
   },
   "dependencies": {
     "next": "16.2.9",
