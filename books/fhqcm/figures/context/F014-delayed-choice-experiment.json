@@ -1,0 +1,34 @@
+{
+  "sourceFile": "chapters/03-quantum-observation.tex",
+  "sourceLine": 85,
+  "before": [
+    "\\section{Delayed Choice Experiments}",
+    "",
+    "Wheeler's delayed-choice experiments further challenged classical intuitions.",
+    "",
+    "In these experiments, choices made after a particle has apparently begun its journey seem to influence how the experiment manifests.",
+    "",
+    "Although these results do not imply backward causation in any simplistic sense, they demonstrate that the relationship between measurement and reality is more subtle than classical models suggest.",
+    "",
+    "The distinction between past and future becomes less rigid.",
+    "",
+    "Observation appears woven into the fabric of events themselves.",
+    ""
+  ],
+  "current": "\\FHQCMFigurePlaceholder{F014 — Delayed Choice Experiment}{A source, possible paths, late measurement choice, and detector are mapped to show how the experimental arrangement affects what can be known.}{F014-delayed-choice-experiment}",
+  "after": [
+    "",
+    "\\section{The Observer and Information}",
+    "",
+    "The FHQCM proposes that observation should be understood through the broader framework of information.",
+    "",
+    "Observation is not merely seeing.",
+    "",
+    "Observation is interaction.",
+    "",
+    "Observation is relationship.",
+    "",
+    "Observation is the exchange and integration of information."
+  ],
+  "surroundingText": "Delayed Choice Experiments Wheeler's delayed-choice experiments further challenged classical intuitions. In these experiments, choices made after a particle has apparently begun its journey seem to influence how the experiment manifests. Although these results do not imply backward causation in any simplistic sense, they demonstrate that the relationship between measurement and reality is more subtle than classical models suggest. The distinction between past and future becomes less rigid. Observation appears woven into the fabric of events themselves. F014 — Delayed Choice ExperimentA source, possible paths, late measurement choice, and detector are mapped to show how the experimental arrangement affects what can be known.F014-delayed-choice-experiment The Observer and Information The FHQCM proposes that observation should be understood through the broader framework of information. Observation is not merely seeing. Observation is interaction. Observation is relationship. Observation is the exchange and integration of information."
+}

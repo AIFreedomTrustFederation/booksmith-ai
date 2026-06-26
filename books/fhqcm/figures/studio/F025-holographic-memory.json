@@ -1,0 +1,20 @@
+{
+  "id": "F025-holographic-memory",
+  "title": "F025 — Holographic Memory",
+  "caption": "Each fragment reflects the whole, introducing the whole-in-each-part language used throughout the model.",
+  "status": "needs-ai-figure",
+  "source": "chapters/04-holographic-brain.tex:9",
+  "figureType": "scientific-topology-diagram",
+  "specFile": "figures/specifications/F025-holographic-memory.json",
+  "contextFile": "figures/context/F025-holographic-memory.json",
+  "promptFile": "figures/studio/F025-holographic-memory-prompt.md",
+  "surroundingTextPreview": "The Holographic Brain Purpose This chapter develops the holographic dimension of the FHQCM by exploring distributed memory, whole-in-part patterning, Karl Pribram's holonomic brain theory, David Bohm's implicate order, and the broader hypothesis that consciousness may be structured through layered informational relationships. The goal is not to claim that neuroscience has proven cosmic consciousness. The goal is more careful: to show how holographic and holonomic models provide a disciplined met",
+  "actions": [
+    "review-context",
+    "edit-plain-language-request",
+    "improve-request-with-ai",
+    "compile-prompt",
+    "generate-draft-image",
+    "approve-or-request-revision"
+  ]
+}

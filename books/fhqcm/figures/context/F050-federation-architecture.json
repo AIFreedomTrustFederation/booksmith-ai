@@ -1,0 +1,21 @@
+{
+  "sourceFile": "chapters/09-federation-consciousness.tex",
+  "sourceLine": 7,
+  "before": [
+    "\\chapter{Federation Consciousness}",
+    "",
+    "\\section{Purpose}",
+    "",
+    "This chapter will connect the metaphysics of FHQCM to the organizational architecture of AI Freedom Trust Federation: publishing, Booksmith AI, DynastyLink, AIFT Forge, Knowledge Commons, and future federated trusts.",
+    ""
+  ],
+  "current": "\\FHQCMFigurePlaceholder{F050 — Federation Architecture}{AI Freedom Trust Federation is mapped as a living organizational torus of publishing, tooling, identity, infrastructure, and knowledge stewardship.}{F050-federation-architecture}",
+  "after": [
+    "",
+    "\\section{Planned Development}",
+    "",
+    "Future drafting should explain how federation is not merely administration but an embodied social form of distributed coherence.",
+    ""
+  ],
+  "surroundingText": "Federation Consciousness Purpose This chapter will connect the metaphysics of FHQCM to the organizational architecture of AI Freedom Trust Federation: publishing, Booksmith AI, DynastyLink, AIFT Forge, Knowledge Commons, and future federated trusts. F050 — Federation ArchitectureAI Freedom Trust Federation is mapped as a living organizational torus of publishing, tooling, identity, infrastructure, and knowledge stewardship.F050-federation-architecture Planned Development Future drafting should explain how federation is not merely administration but an embodied social form of distributed coherence."
+}

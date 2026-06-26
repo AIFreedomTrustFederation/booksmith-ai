@@ -1,0 +1,74 @@
+{
+  "schema": "booksmith.figure-spec.v1",
+  "id": "F011-wave-function",
+  "title": "F011 — Wave Function",
+  "caption": "A visual primer for potential states, probability, and quantum description before measurement.",
+  "status": "SPEC_READY",
+  "source": {
+    "file": "chapters/03-quantum-observation.tex",
+    "line": 11
+  },
+  "placementContext": {
+    "before": [
+      "\\chapter{Quantum Observation}",
+      "",
+      "\\section{Introduction}",
+      "",
+      "One of the most profound discoveries of twentieth-century physics was the realization that observation appears to play a fundamental role in the manifestation of physical reality. Unlike classical physics, where objects possess definite properties independent of measurement, quantum mechanics introduces a realm of potentiality in which physical systems exist as distributions of possibilities until an interaction occurs.",
+      "",
+      "The Fractal-Holographic Quantum Consciousness Model does not claim that human consciousness magically creates reality. Rather, it investigates the possibility that observation, information, relationship, and participation occupy a deeper role in the structure of reality than previously assumed.",
+      "",
+      "This chapter examines the scientific foundations that motivate such questions and explores how observation may function within a participatory cosmos.",
+      ""
+    ],
+    "after": [
+      "",
+      "\\section{The Quantum Revolution}",
+      "",
+      "Classical physics assumed that reality consists of independently existing objects whose properties remain fixed whether or not they are observed.",
+      "",
+      "Quantum mechanics challenged this assumption.",
+      "",
+      "Experiments involving electrons, photons, atoms, and molecules repeatedly demonstrated behavior that appears impossible within classical frameworks. Particles sometimes behave like waves. Waves sometimes behave like particles. Objects may exist in superpositions of multiple states until measurement occurs.",
+      "",
+      "The resulting picture is not one of certainty but of probability.",
+      "",
+      "Before measurement, quantum theory describes systems through wave functions that encode possible outcomes rather than definite realities."
+    ],
+    "surroundingText": "Quantum Observation Introduction One of the most profound discoveries of twentieth-century physics was the realization that observation appears to play a fundamental role in the manifestation of physical reality. Unlike classical physics, where objects possess definite properties independent of measurement, quantum mechanics introduces a realm of potentiality in which physical systems exist as distributions of possibilities until an interaction occurs. The Fractal-Holographic Quantum Consciousness Model does not claim that human consciousness magically creates reality. Rather, it investigates the possibility that observation, information, relationship, and participation occupy a deeper role in the structure of reality than previously assumed. This chapter examines the scientific foundations that motivate such questions and explores how observation may function within a participatory cosmos. F011 — Wave FunctionA visual primer for potential states, probability, and quantum description before measurement.F011-wave-function The Quantum Revolution Classical physics assumed that reality consists of independently existing objects whose properties remain fixed whether or not they are observed. Quantum mechanics challenged this assumption. Experiments involving electrons, photons, atoms, and molecules repeatedly demonstrated behavior that appears impossible within classical frameworks. Particles sometimes behave like waves. Waves sometimes behave like particles. Objects may exist in superpositions of multiple states until measurement occurs. The resulting picture is not one of certainty but of probability. Before measurement, quantum theory describes systems through wave functions that encode possible outcomes rather than definite realities."
+  },
+  "artDirection": {
+    "figureType": "scientific-topology-diagram",
+    "audience": "serious academic and general intelligent readers",
+    "style": "museum-quality scientific book illustration",
+    "composition": "clear central concept, readable hierarchy, uncluttered layout",
+    "aspectRatio": "16:9",
+    "printIntent": {
+      "dpi": 300,
+      "minimumWidthPx": 2400,
+      "minimumHeightPx": 1800
+    }
+  },
+  "required": {
+    "mustExplain": "A visual primer for potential states, probability, and quantum description before measurement.",
+    "mustAvoid": [
+      "fake citations",
+      "fake equations",
+      "unreadable text",
+      "watermarks",
+      "copyrighted characters",
+      "random mystical clutter",
+      "misleading scientific labels"
+    ]
+  },
+  "userRevision": {
+    "plainLanguageRequest": "",
+    "aiImprovedRequest": "",
+    "status": "awaiting-user-input"
+  },
+  "promptCompiler": {
+    "promptStatus": "ready-to-compile",
+    "providerAgnostic": true,
+    "finalPrompt": "Create a high-resolution scientific-topology-diagram titled \"F011 — Wave Function\".\nThe image must visually explain: A visual primer for potential states, probability, and quantum description before measurement.\nUse this manuscript context to decide what belongs in the image: Quantum Observation Introduction One of the most profound discoveries of twentieth-century physics was the realization that observation appears to play a fundamental role in the manifestation of physical reality. Unlike classical physics, where objects possess definite properties independent of measurement, quantum mechanics introduces a realm of potentiality in which physical systems exist as distributions of possibilities until an interaction occurs. The Fractal-Holographic Quantum Consciousness Model does not claim that human consciousness magically creates reality. Rather, it investigates the possibility that observation, information, relationship, and participation occupy a deeper role in the structure of reality than previously assumed. This chapter examines the scientific foundations that motivate such questions and explores how observation may function within a participatory cosmos. F011 — Wave FunctionA visual primer for potential states, probability, and quantum description before measurement.F011-wave-function The Quantum Revolution Classical physics assumed that reality consists of independently existing objects whose properties remain fixed whether or not they are observed. Quantum mechanics challenged this assumption. Experiments involving electrons, photons, atoms, and molecules repeatedly demonstrated behavior that appears impossible within classical frameworks. Particles sometimes behave like waves. Waves sometimes behave like particles. Objects may exist in superpositions of multiple states until measurement occurs. The resulting picture is not one of certainty but of probability. Before measurement, quantum theory describes systems through wave functions that encode possible outcomes rather than definite realities.\nStyle: museum-quality scientific book illustration.\nComposition: clear central concept, readable hierarchy, uncluttered layout.\nAspect ratio: 16:9.\nUse coherent scientific visual language, clean labels only when helpful, and strong print readability.\nAvoid: fake citations, fake equations, unreadable text, watermarks, copyrighted characters, random mystical clutter, misleading scientific labels."
+  }
+}

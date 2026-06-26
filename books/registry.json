@@ -1,6 +1,6 @@
 {
   "schema": "booksmith.federation-library-registry.v1",
-  "generatedAt": "2026-06-26T10:55:40.979Z",
+  "generatedAt": "2026-06-26T12:02:43.885Z",
   "policy": {
     "knownBookStatuses": [
       "active",

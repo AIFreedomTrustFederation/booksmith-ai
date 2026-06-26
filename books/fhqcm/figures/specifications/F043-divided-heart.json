@@ -1,0 +1,72 @@
+{
+  "schema": "booksmith.figure-spec.v1",
+  "id": "F043-divided-heart",
+  "title": "F043 — Divided Heart",
+  "caption": "The divided heart is mapped as fear, shame, resentment, longing, grace, and healing seeking integration.",
+  "status": "SPEC_READY",
+  "source": {
+    "file": "chapters/07-emotional-sobriety.tex",
+    "line": 9
+  },
+  "placementContext": {
+    "before": [
+      "\\chapter{Emotional Sobriety and Recursive Healing}",
+      "",
+      "\\section{Purpose}",
+      "",
+      "This chapter connects FHQCM to recovery, trauma integration, moral inventory, the divided heart, Red Road practice, AA language, and the movement from fragmentation toward harmonic coherence.",
+      "",
+      "It treats emotional sobriety as a lived laboratory for the model. If FHQCM claims that reality moves from fragmentation toward coherence through observation, relation, surrender, and repair, then recovery provides an embodied place to test that language.",
+      ""
+    ],
+    "after": [
+      "",
+      "\\section{The Divided Heart}",
+      "",
+      "Fragmentation is not merely an abstract metaphysical concept. It is experienced in the body as fear, resentment, shame, craving, dissociation, compulsion, and reactivity. A person can be physically sober while still emotionally intoxicated by fear, control, martyrdom, rage, fantasy, or despair.",
+      "",
+      "In FHQCM language, the divided heart is decoherence at the level of lived personhood. Attention scatters. Memory loops. The body prepares for danger even when no immediate danger is present. The future is interpreted through old wounds.",
+      "",
+      "Emotional sobriety begins when the person can observe these patterns without becoming identical to them.",
+      "",
+      "\\section{Inventory as Observation}",
+      "",
+      "Moral inventory is a practical form of recursive observation. The person does not merely feel resentment. The person observes resentment. The person asks what fear, wound, expectation, attachment, or false story is embedded inside it."
+    ],
+    "surroundingText": "Emotional Sobriety and Recursive Healing Purpose This chapter connects FHQCM to recovery, trauma integration, moral inventory, the divided heart, Red Road practice, AA language, and the movement from fragmentation toward harmonic coherence. It treats emotional sobriety as a lived laboratory for the model. If FHQCM claims that reality moves from fragmentation toward coherence through observation, relation, surrender, and repair, then recovery provides an embodied place to test that language. F043 — Divided HeartThe divided heart is mapped as fear, shame, resentment, longing, grace, and healing seeking integration.F043-divided-heart The Divided Heart Fragmentation is not merely an abstract metaphysical concept. It is experienced in the body as fear, resentment, shame, craving, dissociation, compulsion, and reactivity. A person can be physically sober while still emotionally intoxicated by fear, control, martyrdom, rage, fantasy, or despair. In FHQCM language, the divided heart is decoherence at the level of lived personhood. Attention scatters. Memory loops. The body prepares for danger even when no immediate danger is present. The future is interpreted through old wounds. Emotional sobriety begins when the person can observe these patterns without becoming identical to them. Inventory as Observation Moral inventory is a practical form of recursive observation. The person does not merely feel resentment. The person observes resentment. The person asks what fear, wound, expectation, attachment, or false story is embedded inside it."
+  },
+  "artDirection": {
+    "figureType": "symbolic-concept-illustration",
+    "audience": "serious academic and general intelligent readers",
+    "style": "museum-quality scientific book illustration",
+    "composition": "clear central concept, readable hierarchy, uncluttered layout",
+    "aspectRatio": "16:9",
+    "printIntent": {
+      "dpi": 300,
+      "minimumWidthPx": 2400,
+      "minimumHeightPx": 1800
+    }
+  },
+  "required": {
+    "mustExplain": "The divided heart is mapped as fear, shame, resentment, longing, grace, and healing seeking integration.",
+    "mustAvoid": [
+      "fake citations",
+      "fake equations",
+      "unreadable text",
+      "watermarks",
+      "copyrighted characters",
+      "random mystical clutter",
+      "misleading scientific labels"
+    ]
+  },
+  "userRevision": {
+    "plainLanguageRequest": "",
+    "aiImprovedRequest": "",
+    "status": "awaiting-user-input"
+  },
+  "promptCompiler": {
+    "promptStatus": "ready-to-compile",
+    "providerAgnostic": true,
+    "finalPrompt": "Create a high-resolution symbolic-concept-illustration titled \"F043 — Divided Heart\".\nThe image must visually explain: The divided heart is mapped as fear, shame, resentment, longing, grace, and healing seeking integration.\nUse this manuscript context to decide what belongs in the image: Emotional Sobriety and Recursive Healing Purpose This chapter connects FHQCM to recovery, trauma integration, moral inventory, the divided heart, Red Road practice, AA language, and the movement from fragmentation toward harmonic coherence. It treats emotional sobriety as a lived laboratory for the model. If FHQCM claims that reality moves from fragmentation toward coherence through observation, relation, surrender, and repair, then recovery provides an embodied place to test that language. F043 — Divided HeartThe divided heart is mapped as fear, shame, resentment, longing, grace, and healing seeking integration.F043-divided-heart The Divided Heart Fragmentation is not merely an abstract metaphysical concept. It is experienced in the body as fear, resentment, shame, craving, dissociation, compulsion, and reactivity. A person can be physically sober while still emotionally intoxicated by fear, control, martyrdom, rage, fantasy, or despair. In FHQCM language, the divided heart is decoherence at the level of lived personhood. Attention scatters. Memory loops. The body prepares for danger even when no immediate danger is present. The future is interpreted through old wounds. Emotional sobriety begins when the person can observe these patterns without becoming identical to them. Inventory as Observation Moral inventory is a practical form of recursive observation. The person does not merely feel resentment. The person observes resentment. The person asks what fear, wound, expectation, attachment, or false story is embedded inside it.\nStyle: museum-quality scientific book illustration.\nComposition: clear central concept, readable hierarchy, uncluttered layout.\nAspect ratio: 16:9.\nUse coherent scientific visual language, clean labels only when helpful, and strong print readability.\nAvoid: fake citations, fake equations, unreadable text, watermarks, copyrighted characters, random mystical clutter, misleading scientific labels."
+  }
+}

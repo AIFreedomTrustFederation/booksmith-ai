@@ -1,0 +1,20 @@
+{
+  "id": "F046-recovery-spiral",
+  "title": "F046 — Recovery Spiral",
+  "caption": "Recovery is represented as a spiral rather than a straight line, allowing return, repetition, and growth.",
+  "status": "needs-ai-figure",
+  "source": "chapters/07-emotional-sobriety.tex:33",
+  "figureType": "scientific-topology-diagram",
+  "specFile": "figures/specifications/F046-recovery-spiral.json",
+  "contextFile": "figures/context/F046-recovery-spiral.json",
+  "promptFile": "figures/studio/F046-recovery-spiral-prompt.md",
+  "surroundingTextPreview": "Moral inventory is a practical form of recursive observation. The person does not merely feel resentment. The person observes resentment. The person asks what fear, wound, expectation, attachment, or false story is embedded inside it. This is not self-condemnation. It is pattern recognition. In William James' language, religious experience often involves conversion, surrender, and reorganization of the self around a deeper center james1902Varieties. In Viktor Frankl's language, meaning can becom",
+  "actions": [
+    "review-context",
+    "edit-plain-language-request",
+    "improve-request-with-ai",
+    "compile-prompt",
+    "generate-draft-image",
+    "approve-or-request-revision"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "F012-observation-collapse",
+  "title": "F012 — Observation Collapse",
+  "caption": "Potential states narrow into an experienced outcome through measurement or observation, with careful distinction between physics and metaphysical interpretation.",
+  "status": "needs-ai-figure",
+  "source": "chapters/03-quantum-observation.tex:53",
+  "figureType": "quantum-process-diagram",
+  "specFile": "figures/specifications/F012-observation-collapse.json",
+  "contextFile": "figures/context/F012-observation-collapse.json",
+  "promptFile": "figures/studio/F012-observation-collapse-prompt.md",
+  "surroundingTextPreview": "One of the most debated questions in physics concerns what occurs during measurement. Prior to observation, quantum systems are represented by multiple possibilities. After observation, only one outcome appears. This transition is commonly described as wave function collapse. The exact nature of this process remains an active area of philosophical and scientific discussion. The FHQCM does not claim to solve the measurement problem. Instead, it treats measurement as evidence that reality contains",
+  "actions": [
+    "review-context",
+    "edit-plain-language-request",
+    "improve-request-with-ai",
+    "compile-prompt",
+    "generate-draft-image",
+    "approve-or-request-revision"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "schema": "booksmith.figure-spec.v1",
+  "id": "F048-love-as-harmonic-coherence",
+  "title": "F048 — Love as Harmonic Coherence",
+  "caption": "Dissonant waves become coherent through listening, repair, relation, and love.",
+  "status": "SPEC_READY",
+  "source": {
+    "file": "chapters/11-coincidence-coherence-eternal-now.tex",
+    "line": 79
+  },
+  "placementContext": {
+    "before": [
+      "Waves alternate between crest and trough.",
+      "",
+      "Breathing alternates between inhalation and exhalation.",
+      "",
+      "Life alternates between expansion and contraction.",
+      "",
+      "From a narrow perspective, positive and negative appear opposed.",
+      "",
+      "From a wider perspective, they are phases of one oscillation.",
+      "",
+      "Thus polarity is not necessarily ultimate separation. It may be phase distinction within deeper unity.",
+      ""
+    ],
+    "after": [
+      "",
+      "\\section{Toroidal Recursion}",
+      "",
+      "The torus symbolizes circulation, return, and transformation.",
+      "",
+      "The basic symbolic movement is:",
+      "",
+      "\\[",
+      "1 \\rightarrow Many \\rightarrow 1'",
+      "\\]",
+      "",
+      "The final unity is not identical to the first unity because it now contains conscious relationship."
+    ],
+    "surroundingText": "Waves alternate between crest and trough. Breathing alternates between inhalation and exhalation. Life alternates between expansion and contraction. From a narrow perspective, positive and negative appear opposed. From a wider perspective, they are phases of one oscillation. Thus polarity is not necessarily ultimate separation. It may be phase distinction within deeper unity. F048 — Love as Harmonic CoherenceDissonant waves become coherent through listening, repair, relation, and love.F048-love-as-harmonic-coherence Toroidal Recursion The torus symbolizes circulation, return, and transformation. The basic symbolic movement is: [ 1 rightarrow Many rightarrow 1' ] The final unity is not identical to the first unity because it now contains conscious relationship."
+  },
+  "artDirection": {
+    "figureType": "scientific-topology-diagram",
+    "audience": "serious academic and general intelligent readers",
+    "style": "museum-quality scientific book illustration",
+    "composition": "clear central concept, readable hierarchy, uncluttered layout",
+    "aspectRatio": "16:9",
+    "printIntent": {
+      "dpi": 300,
+      "minimumWidthPx": 2400,
+      "minimumHeightPx": 1800
+    }
+  },
+  "required": {
+    "mustExplain": "Dissonant waves become coherent through listening, repair, relation, and love.",
+    "mustAvoid": [
+      "fake citations",
+      "fake equations",
+      "unreadable text",
+      "watermarks",
+      "copyrighted characters",
+      "random mystical clutter",
+      "misleading scientific labels"
+    ]
+  },
+  "userRevision": {
+    "plainLanguageRequest": "",
+    "aiImprovedRequest": "",
+    "status": "awaiting-user-input"
+  },
+  "promptCompiler": {
+    "promptStatus": "ready-to-compile",
+    "providerAgnostic": true,
+    "finalPrompt": "Create a high-resolution scientific-topology-diagram titled \"F048 — Love as Harmonic Coherence\".\nThe image must visually explain: Dissonant waves become coherent through listening, repair, relation, and love.\nUse this manuscript context to decide what belongs in the image: Waves alternate between crest and trough. Breathing alternates between inhalation and exhalation. Life alternates between expansion and contraction. From a narrow perspective, positive and negative appear opposed. From a wider perspective, they are phases of one oscillation. Thus polarity is not necessarily ultimate separation. It may be phase distinction within deeper unity. F048 — Love as Harmonic CoherenceDissonant waves become coherent through listening, repair, relation, and love.F048-love-as-harmonic-coherence Toroidal Recursion The torus symbolizes circulation, return, and transformation. The basic symbolic movement is: [ 1 rightarrow Many rightarrow 1' ] The final unity is not identical to the first unity because it now contains conscious relationship.\nStyle: museum-quality scientific book illustration.\nComposition: clear central concept, readable hierarchy, uncluttered layout.\nAspect ratio: 16:9.\nUse coherent scientific visual language, clean labels only when helpful, and strong print readability.\nAvoid: fake citations, fake equations, unreadable text, watermarks, copyrighted characters, random mystical clutter, misleading scientific labels."
+  }
+}

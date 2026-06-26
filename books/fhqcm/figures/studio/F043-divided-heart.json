@@ -1,0 +1,20 @@
+{
+  "id": "F043-divided-heart",
+  "title": "F043 — Divided Heart",
+  "caption": "The divided heart is mapped as fear, shame, resentment, longing, grace, and healing seeking integration.",
+  "status": "needs-ai-figure",
+  "source": "chapters/07-emotional-sobriety.tex:9",
+  "figureType": "symbolic-concept-illustration",
+  "specFile": "figures/specifications/F043-divided-heart.json",
+  "contextFile": "figures/context/F043-divided-heart.json",
+  "promptFile": "figures/studio/F043-divided-heart-prompt.md",
+  "surroundingTextPreview": "Emotional Sobriety and Recursive Healing Purpose This chapter connects FHQCM to recovery, trauma integration, moral inventory, the divided heart, Red Road practice, AA language, and the movement from fragmentation toward harmonic coherence. It treats emotional sobriety as a lived laboratory for the model. If FHQCM claims that reality moves from fragmentation toward coherence through observation, relation, surrender, and repair, then recovery provides an embodied place to test that language. F043",
+  "actions": [
+    "review-context",
+    "edit-plain-language-request",
+    "improve-request-with-ai",
+    "compile-prompt",
+    "generate-draft-image",
+    "approve-or-request-revision"
+  ]
+}

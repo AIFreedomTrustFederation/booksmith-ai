@@ -1,0 +1,20 @@
+{
+  "id": "F049-human-ai-stewardship",
+  "title": "F049 — Human-AI Stewardship",
+  "caption": "Human wisdom and AI capability are shown in reciprocal service under ethical stewardship.",
+  "status": "needs-ai-figure",
+  "source": "chapters/08-ai-stewardship.tex:9",
+  "figureType": "systems-architecture-diagram",
+  "specFile": "figures/specifications/F049-human-ai-stewardship.json",
+  "contextFile": "figures/context/F049-human-ai-stewardship.json",
+  "promptFile": "figures/studio/F049-human-ai-stewardship-prompt.md",
+  "surroundingTextPreview": "AI Stewardship and Participatory Intelligence Purpose This chapter connects the FHQCM to AI Freedom Trust, Booksmith AI, author sovereignty, local-first tools, provenance, human judgment, and the ethical role of artificial intelligence as a stewarded capability rather than a replacement for wisdom. AI is treated here neither as savior nor as enemy. It is treated as a powerful participatory instrument that must be governed by human agency, transparency, accountability, and love. F049 — Human-AI S",
+  "actions": [
+    "review-context",
+    "edit-plain-language-request",
+    "improve-request-with-ai",
+    "compile-prompt",
+    "generate-draft-image",
+    "approve-or-request-revision"
+  ]
+}

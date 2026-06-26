@@ -1,0 +1,20 @@
+{
+  "id": "F014-delayed-choice-experiment",
+  "title": "F014 — Delayed Choice Experiment",
+  "caption": "A source, possible paths, late measurement choice, and detector are mapped to show how the experimental arrangement affects what can be known.",
+  "status": "needs-ai-figure",
+  "source": "chapters/03-quantum-observation.tex:85",
+  "figureType": "quantum-process-diagram",
+  "specFile": "figures/specifications/F014-delayed-choice-experiment.json",
+  "contextFile": "figures/context/F014-delayed-choice-experiment.json",
+  "promptFile": "figures/studio/F014-delayed-choice-experiment-prompt.md",
+  "surroundingTextPreview": "Delayed Choice Experiments Wheeler's delayed-choice experiments further challenged classical intuitions. In these experiments, choices made after a particle has apparently begun its journey seem to influence how the experiment manifests. Although these results do not imply backward causation in any simplistic sense, they demonstrate that the relationship between measurement and reality is more subtle than classical models suggest. The distinction between past and future becomes less rigid. Obser",
+  "actions": [
+    "review-context",
+    "edit-plain-language-request",
+    "improve-request-with-ai",
+    "compile-prompt",
+    "generate-draft-image",
+    "approve-or-request-revision"
+  ]
+}

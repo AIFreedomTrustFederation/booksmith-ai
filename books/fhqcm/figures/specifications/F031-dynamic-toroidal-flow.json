@@ -1,0 +1,76 @@
+{
+  "schema": "booksmith.figure-spec.v1",
+  "id": "F031-dynamic-toroidal-flow",
+  "title": "F031 — Dynamic Toroidal Flow",
+  "caption": "Toroidal flow is shown as circulation through center, boundary, return, and renewed emergence.",
+  "status": "SPEC_READY",
+  "source": {
+    "file": "chapters/11-coincidence-coherence-eternal-now.tex",
+    "line": 103
+  },
+  "placementContext": {
+    "before": [
+      "The final unity is not identical to the first unity because it now contains conscious relationship.",
+      "",
+      "Expanded:",
+      "",
+      "\\[",
+      "1 \\rightarrow Many \\rightarrow 1' \\rightarrow Many' \\rightarrow 1''",
+      "\\]",
+      "",
+      "A circle repeats.",
+      "",
+      "A spiral remembers.",
+      ""
+    ],
+    "after": [
+      "",
+      "\\section{Fibonacci and Recursive Emergence}",
+      "",
+      "The Fibonacci sequence is defined by:",
+      "",
+      "\\[",
+      "F_n = F_{n-1}+F_{n-2}",
+      "\\]",
+      "",
+      "This is established mathematics.",
+      "",
+      "The FHQCM uses Fibonacci recursion symbolically to show how new forms may emerge from prior relationship."
+    ],
+    "surroundingText": "The final unity is not identical to the first unity because it now contains conscious relationship. Expanded: [ 1 rightarrow Many rightarrow 1' rightarrow Many' rightarrow 1'' ] A circle repeats. A spiral remembers. F031 — Dynamic Toroidal FlowToroidal flow is shown as circulation through center, boundary, return, and renewed emergence.F031-dynamic-toroidal-flow Fibonacci and Recursive Emergence The Fibonacci sequence is defined by: [ F_n = F_n-1+F_n-2 ] This is established mathematics. The FHQCM uses Fibonacci recursion symbolically to show how new forms may emerge from prior relationship."
+  },
+  "artDirection": {
+    "figureType": "scientific-topology-diagram",
+    "audience": "serious academic and general intelligent readers",
+    "style": "museum-quality scientific book illustration",
+    "composition": "clear central concept, readable hierarchy, uncluttered layout",
+    "aspectRatio": "16:9",
+    "printIntent": {
+      "dpi": 300,
+      "minimumWidthPx": 2400,
+      "minimumHeightPx": 1800
+    }
+  },
+  "required": {
+    "mustExplain": "Toroidal flow is shown as circulation through center, boundary, return, and renewed emergence.",
+    "mustAvoid": [
+      "fake citations",
+      "fake equations",
+      "unreadable text",
+      "watermarks",
+      "copyrighted characters",
+      "random mystical clutter",
+      "misleading scientific labels"
+    ]
+  },
+  "userRevision": {
+    "plainLanguageRequest": "",
+    "aiImprovedRequest": "",
+    "status": "awaiting-user-input"
+  },
+  "promptCompiler": {
+    "promptStatus": "ready-to-compile",
+    "providerAgnostic": true,
+    "finalPrompt": "Create a high-resolution scientific-topology-diagram titled \"F031 — Dynamic Toroidal Flow\".\nThe image must visually explain: Toroidal flow is shown as circulation through center, boundary, return, and renewed emergence.\nUse this manuscript context to decide what belongs in the image: The final unity is not identical to the first unity because it now contains conscious relationship. Expanded: [ 1 rightarrow Many rightarrow 1' rightarrow Many' rightarrow 1'' ] A circle repeats. A spiral remembers. F031 — Dynamic Toroidal FlowToroidal flow is shown as circulation through center, boundary, return, and renewed emergence.F031-dynamic-toroidal-flow Fibonacci and Recursive Emergence The Fibonacci sequence is defined by: [ F_n = F_n-1+F_n-2 ] This is established mathematics. The FHQCM uses Fibonacci recursion symbolically to show how new forms may emerge from prior relationship.\nStyle: museum-quality scientific book illustration.\nComposition: clear central concept, readable hierarchy, uncluttered layout.\nAspect ratio: 16:9.\nUse coherent scientific visual language, clean labels only when helpful, and strong print readability.\nAvoid: fake citations, fake equations, unreadable text, watermarks, copyrighted characters, random mystical clutter, misleading scientific labels."
+  }
+}

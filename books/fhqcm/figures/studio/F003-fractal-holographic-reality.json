@@ -1,0 +1,20 @@
+{
+  "id": "F003-fractal-holographic-reality",
+  "title": "F003 — Fractal-Holographic Reality",
+  "caption": "The part reflects the whole through self-similar and holographic patterning, while scientific and symbolic meanings remain distinct.",
+  "status": "needs-ai-figure",
+  "source": "chapters/01-introduction.tex:17",
+  "figureType": "scientific-topology-diagram",
+  "specFile": "figures/specifications/F003-fractal-holographic-reality.json",
+  "contextFile": "figures/context/F003-fractal-holographic-reality.json",
+  "promptFile": "figures/studio/F003-fractal-holographic-reality-prompt.md",
+  "surroundingTextPreview": "F001 — FHQCM OverviewOverview of the Fractal-Holographic Quantum Consciousness Model as a recursive flow between consciousness, observation, quantum potential, fractal time, toroidal becoming, manifest reality, and return.F001-fhqcm-overview This paper explores how consciousness, through the lens of quantum principles, such as wave-particle duality, quantum entanglement, and non-locality, interacts with the fabric of space-time to influence and shape the unfolding of the universe. The implicatio",
+  "actions": [
+    "review-context",
+    "edit-plain-language-request",
+    "improve-request-with-ai",
+    "compile-prompt",
+    "generate-draft-image",
+    "approve-or-request-revision"
+  ]
+}

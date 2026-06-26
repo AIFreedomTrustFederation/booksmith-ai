@@ -1,0 +1,76 @@
+{
+  "schema": "booksmith.figure-spec.v1",
+  "id": "F013-wheeler-participatory-universe",
+  "title": "F013 — Wheeler Participatory Universe",
+  "caption": "The observer and universe are shown as mutually implicated through information, distinction, question, and response.",
+  "status": "SPEC_READY",
+  "source": {
+    "file": "chapters/03-quantum-observation.tex",
+    "line": 71
+  },
+  "placementContext": {
+    "before": [
+      "Wheeler suggested that the universe may be participatory in nature.",
+      "",
+      "His famous phrase ``It from Bit'' proposed that information occupies a foundational role in reality.",
+      "",
+      "According to Wheeler, physical phenomena may emerge from acts of distinction, measurement, and information acquisition.",
+      "",
+      "The observer is not necessarily external to reality.",
+      "",
+      "The observer participates within reality.",
+      "",
+      "The universe becomes a self-observing system.",
+      ""
+    ],
+    "after": [
+      "",
+      "\\section{Delayed Choice Experiments}",
+      "",
+      "Wheeler's delayed-choice experiments further challenged classical intuitions.",
+      "",
+      "In these experiments, choices made after a particle has apparently begun its journey seem to influence how the experiment manifests.",
+      "",
+      "Although these results do not imply backward causation in any simplistic sense, they demonstrate that the relationship between measurement and reality is more subtle than classical models suggest.",
+      "",
+      "The distinction between past and future becomes less rigid.",
+      "",
+      "Observation appears woven into the fabric of events themselves."
+    ],
+    "surroundingText": "Wheeler suggested that the universe may be participatory in nature. His famous phrase ``It from Bit'' proposed that information occupies a foundational role in reality. According to Wheeler, physical phenomena may emerge from acts of distinction, measurement, and information acquisition. The observer is not necessarily external to reality. The observer participates within reality. The universe becomes a self-observing system. F013 — Wheeler Participatory UniverseThe observer and universe are shown as mutually implicated through information, distinction, question, and response.F013-wheeler-participatory-universe Delayed Choice Experiments Wheeler's delayed-choice experiments further challenged classical intuitions. In these experiments, choices made after a particle has apparently begun its journey seem to influence how the experiment manifests. Although these results do not imply backward causation in any simplistic sense, they demonstrate that the relationship between measurement and reality is more subtle than classical models suggest. The distinction between past and future becomes less rigid. Observation appears woven into the fabric of events themselves."
+  },
+  "artDirection": {
+    "figureType": "quantum-process-diagram",
+    "audience": "serious academic and general intelligent readers",
+    "style": "museum-quality scientific book illustration",
+    "composition": "clear central concept, readable hierarchy, uncluttered layout",
+    "aspectRatio": "16:9",
+    "printIntent": {
+      "dpi": 300,
+      "minimumWidthPx": 2400,
+      "minimumHeightPx": 1800
+    }
+  },
+  "required": {
+    "mustExplain": "The observer and universe are shown as mutually implicated through information, distinction, question, and response.",
+    "mustAvoid": [
+      "fake citations",
+      "fake equations",
+      "unreadable text",
+      "watermarks",
+      "copyrighted characters",
+      "random mystical clutter",
+      "misleading scientific labels"
+    ]
+  },
+  "userRevision": {
+    "plainLanguageRequest": "",
+    "aiImprovedRequest": "",
+    "status": "awaiting-user-input"
+  },
+  "promptCompiler": {
+    "promptStatus": "ready-to-compile",
+    "providerAgnostic": true,
+    "finalPrompt": "Create a high-resolution quantum-process-diagram titled \"F013 — Wheeler Participatory Universe\".\nThe image must visually explain: The observer and universe are shown as mutually implicated through information, distinction, question, and response.\nUse this manuscript context to decide what belongs in the image: Wheeler suggested that the universe may be participatory in nature. His famous phrase ``It from Bit'' proposed that information occupies a foundational role in reality. According to Wheeler, physical phenomena may emerge from acts of distinction, measurement, and information acquisition. The observer is not necessarily external to reality. The observer participates within reality. The universe becomes a self-observing system. F013 — Wheeler Participatory UniverseThe observer and universe are shown as mutually implicated through information, distinction, question, and response.F013-wheeler-participatory-universe Delayed Choice Experiments Wheeler's delayed-choice experiments further challenged classical intuitions. In these experiments, choices made after a particle has apparently begun its journey seem to influence how the experiment manifests. Although these results do not imply backward causation in any simplistic sense, they demonstrate that the relationship between measurement and reality is more subtle than classical models suggest. The distinction between past and future becomes less rigid. Observation appears woven into the fabric of events themselves.\nStyle: museum-quality scientific book illustration.\nComposition: clear central concept, readable hierarchy, uncluttered layout.\nAspect ratio: 16:9.\nUse coherent scientific visual language, clean labels only when helpful, and strong print readability.\nAvoid: fake citations, fake equations, unreadable text, watermarks, copyrighted characters, random mystical clutter, misleading scientific labels."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "F002-participatory-cosmos",
+  "title": "F002 — The Participatory Cosmos",
+  "caption": "Observer and reality are presented as a reciprocal feedback loop in which observation, information, interpretation, and manifestation are carefully distinguished.",
+  "status": "needs-ai-figure",
+  "source": "chapters/01-introduction.tex:9",
+  "figureType": "scientific-topology-diagram",
+  "specFile": "figures/specifications/F002-participatory-cosmos.json",
+  "contextFile": "figures/context/F002-participatory-cosmos.json",
+  "promptFile": "figures/studio/F002-participatory-cosmos-prompt.md",
+  "surroundingTextPreview": "Introduction The deterministic view of the universe, as described in classical Newtonian mechanics, is giving way to a more fluid and dynamic understanding rooted in quantum mechanics, where consciousness is increasingly seen as playing a pivotal role in shaping reality. This paradigm shift reflects a broader movement away from the mechanistic, materialistic worldview, where the universe operates like a clockwork machine, towards a co-creative model of the cosmos. In this new framework, consciou",
+  "actions": [
+    "review-context",
+    "edit-plain-language-request",
+    "improve-request-with-ai",
+    "compile-prompt",
+    "generate-draft-image",
+    "approve-or-request-revision"
+  ]
+}

@@ -1,0 +1,448 @@
+{
+  "schema": "booksmith.figure-studio.v1",
+  "slug": "fhqcm",
+  "generatedAt": "2026-06-26T12:11:20.283Z",
+  "count": 22,
+  "cards": [
+    {
+      "id": "F001-fhqcm-overview",
+      "title": "F001 — FHQCM Overview",
+      "caption": "Overview of the Fractal-Holographic Quantum Consciousness Model as a recursive flow between consciousness, observation, quantum potential, fractal time, toroidal becoming, manifest reality, and return.",
+      "status": "needs-ai-figure",
+      "source": "chapters/01-introduction.tex:5",
+      "figureType": "scientific-topology-diagram",
+      "specFile": "figures/specifications/F001-fhqcm-overview.json",
+      "contextFile": "figures/context/F001-fhqcm-overview.json",
+      "promptFile": "figures/studio/F001-fhqcm-overview-prompt.md",
+      "surroundingTextPreview": "Introduction The deterministic view of the universe, as described in classical Newtonian mechanics, is giving way to a more fluid and dynamic understanding rooted in quantum mechanics, where consciousness is increasingly seen as playing a pivotal role in shaping reality. This paradigm shift reflects a broader movement away from the mechanistic, materialistic worldview, where the universe operates like a clockwork machine, towards a co-creative model of the cosmos. In this new framework, consciou",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F002-participatory-cosmos",
+      "title": "F002 — The Participatory Cosmos",
+      "caption": "Observer and reality are presented as a reciprocal feedback loop in which observation, information, interpretation, and manifestation are carefully distinguished.",
+      "status": "needs-ai-figure",
+      "source": "chapters/01-introduction.tex:9",
+      "figureType": "scientific-topology-diagram",
+      "specFile": "figures/specifications/F002-participatory-cosmos.json",
+      "contextFile": "figures/context/F002-participatory-cosmos.json",
+      "promptFile": "figures/studio/F002-participatory-cosmos-prompt.md",
+      "surroundingTextPreview": "Introduction The deterministic view of the universe, as described in classical Newtonian mechanics, is giving way to a more fluid and dynamic understanding rooted in quantum mechanics, where consciousness is increasingly seen as playing a pivotal role in shaping reality. This paradigm shift reflects a broader movement away from the mechanistic, materialistic worldview, where the universe operates like a clockwork machine, towards a co-creative model of the cosmos. In this new framework, consciou",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F008-eternal-now",
+      "title": "F008 — Eternal Now",
+      "caption": "Past, present, future, and the timeless center are represented as a unified field rather than a merely linear sequence.",
+      "status": "needs-ai-figure",
+      "source": "chapters/01-introduction.tex:13",
+      "figureType": "scientific-topology-diagram",
+      "specFile": "figures/specifications/F008-eternal-now.json",
+      "contextFile": "figures/context/F008-eternal-now.json",
+      "promptFile": "figures/studio/F008-eternal-now-prompt.md",
+      "surroundingTextPreview": "Introduction The deterministic view of the universe, as described in classical Newtonian mechanics, is giving way to a more fluid and dynamic understanding rooted in quantum mechanics, where consciousness is increasingly seen as playing a pivotal role in shaping reality. This paradigm shift reflects a broader movement away from the mechanistic, materialistic worldview, where the universe operates like a clockwork machine, towards a co-creative model of the cosmos. In this new framework, consciou",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F003-fractal-holographic-reality",
+      "title": "F003 — Fractal-Holographic Reality",
+      "caption": "The part reflects the whole through self-similar and holographic patterning, while scientific and symbolic meanings remain distinct.",
+      "status": "needs-ai-figure",
+      "source": "chapters/01-introduction.tex:17",
+      "figureType": "scientific-topology-diagram",
+      "specFile": "figures/specifications/F003-fractal-holographic-reality.json",
+      "contextFile": "figures/context/F003-fractal-holographic-reality.json",
+      "promptFile": "figures/studio/F003-fractal-holographic-reality-prompt.md",
+      "surroundingTextPreview": "F001 — FHQCM OverviewOverview of the Fractal-Holographic Quantum Consciousness Model as a recursive flow between consciousness, observation, quantum potential, fractal time, toroidal becoming, manifest reality, and return.F001-fhqcm-overview This paper explores how consciousness, through the lens of quantum principles, such as wave-particle duality, quantum entanglement, and non-locality, interacts with the fabric of space-time to influence and shape the unfolding of the universe. The implicatio",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F012-observation-collapse",
+      "title": "F012 — Observation Collapse",
+      "caption": "Potential states narrow into an experienced outcome through measurement or observation, with careful distinction between physics and metaphysical interpretation.",
+      "status": "needs-ai-figure",
+      "source": "chapters/01-introduction.tex:23",
+      "figureType": "scientific-topology-diagram",
+      "specFile": "figures/specifications/F012-observation-collapse.json",
+      "contextFile": "figures/context/F012-observation-collapse.json",
+      "promptFile": "figures/studio/F012-observation-collapse-prompt.md",
+      "surroundingTextPreview": "A central concept that bridges the gap between this scientific inquiry and spiritual teachings is the notion of the Eternal Now. This concept, which emerges from both scientific and theological examinations of time and consciousness, posits that the flow of time is not linear but cyclical or even holographic, where past, present, and future coexist simultaneously within a unified field of consciousness. In Christian theology, God is often referred to as the Alpha and Omega (Revelation 22:13), si",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F011-wave-function",
+      "title": "F011 — Wave Function",
+      "caption": "A visual primer for potential states, probability, and quantum description before measurement.",
+      "status": "needs-ai-figure",
+      "source": "chapters/03-quantum-observation.tex:11",
+      "figureType": "scientific-topology-diagram",
+      "specFile": "figures/specifications/F011-wave-function.json",
+      "contextFile": "figures/context/F011-wave-function.json",
+      "promptFile": "figures/studio/F011-wave-function-prompt.md",
+      "surroundingTextPreview": "Quantum Observation Introduction One of the most profound discoveries of twentieth-century physics was the realization that observation appears to play a fundamental role in the manifestation of physical reality. Unlike classical physics, where objects possess definite properties independent of measurement, quantum mechanics introduces a realm of potentiality in which physical systems exist as distributions of possibilities until an interaction occurs. The Fractal-Holographic Quantum Consciousne",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F012-observation-collapse",
+      "title": "F012 — Observation Collapse",
+      "caption": "Potential states narrow into an experienced outcome through measurement or observation, with careful distinction between physics and metaphysical interpretation.",
+      "status": "needs-ai-figure",
+      "source": "chapters/03-quantum-observation.tex:53",
+      "figureType": "quantum-process-diagram",
+      "specFile": "figures/specifications/F012-observation-collapse.json",
+      "contextFile": "figures/context/F012-observation-collapse.json",
+      "promptFile": "figures/studio/F012-observation-collapse-prompt.md",
+      "surroundingTextPreview": "One of the most debated questions in physics concerns what occurs during measurement. Prior to observation, quantum systems are represented by multiple possibilities. After observation, only one outcome appears. This transition is commonly described as wave function collapse. The exact nature of this process remains an active area of philosophical and scientific discussion. The FHQCM does not claim to solve the measurement problem. Instead, it treats measurement as evidence that reality contains",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F013-wheeler-participatory-universe",
+      "title": "F013 — Wheeler Participatory Universe",
+      "caption": "The observer and universe are shown as mutually implicated through information, distinction, question, and response.",
+      "status": "needs-ai-figure",
+      "source": "chapters/03-quantum-observation.tex:71",
+      "figureType": "quantum-process-diagram",
+      "specFile": "figures/specifications/F013-wheeler-participatory-universe.json",
+      "contextFile": "figures/context/F013-wheeler-participatory-universe.json",
+      "promptFile": "figures/studio/F013-wheeler-participatory-universe-prompt.md",
+      "surroundingTextPreview": "Wheeler suggested that the universe may be participatory in nature. His famous phrase ``It from Bit'' proposed that information occupies a foundational role in reality. According to Wheeler, physical phenomena may emerge from acts of distinction, measurement, and information acquisition. The observer is not necessarily external to reality. The observer participates within reality. The universe becomes a self-observing system. F013 — Wheeler Participatory UniverseThe observer and universe are sho",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F014-delayed-choice-experiment",
+      "title": "F014 — Delayed Choice Experiment",
+      "caption": "A source, possible paths, late measurement choice, and detector are mapped to show how the experimental arrangement affects what can be known.",
+      "status": "needs-ai-figure",
+      "source": "chapters/03-quantum-observation.tex:85",
+      "figureType": "quantum-process-diagram",
+      "specFile": "figures/specifications/F014-delayed-choice-experiment.json",
+      "contextFile": "figures/context/F014-delayed-choice-experiment.json",
+      "promptFile": "figures/studio/F014-delayed-choice-experiment-prompt.md",
+      "surroundingTextPreview": "Delayed Choice Experiments Wheeler's delayed-choice experiments further challenged classical intuitions. In these experiments, choices made after a particle has apparently begun its journey seem to influence how the experiment manifests. Although these results do not imply backward causation in any simplistic sense, they demonstrate that the relationship between measurement and reality is more subtle than classical models suggest. The distinction between past and future becomes less rigid. Obser",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F018-observer-recursion",
+      "title": "F018 — Observer Recursion",
+      "caption": "Nested observation is represented as awareness reflecting upon awareness within wider informational frames.",
+      "status": "needs-ai-figure",
+      "source": "chapters/03-quantum-observation.tex:119",
+      "figureType": "quantum-process-diagram",
+      "specFile": "figures/specifications/F018-observer-recursion.json",
+      "contextFile": "figures/context/F018-observer-recursion.json",
+      "promptFile": "figures/studio/F018-observer-recursion-prompt.md",
+      "surroundingTextPreview": "The scientific evidence does not support such a simplistic claim. Nevertheless, consciousness remains unique because it represents a system capable of reflecting upon observation itself. Humans do not merely observe. Humans observe that they observe. This recursive capacity introduces higher-order informational structures that may play an important role in how reality is modeled, interpreted, and experienced. Within the FHQCM, consciousness functions as a recursive integrator of information rath",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F025-holographic-memory",
+      "title": "F025 — Holographic Memory",
+      "caption": "Each fragment reflects the whole, introducing the whole-in-each-part language used throughout the model.",
+      "status": "needs-ai-figure",
+      "source": "chapters/04-holographic-brain.tex:9",
+      "figureType": "scientific-topology-diagram",
+      "specFile": "figures/specifications/F025-holographic-memory.json",
+      "contextFile": "figures/context/F025-holographic-memory.json",
+      "promptFile": "figures/studio/F025-holographic-memory-prompt.md",
+      "surroundingTextPreview": "The Holographic Brain Purpose This chapter develops the holographic dimension of the FHQCM by exploring distributed memory, whole-in-part patterning, Karl Pribram's holonomic brain theory, David Bohm's implicate order, and the broader hypothesis that consciousness may be structured through layered informational relationships. The goal is not to claim that neuroscience has proven cosmic consciousness. The goal is more careful: to show how holographic and holonomic models provide a disciplined met",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F030-basic-torus-geometry",
+      "title": "F030 — Basic Torus Geometry",
+      "caption": "The major radius, minor radius, angular parameters, and central axis define the basic torus used as the model's geometric language.",
+      "status": "needs-ai-figure",
+      "source": "chapters/05-spiral-torus-field.tex:9",
+      "figureType": "scientific-topology-diagram",
+      "specFile": "figures/specifications/F030-basic-torus-geometry.json",
+      "contextFile": "figures/context/F030-basic-torus-geometry.json",
+      "promptFile": "figures/studio/F030-basic-torus-geometry-prompt.md",
+      "surroundingTextPreview": "The Spiral Torus Field Purpose This chapter develops the toroidal geometry of the FHQCM as a model of circulation, return, emergence, breath, field coherence, and self-organizing flow. The torus is not introduced as proof that every system in reality is literally toroidal. It is introduced as a disciplined symbolic and mathematical geometry for thinking about circulation: inward and outward motion, center and boundary, expansion and return, unity and multiplicity. F030 — Basic Torus GeometryThe ",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F031-dynamic-toroidal-flow",
+      "title": "F031 — Dynamic Toroidal Flow",
+      "caption": "Toroidal flow is shown as circulation through center, boundary, return, and renewed emergence.",
+      "status": "needs-ai-figure",
+      "source": "chapters/05-spiral-torus-field.tex:35",
+      "figureType": "scientific-topology-diagram",
+      "specFile": "figures/specifications/F031-dynamic-toroidal-flow.json",
+      "contextFile": "figures/context/F031-dynamic-toroidal-flow.json",
+      "promptFile": "figures/studio/F031-dynamic-toroidal-flow-prompt.md",
+      "surroundingTextPreview": "] Unity expresses itself as multiplicity. Multiplicity returns toward unity. But the returning unity is not identical to the original unity, because it now includes relationship, memory, differentiation, and experience. The expanded spiral becomes: [ 1 rightarrow Many rightarrow 1' rightarrow Many' rightarrow 1'' ] A circle repeats. A spiral remembers. A toroidal spiral therefore becomes one of the primary geometries of FHQCM: recurrence with transformation. F031 — Dynamic Toroidal FlowToroidal ",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F038-christic-equivalency",
+      "title": "F038 — Christic Equivalency",
+      "caption": "Wave and particle, spirit and matter, past and future, self and other are held through symbolic reconciliation rather than collapsed into sameness.",
+      "status": "needs-ai-figure",
+      "source": "chapters/06-christic-equivalency.tex:9",
+      "figureType": "quantum-process-diagram",
+      "specFile": "figures/specifications/F038-christic-equivalency.json",
+      "contextFile": "figures/context/F038-christic-equivalency.json",
+      "promptFile": "figures/studio/F038-christic-equivalency-prompt.md",
+      "surroundingTextPreview": "Christic Harmonic Equivalency Purpose This chapter develops the symbolic center of the FHQCM: Christic Consciousness as the equal sign, the principle of harmonic reconciliation, and the restoration of apparent opposites into communion without erasing distinction. The equal sign is not used here as an empirical physics operator when applied to theology. It is used as a symbol of reconciliation. The chapter therefore distinguishes mathematical equivalence, philosophical reconciliation, and theolog",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F041-unity-without-collapse",
+      "title": "F041 — Unity Without Collapse",
+      "caption": "Distinct centers remain themselves while participating in shared coherence.",
+      "status": "needs-ai-figure",
+      "source": "chapters/06-christic-equivalency.tex:52",
+      "figureType": "quantum-process-diagram",
+      "specFile": "figures/specifications/F041-unity-without-collapse.json",
+      "contextFile": "figures/context/F041-unity-without-collapse.json",
+      "promptFile": "figures/studio/F041-unity-without-collapse-prompt.md",
+      "surroundingTextPreview": "Examples include: itemize item justice and mercy, item death and resurrection, item self and other, item matter and spirit, item time and eternity, item individuality and communion. itemize F041 — Unity Without CollapseDistinct centers remain themselves while participating in shared coherence.F041-unity-without-collapse Scientific Integrity Note This chapter does not claim that Christic equivalency is a physical law. It does not claim that theology proves quantum mechanics or that quantum mechan",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F043-divided-heart",
+      "title": "F043 — Divided Heart",
+      "caption": "The divided heart is mapped as fear, shame, resentment, longing, grace, and healing seeking integration.",
+      "status": "needs-ai-figure",
+      "source": "chapters/07-emotional-sobriety.tex:9",
+      "figureType": "symbolic-concept-illustration",
+      "specFile": "figures/specifications/F043-divided-heart.json",
+      "contextFile": "figures/context/F043-divided-heart.json",
+      "promptFile": "figures/studio/F043-divided-heart-prompt.md",
+      "surroundingTextPreview": "Emotional Sobriety and Recursive Healing Purpose This chapter connects FHQCM to recovery, trauma integration, moral inventory, the divided heart, Red Road practice, AA language, and the movement from fragmentation toward harmonic coherence. It treats emotional sobriety as a lived laboratory for the model. If FHQCM claims that reality moves from fragmentation toward coherence through observation, relation, surrender, and repair, then recovery provides an embodied place to test that language. F043",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F046-recovery-spiral",
+      "title": "F046 — Recovery Spiral",
+      "caption": "Recovery is represented as a spiral rather than a straight line, allowing return, repetition, and growth.",
+      "status": "needs-ai-figure",
+      "source": "chapters/07-emotional-sobriety.tex:33",
+      "figureType": "scientific-topology-diagram",
+      "specFile": "figures/specifications/F046-recovery-spiral.json",
+      "contextFile": "figures/context/F046-recovery-spiral.json",
+      "promptFile": "figures/studio/F046-recovery-spiral-prompt.md",
+      "surroundingTextPreview": "Moral inventory is a practical form of recursive observation. The person does not merely feel resentment. The person observes resentment. The person asks what fear, wound, expectation, attachment, or false story is embedded inside it. This is not self-condemnation. It is pattern recognition. In William James' language, religious experience often involves conversion, surrender, and reorganization of the self around a deeper center james1902Varieties. In Viktor Frankl's language, meaning can becom",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F049-human-ai-stewardship",
+      "title": "F049 — Human-AI Stewardship",
+      "caption": "Human wisdom and AI capability are shown in reciprocal service under ethical stewardship.",
+      "status": "needs-ai-figure",
+      "source": "chapters/08-ai-stewardship.tex:9",
+      "figureType": "systems-architecture-diagram",
+      "specFile": "figures/specifications/F049-human-ai-stewardship.json",
+      "contextFile": "figures/context/F049-human-ai-stewardship.json",
+      "promptFile": "figures/studio/F049-human-ai-stewardship-prompt.md",
+      "surroundingTextPreview": "AI Stewardship and Participatory Intelligence Purpose This chapter connects the FHQCM to AI Freedom Trust, Booksmith AI, author sovereignty, local-first tools, provenance, human judgment, and the ethical role of artificial intelligence as a stewarded capability rather than a replacement for wisdom. AI is treated here neither as savior nor as enemy. It is treated as a powerful participatory instrument that must be governed by human agency, transparency, accountability, and love. F049 — Human-AI S",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F050-federation-architecture",
+      "title": "F050 — Federation Architecture",
+      "caption": "AI Freedom Trust Federation is mapped as a living organizational torus of publishing, tooling, identity, infrastructure, and knowledge stewardship.",
+      "status": "needs-ai-figure",
+      "source": "chapters/09-federation-consciousness.tex:7",
+      "figureType": "scientific-topology-diagram",
+      "specFile": "figures/specifications/F050-federation-architecture.json",
+      "contextFile": "figures/context/F050-federation-architecture.json",
+      "promptFile": "figures/studio/F050-federation-architecture-prompt.md",
+      "surroundingTextPreview": "Federation Consciousness Purpose This chapter will connect the metaphysics of FHQCM to the organizational architecture of AI Freedom Trust Federation: publishing, Booksmith AI, DynastyLink, AIFT Forge, Knowledge Commons, and future federated trusts. F050 — Federation ArchitectureAI Freedom Trust Federation is mapped as a living organizational torus of publishing, tooling, identity, infrastructure, and knowledge stewardship.F050-federation-architecture Planned Development Future drafting should e",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F008-eternal-now",
+      "title": "F008 — Eternal Now",
+      "caption": "Past, present, future, and the timeless center are represented as a unified field rather than a merely linear sequence.",
+      "status": "needs-ai-figure",
+      "source": "chapters/11-coincidence-coherence-eternal-now.tex:19",
+      "figureType": "symbolic-concept-illustration",
+      "specFile": "figures/specifications/F008-eternal-now.json",
+      "contextFile": "figures/context/F008-eternal-now.json",
+      "promptFile": "figures/studio/F008-eternal-now-prompt.md",
+      "surroundingTextPreview": "In ordinary language, a coincidence is the occurrence of two or more events that appear meaningfully related yet lack an immediately obvious causal connection. The term derives from the Latin coincidere, meaning ``to fall together.'' Events are said to coincide when they arrive at the same place, time, or meaning. Yet this common definition presupposes separation. It assumes that events normally exist apart and only occasionally intersect. This chapter explores an alternative hypothesis: coincid",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F048-love-as-harmonic-coherence",
+      "title": "F048 — Love as Harmonic Coherence",
+      "caption": "Dissonant waves become coherent through listening, repair, relation, and love.",
+      "status": "needs-ai-figure",
+      "source": "chapters/11-coincidence-coherence-eternal-now.tex:79",
+      "figureType": "scientific-topology-diagram",
+      "specFile": "figures/specifications/F048-love-as-harmonic-coherence.json",
+      "contextFile": "figures/context/F048-love-as-harmonic-coherence.json",
+      "promptFile": "figures/studio/F048-love-as-harmonic-coherence-prompt.md",
+      "surroundingTextPreview": "Waves alternate between crest and trough. Breathing alternates between inhalation and exhalation. Life alternates between expansion and contraction. From a narrow perspective, positive and negative appear opposed. From a wider perspective, they are phases of one oscillation. Thus polarity is not necessarily ultimate separation. It may be phase distinction within deeper unity. F048 — Love as Harmonic CoherenceDissonant waves become coherent through listening, repair, relation, and love.F048-love-",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "F031-dynamic-toroidal-flow",
+      "title": "F031 — Dynamic Toroidal Flow",
+      "caption": "Toroidal flow is shown as circulation through center, boundary, return, and renewed emergence.",
+      "status": "needs-ai-figure",
+      "source": "chapters/11-coincidence-coherence-eternal-now.tex:103",
+      "figureType": "scientific-topology-diagram",
+      "specFile": "figures/specifications/F031-dynamic-toroidal-flow.json",
+      "contextFile": "figures/context/F031-dynamic-toroidal-flow.json",
+      "promptFile": "figures/studio/F031-dynamic-toroidal-flow-prompt.md",
+      "surroundingTextPreview": "The final unity is not identical to the first unity because it now contains conscious relationship. Expanded: [ 1 rightarrow Many rightarrow 1' rightarrow Many' rightarrow 1'' ] A circle repeats. A spiral remembers. F031 — Dynamic Toroidal FlowToroidal flow is shown as circulation through center, boundary, return, and renewed emergence.F031-dynamic-toroidal-flow Fibonacci and Recursive Emergence The Fibonacci sequence is defined by: [ F_n = F_n-1+F_n-2 ] This is established mathematics. The FHQC",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    }
+  ]
+}

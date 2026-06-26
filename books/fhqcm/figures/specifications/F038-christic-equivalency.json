@@ -1,0 +1,72 @@
+{
+  "schema": "booksmith.figure-spec.v1",
+  "id": "F038-christic-equivalency",
+  "title": "F038 — Christic Equivalency",
+  "caption": "Wave and particle, spirit and matter, past and future, self and other are held through symbolic reconciliation rather than collapsed into sameness.",
+  "status": "SPEC_READY",
+  "source": {
+    "file": "chapters/06-christic-equivalency.tex",
+    "line": 9
+  },
+  "placementContext": {
+    "before": [
+      "\\chapter{Christic Harmonic Equivalency}",
+      "",
+      "\\section{Purpose}",
+      "",
+      "This chapter develops the symbolic center of the FHQCM: Christic Consciousness as the equal sign, the principle of harmonic reconciliation, and the restoration of apparent opposites into communion without erasing distinction.",
+      "",
+      "The equal sign is not used here as an empirical physics operator when applied to theology. It is used as a symbol of reconciliation. The chapter therefore distinguishes mathematical equivalence, philosophical reconciliation, and theological participation.",
+      ""
+    ],
+    "after": [
+      "",
+      "\\section{Equivalency Without Collapse}",
+      "",
+      "A common error in unity language is collapse. If unity is misunderstood, distinction disappears. If distinction is absolutized, unity disappears. FHQCM rejects both errors.",
+      "",
+      "Christic Harmonic Equivalency means unity without erasure. Spirit and matter, self and other, divine and human, time and eternity, wave and particle, grief and resurrection are not flattened into sameness. They are held in relation.",
+      "",
+      "This is why the equal sign is used symbolically. It does not mean that every distinction is false. It means that apparent opposites can participate in a deeper reconciliation.",
+      "",
+      "\\section{Theological Grounding}",
+      "",
+      "Christian theology has long wrestled with participation, incarnation, theosis, and cosmic reconciliation. Athanasius' account of incarnation, Gregory of Nyssa's language of infinite ascent, Maximus the Confessor's cosmic Christology, and Origen's speculative restoration all provide source streams for thinking about divine-human participation and the healing of division \\cite{athanasius2011Incarnation,gregory2012LifeMoses,maximus1985CosmicMystery,origen2018FirstPrinciples}."
+    ],
+    "surroundingText": "Christic Harmonic Equivalency Purpose This chapter develops the symbolic center of the FHQCM: Christic Consciousness as the equal sign, the principle of harmonic reconciliation, and the restoration of apparent opposites into communion without erasing distinction. The equal sign is not used here as an empirical physics operator when applied to theology. It is used as a symbol of reconciliation. The chapter therefore distinguishes mathematical equivalence, philosophical reconciliation, and theological participation. F038 — Christic EquivalencyWave and particle, spirit and matter, past and future, self and other are held through symbolic reconciliation rather than collapsed into sameness.F038-christic-equivalency Equivalency Without Collapse A common error in unity language is collapse. If unity is misunderstood, distinction disappears. If distinction is absolutized, unity disappears. FHQCM rejects both errors. Christic Harmonic Equivalency means unity without erasure. Spirit and matter, self and other, divine and human, time and eternity, wave and particle, grief and resurrection are not flattened into sameness. They are held in relation. This is why the equal sign is used symbolically. It does not mean that every distinction is false. It means that apparent opposites can participate in a deeper reconciliation. Theological Grounding Christian theology has long wrestled with participation, incarnation, theosis, and cosmic reconciliation. Athanasius' account of incarnation, Gregory of Nyssa's language of infinite ascent, Maximus the Confessor's cosmic Christology, and Origen's speculative restoration all provide source streams for thinking about divine-human participation and the healing of division athanasius2011Incarnation,gregory2012LifeMoses,maximus1985CosmicMystery,origen2018FirstPrinciples."
+  },
+  "artDirection": {
+    "figureType": "quantum-process-diagram",
+    "audience": "serious academic and general intelligent readers",
+    "style": "museum-quality scientific book illustration",
+    "composition": "clear central concept, readable hierarchy, uncluttered layout",
+    "aspectRatio": "16:9",
+    "printIntent": {
+      "dpi": 300,
+      "minimumWidthPx": 2400,
+      "minimumHeightPx": 1800
+    }
+  },
+  "required": {
+    "mustExplain": "Wave and particle, spirit and matter, past and future, self and other are held through symbolic reconciliation rather than collapsed into sameness.",
+    "mustAvoid": [
+      "fake citations",
+      "fake equations",
+      "unreadable text",
+      "watermarks",
+      "copyrighted characters",
+      "random mystical clutter",
+      "misleading scientific labels"
+    ]
+  },
+  "userRevision": {
+    "plainLanguageRequest": "",
+    "aiImprovedRequest": "",
+    "status": "awaiting-user-input"
+  },
+  "promptCompiler": {
+    "promptStatus": "ready-to-compile",
+    "providerAgnostic": true,
+    "finalPrompt": "Create a high-resolution quantum-process-diagram titled \"F038 — Christic Equivalency\".\nThe image must visually explain: Wave and particle, spirit and matter, past and future, self and other are held through symbolic reconciliation rather than collapsed into sameness.\nUse this manuscript context to decide what belongs in the image: Christic Harmonic Equivalency Purpose This chapter develops the symbolic center of the FHQCM: Christic Consciousness as the equal sign, the principle of harmonic reconciliation, and the restoration of apparent opposites into communion without erasing distinction. The equal sign is not used here as an empirical physics operator when applied to theology. It is used as a symbol of reconciliation. The chapter therefore distinguishes mathematical equivalence, philosophical reconciliation, and theological participation. F038 — Christic EquivalencyWave and particle, spirit and matter, past and future, self and other are held through symbolic reconciliation rather than collapsed into sameness.F038-christic-equivalency Equivalency Without Collapse A common error in unity language is collapse. If unity is misunderstood, distinction disappears. If distinction is absolutized, unity disappears. FHQCM rejects both errors. Christic Harmonic Equivalency means unity without erasure. Spirit and matter, self and other, divine and human, time and eternity, wave and particle, grief and resurrection are not flattened into sameness. They are held in relation. This is why the equal sign is used symbolically. It does not mean that every distinction is false. It means that apparent opposites can participate in a deeper reconciliation. Theological Grounding Christian theology has long wrestled with participation, incarnation, theosis, and cosmic reconciliation. Athanasius' account of incarnation, Gregory of Nyssa's language of infinite ascent, Maximus the Confessor's cosmic Christology, and Origen's speculative restoration all provide source streams for thinking about divine-human participation and the healing of division athanasius2011Incarnation,gregory2012LifeMoses,maximus1985CosmicMystery,origen2018FirstPrinciples.\nStyle: museum-quality scientific book illustration.\nComposition: clear central concept, readable hierarchy, uncluttered layout.\nAspect ratio: 16:9.\nUse coherent scientific visual language, clean labels only when helpful, and strong print readability.\nAvoid: fake citations, fake equations, unreadable text, watermarks, copyrighted characters, random mystical clutter, misleading scientific labels."
+  }
+}

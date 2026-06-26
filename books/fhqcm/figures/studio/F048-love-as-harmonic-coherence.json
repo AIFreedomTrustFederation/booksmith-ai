@@ -1,0 +1,20 @@
+{
+  "id": "F048-love-as-harmonic-coherence",
+  "title": "F048 — Love as Harmonic Coherence",
+  "caption": "Dissonant waves become coherent through listening, repair, relation, and love.",
+  "status": "needs-ai-figure",
+  "source": "chapters/11-coincidence-coherence-eternal-now.tex:79",
+  "figureType": "scientific-topology-diagram",
+  "specFile": "figures/specifications/F048-love-as-harmonic-coherence.json",
+  "contextFile": "figures/context/F048-love-as-harmonic-coherence.json",
+  "promptFile": "figures/studio/F048-love-as-harmonic-coherence-prompt.md",
+  "surroundingTextPreview": "Waves alternate between crest and trough. Breathing alternates between inhalation and exhalation. Life alternates between expansion and contraction. From a narrow perspective, positive and negative appear opposed. From a wider perspective, they are phases of one oscillation. Thus polarity is not necessarily ultimate separation. It may be phase distinction within deeper unity. F048 — Love as Harmonic CoherenceDissonant waves become coherent through listening, repair, relation, and love.F048-love-",
+  "actions": [
+    "review-context",
+    "edit-plain-language-request",
+    "improve-request-with-ai",
+    "compile-prompt",
+    "generate-draft-image",
+    "approve-or-request-revision"
+  ]
+}

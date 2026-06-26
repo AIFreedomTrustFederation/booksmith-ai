@@ -1,0 +1,76 @@
+{
+  "schema": "booksmith.figure-spec.v1",
+  "id": "F018-observer-recursion",
+  "title": "F018 — Observer Recursion",
+  "caption": "Nested observation is represented as awareness reflecting upon awareness within wider informational frames.",
+  "status": "SPEC_READY",
+  "source": {
+    "file": "chapters/03-quantum-observation.tex",
+    "line": 119
+  },
+  "placementContext": {
+    "before": [
+      "The scientific evidence does not support such a simplistic claim.",
+      "",
+      "Nevertheless, consciousness remains unique because it represents a system capable of reflecting upon observation itself.",
+      "",
+      "Humans do not merely observe.",
+      "",
+      "Humans observe that they observe.",
+      "",
+      "This recursive capacity introduces higher-order informational structures that may play an important role in how reality is modeled, interpreted, and experienced.",
+      "",
+      "Within the FHQCM, consciousness functions as a recursive integrator of information rather than a magical force acting upon matter.",
+      ""
+    ],
+    "after": [
+      "",
+      "\\section{Participatory Cosmology}",
+      "",
+      "The participatory perspective suggests that reality is not a finished object.",
+      "",
+      "Reality is an ongoing process.",
+      "",
+      "Observers participate within that process.",
+      "",
+      "Information participates within that process.",
+      "",
+      "Relationships participate within that process."
+    ],
+    "surroundingText": "The scientific evidence does not support such a simplistic claim. Nevertheless, consciousness remains unique because it represents a system capable of reflecting upon observation itself. Humans do not merely observe. Humans observe that they observe. This recursive capacity introduces higher-order informational structures that may play an important role in how reality is modeled, interpreted, and experienced. Within the FHQCM, consciousness functions as a recursive integrator of information rather than a magical force acting upon matter. F018 — Observer RecursionNested observation is represented as awareness reflecting upon awareness within wider informational frames.F018-observer-recursion Participatory Cosmology The participatory perspective suggests that reality is not a finished object. Reality is an ongoing process. Observers participate within that process. Information participates within that process. Relationships participate within that process."
+  },
+  "artDirection": {
+    "figureType": "quantum-process-diagram",
+    "audience": "serious academic and general intelligent readers",
+    "style": "museum-quality scientific book illustration",
+    "composition": "clear central concept, readable hierarchy, uncluttered layout",
+    "aspectRatio": "16:9",
+    "printIntent": {
+      "dpi": 300,
+      "minimumWidthPx": 2400,
+      "minimumHeightPx": 1800
+    }
+  },
+  "required": {
+    "mustExplain": "Nested observation is represented as awareness reflecting upon awareness within wider informational frames.",
+    "mustAvoid": [
+      "fake citations",
+      "fake equations",
+      "unreadable text",
+      "watermarks",
+      "copyrighted characters",
+      "random mystical clutter",
+      "misleading scientific labels"
+    ]
+  },
+  "userRevision": {
+    "plainLanguageRequest": "",
+    "aiImprovedRequest": "",
+    "status": "awaiting-user-input"
+  },
+  "promptCompiler": {
+    "promptStatus": "ready-to-compile",
+    "providerAgnostic": true,
+    "finalPrompt": "Create a high-resolution quantum-process-diagram titled \"F018 — Observer Recursion\".\nThe image must visually explain: Nested observation is represented as awareness reflecting upon awareness within wider informational frames.\nUse this manuscript context to decide what belongs in the image: The scientific evidence does not support such a simplistic claim. Nevertheless, consciousness remains unique because it represents a system capable of reflecting upon observation itself. Humans do not merely observe. Humans observe that they observe. This recursive capacity introduces higher-order informational structures that may play an important role in how reality is modeled, interpreted, and experienced. Within the FHQCM, consciousness functions as a recursive integrator of information rather than a magical force acting upon matter. F018 — Observer RecursionNested observation is represented as awareness reflecting upon awareness within wider informational frames.F018-observer-recursion Participatory Cosmology The participatory perspective suggests that reality is not a finished object. Reality is an ongoing process. Observers participate within that process. Information participates within that process. Relationships participate within that process.\nStyle: museum-quality scientific book illustration.\nComposition: clear central concept, readable hierarchy, uncluttered layout.\nAspect ratio: 16:9.\nUse coherent scientific visual language, clean labels only when helpful, and strong print readability.\nAvoid: fake citations, fake equations, unreadable text, watermarks, copyrighted characters, random mystical clutter, misleading scientific labels."
+  }
+}

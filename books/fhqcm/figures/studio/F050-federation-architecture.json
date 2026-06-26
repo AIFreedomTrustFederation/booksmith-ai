@@ -1,0 +1,20 @@
+{
+  "id": "F050-federation-architecture",
+  "title": "F050 — Federation Architecture",
+  "caption": "AI Freedom Trust Federation is mapped as a living organizational torus of publishing, tooling, identity, infrastructure, and knowledge stewardship.",
+  "status": "needs-ai-figure",
+  "source": "chapters/09-federation-consciousness.tex:7",
+  "figureType": "scientific-topology-diagram",
+  "specFile": "figures/specifications/F050-federation-architecture.json",
+  "contextFile": "figures/context/F050-federation-architecture.json",
+  "promptFile": "figures/studio/F050-federation-architecture-prompt.md",
+  "surroundingTextPreview": "Federation Consciousness Purpose This chapter will connect the metaphysics of FHQCM to the organizational architecture of AI Freedom Trust Federation: publishing, Booksmith AI, DynastyLink, AIFT Forge, Knowledge Commons, and future federated trusts. F050 — Federation ArchitectureAI Freedom Trust Federation is mapped as a living organizational torus of publishing, tooling, identity, infrastructure, and knowledge stewardship.F050-federation-architecture Planned Development Future drafting should e",
+  "actions": [
+    "review-context",
+    "edit-plain-language-request",
+    "improve-request-with-ai",
+    "compile-prompt",
+    "generate-draft-image",
+    "approve-or-request-revision"
+  ]
+}

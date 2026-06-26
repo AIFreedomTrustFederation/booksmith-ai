@@ -1,0 +1,20 @@
+{
+  "id": "F031-dynamic-toroidal-flow",
+  "title": "F031 — Dynamic Toroidal Flow",
+  "caption": "Toroidal flow is shown as circulation through center, boundary, return, and renewed emergence.",
+  "status": "needs-ai-figure",
+  "source": "chapters/11-coincidence-coherence-eternal-now.tex:103",
+  "figureType": "scientific-topology-diagram",
+  "specFile": "figures/specifications/F031-dynamic-toroidal-flow.json",
+  "contextFile": "figures/context/F031-dynamic-toroidal-flow.json",
+  "promptFile": "figures/studio/F031-dynamic-toroidal-flow-prompt.md",
+  "surroundingTextPreview": "The final unity is not identical to the first unity because it now contains conscious relationship. Expanded: [ 1 rightarrow Many rightarrow 1' rightarrow Many' rightarrow 1'' ] A circle repeats. A spiral remembers. F031 — Dynamic Toroidal FlowToroidal flow is shown as circulation through center, boundary, return, and renewed emergence.F031-dynamic-toroidal-flow Fibonacci and Recursive Emergence The Fibonacci sequence is defined by: [ F_n = F_n-1+F_n-2 ] This is established mathematics. The FHQC",
+  "actions": [
+    "review-context",
+    "edit-plain-language-request",
+    "improve-request-with-ai",
+    "compile-prompt",
+    "generate-draft-image",
+    "approve-or-request-revision"
+  ]
+}

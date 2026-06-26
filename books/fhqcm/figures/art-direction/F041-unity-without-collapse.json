@@ -1,0 +1,84 @@
+{
+  "schema": "booksmith.figure-art-direction.v1",
+  "id": "F041-unity-without-collapse",
+  "title": "F041 — Unity Without Collapse",
+  "status": "ART_DIRECTION_READY",
+  "source": {
+    "file": "chapters/06-christic-equivalency.tex",
+    "line": 52
+  },
+  "figureType": "quantum-process-diagram",
+  "knowledge": {
+    "concepts": [
+      "wave-particle relationship",
+      "quantum state transition",
+      "federated systems architecture",
+      "symbolic integration"
+    ],
+    "requiredObjects": [
+      "wavefront or probability field",
+      "measurement boundary",
+      "nodes",
+      "links",
+      "central registry or shared protocol layer",
+      "central symbolic heart or integration point",
+      "spiral or healing path"
+    ],
+    "recommendedLabels": [
+      "superposition",
+      "measurement",
+      "node",
+      "federation",
+      "integration",
+      "recovery"
+    ],
+    "forbiddenObjects": [
+      "fake citations",
+      "fake equations",
+      "unreadable text",
+      "watermarks",
+      "copyrighted characters",
+      "random mystical clutter",
+      "misleading scientific labels",
+      "random galaxies unless explicitly required",
+      "decorative clutter"
+    ]
+  },
+  "composition": {
+    "camera": "orthographic",
+    "layout": "left-to-right experimental flow",
+    "visualHierarchy": [
+      "source/emission",
+      "path or choice point",
+      "measurement/detector",
+      "observer/information interpretation"
+    ],
+    "colorLogic": "cool scientific background, bright path lines, restrained accent colors",
+    "labelPolicy": "minimal labels, no dense paragraphs inside image"
+  },
+  "qaChecklist": [
+    "Matches figure title and caption",
+    "Reflects surrounding manuscript context",
+    "Includes required visual objects",
+    "Avoids forbidden objects and fake text",
+    "No fake citations or equations",
+    "No copyrighted characters or watermarks",
+    "Readable at book-print size",
+    "Suitable for 300 DPI print workflow",
+    "Has clear visual hierarchy",
+    "Does not overuse mystical or decorative elements"
+  ],
+  "revisionWorkflow": {
+    "userPlainLanguage": "",
+    "aiImprovedInstruction": "",
+    "currentVersion": 0,
+    "versions": [],
+    "approvalRequired": true
+  },
+  "prompts": {
+    "providerAgnostic": "Create a publication-quality scientific book figure titled \"F041 — Unity Without Collapse\".\nPurpose: Distinct centers remain themselves while participating in shared coherence.\n\nManuscript context: Examples include: itemize item justice and mercy, item death and resurrection, item self and other, item matter and spirit, item time and eternity, item individuality and communion. itemize F041 — Unity Without CollapseDistinct centers remain themselves while participating in shared coherence.F041-unity-without-collapse Scientific Integrity Note This chapter does not claim that Christic equivalency is a physical law. It does not claim that theology proves quantum mechanics or that quantum mechanics proves Christology. It claims that equivalency is a powerful symbolic operator for the book's metaphysical architecture. The scientific language of the wider manuscript must remain carefully distinguished from this theological-symbolic center. FHQCM Interpretation Christic Harmonic Equivalency is the model's reconciliation principle. It says that separation is real at one scale but not ultimate. It says distinction matters, but isolation is not final. It says the deepest coherence does not destroy persons, histories, wounds, bodies, or worlds. It transfigures them into communion. In the language of recovery, it is the movement from fragmentation to integration. In the language of cosmology, it is the return of multiplicity into a higher-order unity. In the language of faith, it is resurrection.\n\nScientific/conceptual concepts: wave-particle relationship, quantum state transition, federated systems architecture, symbolic integration.\nRequired visual objects: wavefront or probability field, measurement boundary, nodes, links, central registry or shared protocol layer, central symbolic heart or integration point, spiral or healing path.\nRecommended short labels: superposition, measurement, node, federation, integration, recovery.\n\nComposition: left-to-right experimental flow.\nCamera/view: orthographic.\nVisual hierarchy: source/emission → path or choice point → measurement/detector → observer/information interpretation.\nColor logic: cool scientific background, bright path lines, restrained accent colors.\nLabel policy: minimal labels, no dense paragraphs inside image.\n\nAvoid: fake citations, fake equations, unreadable text, watermarks, copyrighted characters, random mystical clutter, misleading scientific labels, random galaxies unless explicitly required, decorative clutter.\n\nMake it clean, serious, elegant, uncluttered, and suitable for an academic manuscript.",
+    "chatgptImage": "Create a publication-quality scientific book figure titled \"F041 — Unity Without Collapse\".\nPurpose: Distinct centers remain themselves while participating in shared coherence.\n\nManuscript context: Examples include: itemize item justice and mercy, item death and resurrection, item self and other, item matter and spirit, item time and eternity, item individuality and communion. itemize F041 — Unity Without CollapseDistinct centers remain themselves while participating in shared coherence.F041-unity-without-collapse Scientific Integrity Note This chapter does not claim that Christic equivalency is a physical law. It does not claim that theology proves quantum mechanics or that quantum mechanics proves Christology. It claims that equivalency is a powerful symbolic operator for the book's metaphysical architecture. The scientific language of the wider manuscript must remain carefully distinguished from this theological-symbolic center. FHQCM Interpretation Christic Harmonic Equivalency is the model's reconciliation principle. It says that separation is real at one scale but not ultimate. It says distinction matters, but isolation is not final. It says the deepest coherence does not destroy persons, histories, wounds, bodies, or worlds. It transfigures them into communion. In the language of recovery, it is the movement from fragmentation to integration. In the language of cosmology, it is the return of multiplicity into a higher-order unity. In the language of faith, it is resurrection.\n\nScientific/conceptual concepts: wave-particle relationship, quantum state transition, federated systems architecture, symbolic integration.\nRequired visual objects: wavefront or probability field, measurement boundary, nodes, links, central registry or shared protocol layer, central symbolic heart or integration point, spiral or healing path.\nRecommended short labels: superposition, measurement, node, federation, integration, recovery.\n\nComposition: left-to-right experimental flow.\nCamera/view: orthographic.\nVisual hierarchy: source/emission → path or choice point → measurement/detector → observer/information interpretation.\nColor logic: cool scientific background, bright path lines, restrained accent colors.\nLabel policy: minimal labels, no dense paragraphs inside image.\n\nAvoid: fake citations, fake equations, unreadable text, watermarks, copyrighted characters, random mystical clutter, misleading scientific labels, random galaxies unless explicitly required, decorative clutter.\n\nMake it clean, serious, elegant, uncluttered, and suitable for an academic manuscript.\n\nUse high-resolution scientific illustration style. Keep text minimal and legible.",
+    "localDiffusion": "Create a publication-quality scientific book figure titled \"F041 — Unity Without Collapse\".\nPurpose: Distinct centers remain themselves while participating in shared coherence.\n\nManuscript context: Examples include: itemize item justice and mercy, item death and resurrection, item self and other, item matter and spirit, item time and eternity, item individuality and communion. itemize F041 — Unity Without CollapseDistinct centers remain themselves while participating in shared coherence.F041-unity-without-collapse Scientific Integrity Note This chapter does not claim that Christic equivalency is a physical law. It does not claim that theology proves quantum mechanics or that quantum mechanics proves Christology. It claims that equivalency is a powerful symbolic operator for the book's metaphysical architecture. The scientific language of the wider manuscript must remain carefully distinguished from this theological-symbolic center. FHQCM Interpretation Christic Harmonic Equivalency is the model's reconciliation principle. It says that separation is real at one scale but not ultimate. It says distinction matters, but isolation is not final. It says the deepest coherence does not destroy persons, histories, wounds, bodies, or worlds. It transfigures them into communion. In the language of recovery, it is the movement from fragmentation to integration. In the language of cosmology, it is the return of multiplicity into a higher-order unity. In the language of faith, it is resurrection.\n\nScientific/conceptual concepts: wave-particle relationship, quantum state transition, federated systems architecture, symbolic integration.\nRequired visual objects: wavefront or probability field, measurement boundary, nodes, links, central registry or shared protocol layer, central symbolic heart or integration point, spiral or healing path.\nRecommended short labels: superposition, measurement, node, federation, integration, recovery.\n\nComposition: left-to-right experimental flow.\nCamera/view: orthographic.\nVisual hierarchy: source/emission → path or choice point → measurement/detector → observer/information interpretation.\nColor logic: cool scientific background, bright path lines, restrained accent colors.\nLabel policy: minimal labels, no dense paragraphs inside image.\n\nAvoid: fake citations, fake equations, unreadable text, watermarks, copyrighted characters, random mystical clutter, misleading scientific labels, random galaxies unless explicitly required, decorative clutter.\n\nMake it clean, serious, elegant, uncluttered, and suitable for an academic manuscript.\n\nStyle tokens: scientific diagram, clean vector-like composition, high detail, sharp, print ready, no watermark, no illegible text.",
+    "svgDiagram": "Create a publication-quality scientific book figure titled \"F041 — Unity Without Collapse\".\nPurpose: Distinct centers remain themselves while participating in shared coherence.\n\nManuscript context: Examples include: itemize item justice and mercy, item death and resurrection, item self and other, item matter and spirit, item time and eternity, item individuality and communion. itemize F041 — Unity Without CollapseDistinct centers remain themselves while participating in shared coherence.F041-unity-without-collapse Scientific Integrity Note This chapter does not claim that Christic equivalency is a physical law. It does not claim that theology proves quantum mechanics or that quantum mechanics proves Christology. It claims that equivalency is a powerful symbolic operator for the book's metaphysical architecture. The scientific language of the wider manuscript must remain carefully distinguished from this theological-symbolic center. FHQCM Interpretation Christic Harmonic Equivalency is the model's reconciliation principle. It says that separation is real at one scale but not ultimate. It says distinction matters, but isolation is not final. It says the deepest coherence does not destroy persons, histories, wounds, bodies, or worlds. It transfigures them into communion. In the language of recovery, it is the movement from fragmentation to integration. In the language of cosmology, it is the return of multiplicity into a higher-order unity. In the language of faith, it is resurrection.\n\nScientific/conceptual concepts: wave-particle relationship, quantum state transition, federated systems architecture, symbolic integration.\nRequired visual objects: wavefront or probability field, measurement boundary, nodes, links, central registry or shared protocol layer, central symbolic heart or integration point, spiral or healing path.\nRecommended short labels: superposition, measurement, node, federation, integration, recovery.\n\nComposition: left-to-right experimental flow.\nCamera/view: orthographic.\nVisual hierarchy: source/emission → path or choice point → measurement/detector → observer/information interpretation.\nColor logic: cool scientific background, bright path lines, restrained accent colors.\nLabel policy: minimal labels, no dense paragraphs inside image.\n\nAvoid: fake citations, fake equations, unreadable text, watermarks, copyrighted characters, random mystical clutter, misleading scientific labels, random galaxies unless explicitly required, decorative clutter.\n\nMake it clean, serious, elegant, uncluttered, and suitable for an academic manuscript.\n\nIf rendered as SVG, prefer simple geometric primitives, arrows, gradients, and readable labels."
+  }
+}

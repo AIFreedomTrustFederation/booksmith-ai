@@ -1,0 +1,20 @@
+{
+  "id": "F011-wave-function",
+  "title": "F011 — Wave Function",
+  "caption": "A visual primer for potential states, probability, and quantum description before measurement.",
+  "status": "needs-ai-figure",
+  "source": "chapters/03-quantum-observation.tex:11",
+  "figureType": "scientific-topology-diagram",
+  "specFile": "figures/specifications/F011-wave-function.json",
+  "contextFile": "figures/context/F011-wave-function.json",
+  "promptFile": "figures/studio/F011-wave-function-prompt.md",
+  "surroundingTextPreview": "Quantum Observation Introduction One of the most profound discoveries of twentieth-century physics was the realization that observation appears to play a fundamental role in the manifestation of physical reality. Unlike classical physics, where objects possess definite properties independent of measurement, quantum mechanics introduces a realm of potentiality in which physical systems exist as distributions of possibilities until an interaction occurs. The Fractal-Holographic Quantum Consciousne",
+  "actions": [
+    "review-context",
+    "edit-plain-language-request",
+    "improve-request-with-ai",
+    "compile-prompt",
+    "generate-draft-image",
+    "approve-or-request-revision"
+  ]
+}

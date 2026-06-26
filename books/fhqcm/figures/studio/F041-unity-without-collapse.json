@@ -1,0 +1,20 @@
+{
+  "id": "F041-unity-without-collapse",
+  "title": "F041 — Unity Without Collapse",
+  "caption": "Distinct centers remain themselves while participating in shared coherence.",
+  "status": "needs-ai-figure",
+  "source": "chapters/06-christic-equivalency.tex:52",
+  "figureType": "quantum-process-diagram",
+  "specFile": "figures/specifications/F041-unity-without-collapse.json",
+  "contextFile": "figures/context/F041-unity-without-collapse.json",
+  "promptFile": "figures/studio/F041-unity-without-collapse-prompt.md",
+  "surroundingTextPreview": "Examples include: itemize item justice and mercy, item death and resurrection, item self and other, item matter and spirit, item time and eternity, item individuality and communion. itemize F041 — Unity Without CollapseDistinct centers remain themselves while participating in shared coherence.F041-unity-without-collapse Scientific Integrity Note This chapter does not claim that Christic equivalency is a physical law. It does not claim that theology proves quantum mechanics or that quantum mechan",
+  "actions": [
+    "review-context",
+    "edit-plain-language-request",
+    "improve-request-with-ai",
+    "compile-prompt",
+    "generate-draft-image",
+    "approve-or-request-revision"
+  ]
+}

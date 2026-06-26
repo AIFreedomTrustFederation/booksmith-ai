@@ -1,0 +1,20 @@
+{
+  "id": "F008-eternal-now",
+  "title": "F008 — Eternal Now",
+  "caption": "Past, present, future, and the timeless center are represented as a unified field rather than a merely linear sequence.",
+  "status": "needs-ai-figure",
+  "source": "chapters/11-coincidence-coherence-eternal-now.tex:19",
+  "figureType": "symbolic-concept-illustration",
+  "specFile": "figures/specifications/F008-eternal-now.json",
+  "contextFile": "figures/context/F008-eternal-now.json",
+  "promptFile": "figures/studio/F008-eternal-now-prompt.md",
+  "surroundingTextPreview": "In ordinary language, a coincidence is the occurrence of two or more events that appear meaningfully related yet lack an immediately obvious causal connection. The term derives from the Latin coincidere, meaning ``to fall together.'' Events are said to coincide when they arrive at the same place, time, or meaning. Yet this common definition presupposes separation. It assumes that events normally exist apart and only occasionally intersect. This chapter explores an alternative hypothesis: coincid",
+  "actions": [
+    "review-context",
+    "edit-plain-language-request",
+    "improve-request-with-ai",
+    "compile-prompt",
+    "generate-draft-image",
+    "approve-or-request-revision"
+  ]
+}

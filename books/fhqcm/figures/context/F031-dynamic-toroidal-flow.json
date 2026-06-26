@@ -1,0 +1,34 @@
+{
+  "sourceFile": "chapters/11-coincidence-coherence-eternal-now.tex",
+  "sourceLine": 103,
+  "before": [
+    "The final unity is not identical to the first unity because it now contains conscious relationship.",
+    "",
+    "Expanded:",
+    "",
+    "\\[",
+    "1 \\rightarrow Many \\rightarrow 1' \\rightarrow Many' \\rightarrow 1''",
+    "\\]",
+    "",
+    "A circle repeats.",
+    "",
+    "A spiral remembers.",
+    ""
+  ],
+  "current": "\\FHQCMFigurePlaceholder{F031 — Dynamic Toroidal Flow}{Toroidal flow is shown as circulation through center, boundary, return, and renewed emergence.}{F031-dynamic-toroidal-flow}",
+  "after": [
+    "",
+    "\\section{Fibonacci and Recursive Emergence}",
+    "",
+    "The Fibonacci sequence is defined by:",
+    "",
+    "\\[",
+    "F_n = F_{n-1}+F_{n-2}",
+    "\\]",
+    "",
+    "This is established mathematics.",
+    "",
+    "The FHQCM uses Fibonacci recursion symbolically to show how new forms may emerge from prior relationship."
+  ],
+  "surroundingText": "The final unity is not identical to the first unity because it now contains conscious relationship. Expanded: [ 1 rightarrow Many rightarrow 1' rightarrow Many' rightarrow 1'' ] A circle repeats. A spiral remembers. F031 — Dynamic Toroidal FlowToroidal flow is shown as circulation through center, boundary, return, and renewed emergence.F031-dynamic-toroidal-flow Fibonacci and Recursive Emergence The Fibonacci sequence is defined by: [ F_n = F_n-1+F_n-2 ] This is established mathematics. The FHQCM uses Fibonacci recursion symbolically to show how new forms may emerge from prior relationship."
+}

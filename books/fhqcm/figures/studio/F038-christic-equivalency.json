@@ -1,0 +1,20 @@
+{
+  "id": "F038-christic-equivalency",
+  "title": "F038 — Christic Equivalency",
+  "caption": "Wave and particle, spirit and matter, past and future, self and other are held through symbolic reconciliation rather than collapsed into sameness.",
+  "status": "needs-ai-figure",
+  "source": "chapters/06-christic-equivalency.tex:9",
+  "figureType": "quantum-process-diagram",
+  "specFile": "figures/specifications/F038-christic-equivalency.json",
+  "contextFile": "figures/context/F038-christic-equivalency.json",
+  "promptFile": "figures/studio/F038-christic-equivalency-prompt.md",
+  "surroundingTextPreview": "Christic Harmonic Equivalency Purpose This chapter develops the symbolic center of the FHQCM: Christic Consciousness as the equal sign, the principle of harmonic reconciliation, and the restoration of apparent opposites into communion without erasing distinction. The equal sign is not used here as an empirical physics operator when applied to theology. It is used as a symbol of reconciliation. The chapter therefore distinguishes mathematical equivalence, philosophical reconciliation, and theolog",
+  "actions": [
+    "review-context",
+    "edit-plain-language-request",
+    "improve-request-with-ai",
+    "compile-prompt",
+    "generate-draft-image",
+    "approve-or-request-revision"
+  ]
+}
