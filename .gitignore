@@ -62,3 +62,8 @@ next-env.d.ts
 
 # Local dependency audit reports
 reports/
+.booksmith-build/
+debug-bundles/
+books/*/exports/zips/
+books/*/exports/pdf/
+books/*/exports/publishing-packet/
