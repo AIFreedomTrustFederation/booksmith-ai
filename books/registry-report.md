@@ -1,6 +1,6 @@
 # BookSmith Federation Library Registry
 
-Generated: 2026-06-26T10:52:23.070Z
+Generated: 2026-06-26T10:55:40.979Z
 Books known: 16
 
 ## Books
