@@ -1,5 +1,3 @@
-import "server-only";
-
 import { randomUUID } from "node:crypto";
 
 import type { ModelGenerationResponse, ModelMessage, ModelProvider, ModelRole } from "./model-provider";
