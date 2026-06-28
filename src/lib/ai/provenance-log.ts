@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { mkdir, appendFile } from "node:fs/promises";
 import path from "node:path";
 
@@ -36,9 +37,5 @@ export async function appendAiTaskProvenance(record: AiTaskProvenanceRecord): Pr
 }
 
 export async function sha256Hex(value: string): Promise<string> {
-  const encoder = new TextEncoder();
-  const digest = await crypto.subtle.digest("SHA-256", encoder.encode(value));
-  return Array.from(new Uint8Array(digest))
-    .map((byte) => byte.toString(16).padStart(2, "0"))
-    .join("");
+  return createHash("sha256").update(value).digest("hex");
 }
