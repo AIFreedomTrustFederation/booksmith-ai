@@ -84,10 +84,6 @@ export async function runAiTask(input: AiTaskInput): Promise<AiTaskResult> {
 }
 
 function validateTaskInput(input: AiTaskInput): void {
-  if (input.role === "embeddings") {
-    throw new AiTaskServiceError("Embedding tasks require a dedicated service.");
-  }
-
   if (!input.instruction.trim()) {
     throw new AiTaskServiceError("AI task instruction is required.");
   }
