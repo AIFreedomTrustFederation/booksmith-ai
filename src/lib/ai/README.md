@@ -15,6 +15,23 @@ The first implementation uses an OpenAI-compatible adapter for local and self-ho
 
 All providers are disabled by default.
 
+## Server-Only Task Service
+
+Use `runAiTask` from `src/lib/ai/ai-task-service.ts` for text-generation workflows.
+
+The service flow is:
+
+```text
+typed Booksmith task
+→ approved prompt asset from prompts/ai/task-prompts.json
+→ role-specific provider selection
+→ ModelProvider.generate(...)
+→ data/provenance/ai-tasks.jsonl record
+→ generated content returned to product workflow
+```
+
+The task service records provider ID, provider kind, model, prompt asset ID/version, book slug, source path, request time, generation time, local-first status, user-managed status, input hash, output hash, and token usage when the provider reports it.
+
 ## Environment Flags
 
 ```bash
@@ -29,6 +46,11 @@ BOOKSMITH_LLAMA_CPP_MODEL=local-model
 BOOKSMITH_VLLM_ENABLED=true
 BOOKSMITH_VLLM_BASE_URL=http://127.0.0.1:8000/v1/
 BOOKSMITH_VLLM_MODEL=local-model
+
+BOOKSMITH_AI_DEFAULT_PROVIDER_ID=ollama-local
+BOOKSMITH_AI_DRAFTING_PROVIDER_ID=ollama-local
+BOOKSMITH_AI_EDITING_PROVIDER_ID=llama-cpp-local
+BOOKSMITH_AI_CONTINUITY_PROVIDER_ID=vllm-local
 ```
 
 ## Rules
@@ -38,7 +60,8 @@ BOOKSMITH_VLLM_MODEL=local-model
 3. Record model choices, prompt asset IDs, book slugs, and source paths in provenance records before production use.
 4. Treat all user-managed endpoints as unverified until license and privacy checks are surfaced in the UI.
 5. Keep provider configuration explicit and inspectable.
+6. Keep `runAiTask` on server routes, server actions, scripts, or other Node/server-only workflows.
 
 ## Next Step
 
-Add a server-only AI service layer that accepts a typed Booksmith task, selects an enabled provider by role, loads approved prompt assets, and writes provenance records before returning generated content to the product workflow.
+Add a thin server route or server action for the Studio UI that calls `runAiTask` without importing provider adapters into client components.
