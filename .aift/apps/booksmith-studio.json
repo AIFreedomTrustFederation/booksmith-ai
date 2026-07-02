@@ -1,0 +1,53 @@
+{
+  "schema": "https://aifreedomtrust.org/schemas/aift.app.schema.json",
+  "id": "booksmith-studio",
+  "name": "BookSmith Studio",
+  "repo": "AIFreedomTrustFederation/booksmith-ai",
+  "slug": "booksmith-ai",
+  "category": "publishing",
+  "status": "detected",
+  "description": "Author-first, local-first writing, editing, publishing, provenance, LaTeX proofing, figure, and launch studio for AI Freedom Trust Publishing.",
+  "entrypoints": {
+    "web": {
+      "status": "detected",
+      "path": "/studio",
+      "devUrl": "http://localhost:3000/studio",
+      "evidence": "Next.js Studio route exists in src/app/studio/page.tsx"
+    },
+    "cli": {
+      "status": "detected",
+      "command": "npm run studio",
+      "evidence": "package.json exposes the studio script"
+    }
+  },
+  "capabilities": [
+    "federated-library",
+    "authoring-studio",
+    "publishing-packets",
+    "latex-proofing",
+    "figure-studio",
+    "ai-task-service",
+    "provenance-log"
+  ],
+  "principles": {
+    "localFirst": true,
+    "authorSovereign": true,
+    "inspectable": true,
+    "privateByDefault": true,
+    "aiBehindProviderInterfaces": true
+  },
+  "aiftOs": {
+    "appType": "workspace-app",
+    "launchMode": "local-web",
+    "healthCommand": "npm run system:health",
+    "verifyCommand": "npm run validate:library && npm run lint && npm run build",
+    "sourceOfTruth": [
+      "aift.repo.json",
+      ".aift/repo.json",
+      ".aift/capabilities.json",
+      ".aift/apps/booksmith-studio.json",
+      "package.json",
+      "library/book-registry.json"
+    ]
+  }
+}
