@@ -4,6 +4,18 @@
   "sovereign": true,
   "managedBy": "AIFT-OS",
   "dependencies": [],
-  "capabilities": [],
-  "commandsPath": ".aift/commands"
+  "capabilities": [
+    "federated-library",
+    "authoring-studio",
+    "publishing-packets",
+    "latex-proofing",
+    "figure-studio",
+    "ai-task-service",
+    "provenance-log"
+  ],
+  "commandsPath": ".aift/commands",
+  "appsPath": ".aift/apps",
+  "apps": [
+    ".aift/apps/booksmith-studio.json"
+  ]
 }
