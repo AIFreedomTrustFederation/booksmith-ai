@@ -87,6 +87,18 @@ function BookCard({ book }: { book: BookshelfBook }) {
           </ul>
         </div>
       ) : null}
+
+      <div className="mt-5 flex flex-wrap gap-2">
+        <Link
+          className="rounded-full bg-[#173322] px-4 py-2 text-sm font-black text-white transition hover:bg-[#284b34]"
+          href={`/studio/books/${book.registry.slug}`}
+        >
+          Open Book
+        </Link>
+        <span className="rounded-full border border-[#d8e1d1] px-4 py-2 text-sm font-bold text-[#607064]">
+          Save/edit actions planned
+        </span>
+      </div>
     </article>
   );
 }
