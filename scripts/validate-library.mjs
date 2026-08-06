@@ -76,7 +76,15 @@ if (!exists("library/book-registry.json")) {
       fail("Registry must contain at least one book");
     }
 
-    const slugs = new Set();
+    const slugs = new Set(
+      (registry.books || [])
+        .filter((book) => isPlainObject(book) && typeof book.slug === "string" && book.slug)
+        .map((book) => book.slug),
+    );
+
+    if (slugs.size !== (registry.books || []).filter((book) => isPlainObject(book) && book.slug).length) {
+      fail("Registry contains duplicate book slugs");
+    }
 
     for (const book of registry.books || []) {
       if (!isPlainObject(book)) {
@@ -87,9 +95,6 @@ if (!exists("library/book-registry.json")) {
       requireFields(book, requiredBookFields, `Registry book ${book.slug || "<unknown>"}`);
 
       if (!book.slug) continue;
-
-      if (slugs.has(book.slug)) fail(`Duplicate book slug: ${book.slug}`);
-      slugs.add(book.slug);
 
       if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(book.slug)) {
         fail(`Book slug must be lowercase kebab-case: ${book.slug}`);

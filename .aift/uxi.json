@@ -1,0 +1,14 @@
+{
+  "schema": "aift.uxi.integration.v1",
+  "repository": "booksmith-ai",
+  "role": "knowledge-application",
+  "sources": [
+    {
+      "id": "booksmith.library",
+      "kind": "json",
+      "path": "library/book-registry.json",
+      "description": "Canonical federated BookSmith library registry.",
+      "status": "ready"
+    }
+  ]
+}
