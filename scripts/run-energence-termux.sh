@@ -8,7 +8,12 @@ npm install
 npm run validate:library
 npm run validate:library:v2
 
-echo "==> Booksmith: generating chapter writing packets"\nnpm run writing:queue:energence\n\necho "==> Booksmith: rendering deterministic LaTeX source"
+mkdir -p "books/$slug/assets" "books/$slug/exports/pdf" "books/$slug/exports/latex" "books/$slug/manuscript/chapters"
+
+echo "==> Booksmith: generating chapter writing packets"
+npm run writing:queue:energence
+
+echo "==> Booksmith: rendering deterministic LaTeX source"
 npm run render:latex -- "$slug"
 
 echo "==> Booksmith: building figure registry, briefs, and generation queue"
