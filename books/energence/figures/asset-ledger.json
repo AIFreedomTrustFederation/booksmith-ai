@@ -1,5 +1,62 @@
 {
   "slug": "energence",
-  "generatedAt": "2026-08-07T06:08:52.355Z",
-  "assets": []
+  "generatedAt": "2026-08-07T06:11:38.724Z",
+  "assets": [
+    {
+      "figureId": "energence-001-three-modes",
+      "title": "The Three Modes of Energence",
+      "asset": null,
+      "status": "needs-ai-figure",
+      "promptFile": "figures/ai-briefs/energence-001-three-modes.md",
+      "model": null,
+      "provider": null,
+      "generatedAt": null,
+      "sourceImages": [],
+      "license": "pending",
+      "credit": "pending",
+      "approvedForPrint": false
+    },
+    {
+      "figureId": "energence-002-emergence-ladder",
+      "title": "From Physical Information to Christic Consciousness",
+      "asset": null,
+      "status": "needs-ai-figure",
+      "promptFile": "figures/ai-briefs/energence-002-emergence-ladder.md",
+      "model": null,
+      "provider": null,
+      "generatedAt": null,
+      "sourceImages": [],
+      "license": "pending",
+      "credit": "pending",
+      "approvedForPrint": false
+    },
+    {
+      "figureId": "energence-003-panentheistic-containment",
+      "title": "All in God, God Beyond All",
+      "asset": null,
+      "status": "needs-ai-figure",
+      "promptFile": "figures/ai-briefs/energence-003-panentheistic-containment.md",
+      "model": null,
+      "provider": null,
+      "generatedAt": null,
+      "sourceImages": [],
+      "license": "pending",
+      "credit": "pending",
+      "approvedForPrint": false
+    },
+    {
+      "figureId": "energence-004-book-arc",
+      "title": "The Book's Evolutionary Arc",
+      "asset": null,
+      "status": "needs-ai-figure",
+      "promptFile": "figures/ai-briefs/energence-004-book-arc.md",
+      "model": null,
+      "provider": null,
+      "generatedAt": null,
+      "sourceImages": [],
+      "license": "pending",
+      "credit": "pending",
+      "approvedForPrint": false
+    }
+  ]
 }
