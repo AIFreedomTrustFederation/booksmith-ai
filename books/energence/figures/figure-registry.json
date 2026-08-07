@@ -1,46 +1,11 @@
 {
   "slug": "energence",
-  "version": "1.0.0",
-  "figures": [
-    {
-      "id": "energence-001-three-modes",
-      "title": "The Three Modes of Energence",
-      "caption": "Father as nonconscious energy-information, Holy Spirit-Mother as subconscious formative intelligence, and Resurrected Christic Consciousness as awakened participation.",
-      "sourceFile": "manuscript/01-book-architecture.md",
-      "sourceLine": 10,
-      "type": "conceptual-diagram",
-      "status": "needs-ai-figure",
-      "asset": null
-    },
-    {
-      "id": "energence-002-emergence-ladder",
-      "title": "From Physical Information to Christic Consciousness",
-      "caption": "A non-linear developmental map from quantum states through chemistry, life, subconscious integration, consciousness, and Christic self-transcendence.",
-      "sourceFile": "manuscript/01-book-architecture.md",
-      "sourceLine": 17,
-      "type": "scientific-conceptual-diagram",
-      "status": "needs-ai-figure",
-      "asset": null
-    },
-    {
-      "id": "energence-003-panentheistic-containment",
-      "title": "All in God, God Beyond All",
-      "caption": "A panentheistic map showing the universe within Energence while Energence exceeds the manifested universe.",
-      "sourceFile": "sources/author-canon.md",
-      "sourceLine": 22,
-      "type": "theological-diagram",
-      "status": "needs-ai-figure",
-      "asset": null
-    },
-    {
-      "id": "energence-004-book-arc",
-      "title": "The Book's Evolutionary Arc",
-      "caption": "The five-part movement from naming Energence through Trinity, evolution, evil and extinction, to the Omega of communion.",
-      "sourceFile": "manuscript/01-book-architecture.md",
-      "sourceLine": 1,
-      "type": "part-opener-map",
-      "status": "needs-ai-figure",
-      "asset": null
-    }
-  ]
+  "generatedAt": "2026-08-07T06:08:52.353Z",
+  "policy": {
+    "placeholdersAllowedInDraft": true,
+    "placeholdersAllowedInPublication": false,
+    "aiImagesRequireLedger": true,
+    "provenanceRequired": true
+  },
+  "figures": []
 }
