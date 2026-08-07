@@ -21,7 +21,7 @@ function walk(dir) {
   });
 }
 
-const placeholders = [];
+const previousRegistry = fs.existsSync(registryPath)\n  ? JSON.parse(fs.readFileSync(registryPath, "utf8"))\n  : { figures: [] };\nconst previousLedger = fs.existsSync(ledgerPath)\n  ? JSON.parse(fs.readFileSync(ledgerPath, "utf8"))\n  : { assets: [] };\n\nconst placeholders = [];
 
 for (const file of walk(exportDir).filter((f) => f.endsWith(".tex"))) {
   const rel = path.relative(exportDir, file).replaceAll("\\", "/");
@@ -70,7 +70,7 @@ fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2) + "\n");
 const ledger = {
   slug,
   generatedAt: new Date().toISOString(),
-  assets: placeholders.map((fig) => ({
+  assets: figures.map((fig) => {\n    const previous = (previousLedger.assets || []).find((asset) => asset.figureId === fig.id);\n    return previous || ({
     figureId: fig.id,
     title: fig.title,
     asset: fig.asset,
@@ -87,7 +87,7 @@ const ledger = {
 
 fs.writeFileSync(ledgerPath, JSON.stringify(ledger, null, 2) + "\n");
 
-for (const fig of placeholders) {
+for (const fig of figures) {\n  const briefPath = path.join(briefsDir, `${fig.id}.md`);\n  if (fs.existsSync(briefPath)) continue;
   const brief = `# AI Figure Brief: ${fig.id}
 
 ## Title
@@ -101,7 +101,7 @@ ${fig.caption}
 - Line: ${fig.sourceLine}
 
 ## Purpose
-Create a publication-quality scientific/conceptual figure for the FHQCM manuscript.
+Create a publication-quality scientific or conceptual figure for the current Booksmith manuscript.
 
 ## Visual Requirements
 - Museum-quality scientific illustration.
@@ -127,9 +127,9 @@ Avoid: clutter, random mystical symbols, fake text, distorted typography, mislea
 - human approval status
 `;
 
-  fs.writeFileSync(path.join(briefsDir, `${fig.id}.md`), brief);
+  fs.writeFileSync(briefPath, brief);
 }
 
 console.log(`Figure registry written: ${path.relative(root, registryPath)}`);
 console.log(`Asset ledger written: ${path.relative(root, ledgerPath)}`);
-console.log(`AI briefs written: ${placeholders.length}`);
+console.log(`Figures retained or discovered: ${figures.length}`);
