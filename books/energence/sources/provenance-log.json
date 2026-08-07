@@ -1,0 +1,30 @@
+{
+  "slug": "energence",
+  "version": "0.1.0",
+  "entries": [
+    {
+      "id": "energence-author-canon-001",
+      "type": "author-supplied-canon",
+      "author": "Zechariah Daniel Edwards",
+      "source": "Conversation-developed Energence hypothesis and Scripture essay",
+      "status": "accepted",
+      "rights": "author-controlled",
+      "notes": "Core claims preserved in sources/author-canon.md."
+    },
+    {
+      "id": "energence-blueprint-001",
+      "type": "ai-assisted-organization",
+      "author": "OpenAI Codex with author direction",
+      "source": "Energence Book Development Blueprint",
+      "status": "proposal-approved-for-project-seed",
+      "rights": "author-controlled project artifact",
+      "notes": "Twenty-chapter architecture and editorial safeguards."
+    }
+  ],
+  "rules": {
+    "userInput": "canon",
+    "aiOutput": "proposal-until-approved",
+    "citations": "verify-before-publication",
+    "figures": "human-approval-required"
+  }
+}
