@@ -151,7 +151,8 @@
     "energence:pipeline": "bash scripts/run-energence-termux.sh",
     "render:latex:energence": "node scripts/render-latex.mjs energence",
     "figures:energence": "bash scripts/figure-art-director-pipeline-v1.sh energence",
-    "publish:energence": "bash scripts/booksmith-publish-managed-v1.sh energence"
+    "publish:energence": "bash scripts/booksmith-publish-managed-v1.sh energence",
+    "writing:queue:energence": "node scripts/energence-writing-orchestrator.mjs energence"
   },
   "dependencies": {
     "next": "16.2.9",
