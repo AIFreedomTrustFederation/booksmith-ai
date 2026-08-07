@@ -1,6 +1,6 @@
 {
   "schema": "booksmith.federation-library-registry.v1",
-  "generatedAt": "2026-06-26T12:02:43.885Z",
+  "generatedAt": "2026-08-07T06:11:38.724Z",
   "policy": {
     "knownBookStatuses": [
       "active",
@@ -218,6 +218,21 @@
         "towards-a-unified-reality",
         "coincidence-and-the-eternal-now",
         "federation-theory"
+      ]
+    },
+    "energence": {
+      "slug": "energence",
+      "title": "Energence",
+      "status": "active",
+      "version": "0.1.0",
+      "path": "books/energence",
+      "purpose": "Constructive panentheistic account of primordial energy-information, evolutionary divine immanence, subconscious formative intelligence, and resurrected Christic consciousness.",
+      "relatedBooks": [
+        "panentheism",
+        "universal-process-theosophy",
+        "towards-a-unified-reality",
+        "fhqcm",
+        "civilizational-resilience"
       ]
     }
   }
