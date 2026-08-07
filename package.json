@@ -147,7 +147,11 @@
     "server": "bash scripts/booksmith-server.sh",
     "install:termux": "bash scripts/booksmith-install-termux-v1.sh",
     "server:fhqcm": "BOOKSMITH_SLUG=fhqcm bash scripts/booksmith-server.sh",
-    "install:missing-tools": "bash scripts/install-missing-tools.sh"
+    "install:missing-tools": "bash scripts/install-missing-tools.sh",
+    "energence:pipeline": "bash scripts/run-energence-termux.sh",
+    "render:latex:energence": "node scripts/render-latex.mjs energence",
+    "figures:energence": "bash scripts/figure-art-director-pipeline-v1.sh energence",
+    "publish:energence": "bash scripts/booksmith-publish-managed-v1.sh energence"
   },
   "dependencies": {
     "next": "16.2.9",
