@@ -1,0 +1,414 @@
+{
+  "slug": "energence",
+  "version": "1.0.0",
+  "targetWords": 100000,
+  "chapterCount": 20,
+  "workflow": {
+    "canon": "accepted",
+    "generatedDrafts": "proposal",
+    "citations": "verification-required",
+    "authorApproval": "required-before-manuscript-merge"
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "slug": "01-why-energence",
+      "title": "Why Energence?",
+      "part": 1,
+      "primaryTexts": "Exodus 3:14; Acts 17:24-28; Romans 11:36",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    },
+    {
+      "number": 2,
+      "slug": "02-what-kind-of-claim-is-this",
+      "title": "What Kind of Claim Is This?",
+      "part": 1,
+      "primaryTexts": "Job 38-42; 1 Corinthians 13:9-12",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    },
+    {
+      "number": 3,
+      "slug": "03-in-god-we-live",
+      "title": "In God We Live",
+      "part": 1,
+      "primaryTexts": "Acts 17:22-31; Colossians 1:15-20; Romans 11:33-36; Ephesians 1:20-23",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    },
+    {
+      "number": 4,
+      "slug": "04-beyond-he-and-she",
+      "title": "Beyond He and She",
+      "part": 1,
+      "primaryTexts": "Genesis 1:26-27; Proverbs 8; Isaiah 42:14; Matthew 23:37",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    },
+    {
+      "number": 5,
+      "slug": "05-father-the-nonconscious-ground",
+      "title": "Father: The Nonconscious Ground",
+      "part": 2,
+      "primaryTexts": "Genesis 1:1-2; Psalm 104; Hebrews 1:3",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    },
+    {
+      "number": 6,
+      "slug": "06-holy-spirit-mother-the-subconscious-womb",
+      "title": "Holy Spirit-Mother: The Subconscious Womb",
+      "part": 2,
+      "primaryTexts": "Genesis 1:2; Job 33:4; Psalm 104:30; John 3:8",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    },
+    {
+      "number": 7,
+      "slug": "07-son-energy-informed-as-matter",
+      "title": "Son: Energy Informed as Matter",
+      "part": 2,
+      "primaryTexts": "John 1:1-18; Colossians 1:15-20; Hebrews 1:1-3",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    },
+    {
+      "number": 8,
+      "slug": "08-resurrected-christic-consciousness",
+      "title": "Resurrected Christic Consciousness",
+      "part": 2,
+      "primaryTexts": "1 Corinthians 15; Philippians 2:5-11; Colossians 3:9-11",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    },
+    {
+      "number": 9,
+      "slug": "09-let-the-earth-bring-forth",
+      "title": "Let the Earth Bring Forth",
+      "part": 3,
+      "primaryTexts": "Genesis 1:11-12, 20-25",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    },
+    {
+      "number": 10,
+      "slug": "10-from-quantum-information-to-life",
+      "title": "From Quantum Information to Life",
+      "part": 3,
+      "primaryTexts": "Psalm 139:13-18; John 1:3-4",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    },
+    {
+      "number": 11,
+      "slug": "11-evolution-is-not-the-enemy-of-creation",
+      "title": "Evolution Is Not the Enemy of Creation",
+      "part": 3,
+      "primaryTexts": "Psalm 104; Romans 8:19-23",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    },
+    {
+      "number": 12,
+      "slug": "12-the-evolution-of-consciousness",
+      "title": "The Evolution of Consciousness",
+      "part": 3,
+      "primaryTexts": "Genesis 2:7; Psalm 8; 1 Corinthians 2:10-16",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    },
+    {
+      "number": 13,
+      "slug": "13-the-cost-of-a-becoming-creation",
+      "title": "The Cost of a Becoming Creation",
+      "part": 4,
+      "primaryTexts": "Job 38-41; Ecclesiastes 3; Romans 8:18-23",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    },
+    {
+      "number": 14,
+      "slug": "14-i-create-calamity",
+      "title": "I Create Calamity",
+      "part": 4,
+      "primaryTexts": "Isaiah 45:1-13; Amos 3:6",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    },
+    {
+      "number": 15,
+      "slug": "15-satan-the-accuser-and-the-divine-council",
+      "title": "Satan, the Accuser, and the Divine Council",
+      "part": 4,
+      "primaryTexts": "Job 1-2; 1 Kings 22:19-23; Zechariah 3:1-7; Psalm 82",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    },
+    {
+      "number": 16,
+      "slug": "16-selection-without-social-darwinism",
+      "title": "Selection Without Social Darwinism",
+      "part": 4,
+      "primaryTexts": "1 Corinthians 12; Galatians 6:2; Philippians 2:1-11",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    },
+    {
+      "number": 17,
+      "slug": "17-creation-waiting-to-be-liberated",
+      "title": "Creation Waiting to Be Liberated",
+      "part": 5,
+      "primaryTexts": "Romans 8:19-23; 2 Corinthians 5:17-19",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    },
+    {
+      "number": 18,
+      "slug": "18-the-last-enemy-is-death",
+      "title": "The Last Enemy Is Death",
+      "part": 5,
+      "primaryTexts": "1 Corinthians 15:20-28, 35-58",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    },
+    {
+      "number": 19,
+      "slug": "19-god-all-in-all",
+      "title": "God All in All",
+      "part": 5,
+      "primaryTexts": "1 Corinthians 15:28; Ephesians 1:9-10, 22-23; Colossians 1:19-20",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    },
+    {
+      "number": 20,
+      "slug": "20-the-ethics-of-christic-evolution",
+      "title": "The Ethics of Christic Evolution",
+      "part": 5,
+      "primaryTexts": "Matthew 5-7; John 17; Galatians 5:22-23",
+      "targetWords": 5000,
+      "status": "planned",
+      "canon": "sources/author-canon.md",
+      "requiredSections": [
+        "Governing question",
+        "Scriptural exegesis",
+        "Scientific account",
+        "Energence interpretation",
+        "Strongest objection",
+        "Response",
+        "Ethical consequences",
+        "Synthesis"
+      ]
+    }
+  ]
+}
