@@ -1,7 +1,7 @@
 # BookSmith Figure Engine v1
 
 Book slug: `energence`
-Generated: 2026-08-07T06:18:04.004Z
+Generated: 2026-08-07T06:21:34.915Z
 Action: queue
 
 ## Counts

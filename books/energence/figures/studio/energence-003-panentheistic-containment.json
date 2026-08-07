@@ -1,0 +1,20 @@
+{
+  "id": "energence-003-panentheistic-containment",
+  "title": "All in God, God Beyond All",
+  "caption": "A panentheistic map showing the universe within Energence while Energence exceeds the manifested universe.",
+  "status": "needs-ai-figure",
+  "source": "sources/author-canon.md:22",
+  "figureType": "conceptual-scientific-illustration",
+  "specFile": "figures/specifications/energence-003-panentheistic-containment.json",
+  "contextFile": "figures/context/energence-003-panentheistic-containment.json",
+  "promptFile": "figures/studio/energence-003-panentheistic-containment-prompt.md",
+  "surroundingTextPreview": "",
+  "actions": [
+    "review-context",
+    "edit-plain-language-request",
+    "improve-request-with-ai",
+    "compile-prompt",
+    "generate-draft-image",
+    "approve-or-request-revision"
+  ]
+}

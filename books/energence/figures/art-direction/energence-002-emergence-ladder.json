@@ -1,0 +1,69 @@
+{
+  "schema": "booksmith.figure-art-direction.v1",
+  "id": "energence-002-emergence-ladder",
+  "title": "From Physical Information to Christic Consciousness",
+  "status": "ART_DIRECTION_READY",
+  "source": {
+    "file": "manuscript/01-book-architecture.md",
+    "line": 17
+  },
+  "figureType": "quantum-process-diagram",
+  "knowledge": {
+    "concepts": [
+      "conceptual explanatory diagram"
+    ],
+    "requiredObjects": [
+      "central visual metaphor",
+      "supporting arrows or structure"
+    ],
+    "recommendedLabels": [],
+    "forbiddenObjects": [
+      "fake citations",
+      "fake equations",
+      "unreadable text",
+      "watermarks",
+      "copyrighted characters",
+      "random mystical clutter",
+      "misleading scientific labels",
+      "random galaxies unless explicitly required",
+      "decorative clutter"
+    ]
+  },
+  "composition": {
+    "camera": "orthographic",
+    "layout": "left-to-right experimental flow",
+    "visualHierarchy": [
+      "source/emission",
+      "path or choice point",
+      "measurement/detector",
+      "observer/information interpretation"
+    ],
+    "colorLogic": "cool scientific background, bright path lines, restrained accent colors",
+    "labelPolicy": "minimal labels, no dense paragraphs inside image"
+  },
+  "qaChecklist": [
+    "Matches figure title and caption",
+    "Reflects surrounding manuscript context",
+    "Includes required visual objects",
+    "Avoids forbidden objects and fake text",
+    "No fake citations or equations",
+    "No copyrighted characters or watermarks",
+    "Readable at book-print size",
+    "Suitable for 300 DPI print workflow",
+    "Has clear visual hierarchy",
+    "Does not overuse mystical or decorative elements"
+  ],
+  "revisionWorkflow": {
+    "userPlainLanguage": "",
+    "aiImprovedInstruction": "",
+    "currentVersion": 0,
+    "versions": [],
+    "approvalRequired": true
+  },
+  "prompts": {
+    "providerAgnostic": "Create a publication-quality scientific book figure titled \"From Physical Information to Christic Consciousness\".\nPurpose: A non-linear developmental map from quantum states through chemistry, life, subconscious integration, consciousness, and Christic self-transcendence.\n\nManuscript context: No surrounding text available.\n\nScientific/conceptual concepts: conceptual explanatory diagram.\nRequired visual objects: central visual metaphor, supporting arrows or structure.\nRecommended short labels: none.\n\nComposition: left-to-right experimental flow.\nCamera/view: orthographic.\nVisual hierarchy: source/emission → path or choice point → measurement/detector → observer/information interpretation.\nColor logic: cool scientific background, bright path lines, restrained accent colors.\nLabel policy: minimal labels, no dense paragraphs inside image.\n\nAvoid: fake citations, fake equations, unreadable text, watermarks, copyrighted characters, random mystical clutter, misleading scientific labels, random galaxies unless explicitly required, decorative clutter.\n\nMake it clean, serious, elegant, uncluttered, and suitable for an academic manuscript.",
+    "chatgptImage": "Create a publication-quality scientific book figure titled \"From Physical Information to Christic Consciousness\".\nPurpose: A non-linear developmental map from quantum states through chemistry, life, subconscious integration, consciousness, and Christic self-transcendence.\n\nManuscript context: No surrounding text available.\n\nScientific/conceptual concepts: conceptual explanatory diagram.\nRequired visual objects: central visual metaphor, supporting arrows or structure.\nRecommended short labels: none.\n\nComposition: left-to-right experimental flow.\nCamera/view: orthographic.\nVisual hierarchy: source/emission → path or choice point → measurement/detector → observer/information interpretation.\nColor logic: cool scientific background, bright path lines, restrained accent colors.\nLabel policy: minimal labels, no dense paragraphs inside image.\n\nAvoid: fake citations, fake equations, unreadable text, watermarks, copyrighted characters, random mystical clutter, misleading scientific labels, random galaxies unless explicitly required, decorative clutter.\n\nMake it clean, serious, elegant, uncluttered, and suitable for an academic manuscript.\n\nUse high-resolution scientific illustration style. Keep text minimal and legible.",
+    "localDiffusion": "Create a publication-quality scientific book figure titled \"From Physical Information to Christic Consciousness\".\nPurpose: A non-linear developmental map from quantum states through chemistry, life, subconscious integration, consciousness, and Christic self-transcendence.\n\nManuscript context: No surrounding text available.\n\nScientific/conceptual concepts: conceptual explanatory diagram.\nRequired visual objects: central visual metaphor, supporting arrows or structure.\nRecommended short labels: none.\n\nComposition: left-to-right experimental flow.\nCamera/view: orthographic.\nVisual hierarchy: source/emission → path or choice point → measurement/detector → observer/information interpretation.\nColor logic: cool scientific background, bright path lines, restrained accent colors.\nLabel policy: minimal labels, no dense paragraphs inside image.\n\nAvoid: fake citations, fake equations, unreadable text, watermarks, copyrighted characters, random mystical clutter, misleading scientific labels, random galaxies unless explicitly required, decorative clutter.\n\nMake it clean, serious, elegant, uncluttered, and suitable for an academic manuscript.\n\nStyle tokens: scientific diagram, clean vector-like composition, high detail, sharp, print ready, no watermark, no illegible text.",
+    "svgDiagram": "Create a publication-quality scientific book figure titled \"From Physical Information to Christic Consciousness\".\nPurpose: A non-linear developmental map from quantum states through chemistry, life, subconscious integration, consciousness, and Christic self-transcendence.\n\nManuscript context: No surrounding text available.\n\nScientific/conceptual concepts: conceptual explanatory diagram.\nRequired visual objects: central visual metaphor, supporting arrows or structure.\nRecommended short labels: none.\n\nComposition: left-to-right experimental flow.\nCamera/view: orthographic.\nVisual hierarchy: source/emission → path or choice point → measurement/detector → observer/information interpretation.\nColor logic: cool scientific background, bright path lines, restrained accent colors.\nLabel policy: minimal labels, no dense paragraphs inside image.\n\nAvoid: fake citations, fake equations, unreadable text, watermarks, copyrighted characters, random mystical clutter, misleading scientific labels, random galaxies unless explicitly required, decorative clutter.\n\nMake it clean, serious, elegant, uncluttered, and suitable for an academic manuscript.\n\nIf rendered as SVG, prefer simple geometric primitives, arrows, gradients, and readable labels."
+  }
+}

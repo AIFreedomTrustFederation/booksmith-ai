@@ -1,0 +1,20 @@
+{
+  "id": "energence-002-emergence-ladder",
+  "title": "From Physical Information to Christic Consciousness",
+  "caption": "A non-linear developmental map from quantum states through chemistry, life, subconscious integration, consciousness, and Christic self-transcendence.",
+  "status": "needs-ai-figure",
+  "source": "manuscript/01-book-architecture.md:17",
+  "figureType": "quantum-process-diagram",
+  "specFile": "figures/specifications/energence-002-emergence-ladder.json",
+  "contextFile": "figures/context/energence-002-emergence-ladder.json",
+  "promptFile": "figures/studio/energence-002-emergence-ladder-prompt.md",
+  "surroundingTextPreview": "",
+  "actions": [
+    "review-context",
+    "edit-plain-language-request",
+    "improve-request-with-ai",
+    "compile-prompt",
+    "generate-draft-image",
+    "approve-or-request-revision"
+  ]
+}

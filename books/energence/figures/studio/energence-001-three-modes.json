@@ -1,0 +1,20 @@
+{
+  "id": "energence-001-three-modes",
+  "title": "The Three Modes of Energence",
+  "caption": "Father as nonconscious energy-information, Holy Spirit-Mother as subconscious formative intelligence, and Resurrected Christic Consciousness as awakened participation.",
+  "status": "needs-ai-figure",
+  "source": "manuscript/01-book-architecture.md:10",
+  "figureType": "symbolic-concept-illustration",
+  "specFile": "figures/specifications/energence-001-three-modes.json",
+  "contextFile": "figures/context/energence-001-three-modes.json",
+  "promptFile": "figures/studio/energence-001-three-modes-prompt.md",
+  "surroundingTextPreview": "",
+  "actions": [
+    "review-context",
+    "edit-plain-language-request",
+    "improve-request-with-ai",
+    "compile-prompt",
+    "generate-draft-image",
+    "approve-or-request-revision"
+  ]
+}

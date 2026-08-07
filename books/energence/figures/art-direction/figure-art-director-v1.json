@@ -1,7 +1,40 @@
 {
   "schema": "booksmith.figure-art-director-index.v1",
   "slug": "energence",
-  "generatedAt": "2026-08-07T06:18:05.743Z",
-  "count": 0,
-  "figures": []
+  "generatedAt": "2026-08-07T06:21:36.698Z",
+  "count": 4,
+  "figures": [
+    {
+      "id": "energence-001-three-modes",
+      "title": "The Three Modes of Energence",
+      "type": "symbolic-concept-illustration",
+      "status": "ART_DIRECTION_READY",
+      "artDirectionFile": "figures/art-direction/energence-001-three-modes.json",
+      "promptPreview": "Create a publication-quality scientific book figure titled \"The Three Modes of Energence\".\nPurpose: Father as nonconscious energy-information, Holy Spirit-Mother as subconscious formative intelligence, and Resurrected Christic Consciousness as awakened participation.\n\nManuscript context: No surrounding text available.\n\nScientific/conceptual concepts: conceptual explanatory diagram.\nRequired visual objects: central visual metaphor, supporting arrows or structure.\nRecommended short labels: none.\n\n"
+    },
+    {
+      "id": "energence-002-emergence-ladder",
+      "title": "From Physical Information to Christic Consciousness",
+      "type": "quantum-process-diagram",
+      "status": "ART_DIRECTION_READY",
+      "artDirectionFile": "figures/art-direction/energence-002-emergence-ladder.json",
+      "promptPreview": "Create a publication-quality scientific book figure titled \"From Physical Information to Christic Consciousness\".\nPurpose: A non-linear developmental map from quantum states through chemistry, life, subconscious integration, consciousness, and Christic self-transcendence.\n\nManuscript context: No surrounding text available.\n\nScientific/conceptual concepts: conceptual explanatory diagram.\nRequired visual objects: central visual metaphor, supporting arrows or structure.\nRecommended short labels: no"
+    },
+    {
+      "id": "energence-003-panentheistic-containment",
+      "title": "All in God, God Beyond All",
+      "type": "conceptual-scientific-illustration",
+      "status": "ART_DIRECTION_READY",
+      "artDirectionFile": "figures/art-direction/energence-003-panentheistic-containment.json",
+      "promptPreview": "Create a publication-quality scientific book figure titled \"All in God, God Beyond All\".\nPurpose: A panentheistic map showing the universe within Energence while Energence exceeds the manifested universe.\n\nManuscript context: No surrounding text available.\n\nScientific/conceptual concepts: conceptual explanatory diagram.\nRequired visual objects: central visual metaphor, supporting arrows or structure.\nRecommended short labels: none.\n\nComposition: central subject with supporting explanatory struct"
+    },
+    {
+      "id": "energence-004-book-arc",
+      "title": "The Book's Evolutionary Arc",
+      "type": "conceptual-scientific-illustration",
+      "status": "ART_DIRECTION_READY",
+      "artDirectionFile": "figures/art-direction/energence-004-book-arc.json",
+      "promptPreview": "Create a publication-quality scientific book figure titled \"The Book's Evolutionary Arc\".\nPurpose: The five-part movement from naming Energence through Trinity, evolution, evil and extinction, to the Omega of communion.\n\nManuscript context: No surrounding text available.\n\nScientific/conceptual concepts: conceptual explanatory diagram.\nRequired visual objects: central visual metaphor, supporting arrows or structure.\nRecommended short labels: none.\n\nComposition: central subject with supporting exp"
+    }
+  ]
 }

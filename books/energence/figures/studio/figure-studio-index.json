@@ -1,0 +1,88 @@
+{
+  "schema": "booksmith.figure-studio.v1",
+  "slug": "energence",
+  "generatedAt": "2026-08-07T06:21:35.808Z",
+  "count": 4,
+  "cards": [
+    {
+      "id": "energence-001-three-modes",
+      "title": "The Three Modes of Energence",
+      "caption": "Father as nonconscious energy-information, Holy Spirit-Mother as subconscious formative intelligence, and Resurrected Christic Consciousness as awakened participation.",
+      "status": "needs-ai-figure",
+      "source": "manuscript/01-book-architecture.md:10",
+      "figureType": "symbolic-concept-illustration",
+      "specFile": "figures/specifications/energence-001-three-modes.json",
+      "contextFile": "figures/context/energence-001-three-modes.json",
+      "promptFile": "figures/studio/energence-001-three-modes-prompt.md",
+      "surroundingTextPreview": "",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "energence-002-emergence-ladder",
+      "title": "From Physical Information to Christic Consciousness",
+      "caption": "A non-linear developmental map from quantum states through chemistry, life, subconscious integration, consciousness, and Christic self-transcendence.",
+      "status": "needs-ai-figure",
+      "source": "manuscript/01-book-architecture.md:17",
+      "figureType": "quantum-process-diagram",
+      "specFile": "figures/specifications/energence-002-emergence-ladder.json",
+      "contextFile": "figures/context/energence-002-emergence-ladder.json",
+      "promptFile": "figures/studio/energence-002-emergence-ladder-prompt.md",
+      "surroundingTextPreview": "",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "energence-003-panentheistic-containment",
+      "title": "All in God, God Beyond All",
+      "caption": "A panentheistic map showing the universe within Energence while Energence exceeds the manifested universe.",
+      "status": "needs-ai-figure",
+      "source": "sources/author-canon.md:22",
+      "figureType": "conceptual-scientific-illustration",
+      "specFile": "figures/specifications/energence-003-panentheistic-containment.json",
+      "contextFile": "figures/context/energence-003-panentheistic-containment.json",
+      "promptFile": "figures/studio/energence-003-panentheistic-containment-prompt.md",
+      "surroundingTextPreview": "",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    },
+    {
+      "id": "energence-004-book-arc",
+      "title": "The Book's Evolutionary Arc",
+      "caption": "The five-part movement from naming Energence through Trinity, evolution, evil and extinction, to the Omega of communion.",
+      "status": "needs-ai-figure",
+      "source": "manuscript/01-book-architecture.md:1",
+      "figureType": "conceptual-scientific-illustration",
+      "specFile": "figures/specifications/energence-004-book-arc.json",
+      "contextFile": "figures/context/energence-004-book-arc.json",
+      "promptFile": "figures/studio/energence-004-book-arc-prompt.md",
+      "surroundingTextPreview": "",
+      "actions": [
+        "review-context",
+        "edit-plain-language-request",
+        "improve-request-with-ai",
+        "compile-prompt",
+        "generate-draft-image",
+        "approve-or-request-revision"
+      ]
+    }
+  ]
+}

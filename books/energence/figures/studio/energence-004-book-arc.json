@@ -1,0 +1,20 @@
+{
+  "id": "energence-004-book-arc",
+  "title": "The Book's Evolutionary Arc",
+  "caption": "The five-part movement from naming Energence through Trinity, evolution, evil and extinction, to the Omega of communion.",
+  "status": "needs-ai-figure",
+  "source": "manuscript/01-book-architecture.md:1",
+  "figureType": "conceptual-scientific-illustration",
+  "specFile": "figures/specifications/energence-004-book-arc.json",
+  "contextFile": "figures/context/energence-004-book-arc.json",
+  "promptFile": "figures/studio/energence-004-book-arc-prompt.md",
+  "surroundingTextPreview": "",
+  "actions": [
+    "review-context",
+    "edit-plain-language-request",
+    "improve-request-with-ai",
+    "compile-prompt",
+    "generate-draft-image",
+    "approve-or-request-revision"
+  ]
+}
