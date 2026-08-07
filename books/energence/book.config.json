@@ -1,0 +1,50 @@
+{
+  "slug": "energence",
+  "title": "Energence",
+  "subtitle": "Scripture, Evolution, and the Awakening of Godself",
+  "series": "Foundational Doctrine",
+  "status": "active",
+  "version": "0.1.0",
+  "purpose": "Develop the Energence hypothesis as a constructive panentheistic theology in which primordial energy-information, subconscious formative intelligence, biological consciousness, evolution, and resurrected Christic consciousness are modes in the macroevolutionary manifestation of Godself.",
+  "relatedBooks": [
+    "panentheism",
+    "universal-process-theosophy",
+    "towards-a-unified-reality",
+    "fhqcm",
+    "civilizational-resilience"
+  ],
+  "canonicalTerms": [
+    "Energence",
+    "Primordial Information",
+    "Formative Intelligence",
+    "Holy Spirit-Mother",
+    "Christic Consciousness",
+    "Evolutionary Panentheism",
+    "Transcendence",
+    "Immanence"
+  ],
+  "publishingTargets": [
+    "markdown",
+    "latex",
+    "pdf",
+    "epub",
+    "web",
+    "docx",
+    "print",
+    "publishing-packet"
+  ],
+  "provenanceRequired": true,
+  "authorCanon": "User-supplied writing is accepted canon. AI output remains proposal until author approval.",
+  "trim": {
+    "widthInches": 6,
+    "heightInches": 9
+  },
+  "latex": {
+    "engine": "xelatex",
+    "profile": "nonfiction"
+  },
+  "figures": {
+    "workflow": "human-approved",
+    "minimumDpi": 300
+  }
+}
