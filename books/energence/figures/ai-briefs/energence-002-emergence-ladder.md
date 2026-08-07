@@ -1,0 +1,3 @@
+# AI Figure Brief: From Physical Information to Christic Consciousness
+
+Create an exact vector-first diagram, not illustrative fantasy art. Show six related levels: physical states and correlations; chemistry; self-maintaining life; subconscious regulation; reflective consciousness; Christic consciousness. Use branching and feedback arrows rather than an inevitable straight ladder. Mark extinction, contingency, and regression as possible branches. Preserve the distinction between established scientific descriptions and the final theological interpretation. Deliver SVG/PDF source with editable labels and a monochrome-safe palette.
