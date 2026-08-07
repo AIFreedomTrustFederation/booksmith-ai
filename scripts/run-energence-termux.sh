@@ -13,7 +13,7 @@ npm run render:latex -- "$slug"
 
 echo "==> Booksmith: building figure registry, briefs, and generation queue"
 npm run figures:registry -- "$slug"
-npm run figure:queue -- "$slug" queue
+npm run figure:engine -- "$slug" queue
 npm run figure:intelligence:v1 -- "$slug"
 npm run figure:art-director -- "$slug"
 npm run figure:audit -- "$slug"
