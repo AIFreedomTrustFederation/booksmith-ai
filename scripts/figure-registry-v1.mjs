@@ -21,37 +21,39 @@ function walk(dir) {
   });
 }
 
-const previousRegistry = fs.existsSync(registryPath)\n  ? JSON.parse(fs.readFileSync(registryPath, "utf8"))\n  : { figures: [] };\nconst previousLedger = fs.existsSync(ledgerPath)\n  ? JSON.parse(fs.readFileSync(ledgerPath, "utf8"))\n  : { assets: [] };\n\nconst placeholders = [];
+function readJson(file, fallback) {
+  return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : fallback;
+}
 
-for (const file of walk(exportDir).filter((f) => f.endsWith(".tex"))) {
+const previousRegistry = readJson(registryPath, { figures: [] });
+const previousLedger = readJson(ledgerPath, { assets: [] });
+const discovered = [];
+
+for (const file of walk(exportDir).filter((item) => item.endsWith(".tex"))) {
   const rel = path.relative(exportDir, file).replaceAll("\\", "/");
   const lines = fs.readFileSync(file, "utf8").split(/\r?\n/);
 
   lines.forEach((line, index) => {
-    const m = line.match(/\\FHQCMFigurePlaceholder\{([^}]*)\}\{([^}]*)\}\{([^}]*)\}/);
-    if (!m) return;
+    const match = line.match(/\\(?:FHQCM|Booksmith)FigurePlaceholder\{([^}]*)\}\{([^}]*)\}\{([^}]*)\}/);
+    if (!match) return;
 
-    placeholders.push({
-      id: m[3],
-      title: m[1],
-      caption: m[2],
+    discovered.push({
+      id: match[3],
+      title: match[1],
+      caption: match[2],
       sourceFile: rel,
       sourceLine: index + 1,
       status: "needs-ai-figure",
       asset: null,
-      rights: {
-        license: "pending",
-        source: "pending",
-        credit: "pending"
-      },
-      print: {
-        targetDpi: 300,
-        minWidthPx: 2400,
-        minHeightPx: 1800
-      }
+      rights: { license: "pending", source: "pending", credit: "pending" },
+      print: { targetDpi: 300, minWidthPx: 2400, minHeightPx: 1800 },
     });
   });
 }
+
+const discoveredIds = new Set(discovered.map((figure) => figure.id));
+const retained = (previousRegistry.figures || []).filter((figure) => !discoveredIds.has(figure.id));
+const figures = [...discovered, ...retained];
 
 const registry = {
   slug,
@@ -60,76 +62,66 @@ const registry = {
     placeholdersAllowedInDraft: true,
     placeholdersAllowedInPublication: false,
     aiImagesRequireLedger: true,
-    provenanceRequired: true
+    provenanceRequired: true,
   },
-  figures: placeholders
+  figures,
 };
 
-fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2) + "\n");
-
-const ledger = {
-  slug,
-  generatedAt: new Date().toISOString(),
-  assets: figures.map((fig) => {\n    const previous = (previousLedger.assets || []).find((asset) => asset.figureId === fig.id);\n    return previous || ({
-    figureId: fig.id,
-    title: fig.title,
-    asset: fig.asset,
-    status: fig.status,
-    promptFile: `figures/ai-briefs/${fig.id}.md`,
+const assets = figures.map((figure) => {
+  const previous = (previousLedger.assets || []).find((asset) => asset.figureId === figure.id);
+  return previous || {
+    figureId: figure.id,
+    title: figure.title,
+    asset: figure.asset || null,
+    status: figure.status || "needs-ai-figure",
+    promptFile: `figures/ai-briefs/${figure.id}.md`,
     model: null,
+    provider: null,
     generatedAt: null,
     sourceImages: [],
     license: "pending",
     credit: "pending",
-    approvedForPrint: false
-  }))
-};
+    approvedForPrint: false,
+  };
+});
 
+const ledger = { slug, generatedAt: new Date().toISOString(), assets };
+fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2) + "\n");
 fs.writeFileSync(ledgerPath, JSON.stringify(ledger, null, 2) + "\n");
 
-for (const fig of figures) {\n  const briefPath = path.join(briefsDir, `${fig.id}.md`);\n  if (fs.existsSync(briefPath)) continue;
-  const brief = `# AI Figure Brief: ${fig.id}
+let briefsWritten = 0;
+for (const figure of figures) {
+  const briefPath = path.join(briefsDir, `${figure.id}.md`);
+  if (fs.existsSync(briefPath)) continue;
+
+  const brief = `# AI Figure Brief: ${figure.id}
 
 ## Title
-${fig.title}
+${figure.title}
 
 ## Caption
-${fig.caption}
+${figure.caption}
 
 ## Source
-- File: \`${fig.sourceFile}\`
-- Line: ${fig.sourceLine}
+- File: \`${figure.sourceFile}\`
+- Line: ${figure.sourceLine}
 
 ## Purpose
 Create a publication-quality scientific or conceptual figure for the current Booksmith manuscript.
 
-## Visual Requirements
-- Museum-quality scientific illustration.
-- Clear visual hierarchy.
-- No fake citations, fake equations, fake logos, or unreadable labels.
-- Use clean labels only when necessary.
-- Prefer symbolic geometry, field lines, layered diagrams, light cones, toroidal forms, observer axes, causal arrows, and coherent color logic.
-- Must be suitable for print at 300 DPI.
-
-## Prompt Draft
-Create a high-resolution scientific concept illustration titled "${fig.title}". The image should visually explain: ${fig.caption}
-
-Style: professional academic book figure, clean, precise, luminous, coherent, visually elegant, suitable for a serious theoretical physics and consciousness studies manuscript.
-
-Avoid: clutter, random mystical symbols, fake text, distorted typography, misleading equations, copyrighted characters, watermarks.
-
-## Required Ledger Fields After Creation
-- image file path
-- model/provider
-- prompt used
-- generation date
-- license/usage rights
-- human approval status
+## Requirements
+- Clear visual hierarchy and editable labels.
+- No fake citations, fake equations, fake logos, watermarks, or unreadable text.
+- Preserve the distinction between scientific description and theological interpretation.
+- Provide sufficient resolution for 300-DPI print production.
+- Record model, provider, prompt, license, provenance, and human approval.
 `;
 
   fs.writeFileSync(briefPath, brief);
+  briefsWritten += 1;
 }
 
 console.log(`Figure registry written: ${path.relative(root, registryPath)}`);
 console.log(`Asset ledger written: ${path.relative(root, ledgerPath)}`);
 console.log(`Figures retained or discovered: ${figures.length}`);
+console.log(`New AI briefs written: ${briefsWritten}`);
