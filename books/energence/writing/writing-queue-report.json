@@ -1,0 +1,130 @@
+{
+  "slug": "energence",
+  "generatedAt": "2026-08-07T06:18:00.702Z",
+  "packets": [
+    {
+      "chapter": 1,
+      "title": "Why Energence?",
+      "packet": "writing/queue/01-why-energence.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    },
+    {
+      "chapter": 2,
+      "title": "What Kind of Claim Is This?",
+      "packet": "writing/queue/02-what-kind-of-claim-is-this.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    },
+    {
+      "chapter": 3,
+      "title": "In God We Live",
+      "packet": "writing/queue/03-in-god-we-live.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    },
+    {
+      "chapter": 4,
+      "title": "Beyond He and She",
+      "packet": "writing/queue/04-beyond-he-and-she.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    },
+    {
+      "chapter": 5,
+      "title": "Father: The Nonconscious Ground",
+      "packet": "writing/queue/05-father-the-nonconscious-ground.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    },
+    {
+      "chapter": 6,
+      "title": "Holy Spirit-Mother: The Subconscious Womb",
+      "packet": "writing/queue/06-holy-spirit-mother-the-subconscious-womb.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    },
+    {
+      "chapter": 7,
+      "title": "Son: Energy Informed as Matter",
+      "packet": "writing/queue/07-son-energy-informed-as-matter.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    },
+    {
+      "chapter": 8,
+      "title": "Resurrected Christic Consciousness",
+      "packet": "writing/queue/08-resurrected-christic-consciousness.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    },
+    {
+      "chapter": 9,
+      "title": "Let the Earth Bring Forth",
+      "packet": "writing/queue/09-let-the-earth-bring-forth.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    },
+    {
+      "chapter": 10,
+      "title": "From Quantum Information to Life",
+      "packet": "writing/queue/10-from-quantum-information-to-life.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    },
+    {
+      "chapter": 11,
+      "title": "Evolution Is Not the Enemy of Creation",
+      "packet": "writing/queue/11-evolution-is-not-the-enemy-of-creation.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    },
+    {
+      "chapter": 12,
+      "title": "The Evolution of Consciousness",
+      "packet": "writing/queue/12-the-evolution-of-consciousness.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    },
+    {
+      "chapter": 13,
+      "title": "The Cost of a Becoming Creation",
+      "packet": "writing/queue/13-the-cost-of-a-becoming-creation.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    },
+    {
+      "chapter": 14,
+      "title": "I Create Calamity",
+      "packet": "writing/queue/14-i-create-calamity.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    },
+    {
+      "chapter": 15,
+      "title": "Satan, the Accuser, and the Divine Council",
+      "packet": "writing/queue/15-satan-the-accuser-and-the-divine-council.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    },
+    {
+      "chapter": 16,
+      "title": "Selection Without Social Darwinism",
+      "packet": "writing/queue/16-selection-without-social-darwinism.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    },
+    {
+      "chapter": 17,
+      "title": "Creation Waiting to Be Liberated",
+      "packet": "writing/queue/17-creation-waiting-to-be-liberated.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    },
+    {
+      "chapter": 18,
+      "title": "The Last Enemy Is Death",
+      "packet": "writing/queue/18-the-last-enemy-is-death.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    },
+    {
+      "chapter": 19,
+      "title": "God All in All",
+      "packet": "writing/queue/19-god-all-in-all.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    },
+    {
+      "chapter": 20,
+      "title": "The Ethics of Christic Evolution",
+      "packet": "writing/queue/20-the-ethics-of-christic-evolution.md",
+      "status": "READY_FOR_DRAFT_PROPOSAL"
+    }
+  ],
+  "counts": {
+    "total": 20,
+    "ready": 20
+  }
+}

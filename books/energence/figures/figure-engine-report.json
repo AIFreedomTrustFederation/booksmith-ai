@@ -1,12 +1,61 @@
 {
   "slug": "energence",
-  "generatedAt": "2026-08-07T06:08:53.296Z",
+  "generatedAt": "2026-08-07T06:18:04.004Z",
   "action": "queue",
   "counts": {
-    "total": 0,
+    "total": 4,
     "approved": 0,
     "needsHumanApproval": 0,
-    "needsAiFigure": 0
+    "needsAiFigure": 4
   },
-  "items": []
+  "items": [
+    {
+      "figureId": "energence-001-three-modes",
+      "title": "The Three Modes of Energence",
+      "caption": "Father as nonconscious energy-information, Holy Spirit-Mother as subconscious formative intelligence, and Resurrected Christic Consciousness as awakened participation.",
+      "status": "NEEDS_AI_FIGURE",
+      "sourceFile": "manuscript/01-book-architecture.md",
+      "sourceLine": 10,
+      "promptFile": "figures/ai-briefs/energence-001-three-modes.md",
+      "asset": null,
+      "approvedForPrint": false,
+      "nextAction": "Generate image from AI brief or import a manually created asset."
+    },
+    {
+      "figureId": "energence-002-emergence-ladder",
+      "title": "From Physical Information to Christic Consciousness",
+      "caption": "A non-linear developmental map from quantum states through chemistry, life, subconscious integration, consciousness, and Christic self-transcendence.",
+      "status": "NEEDS_AI_FIGURE",
+      "sourceFile": "manuscript/01-book-architecture.md",
+      "sourceLine": 17,
+      "promptFile": "figures/ai-briefs/energence-002-emergence-ladder.md",
+      "asset": null,
+      "approvedForPrint": false,
+      "nextAction": "Generate image from AI brief or import a manually created asset."
+    },
+    {
+      "figureId": "energence-003-panentheistic-containment",
+      "title": "All in God, God Beyond All",
+      "caption": "A panentheistic map showing the universe within Energence while Energence exceeds the manifested universe.",
+      "status": "NEEDS_AI_FIGURE",
+      "sourceFile": "sources/author-canon.md",
+      "sourceLine": 22,
+      "promptFile": "figures/ai-briefs/energence-003-panentheistic-containment.md",
+      "asset": null,
+      "approvedForPrint": false,
+      "nextAction": "Generate image from AI brief or import a manually created asset."
+    },
+    {
+      "figureId": "energence-004-book-arc",
+      "title": "The Book's Evolutionary Arc",
+      "caption": "The five-part movement from naming Energence through Trinity, evolution, evil and extinction, to the Omega of communion.",
+      "status": "NEEDS_AI_FIGURE",
+      "sourceFile": "manuscript/01-book-architecture.md",
+      "sourceLine": 1,
+      "promptFile": "figures/ai-briefs/energence-004-book-arc.md",
+      "asset": null,
+      "approvedForPrint": false,
+      "nextAction": "Generate image from AI brief or import a manually created asset."
+    }
+  ]
 }

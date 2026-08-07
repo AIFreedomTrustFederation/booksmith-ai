@@ -1,16 +1,31 @@
 # BookSmith Figure Engine v1
 
 Book slug: `energence`
-Generated: 2026-08-07T06:08:53.296Z
+Generated: 2026-08-07T06:18:04.004Z
 Action: queue
 
 ## Counts
 
-- total: 0
+- total: 4
 - approved: 0
 - needsHumanApproval: 0
-- needsAiFigure: 0
+- needsAiFigure: 4
 
 ## Items
 
-None.
+### energence-001-three-modes
+- Status: NEEDS_AI_FIGURE
+- Title: The Three Modes of Energence
+- Next action: Generate image from AI brief or import a manually created asset.
+### energence-002-emergence-ladder
+- Status: NEEDS_AI_FIGURE
+- Title: From Physical Information to Christic Consciousness
+- Next action: Generate image from AI brief or import a manually created asset.
+### energence-003-panentheistic-containment
+- Status: NEEDS_AI_FIGURE
+- Title: All in God, God Beyond All
+- Next action: Generate image from AI brief or import a manually created asset.
+### energence-004-book-arc
+- Status: NEEDS_AI_FIGURE
+- Title: The Book's Evolutionary Arc
+- Next action: Generate image from AI brief or import a manually created asset.
