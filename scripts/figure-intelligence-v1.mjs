@@ -10,7 +10,9 @@ const pdfDir = path.join(bookDir, "exports", "pdf");
 const registryPath = path.join(figureDir, "figure-registry.json");
 const ledgerPath = path.join(figureDir, "asset-ledger.json");
 const outJson = path.join(pdfDir, "booksmith-figure-intelligence-v1.json");
-const outMd = path.join(pdfDir, "booksmith-figure-intelligence-v1.md");\n\nfs.mkdirSync(pdfDir, { recursive: true });
+const outMd = path.join(pdfDir, "booksmith-figure-intelligence-v1.md");
+
+fs.mkdirSync(pdfDir, { recursive: true });
 
 if (!fs.existsSync(registryPath)) {
   console.error("Missing figure registry.");
