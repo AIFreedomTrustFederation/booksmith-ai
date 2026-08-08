@@ -1,7 +1,7 @@
 # BookSmith Figure Studio v1
 
 Book slug: `energence`
-Generated: 2026-08-07T06:21:35.808Z
+Generated: 2026-08-08T03:13:14.214Z
 Figures: 4
 
 ## UI/UX Meaning

@@ -1,7 +1,7 @@
 # BookSmith Figure Art Director v1
 
 Book slug: `energence`
-Generated: 2026-08-07T06:21:36.698Z
+Generated: 2026-08-08T03:13:15.268Z
 Figures directed: 4
 
 ## Meaning
