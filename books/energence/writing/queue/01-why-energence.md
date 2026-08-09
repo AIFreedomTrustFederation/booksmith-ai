@@ -2,7 +2,7 @@
 book: energence
 chapter: 1
 title: "Why Energence?"
-status: proposal-requested
+status: drafting-proposal
 target_words: 5000
 author_approval_required: true
 ---
