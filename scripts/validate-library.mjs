@@ -76,13 +76,12 @@ if (!exists("library/book-registry.json")) {
       fail("Registry must contain at least one book");
     }
 
-    const slugs = new Set(
-      (registry.books || [])
-        .filter((book) => isPlainObject(book) && typeof book.slug === "string" && book.slug)
-        .map((book) => book.slug),
+    const validBooks = (registry.books || []).filter(
+      (book) => isPlainObject(book) && typeof book.slug === "string" && book.slug,
     );
+    const slugs = new Set(validBooks.map((book) => book.slug));
 
-    if (slugs.size !== (registry.books || []).filter((book) => isPlainObject(book) && book.slug).length) {
+    if (slugs.size !== validBooks.length) {
       fail("Registry contains duplicate book slugs");
     }
 
