@@ -76,6 +76,19 @@ export default async function StudioBookPage({ params }: { params: Promise<{ slu
           <StatusPill>{book.connectedSources.length} sources</StatusPill>
         </div>
 
+        {slug === "energence" ? (
+          <Link
+            className="mt-6 flex items-center justify-between gap-4 rounded-2xl border border-[#bb9151] bg-[#173322] px-5 py-4 text-[#f8efd9] shadow-sm transition hover:bg-[#21462e]"
+            href={`/studio/books/${slug}/living-manuscript`}
+          >
+            <span>
+              <span className="block text-xs font-black uppercase tracking-[0.2em] text-[#d8a85f]">New working surface</span>
+              <span className="mt-1 block font-black">Open the Living Manuscript Studio</span>
+            </span>
+            <span aria-hidden="true" className="text-2xl">→</span>
+          </Link>
+        ) : null}
+
         <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
           <section className="space-y-5">
             <FolderPanel book={book} />
@@ -83,8 +96,8 @@ export default async function StudioBookPage({ params }: { params: Promise<{ slu
             <div className="grid gap-4 md:grid-cols-2">
               <WorkflowCard
                 title="Chapter Studio"
-                status="planned"
-                body="Next step: read manuscript files, expose chapter sections, and save edits through a server-only write path with provenance."
+                status={slug === "energence" ? "first surface ready" : "planned"}
+                body={slug === "energence" ? "Book Tree, Claim Ledger, and Chapter Forge now expose the real chapter plan, canon boundaries, source status, and writing queues." : "Next step: read manuscript files, expose chapter sections, and save edits through a server-only write path with provenance."}
               />
               <WorkflowCard
                 title="AI Task Actions"

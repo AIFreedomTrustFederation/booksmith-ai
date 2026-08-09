@@ -1,0 +1,75 @@
+{
+  "schema": "booksmith.claim-ledger.v1",
+  "slug": "energence",
+  "version": "0.1.0",
+  "authoritativeSource": "sources/author-canon.md",
+  "statusRule": "Author canon is accepted; scientific and scholarly support remains verification-required until reviewed.",
+  "claims": [
+    {
+      "id": "energence-foundational-synthesis",
+      "title": "Energy and Intelligence as divine synthesis",
+      "summary": "All existence was caused by the synthesis of Energy and Intelligence called Energence.",
+      "type": "author-canon",
+      "status": "accepted",
+      "support": "author-source",
+      "sourceRefs": ["sources/author-canon.md#foundational-claim"],
+      "chapterSlugs": ["01-why-energence", "02-what-kind-of-claim-is-this"],
+      "canonicalTerms": ["Energence", "Primordial Information", "Formative Intelligence"]
+    },
+    {
+      "id": "energence-three-modes",
+      "title": "Three modes of Energence",
+      "summary": "The Father names the nonconscious ground, Holy Spirit-Mother the subconscious formative activity, and Resurrected Christic Consciousness awakened participation.",
+      "type": "constructive-theology",
+      "status": "accepted-interpretation",
+      "support": "author-source",
+      "sourceRefs": ["sources/author-canon.md#trinitarian-modes"],
+      "chapterSlugs": ["05-father-the-nonconscious-ground", "06-holy-spirit-mother-the-subconscious-womb", "07-son-energy-informed-as-matter", "08-resurrected-christic-consciousness"],
+      "canonicalTerms": ["Holy Spirit-Mother", "Christic Consciousness"]
+    },
+    {
+      "id": "energence-evolutionary-immanence",
+      "title": "Evolution as divine immanence",
+      "summary": "Evolution is interpreted as the immanent mechanism through which Energence diversifies life and brings forth conscious beings.",
+      "type": "philosophical-inference",
+      "status": "argument-required",
+      "support": "verification-required",
+      "sourceRefs": ["sources/author-canon.md#evolutionary-claim"],
+      "chapterSlugs": ["09-let-the-earth-bring-forth", "10-from-quantum-information-to-life", "11-evolution-is-not-the-enemy-of-creation", "12-the-evolution-of-consciousness"],
+      "canonicalTerms": ["Evolutionary Panentheism", "Immanence"]
+    },
+    {
+      "id": "energence-panentheistic-participation",
+      "title": "Everything in God; God beyond everything",
+      "summary": "Every physical state participates in Energence informationally, while Energence exceeds every presently manifested form.",
+      "type": "constructive-theology",
+      "status": "accepted-interpretation",
+      "support": "scriptural-and-philosophical-review",
+      "sourceRefs": ["sources/author-canon.md#panentheistic-claim"],
+      "chapterSlugs": ["03-in-god-we-live", "17-creation-waiting-to-be-liberated", "19-god-all-in-all"],
+      "canonicalTerms": ["Transcendence", "Immanence"]
+    },
+    {
+      "id": "energence-teleological-coherence",
+      "title": "A tendency toward comprehensive coherence",
+      "summary": "Existence is theologically interpreted as tending toward increasingly comprehensive coherence, relationship, consciousness, and communion.",
+      "type": "theological-hypothesis",
+      "status": "open-question",
+      "support": "verification-required",
+      "sourceRefs": ["sources/author-canon.md#teleological-claim"],
+      "chapterSlugs": ["12-the-evolution-of-consciousness", "18-the-last-enemy-is-death", "19-god-all-in-all", "20-the-ethics-of-christic-evolution"],
+      "canonicalTerms": ["Christic Consciousness", "Evolutionary Panentheism"]
+    },
+    {
+      "id": "energence-scientific-integrity",
+      "title": "Evidence and interpretation must remain distinct",
+      "summary": "The manuscript must distinguish established evidence, scientific hypothesis, philosophical inference, scriptural exegesis, and constructive theology.",
+      "type": "editorial-safeguard",
+      "status": "required",
+      "support": "author-source",
+      "sourceRefs": ["sources/author-canon.md#scientific-integrity-rule"],
+      "chapterSlugs": ["02-what-kind-of-claim-is-this", "10-from-quantum-information-to-life", "11-evolution-is-not-the-enemy-of-creation", "12-the-evolution-of-consciousness"],
+      "canonicalTerms": ["Energence"]
+    }
+  ]
+}

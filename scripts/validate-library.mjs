@@ -166,6 +166,35 @@ if (!exists("library/book-registry.json")) {
           warn(`${bookRoot}/${folder} does not exist yet; create it before active production.`);
         }
       }
+
+      const claimLedgerPath = `${bookRoot}/sources/claim-ledger.json`;
+      if (exists(claimLedgerPath)) {
+        const ledger = readJson(path.join(root, claimLedgerPath));
+        if (!isPlainObject(ledger)) {
+          fail(`${claimLedgerPath} must be a JSON object`);
+        } else {
+          requireFields(ledger, ["schema", "slug", "claims"], claimLedgerPath);
+          if (ledger.schema !== "booksmith.claim-ledger.v1") fail(`${claimLedgerPath} has unsupported schema: ${ledger.schema}`);
+          if (ledger.slug !== book.slug) fail(`${claimLedgerPath} slug does not match registry`);
+          if (!Array.isArray(ledger.claims) || ledger.claims.length === 0) {
+            fail(`${claimLedgerPath} must contain at least one claim`);
+          } else {
+            const claimIds = new Set();
+            for (const claim of ledger.claims) {
+              if (!isPlainObject(claim)) {
+                fail(`${claimLedgerPath} claim must be an object`);
+                continue;
+              }
+              requireFields(claim, ["id", "title", "summary", "type", "status", "support", "sourceRefs", "chapterSlugs", "canonicalTerms"], `${claimLedgerPath} claim`);
+              if (claimIds.has(claim.id)) fail(`${claimLedgerPath} contains duplicate claim id: ${claim.id}`);
+              claimIds.add(claim.id);
+              for (const field of ["sourceRefs", "chapterSlugs", "canonicalTerms"]) {
+                if (!Array.isArray(claim[field])) fail(`${claimLedgerPath} claim ${claim.id || "<unknown>"} ${field} must be an array`);
+              }
+            }
+          }
+        }
+      }
     }
 
     if (exists("library/source-registry.json")) {

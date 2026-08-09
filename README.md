@@ -124,10 +124,15 @@ See [docs/unicode-fonts-and-art-books.md](docs/unicode-fonts-and-art-books.md) f
 See [docs/product-roadmap.md](docs/product-roadmap.md) for the next high-value
 features to build.
 
+The first Living Manuscript Studio combines a navigable Book Tree, a source-aware
+Claim Ledger, and a deterministic Chapter Forge for Energence. See
+[docs/living-manuscript-studio.md](docs/living-manuscript-studio.md).
+
 ## MVP
 
 - Bookshelf for active writing projects
 - Chapter Studio for drafting and revision workflows
+- Living Manuscript Studio for book structure, claim authority, and canon-safe drafting briefs
 - Federated Library workspace for cross-referenced books
 - AI mode controls for drafting, rewriting, plotting, editing, and marketing
 - Story Bible for voice, lore, audience, and creative boundaries
