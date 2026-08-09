@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { getFigureRecord } from "@/lib/studio/booksmith-studio-data";
+import { getFigureRecord, getFigureStudioIndex } from "@/lib/studio/booksmith-studio-data";
+
+export function generateStaticParams() {
+  return getFigureStudioIndex("fhqcm").cards.map((card) => ({ figureId: card.id }));
+}
 
 export default function FigureDetailPage({ params }: { params: { figureId: string } }) {
   const slug = "fhqcm";
