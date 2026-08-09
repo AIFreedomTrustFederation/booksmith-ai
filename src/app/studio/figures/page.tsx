@@ -10,9 +10,9 @@ export default function FigureStudioPage() {
 
   const counts = {
     total: cards.length,
-    approved: ledger.assets?.filter((a: any) => a.approvedForPrint).length ?? 0,
-    needsAi: ledger.assets?.filter((a: any) => !a.asset).length ?? 0,
-    needsReview: ledger.assets?.filter((a: any) => a.asset && !a.approvedForPrint).length ?? 0,
+    approved: ledger.assets.filter((asset) => asset.approvedForPrint).length,
+    needsAi: ledger.assets.filter((asset) => !asset.asset).length,
+    needsReview: ledger.assets.filter((asset) => asset.asset && !asset.approvedForPrint).length,
   };
 
   return (
@@ -34,7 +34,7 @@ export default function FigureStudioPage() {
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {cards.map((card: any) => (
+          {cards.map((card) => (
             <Link
               key={card.id}
               href={`/studio/figures/${card.id}`}
