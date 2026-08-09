@@ -1,4 +1,4 @@
-import { getSystemHealth } from "@/lib/system/system-health";
+import { getSystemHealth, type SystemToolStatus } from "@/lib/system/system-health";
 
 export default function SystemHealthPage() {
   const health = getSystemHealth();
@@ -88,11 +88,11 @@ function Rows({ rows }: { rows: [string, string][] }) {
   );
 }
 
-function ToolGrid({ tools }: { tools: Record<string, any> }) {
+function ToolGrid({ tools }: { tools: Record<string, SystemToolStatus> }) {
   return (
     <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
       {Object.entries(tools).map(([key, value]) => {
-        const installed = Boolean((value as any)?.installed);
+        const installed = Boolean(value.installed);
         return (
           <div key={key} className="rounded-xl border border-zinc-800 bg-black/30 p-4">
             <div className="flex items-center justify-between gap-3">
@@ -101,7 +101,7 @@ function ToolGrid({ tools }: { tools: Record<string, any> }) {
                 {installed ? "PASS" : "MISSING"}
               </span>
             </div>
-            <p className="mt-2 line-clamp-2 text-xs text-zinc-400">{(value as any)?.version || (value as any)?.error || ""}</p>
+            <p className="mt-2 line-clamp-2 text-xs text-zinc-400">{value.version || value.error || ""}</p>
           </div>
         );
       })}
