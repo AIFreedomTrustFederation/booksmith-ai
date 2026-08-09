@@ -3,6 +3,11 @@ import { notFound } from "next/navigation";
 
 import { loadFederatedLibrary, type BookshelfBook } from "@/lib/library/load-library";
 
+export async function generateStaticParams() {
+  const library = await loadFederatedLibrary();
+  return library.books.map((book) => ({ slug: book.registry.slug }));
+}
+
 function StatusPill({ children }: { children: React.ReactNode }) {
   return <span className="rounded-full bg-[#eef7ea] px-3 py-1 text-xs font-black text-[#3f674b]">{children}</span>;
 }
