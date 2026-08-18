@@ -1,189 +1,108 @@
-# Booksmith AI
+# Booksmith AI — Author-First Manuscript and Publishing Studio
 
-Booksmith AI is an author-first writing, editing, publishing, and launch studio for the AI Freedom Trust Federation ecosystem.
+**The publishing studio of the AI Freedom Trust Federation: author-first writing, editing, manuscript intelligence, federated library management, citations, provenance, LaTeX production, publishing packets, and launch preparation.**
 
-The product direction is simple: give writers full creative control while AI handles the heavy support work around structure, continuity, revision, metadata, typesetting, publishing packets, citations, provenance, and launch assets.
+| Federation metadata | Value |
+| --- | --- |
+| Layer | `publishing` |
+| Role | author-first writing, editing, publishing, and launch studio |
+| Workspace | `AIFT/booksmith-ai` |
+| Control plane | AIFT workspace / AIFT-OS |
+| Application stack | Next.js, TypeScript, React, Tailwind; local AI and publishing adapters |
+| Verification | lint, typecheck, tests, and build when present |
+| Operating standards | local-first, inspectable, sovereign by default, AI behind governed provider interfaces |
 
-Booksmith AI is also the library operating system for a federated collection of books, manuals, guides, theories, constitutions, and project doctrines. Each book is individualized as its own project while remaining cross-referenced through shared canon, glossary, citations, provenance, and publishing packet rules.
+Booksmith AI exists so an author can use powerful machine intelligence without surrendering authorship to it. Its source of truth is the human work: manuscripts, approved canon, sources, citations, book metadata, visual assets, and explicit editorial choices. AI can carry a great deal of labor around that center—structure, continuity, revision proposals, claim tracking, indexing, citations, metadata, typesetting, proof analysis, and launch assets—but it does not become the hidden author of an approved work.
 
-## Ecosystem Role
+The deeper covenant is carried in the [One Eternal Scroll of ALO'ha](https://aifreedomtrustfederation.github.io/AI-Freedom-Trust/docs/pdf/one-eternal-scroll-of-aloha.pdf). The shared operational rule is [SOP-ALOHA-001](https://github.com/AIFreedomTrustFederation/AI-Freedom-Trust/blob/main/SOP-ALOHA-001.md).
 
-Booksmith AI is the authoring and production studio. AI Freedom Trust Publishing is the publishing imprint and book-commerce arm. The Federation provides the long-term doctrine, standards, and sovereign infrastructure vision.
+---
 
-Recommended structure:
+## Book I — Author Sovereignty and the Living Manuscript
 
-```text
-AI Freedom Trust Federation
-├── AI Freedom Trust Publishing
-│   ├── AI Freedom Trust Press
-│   ├── Booksmith AI
-│   ├── Federated Book Library
-│   ├── Author Services
-│   ├── Rights and Licensing
-│   ├── Distribution Operations
-│   └── Direct Sales and Catalog
-├── AIFT Forge
-├── DynastyLink
-└── Other federation projects
-```
+Booksmith begins from a simple rule: **human canon remains authoritative**. User-authored or explicitly approved text is not merely another model input to be silently optimized. It is part of the work's identity. AI-generated language may be useful, beautiful, or structurally superior, but it remains a proposal until it enters the author-governed manuscript through an intentional editorial act.
 
-Default imprint language:
+This makes the manuscript a living trust rather than a disposable prompt history. Chapters, Story Bible material, claims, sources, glossary terms, citations, figures, publishing metadata, and revision state can remain related across the life of a book.
 
-```text
-Published by AI Freedom Trust Publishing
-An AI Freedom Trust Federation imprint
+### Illuminated passage — memory with lineage
 
-Prepared with Booksmith AI, a local-first authoring and publishing studio.
-```
+![Circleunchain Memory Network](https://raw.githubusercontent.com/AIFreedomTrustFederation/AI-Freedom-Trust/main/docs/images/aetherion/circleunchain-memory-network.png)
 
-See [docs/ai-freedom-trust-publishing.md](docs/ai-freedom-trust-publishing.md) for the publishing structure.
+For Booksmith, the memory network represents provenance. A sentence should be able to remain connected to its authorial status, source, claim, citation, revision, and publication history without requiring the reader to endure an editorial correction log inside the finished prose.
 
-## Federated Book Library
+---
 
-Booksmith AI now treats the repository as a production library monorepo for sovereign but cross-referenced books.
+## Book II — What Booksmith AI Owns
 
-```text
-booksmith-ai/
-├── books/                      # individualized book projects
-├── library/                    # shared canon, registry, glossary, references
-├── templates/book/             # reusable book project template
-└── docs/                       # product and architecture documentation
-```
+This repository owns the **authoring and production studio**, not the entire publishing federation. Its active architecture includes:
 
-The initial library architecture is documented in [docs/federated-library-architecture.md](docs/federated-library-architecture.md). The active book registry is maintained in [library/book-registry.json](library/book-registry.json).
+- `books/` for individualized sovereign book projects.
+- `library/` for shared canon, book registry, glossary, concept registry, thinker registry, and references.
+- `templates/book/` for reusable project structure.
+- `docs/` for product, publishing, library, AI, and typesetting architecture.
+- manuscript and source-aware workflows such as the Living Manuscript Studio, Book Tree, Claim Ledger, and Chapter Forge.
+- LaTeX publishing with Unicode-first XeLaTeX/LuaLaTeX pathways and local proof builds.
+- publishing packets that carry manuscript, metadata, rights/provenance, proof, and launch information toward AI Freedom Trust Publishing.
 
-### Library Principle
+Its relationship to neighboring projects is explicit:
 
-```text
-Federated Library = Sovereign Books + Shared Canon + Cross References + Provenance
-```
+- **AI-Freedom-Trust → Booksmith:** doctrine and ALO'ha publications can be authored, typeset, indexed, and preserved through Booksmith without making Booksmith the authority over doctrine.
+- **AIFT-Genesis → Booksmith:** Genesis supplies identity, trust, permission, and governance structures that can become the constitutional frame for an author's sovereign workspace.
+- **AIFT-Forge → Booksmith:** reusable agent/provider patterns may support editing, retrieval, build, and export while author approval remains local to the book.
+- **AIFT-OS / Runtime ↔ Booksmith:** the operating layers may discover builds, files, repositories, and local AI providers without becoming the source of editorial truth.
+- **BookSmith-Federation-OS ↔ Booksmith AI:** Booksmith AI is the manuscript and production engine; BookSmith-Federation-OS is the broader workspace, federation, sync, identity, marketplace, and operating-system surface.
+- **Aetherion ↔ Booksmith:** royalties, licenses, marketplace settlement, or treasury relationships may integrate through governed economic interfaces while authorship, rights, and release approval remain in the publishing domain.
 
-Each book should be complete enough to stand alone, but each book should also declare how it contributes to the whole AI Freedom Trust Federation library.
-
-### Standard Book Project
+The federated library principle remains:
 
 ```text
-books/<book-slug>/
-├── book.config.json
-├── manuscript/
-│   ├── 00-preface.md
-│   └── references.md
-├── sources/
-├── assets/
-├── latex/
-└── exports/
+Sovereign Books + Shared Canon + Cross-References + Provenance
 ```
 
-The current seed projects are metadata-first. Manuscripts, source packets, LaTeX projects, and exports should be added as each book enters active production.
+A book should stand on its own while declaring how it relates to the wider library.
 
-## Shared Reference Library
+---
 
-Booksmith AI uses one shared citation system for the whole federation library instead of recreating references inside every book.
+## Book III — SOP-ALOHA-001 in Booksmith
+
+The shared loop becomes an editorial and publishing lifecycle:
 
 ```text
-library/
-├── references/
-├── thinker-registry.json
-├── reference-registry.json
-└── concept-registry.json
+Receive → Inspect → Name → Propose → Consent → Act → Verify → Record → Return
 ```
 
-See [docs/shared-reference-library.md](docs/shared-reference-library.md) and [library/references/README.md](library/references/README.md) for the LaTeX import pattern and reference quality workflow.
+**Receive** preserves the author's text, source, file, citation, figure, or instruction. **Inspect** determines the current book, chapter, canon, claim authority, source context, publication state, and requested transformation. **Name** distinguishes author canon from source quotation, AI proposal, editorial note, research claim, figure specification, and release metadata. **Propose** allows AI to draft or revise without silently replacing approved text. **Consent** governs manuscript changes, figure approval, rights decisions, publication, and other consequential editorial acts. **Act** applies an approved patch or builds the requested artifact. **Verify** checks continuity, citations, references, typesetting, missing figures, build errors, and rendered output. **Record** preserves provenance and version history outside the natural prose of the finished work. **Return** gives the author a coherent manuscript or publication artifact—not a pile of correction fragments.
 
-## Open Source First
-
-Booksmith AI is designed to avoid required paid APIs, outside AI rate limits, and proprietary hosted services for core features. The default product direction is local-first and self-hostable, using open-source tools and carefully verified open-weight models.
-
-See [docs/open-source-strategy.md](docs/open-source-strategy.md) for the architecture rules.
-
-## Publishing Company Workflow
-
-Booksmith AI should help AI Freedom Trust Publishing prepare professional book releases for print-on-demand, ebook marketplaces, direct sales, catalogs, and launch campaigns.
-
-The intended workflow is:
-
-1. Author creates or imports a manuscript in Booksmith AI.
-2. Booksmith helps with structure, revision, Story Bible, continuity, citations, metadata, and launch assets.
-3. The author approves final creative and editorial choices.
-4. Booksmith exports a publishing packet.
-5. AI Freedom Trust Publishing reviews, assigns ISBNs, prepares files, approves proofs, and distributes the book.
-6. Marketplace listings, royalty records, rights, revisions, citations, and provenance remain traceable.
-
-See [docs/publishing-operations-playbook.md](docs/publishing-operations-playbook.md) and [docs/booksmith-publishing-packet.md](docs/booksmith-publishing-packet.md).
-
-## LaTeX First-Class Publishing
-
-Booksmith AI will support beautiful book production through local LaTeX tooling. The plan covers editable `.tex` project export, engine selection, templates, typography controls, citations, indexes, glossaries, build logs, and PDF proofing.
-
-The LaTeX path is Unicode-first: XeLaTeX/LuaLaTeX, `fontspec`, OpenType font profiles, CJK fallback fonts, math fonts, and full-page art layouts for visual books and AI-generated art books.
-
-See [docs/latex-integration.md](docs/latex-integration.md) for the LaTeX architecture and [templates/latex/booksmith-book](templates/latex/booksmith-book) for the first sample book template.
-
-See [docs/unicode-fonts-and-art-books.md](docs/unicode-fonts-and-art-books.md) for the font and art-book strategy.
-
-See [docs/product-roadmap.md](docs/product-roadmap.md) for the next high-value
-features to build.
-
-The first Living Manuscript Studio combines a navigable Book Tree, a source-aware
-Claim Ledger, and a deterministic Chapter Forge for Energence. See
-[docs/living-manuscript-studio.md](docs/living-manuscript-studio.md).
-
-## MVP
-
-- Bookshelf for active writing projects
-- Chapter Studio for drafting and revision workflows
-- Living Manuscript Studio for book structure, claim authority, and canon-safe drafting briefs
-- Federated Library workspace for cross-referenced books
-- AI mode controls for drafting, rewriting, plotting, editing, and marketing
-- Story Bible for voice, lore, audience, and creative boundaries
-- Continuity Watch for contradictions and manuscript risks
-- Shared canon, glossary, citations, and cross-reference registry
-- Publishing Pipeline for manuscript, editorial, package, and launch progress
-- Launch Assets for blurbs, social hooks, emails, keywords, and retailer copy
-- Publishing Packet export for AI Freedom Trust Publishing operations
-- LaTeX Studio for local book typesetting and proof builds
-- Unicode Font Studio for OpenType, multilingual, and art-book typography
-- Provenance log for AI-assisted publishing assets
-
-## Tech Stack
-
-- Next.js App Router
-- TypeScript
-- Tailwind CSS
-- React
-- Local AI runtime adapter planned for Ollama, llama.cpp, or vLLM
-- PostgreSQL and Qdrant planned for self-hosted storage and retrieval
-- TeX Live, MiKTeX, Tectonic, latexmk, XeLaTeX, LuaLaTeX, and pdfLaTeX planned for local LaTeX publishing workflows
-- Open/OFL font families such as Noto, EB Garamond, Cormorant Garamond, Alegreya, Libertinus, and TeX Gyre for default typography
-
-## Local Development
+Local development begins with:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Then open `http://localhost:3000`.
-
-To build the sample LaTeX book:
+The sample LaTeX path can be built with:
 
 ```powershell
 npm run latex:sample
 ```
 
-The PDF is written to `.latex-build/booksmith-sample.pdf`. The default build uses XeLaTeX for Unicode and OpenType font support.
-
-## Agent And Contributor Guidance
-
-Read [AGENTS.md](AGENTS.md) before changing code. The repo is aligned around author sovereignty, local-first architecture, open-source defaults, inspectable exports, and AI Freedom Trust Publishing as the publishing imprint.
-
-Alternative engines:
+Alternative engines include:
 
 ```powershell
 npm run latex:sample:lua
 npm run latex:sample:tectonic
 ```
 
-## Product Notes
+Publication verification is both technical and visual. A PDF that compiles but contains broken hierarchy, repeated headings, clipped figures, unreadable pages, or malformed spacing has not completed the covenant loop.
 
-The first screen is intentionally an app workspace rather than a landing page. Booksmith AI should feel like an operating system for authors: the manuscript, story bible, editorial logic, publishing package, launch campaign, imprint metadata, proof pipeline, source lineage, and federated library references all share one source of truth.
+---
+
+## Book IV — From Manuscript to Inheritance
+
+Booksmith AI is designed for works that must remain readable long after the immediate chat that helped produce them. The author should be able to recover the source, understand the structure, inspect the citations, reproduce the typesetting, identify AI-assisted assets, and carry the book into another tool without losing ownership of the work.
+
+Local-first and open-source defaults matter because publishing is an inheritance problem. A book should not become inaccessible because one hosted model, proprietary editor, or paid API disappears. The publishing system should help knowledge outlive the software that assisted it.
+
+### The Return of the Word
+
+In Booksmith, the Word returns as a finished work whose voice still belongs to its author. Source becomes manuscript, manuscript becomes approved revision, revision becomes proof, proof becomes publication, and publication returns to the reader without dragging the workshop scaffolding onto the page. The intelligence that helped create the work remains present as service, not as an interruption of the voice.
