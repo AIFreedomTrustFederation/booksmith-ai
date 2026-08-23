@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useMemo, useState, useSyncExternalStore } from "react";
 
 import type {
   LivingChapter,
@@ -18,9 +18,48 @@ const workspaceLabels: Record<WorkspaceView, string> = {
   memory: "Book Memory",
 };
 
+const draftEvent = "booksmith-local-draft";
+
 function wordCount(value: string) {
   const normalized = value.trim();
   return normalized ? normalized.split(/\s+/).length : 0;
+}
+
+function useLocalDraft(storageKey: string, canonical: string) {
+  const subscribe = useCallback((notify: () => void) => {
+    const onStorage = (event: StorageEvent) => {
+      if (event.key === storageKey) notify();
+    };
+    const onLocalDraft = (event: Event) => {
+      if ((event as CustomEvent<string>).detail === storageKey) notify();
+    };
+
+    window.addEventListener("storage", onStorage);
+    window.addEventListener(draftEvent, onLocalDraft);
+    return () => {
+      window.removeEventListener("storage", onStorage);
+      window.removeEventListener(draftEvent, onLocalDraft);
+    };
+  }, [storageKey]);
+
+  const getSnapshot = useCallback(
+    () => window.localStorage.getItem(storageKey) ?? canonical,
+    [canonical, storageKey],
+  );
+  const getServerSnapshot = useCallback(() => canonical, [canonical]);
+  const value = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+
+  const setValue = useCallback((next: string) => {
+    window.localStorage.setItem(storageKey, next);
+    window.dispatchEvent(new CustomEvent<string>(draftEvent, { detail: storageKey }));
+  }, [storageKey]);
+
+  const reset = useCallback(() => {
+    window.localStorage.removeItem(storageKey);
+    window.dispatchEvent(new CustomEvent<string>(draftEvent, { detail: storageKey }));
+  }, [storageKey]);
+
+  return { value, setValue, reset };
 }
 
 function Badge({
@@ -38,9 +77,7 @@ function Badge({
   };
 
   return (
-    <span
-      className={`inline-flex items-center rounded-full border px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.13em] ${tones[tone]}`}
-    >
+    <span className={`inline-flex items-center rounded-full border px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.13em] ${tones[tone]}`}>
       {children}
     </span>
   );
@@ -74,10 +111,7 @@ function buildForgePacket(data: LivingManuscriptData, chapter: LivingChapter) {
     "",
     "Claims in scope:",
     ...(claims.length
-      ? claims.map(
-          (claim) =>
-            `- ${claim.title} [${claim.type}; ${claim.status}; ${claim.support}] — ${claim.summary}`,
-        )
+      ? claims.map((claim) => `- ${claim.title} [${claim.type}; ${claim.status}; ${claim.support}] — ${claim.summary}`)
       : ["- No ledger claims assigned to this chapter."]),
     "",
     "Integrity rules:",
@@ -101,18 +135,10 @@ function MarkdownPreview({ value }: { value: string }) {
     <article className="min-h-[520px] rounded-2xl border border-[#294735] bg-[#f7f4ea] px-6 py-8 text-[#1d271f] shadow-inner sm:px-10">
       {value.split("\n").map((line, index) => {
         const key = `${index}-${line.slice(0, 18)}`;
-        if (line.startsWith("### ")) {
-          return <h3 className="mb-3 mt-7 text-xl font-black" key={key}>{line.slice(4)}</h3>;
-        }
-        if (line.startsWith("## ")) {
-          return <h2 className="mb-3 mt-8 text-2xl font-black" key={key}>{line.slice(3)}</h2>;
-        }
-        if (line.startsWith("# ")) {
-          return <h1 className="mb-5 mt-2 text-3xl font-black tracking-tight" key={key}>{line.slice(2)}</h1>;
-        }
-        if (line.startsWith("- ")) {
-          return <p className="mb-2 pl-4 text-[15px] leading-8" key={key}>• {line.slice(2)}</p>;
-        }
+        if (line.startsWith("### ")) return <h3 className="mb-3 mt-7 text-xl font-black" key={key}>{line.slice(4)}</h3>;
+        if (line.startsWith("## ")) return <h2 className="mb-3 mt-8 text-2xl font-black" key={key}>{line.slice(3)}</h2>;
+        if (line.startsWith("# ")) return <h1 className="mb-5 mt-2 text-3xl font-black tracking-tight" key={key}>{line.slice(2)}</h1>;
+        if (line.startsWith("- ")) return <p className="mb-2 pl-4 text-[15px] leading-8" key={key}>• {line.slice(2)}</p>;
         if (!line.trim()) return <div className="h-4" key={key} />;
         return <p className="mb-4 text-[16px] leading-8" key={key}>{line}</p>;
       })}
@@ -143,36 +169,26 @@ function BookTree({
               <h3 className="mt-1 text-sm font-black text-[#d8e7da]">{part.title}</h3>
             </div>
             <div className="mt-2 space-y-1">
-              {data.chapters
-                .filter((chapter) => chapter.part === part.number)
-                .map((chapter) => {
-                  const active = chapter.slug === selected.slug;
-                  return (
-                    <button
-                      className={`group flex w-full items-start gap-3 rounded-xl border px-3 py-2.5 text-left transition ${
-                        active
-                          ? "border-[#b68d4d] bg-[#2b2416] text-[#f4dfaf]"
-                          : "border-transparent text-[#a9bcad] hover:border-[#294735] hover:bg-[#102219]"
-                      }`}
-                      key={chapter.slug}
-                      onClick={() => onSelect(chapter)}
-                      type="button"
-                    >
-                      <span className={`mt-0.5 text-[11px] font-black ${active ? "text-[#e0b86d]" : "text-[#5f7867]"}`}>
-                        {String(chapter.number).padStart(2, "0")}
+              {data.chapters.filter((chapter) => chapter.part === part.number).map((chapter) => {
+                const active = chapter.slug === selected.slug;
+                return (
+                  <button
+                    className={`group flex w-full items-start gap-3 rounded-xl border px-3 py-2.5 text-left transition ${active ? "border-[#b68d4d] bg-[#2b2416] text-[#f4dfaf]" : "border-transparent text-[#a9bcad] hover:border-[#294735] hover:bg-[#102219]"}`}
+                    key={chapter.slug}
+                    onClick={() => onSelect(chapter)}
+                    type="button"
+                  >
+                    <span className={`mt-0.5 text-[11px] font-black ${active ? "text-[#e0b86d]" : "text-[#5f7867]"}`}>{String(chapter.number).padStart(2, "0")}</span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-xs font-bold leading-5">{chapter.title}</span>
+                      <span className="mt-1 flex flex-wrap gap-1.5">
+                        <span className="text-[9px] font-bold uppercase tracking-[0.1em] text-[#66806d]">{chapter.manuscriptReady ? `${chapter.manuscriptWords} words` : "not drafted"}</span>
+                        {chapter.queueReady ? <span className="text-[9px] font-bold uppercase tracking-[0.1em] text-[#9d7a44]">queue</span> : null}
                       </span>
-                      <span className="min-w-0 flex-1">
-                        <span className="block text-xs font-bold leading-5">{chapter.title}</span>
-                        <span className="mt-1 flex flex-wrap gap-1.5">
-                          <span className="text-[9px] font-bold uppercase tracking-[0.1em] text-[#66806d]">
-                            {chapter.manuscriptReady ? `${chapter.manuscriptWords} words` : "not drafted"}
-                          </span>
-                          {chapter.queueReady ? <span className="text-[9px] font-bold uppercase tracking-[0.1em] text-[#9d7a44]">queue</span> : null}
-                        </span>
-                      </span>
-                    </button>
-                  );
-                })}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </section>
         ))}
@@ -231,12 +247,8 @@ function IntelligencePanel({
           </div>
           <Badge tone="amber">proposal only</Badge>
         </div>
-        <p className="mt-3 text-xs leading-6 text-[#8fa494]">
-          The provider boundary is intentionally explicit. Booksmith prepares the chapter, canon, claims, sources, and local draft as context without pretending a model is already connected.
-        </p>
-        <label className="mt-5 block text-[10px] font-black uppercase tracking-[0.17em] text-[#77907e]" htmlFor="booksmith-request">
-          Ask Booksmith
-        </label>
+        <p className="mt-3 text-xs leading-6 text-[#8fa494]">The provider boundary is explicit. Booksmith prepares the chapter, canon, claims, sources, and local draft as context without pretending a model is already connected.</p>
+        <label className="mt-5 block text-[10px] font-black uppercase tracking-[0.17em] text-[#77907e]" htmlFor="booksmith-request">Ask Booksmith</label>
         <textarea
           className="mt-2 min-h-28 w-full resize-y rounded-2xl border border-[#314d39] bg-[#07120c] p-3 text-sm leading-6 text-[#e5eee6] outline-none transition placeholder:text-[#536b5a] focus:border-[#b68d4d]"
           id="booksmith-request"
@@ -244,11 +256,7 @@ function IntelligencePanel({
           placeholder="Example: Strengthen the transition into the scientific account without changing the theological claim."
           value={request}
         />
-        <button
-          className="mt-3 w-full rounded-xl bg-[#d4a85f] px-4 py-3 text-sm font-black text-[#172015] transition hover:bg-[#e9bf77]"
-          onClick={copyProviderPacket}
-          type="button"
-        >
+        <button className="mt-3 w-full rounded-xl bg-[#d4a85f] px-4 py-3 text-sm font-black text-[#172015] transition hover:bg-[#e9bf77]" onClick={copyProviderPacket} type="button">
           {copied ? "Context packet copied" : "Copy provider context"}
         </button>
         <p className="mt-2 text-[10px] leading-5 text-[#66806d]">Ready for a governed local/open provider adapter. No network call is made from this UI.</p>
@@ -304,41 +312,35 @@ function EditorWorkspace({
   setSelected: (chapter: LivingChapter) => void;
 }) {
   const storageKey = `booksmith:${data.slug}:draft:${selected.slug}`;
-  const [drafts, setDrafts] = useState<Record<string, string>>({});
+  const localDraft = useLocalDraft(storageKey, selected.manuscriptText);
   const [editorView, setEditorView] = useState<EditorView>("write");
-  const [proposal, setProposal] = useState("");
+  const [proposals, setProposals] = useState<Record<string, string>>({});
   const [savedPulse, setSavedPulse] = useState(false);
 
-  useEffect(() => {
-    setDrafts((current) => {
-      if (current[selected.slug] !== undefined) return current;
-      const stored = window.localStorage.getItem(storageKey);
-      return { ...current, [selected.slug]: stored ?? selected.manuscriptText };
-    });
-    setProposal("");
-  }, [selected.manuscriptText, selected.slug, storageKey]);
-
-  const draft = drafts[selected.slug] ?? selected.manuscriptText;
+  const draft = localDraft.value;
+  const proposal = proposals[selected.slug] ?? "";
   const localWords = wordCount(draft);
   const dirty = draft !== selected.manuscriptText;
 
+  function updateProposal(value: string) {
+    setProposals((current) => ({ ...current, [selected.slug]: value }));
+  }
+
   function updateDraft(value: string) {
-    setDrafts((current) => ({ ...current, [selected.slug]: value }));
-    window.localStorage.setItem(storageKey, value);
+    localDraft.setValue(value);
     setSavedPulse(true);
     window.setTimeout(() => setSavedPulse(false), 900);
   }
 
   function restoreCanonical() {
-    window.localStorage.removeItem(storageKey);
-    setDrafts((current) => ({ ...current, [selected.slug]: selected.manuscriptText }));
-    setProposal("");
+    localDraft.reset();
+    updateProposal("");
   }
 
   function applyProposal() {
     if (!proposal.trim()) return;
     updateDraft(proposal);
-    setProposal("");
+    updateProposal("");
   }
 
   return (
@@ -369,12 +371,7 @@ function EditorWorkspace({
             <div className="flex items-center gap-2">
               <div className="flex rounded-xl border border-[#314d39] bg-[#07120c] p-1">
                 {(["write", "preview"] as EditorView[]).map((view) => (
-                  <button
-                    className={`rounded-lg px-3 py-1.5 text-xs font-bold transition ${editorView === view ? "bg-[#24432e] text-white" : "text-[#7f9987] hover:text-white"}`}
-                    key={view}
-                    onClick={() => setEditorView(view)}
-                    type="button"
-                  >
+                  <button className={`rounded-lg px-3 py-1.5 text-xs font-bold transition ${editorView === view ? "bg-[#24432e] text-white" : "text-[#7f9987] hover:text-white"}`} key={view} onClick={() => setEditorView(view)} type="button">
                     {view === "write" ? "Write" : "Preview"}
                   </button>
                 ))}
@@ -416,14 +413,7 @@ function EditorWorkspace({
         </div>
       </section>
 
-      <IntelligencePanel
-        data={data}
-        draft={draft}
-        onApplyProposal={applyProposal}
-        proposal={proposal}
-        selected={selected}
-        setProposal={setProposal}
-      />
+      <IntelligencePanel data={data} draft={draft} onApplyProposal={applyProposal} proposal={proposal} selected={selected} setProposal={updateProposal} />
     </div>
   );
 }
@@ -440,12 +430,7 @@ function ClaimsView({ data }: { data: LivingManuscriptData }) {
       </div>
       <div className="mt-5 flex flex-wrap gap-2">
         {["all", ...types].map((type) => (
-          <button
-            className={`rounded-full border px-3 py-2 text-xs font-bold transition ${filter === type ? "border-[#d4a85f] bg-[#2c2415] text-[#f0d39a]" : "border-[#365440] text-[#91a997] hover:bg-[#102219]"}`}
-            key={type}
-            onClick={() => setFilter(type)}
-            type="button"
-          >
+          <button className={`rounded-full border px-3 py-2 text-xs font-bold transition ${filter === type ? "border-[#d4a85f] bg-[#2c2415] text-[#f0d39a]" : "border-[#365440] text-[#91a997] hover:bg-[#102219]"}`} key={type} onClick={() => setFilter(type)} type="button">
             {type === "all" ? "All claims" : type}
           </button>
         ))}
@@ -462,19 +447,8 @@ function ClaimsView({ data }: { data: LivingManuscriptData }) {
             </div>
             <p className="mt-4 text-sm leading-7 text-[#b6c8b9]">{claim.summary}</p>
             <div className="mt-5 grid gap-4 border-t border-[#294735] pt-4 sm:grid-cols-2">
-              <div>
-                <p className="text-[10px] font-black uppercase tracking-[0.14em] text-[#718978]">Support</p>
-                <p className="mt-2 text-sm text-[#d5e1d7]">{claim.support}</p>
-              </div>
-              <div>
-                <p className="text-[10px] font-black uppercase tracking-[0.14em] text-[#718978]">Chapters</p>
-                <p className="mt-2 text-sm text-[#d5e1d7]">
-                  {claim.chapterSlugs
-                    .map((slug) => data.chapters.find((chapter) => chapter.slug === slug)?.number)
-                    .filter(Boolean)
-                    .join(" · ")}
-                </p>
-              </div>
+              <div><p className="text-[10px] font-black uppercase tracking-[0.14em] text-[#718978]">Support</p><p className="mt-2 text-sm text-[#d5e1d7]">{claim.support}</p></div>
+              <div><p className="text-[10px] font-black uppercase tracking-[0.14em] text-[#718978]">Chapters</p><p className="mt-2 text-sm text-[#d5e1d7]">{claim.chapterSlugs.map((slug) => data.chapters.find((chapter) => chapter.slug === slug)?.number).filter(Boolean).join(" · ")}</p></div>
             </div>
             <div className="mt-4">
               <p className="text-[10px] font-black uppercase tracking-[0.14em] text-[#718978]">Sources</p>
@@ -504,12 +478,7 @@ function ForgeView({ data, selected, setSelected }: { data: LivingManuscriptData
         <p className="px-2 text-[10px] font-black uppercase tracking-[0.18em] text-[#718978]">Choose chapter</p>
         <div className="mt-3 max-h-[72vh] space-y-1 overflow-y-auto pr-1">
           {data.chapters.map((chapter) => (
-            <button
-              className={`w-full rounded-xl px-3 py-2.5 text-left text-sm transition ${selected.slug === chapter.slug ? "bg-[#2c2415] font-black text-[#f0cc86]" : "text-[#b8cbbd] hover:bg-[#102219]"}`}
-              key={chapter.slug}
-              onClick={() => setSelected(chapter)}
-              type="button"
-            >
+            <button className={`w-full rounded-xl px-3 py-2.5 text-left text-sm transition ${selected.slug === chapter.slug ? "bg-[#2c2415] font-black text-[#f0cc86]" : "text-[#b8cbbd] hover:bg-[#102219]"}`} key={chapter.slug} onClick={() => setSelected(chapter)} type="button">
               {chapter.number}. {chapter.title}
             </button>
           ))}
@@ -523,9 +492,7 @@ function ForgeView({ data, selected, setSelected }: { data: LivingManuscriptData
             <h2 className="mt-2 text-2xl font-black">{selected.number}. {selected.title}</h2>
             <p className="mt-2 text-xs text-[#7f9987]">The Forge prepares context; it never silently promotes generated language into canon.</p>
           </div>
-          <button className="rounded-xl bg-[#d4a85f] px-4 py-2.5 text-sm font-black text-[#172015] hover:bg-[#e9bf77]" onClick={copyPacket} type="button">
-            {copied ? "Copied" : "Copy context"}
-          </button>
+          <button className="rounded-xl bg-[#d4a85f] px-4 py-2.5 text-sm font-black text-[#172015] hover:bg-[#e9bf77]" onClick={copyPacket} type="button">{copied ? "Copied" : "Copy context"}</button>
         </div>
 
         <div className="mt-6 grid gap-3 sm:grid-cols-4">
@@ -540,10 +507,7 @@ function ForgeView({ data, selected, setSelected }: { data: LivingManuscriptData
             <h3 className="font-black">Required chapter movement</h3>
             <ol className="mt-3 space-y-2">
               {selected.requiredSections.map((section, index) => (
-                <li className="flex gap-3 rounded-xl border border-[#213b2b] bg-[#0d2015] p-3 text-sm" key={section}>
-                  <span className="font-black text-[#d4a85f]">{index + 1}</span>
-                  <span>{section}</span>
-                </li>
+                <li className="flex gap-3 rounded-xl border border-[#213b2b] bg-[#0d2015] p-3 text-sm" key={section}><span className="font-black text-[#d4a85f]">{index + 1}</span><span>{section}</span></li>
               ))}
             </ol>
           </div>
@@ -552,10 +516,7 @@ function ForgeView({ data, selected, setSelected }: { data: LivingManuscriptData
             <div className="mt-3 space-y-2">
               {claims.length ? claims.map((claim) => (
                 <div className="rounded-xl border border-[#213b2b] bg-[#0d2015] p-3" key={claim.id}>
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <p className="text-sm font-bold">{claim.title}</p>
-                    <Badge tone={supportTone(claim.support)}>{claim.status}</Badge>
-                  </div>
+                  <div className="flex flex-wrap items-center justify-between gap-2"><p className="text-sm font-bold">{claim.title}</p><Badge tone={supportTone(claim.support)}>{claim.status}</Badge></div>
                   <p className="mt-2 text-xs leading-5 text-[#91a997]">{claim.summary}</p>
                 </div>
               )) : <p className="rounded-xl bg-[#0d2015] p-3 text-sm text-[#91a997]">No ledger claim is assigned to this chapter.</p>}
@@ -591,9 +552,7 @@ function MemoryView({ data }: { data: LivingManuscriptData }) {
               <p className="text-[10px] font-black uppercase tracking-[0.16em] text-[#718978]">{concept.domain}</p>
               <h3 className="mt-2 text-lg font-black">{concept.label}</h3>
               <p className="mt-3 text-xs leading-6 text-[#8fa494]">{concept.referenceKeys.length} connected reference {concept.referenceKeys.length === 1 ? "key" : "keys"}</p>
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {concept.referenceKeys.map((key) => <Badge key={key} tone="slate">{key}</Badge>)}
-              </div>
+              <div className="mt-3 flex flex-wrap gap-1.5">{concept.referenceKeys.map((key) => <Badge key={key} tone="slate">{key}</Badge>)}</div>
             </article>
           )) : <p className="text-sm text-[#8fa494]">No shared concepts are connected to this book yet.</p>}
         </div>
@@ -602,9 +561,7 @@ function MemoryView({ data }: { data: LivingManuscriptData }) {
       <aside className="space-y-5">
         <section className="rounded-3xl border border-[#294735] bg-[#0b1a11] p-5">
           <h3 className="font-black">Canonical terms</h3>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {data.canonicalTerms.map((term) => <Badge key={term}>{term}</Badge>)}
-          </div>
+          <div className="mt-4 flex flex-wrap gap-2">{data.canonicalTerms.map((term) => <Badge key={term}>{term}</Badge>)}</div>
         </section>
         <section className="rounded-3xl border border-[#294735] bg-[#0b1a11] p-5">
           <h3 className="font-black">Provenance</h3>
@@ -645,12 +602,7 @@ export function LivingManuscriptWorkspace({ data }: { data: LivingManuscriptData
 
       <nav aria-label="Living Manuscript modes" className="mb-5 flex gap-2 overflow-x-auto rounded-2xl border border-[#294735] bg-[#09170f] p-2">
         {(Object.keys(workspaceLabels) as WorkspaceView[]).map((key) => (
-          <button
-            className={`whitespace-nowrap rounded-xl px-4 py-2.5 text-xs font-black transition ${view === key ? "bg-[#d4a85f] text-[#172015]" : "text-[#91a997] hover:bg-[#102219] hover:text-white"}`}
-            key={key}
-            onClick={() => setView(key)}
-            type="button"
-          >
+          <button className={`whitespace-nowrap rounded-xl px-4 py-2.5 text-xs font-black transition ${view === key ? "bg-[#d4a85f] text-[#172015]" : "text-[#91a997] hover:bg-[#102219] hover:text-white"}`} key={key} onClick={() => setView(key)} type="button">
             {workspaceLabels[key]}
           </button>
         ))}
