@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   validate:
-    name: Validate library and app
+    name: Validate library, Runtime, and app
     runs-on: ubuntu-latest
 
     steps:
@@ -32,5 +32,13 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Build
+      - name: Build local/private Booksmith App
         run: npm run build
+
+      - name: Smoke test Booksmith Runtime
+        run: node scripts/runtime/smoke-test.mjs
+
+      - name: Build static GitHub Pages mode
+        run: |
+          rm -rf .next out
+          GITHUB_PAGES=true npm run build
