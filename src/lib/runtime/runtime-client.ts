@@ -11,6 +11,7 @@ export type RuntimeHealth = {
   remoteBinding: boolean;
   tokenRequired: boolean;
   node: string;
+  importMaxBytes?: number;
   sqlite: { ready: boolean; metadata?: Record<string, string>; error?: string };
   providers: Array<{ id: string; label: string; kind: string; enabled: boolean; localFirst: boolean; defaultModel: string | null }>;
   enabledProviders: string[];
@@ -45,6 +46,23 @@ export type RuntimeJob = {
   finishedAt: string | null;
   exitCode: number | null;
   log: string;
+};
+
+export type SourceImportInput = {
+  bookSlug: string;
+  fileName?: string;
+  contentBase64?: string;
+  text?: string;
+  url?: string;
+  rightsStatus?: string;
+  notes?: string;
+};
+
+export type SourceImportResult = {
+  record: { sourceId: string; bookSlug: string; sourceType: string; location: string; rightsStatus: string; status: string; notes: string };
+  metadata: { sourceId: string; extractionMethod: string; extracted: boolean; importedAt: string; originalName: string; originalUrl: string | null };
+  directory: string;
+  index: { documentCount: number; entityCount: number; edgeCount: number } | null;
 };
 
 const configKey = "booksmith:runtime:config";
@@ -151,12 +169,19 @@ export async function runtimeAiStream(
     for (const frame of frames) {
       const lines = frame.split("\n");
       const type = lines.find((line) => line.startsWith("event:"))?.slice(6).trim() ?? "message";
-      const raw = lines.filter((line) => line.startsWith("data:")) .map((line) => line.slice(5).trim()).join("\n");
+      const raw = lines.filter((line) => line.startsWith("data:")).map((line) => line.slice(5).trim()).join("\n");
       let data: unknown = raw;
       try { data = JSON.parse(raw); } catch { /* preserve raw event */ }
       onEvent({ type, data });
     }
   }
+}
+
+export function runtimeImportSource(input: SourceImportInput) {
+  return request<SourceImportResult>("/v1/sources/import", {
+    method: "POST",
+    body: JSON.stringify(input),
+  });
 }
 
 export function runtimeSearch(query: string, bookSlug?: string, limit = 30) {
@@ -194,5 +219,5 @@ export function runtimeGitStatus() {
 }
 
 export function runtimeProvenance(limit = 100) {
-  return request<{ manuscript: unknown[]; ai: unknown[] }>(`/v1/provenance?limit=${limit}`, { method: "GET" });
+  return request<{ manuscript: unknown[]; ai: unknown[]; sources: unknown[] }>(`/v1/provenance?limit=${limit}`, { method: "GET" });
 }
