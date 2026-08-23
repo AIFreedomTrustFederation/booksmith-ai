@@ -3,10 +3,11 @@ import fs from "node:fs";
 import path from "node:path";
 
 import { runAiTask, type AiTaskInput } from "../src/lib/ai/ai-task-service";
-import { defaultModelProviderConfigs, getEnabledModelProviders } from "../src/lib/ai/provider-registry";
-import { booksmithGraph, indexStatus, rebuildBooksmithIndex, searchBooksmithIndex } from "./runtime/sqlite-index.mjs";
-import { diffManuscript, gitStatus, readManuscript, recentManuscriptProvenance, saveManuscript } from "./runtime/manuscript-store.mjs";
+import { getEnabledModelProviders, getModelProvider, getModelProviderConfigs } from "../src/lib/ai/provider-registry";
 import { getJob, listJobKinds, recentJobs, startJob } from "./runtime/job-runner.mjs";
+import { diffManuscript, gitStatus, readManuscript, recentManuscriptProvenance, saveManuscript } from "./runtime/manuscript-store.mjs";
+import { readProviderSettings, writeProviderSettings } from "./runtime/provider-settings.mjs";
+import { booksmithGraph, indexStatus, rebuildBooksmithIndex, searchBooksmithIndex } from "./runtime/sqlite-index.mjs";
 import { importSource } from "./runtime/source-importer.mjs";
 
 const root = process.cwd();
@@ -15,16 +16,9 @@ const port = Number(process.env.BOOKSMITH_RUNTIME_PORT ?? "8787");
 const token = process.env.BOOKSMITH_RUNTIME_TOKEN?.trim() ?? "";
 const remoteBinding = !["127.0.0.1", "localhost", "::1"].includes(host);
 
-if (remoteBinding && !token) {
-  throw new Error("BOOKSMITH_RUNTIME_TOKEN is required when the runtime binds beyond loopback.");
-}
+if (remoteBinding && !token) throw new Error("BOOKSMITH_RUNTIME_TOKEN is required when the runtime binds beyond loopback.");
 
-const configuredOrigins = new Set(
-  (process.env.BOOKSMITH_ALLOWED_ORIGINS ?? "")
-    .split(",")
-    .map((value) => value.trim())
-    .filter(Boolean),
-);
+const configuredOrigins = new Set((process.env.BOOKSMITH_ALLOWED_ORIGINS ?? "").split(",").map((value) => value.trim()).filter(Boolean));
 
 function isLocalOrigin(origin: string) {
   try {
@@ -103,13 +97,23 @@ async function readJsonLines(file: string, limit: number) {
   });
 }
 
+function publicProviderConfig() {
+  return getModelProviderConfigs().map((provider) => ({
+    id: provider.id,
+    label: provider.label,
+    kind: provider.kind,
+    enabled: provider.enabled,
+    localFirst: provider.localFirst,
+    userManaged: provider.userManaged,
+    baseUrl: provider.baseUrl,
+    defaultModel: provider.defaultModel ?? null,
+    notes: provider.notes ?? null,
+  }));
+}
+
 async function health() {
   let sqlite;
-  try {
-    sqlite = await indexStatus();
-  } catch (error) {
-    sqlite = { ready: false, error: error instanceof Error ? error.message : String(error) };
-  }
+  try { sqlite = await indexStatus(); } catch (error) { sqlite = { ready: false, error: error instanceof Error ? error.message : String(error) }; }
   return {
     ok: true,
     runtime: "booksmith-runtime-v1",
@@ -122,15 +126,7 @@ async function health() {
     node: process.version,
     sqlite,
     importMaxBytes: Number(process.env.BOOKSMITH_IMPORT_MAX_BYTES ?? 25 * 1024 * 1024),
-    providers: defaultModelProviderConfigs.map((provider) => ({
-      id: provider.id,
-      label: provider.label,
-      kind: provider.kind,
-      enabled: provider.enabled,
-      localFirst: provider.localFirst,
-      baseUrl: provider.baseUrl,
-      defaultModel: provider.defaultModel ?? null,
-    })),
+    providers: publicProviderConfig(),
     enabledProviders: getEnabledModelProviders().map((provider) => provider.config.id),
     jobs: listJobKinds(),
   };
@@ -169,9 +165,25 @@ const server = createServer(async (request, response) => {
 
     if (request.method === "GET" && route === "/v1/health") return json(response, 200, await health());
 
-    if (request.method === "GET" && route === "/v1/manuscript") {
-      return json(response, 200, await readManuscript(url.searchParams.get("book") ?? "", url.searchParams.get("chapter") ?? ""));
+    if (request.method === "GET" && route === "/v1/providers") {
+      return json(response, 200, { providers: publicProviderConfig(), overrides: (await readProviderSettings()).providers });
     }
+
+    if (request.method === "POST" && route === "/v1/providers") {
+      requireMutationAccess(request);
+      await writeProviderSettings(await body(request));
+      return json(response, 200, { providers: publicProviderConfig() });
+    }
+
+    if (request.method === "POST" && route === "/v1/providers/health") {
+      requireMutationAccess(request);
+      const input = await body(request) as { providerId?: string };
+      if (input.providerId) return json(response, 200, await getModelProvider(input.providerId).health());
+      const results = await Promise.all(getEnabledModelProviders().map((provider) => provider.health()));
+      return json(response, 200, results);
+    }
+
+    if (request.method === "GET" && route === "/v1/manuscript") return json(response, 200, await readManuscript(url.searchParams.get("book") ?? "", url.searchParams.get("chapter") ?? ""));
 
     if (request.method === "POST" && route === "/v1/manuscript/diff") {
       requireMutationAccess(request);
@@ -188,15 +200,13 @@ const server = createServer(async (request, response) => {
       return json(response, 200, await runAiTask(await body(request) as AiTaskInput));
     }
 
-    if (request.method === "POST" && route === "/v1/ai/stream") {
-      return streamAi(request, response);
-    }
+    if (request.method === "POST" && route === "/v1/ai/stream") return streamAi(request, response);
 
     if (request.method === "POST" && route === "/v1/sources/import") {
       requireMutationAccess(request);
       const imported = await importSource(await body(request));
       let index = null;
-      try { index = await rebuildBooksmithIndex(); } catch { /* source remains safely imported even if local SQLite is unavailable */ }
+      try { index = await rebuildBooksmithIndex(); } catch { /* source remains safely imported even if SQLite is unavailable */ }
       return json(response, 201, { ...imported, index });
     }
 
@@ -214,10 +224,7 @@ const server = createServer(async (request, response) => {
       }));
     }
 
-    if (request.method === "GET" && route === "/v1/graph") {
-      return json(response, 200, await booksmithGraph(url.searchParams.get("book") || undefined));
-    }
-
+    if (request.method === "GET" && route === "/v1/graph") return json(response, 200, await booksmithGraph(url.searchParams.get("book") || undefined));
     if (request.method === "GET" && route === "/v1/git/status") return json(response, 200, await gitStatus());
 
     if (request.method === "POST" && route === "/v1/jobs") {
