@@ -56,10 +56,6 @@ function filesUnder(relativePath: string): string[] {
   return output.sort();
 }
 
-function countMatching(files: string[], pattern: RegExp) {
-  return files.filter((file) => pattern.test(file)).length;
-}
-
 export function getBookCapabilitySnapshot(book: BookshelfBook): BookCapabilitySnapshot {
   const slug = book.registry.slug;
   const base = `books/${slug}`;
@@ -71,8 +67,12 @@ export function getBookCapabilitySnapshot(book: BookshelfBook): BookCapabilitySn
   const publishingFiles = filesUnder(`${base}/publishing`).length;
   const exportFiles = filesUnder(`${base}/exports`).length;
   const bibliographyFiles = filesUnder(`${base}/bibliography`).length;
-  const proofArtifacts = countMatching(allFiles, /(^|\/)(proof|proofs)(\/|[-_.])/i) + countMatching(allFiles, /proof[-_.]/i);
-  const reportArtifacts = countMatching(allFiles, /(report|audit|diagnostic|quality|gate|inspection)[-_.]/i);
+  const proofFiles = allFiles.filter((file) => /(^|[\/_.-])proof([\/_.-]|$)/i.test(file));
+  const reportFiles = allFiles.filter(
+    (file) => !proofFiles.includes(file) && /(^|[\/_.-])(report|audit|diagnostic|quality|gate|inspection)([\/_.-]|$)/i.test(file),
+  );
+  const proofArtifacts = proofFiles.length;
+  const reportArtifacts = reportFiles.length;
 
   const hasClaimLedger = exists(`${base}/sources/claim-ledger.json`);
   const hasProvenance = exists(`${base}/sources/provenance-log.json`);
