@@ -30,4 +30,4 @@ if ! kill -0 "$RUNTIME_PID" >/dev/null 2>&1; then
 fi
 
 echo "Starting Booksmith production UI on http://$HOST:$PORT"
-exec npx next start --hostname "$HOST" --port "$PORT"
+npx next start --hostname "$HOST" --port "$PORT"
