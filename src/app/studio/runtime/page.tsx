@@ -17,6 +17,7 @@ import {
 } from "@/lib/runtime/runtime-client";
 
 type GitState = { available: boolean; branch: string | null; status: string[] };
+type ProvenanceState = { manuscript: unknown[]; ai: unknown[]; sources: unknown[] };
 
 function Badge({ children, tone = "green" }: { children: React.ReactNode; tone?: "green" | "amber" | "red" | "slate" }) {
   const styles = {
@@ -29,11 +30,11 @@ function Badge({ children, tone = "green" }: { children: React.ReactNode; tone?:
 }
 
 export default function RuntimeCenterPage() {
-  const [config, setConfig] = useState<RuntimeConfig>({ baseUrl: "http://127.0.0.1:8787", token: "" });
+  const [config, setConfig] = useState<RuntimeConfig>(() => getRuntimeConfig());
   const [health, setHealth] = useState<RuntimeHealth | null>(null);
   const [jobs, setJobs] = useState<RuntimeJob[]>([]);
   const [git, setGit] = useState<GitState | null>(null);
-  const [provenance, setProvenance] = useState<{ manuscript: unknown[]; ai: unknown[] } | null>(null);
+  const [provenance, setProvenance] = useState<ProvenanceState | null>(null);
   const [state, setState] = useState("Not connected.");
   const [bookSlug, setBookSlug] = useState("energence");
   const [jobKind, setJobKind] = useState("library-validate");
@@ -60,7 +61,6 @@ export default function RuntimeCenterPage() {
   }, []);
 
   useEffect(() => {
-    setConfig(getRuntimeConfig());
     void refresh();
     const timer = window.setInterval(() => { void refresh(); }, 5000);
     return () => window.clearInterval(timer);
@@ -106,7 +106,7 @@ export default function RuntimeCenterPage() {
             <div>
               <p className="text-[11px] font-black uppercase tracking-[0.3em] text-[#d4a85f]">Booksmith Runtime v1</p>
               <h1 className="mt-4 max-w-5xl text-4xl font-black tracking-[-0.03em] sm:text-6xl">The governed engine behind the manuscript.</h1>
-              <p className="mt-5 max-w-4xl text-base leading-8 text-[#9eb2a2]">This is the private/local execution layer for canonical saves, provenance, Git, SQLite memory, local AI providers, figures, proofing and publication jobs. GitHub Pages never receives these powers.</p>
+              <p className="mt-5 max-w-4xl text-base leading-8 text-[#9eb2a2]">This is the private/local execution layer for canonical saves, provenance, Git, SQLite memory, local AI providers, research intake, figures, proofing and publication jobs. GitHub Pages never receives these powers.</p>
             </div>
             <div className="flex flex-wrap gap-2"><Badge tone={health ? "green" : "amber"}>{health ? "connected" : "offline"}</Badge>{health?.sqlite.ready ? <Badge>SQLite ready</Badge> : <Badge tone="slate">SQLite not ready</Badge>}<Badge tone={activeJobs ? "amber" : "slate"}>{activeJobs} active jobs</Badge></div>
           </div>
@@ -140,7 +140,7 @@ export default function RuntimeCenterPage() {
 
           <section className="space-y-6">
             <section className="rounded-3xl border border-[#294735] bg-[#0b1a11] p-5 sm:p-6">
-              <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between"><div><p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#d4a85f]">Governed job engine</p><h2 className="mt-2 text-2xl font-black">Run the existing production machinery.</h2><p className="mt-2 max-w-3xl text-xs leading-6 text-[#91a997]">Only allowlisted Booksmith commands can run. Publishing requires an additional explicit confirmation string.</p></div></div>
+              <div><p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#d4a85f]">Governed job engine</p><h2 className="mt-2 text-2xl font-black">Run the existing production machinery.</h2><p className="mt-2 max-w-3xl text-xs leading-6 text-[#91a997]">Only allowlisted Booksmith commands can run. Publishing requires an additional explicit confirmation string.</p></div>
               <div className="mt-5 grid gap-3 md:grid-cols-[1fr_1fr_auto]"><select className="rounded-xl border border-[#314d39] bg-[#07120c] px-3 py-2.5 text-sm" onChange={(event) => setJobKind(event.target.value)} value={jobKind}>{(health?.jobs ?? [{ kind: "library-validate", consequential: false }, { kind: "system-health", consequential: false }, { kind: "proof", consequential: false }, { kind: "visual-proof", consequential: false }, { kind: "figures", consequential: false }, { kind: "publication-gate", consequential: false }, { kind: "publishing-packet", consequential: false }, { kind: "publish", consequential: true }]).map((job) => <option key={job.kind} value={job.kind}>{job.kind}{job.consequential ? " · confirmation required" : ""}</option>)}</select><input className="rounded-xl border border-[#314d39] bg-[#07120c] px-3 py-2.5 text-sm" onChange={(event) => setBookSlug(event.target.value)} placeholder="book slug" value={bookSlug} /><button className="rounded-xl bg-[#d4a85f] px-5 py-2.5 text-sm font-black text-[#172015] disabled:opacity-40" disabled={!health} onClick={() => void runJob()} type="button">Run</button></div>
               {jobKind === "publish" ? <div className="mt-3 rounded-xl border border-[#743f3f] bg-[#251313] p-4"><p className="text-xs leading-6 text-[#dfb0b0]">Publication can create consequential release artifacts. Type <b>publish</b> to authorize this one job.</p><input className="mt-2 w-full rounded-lg border border-[#743f3f] bg-[#100909] px-3 py-2 text-sm" onChange={(event) => setPublishConfirm(event.target.value)} placeholder="publish" value={publishConfirm} /></div> : null}
             </section>
@@ -152,7 +152,7 @@ export default function RuntimeCenterPage() {
 
             <section className="grid gap-4 lg:grid-cols-2">
               <article className="rounded-3xl border border-[#294735] bg-[#0b1a11] p-5"><h2 className="text-lg font-black">AI providers</h2><div className="mt-4 space-y-2">{health?.providers.map((provider) => <div className="rounded-xl border border-[#213b2b] bg-[#07120c] p-3" key={provider.id}><div className="flex items-center justify-between gap-2"><p className="text-sm font-bold">{provider.label}</p><Badge tone={provider.enabled ? "green" : "slate"}>{provider.enabled ? "enabled" : "disabled"}</Badge></div><p className="mt-1 text-[10px] text-[#718978]">{provider.kind} · {provider.defaultModel ?? "model not selected"}</p></div>) ?? <p className="text-xs text-[#718978]">Connect the Runtime to inspect providers.</p>}</div></article>
-              <article className="rounded-3xl border border-[#294735] bg-[#0b1a11] p-5"><h2 className="text-lg font-black">Provenance ledger</h2><p className="mt-3 text-xs leading-6 text-[#91a997]">Author-approved saves and AI tasks are recorded separately so proposal history never masquerades as canon.</p><div className="mt-4 grid grid-cols-2 gap-3"><div className="rounded-xl bg-[#07120c] p-4"><p className="text-2xl font-black text-[#f1dfb7]">{provenance?.manuscript.length ?? 0}</p><p className="text-[10px] uppercase text-[#718978]">manuscript events</p></div><div className="rounded-xl bg-[#07120c] p-4"><p className="text-2xl font-black text-[#f1dfb7]">{provenance?.ai.length ?? 0}</p><p className="text-[10px] uppercase text-[#718978]">AI tasks</p></div></div></article>
+              <article className="rounded-3xl border border-[#294735] bg-[#0b1a11] p-5"><h2 className="text-lg font-black">Provenance ledger</h2><p className="mt-3 text-xs leading-6 text-[#91a997]">Author-approved saves, research intake, and AI tasks are recorded separately so proposal history never masquerades as canon.</p><div className="mt-4 grid grid-cols-3 gap-3"><div className="rounded-xl bg-[#07120c] p-4"><p className="text-2xl font-black text-[#f1dfb7]">{provenance?.manuscript.length ?? 0}</p><p className="text-[10px] uppercase text-[#718978]">manuscript</p></div><div className="rounded-xl bg-[#07120c] p-4"><p className="text-2xl font-black text-[#f1dfb7]">{provenance?.sources.length ?? 0}</p><p className="text-[10px] uppercase text-[#718978]">sources</p></div><div className="rounded-xl bg-[#07120c] p-4"><p className="text-2xl font-black text-[#f1dfb7]">{provenance?.ai.length ?? 0}</p><p className="text-[10px] uppercase text-[#718978]">AI tasks</p></div></div></article>
             </section>
           </section>
         </div>
