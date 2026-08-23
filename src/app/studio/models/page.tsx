@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import {
   type RuntimeProviderConfig,
@@ -26,7 +26,7 @@ export default function ModelStudioPage() {
   const [state, setState] = useState("Connect Booksmith Runtime to configure local models.");
   const [busy, setBusy] = useState(false);
 
-  async function load() {
+  const load = useCallback(async () => {
     try {
       const result = await runtimeProviders();
       setProviders(result.providers);
@@ -34,11 +34,11 @@ export default function ModelStudioPage() {
     } catch (error) {
       setState(error instanceof Error ? error.message : String(error));
     }
-  }
+  }, []);
 
   useEffect(() => {
     void load();
-  }, []);
+  }, [load]);
 
   function updateProvider(id: string, update: Partial<EditableProvider>) {
     setProviders((current) => current.map((provider) => provider.id === id ? { ...provider, ...update } : provider));
