@@ -1,6 +1,6 @@
 # Booksmith App + Runtime v1
 
-Booksmith is now one authoring product with two execution modes built from the same Next.js Studio.
+Booksmith is one authoring product with two execution modes built from the same Next.js Studio.
 
 ```text
 GitHub Pages                         Local / Private Booksmith App
@@ -19,11 +19,11 @@ read-only static portal              read + governed write
                                       canonical book files
 ```
 
-The repository remains the source of truth. SQLite, job state, browser drafts, and Runtime provenance are rebuildable or local operational state.
+The repository remains the source of truth. SQLite, job state, browser drafts, provider settings, and Runtime provenance are rebuildable or private local operational state.
 
 ## Launch
 
-The existing application command now launches both layers:
+For normal authoring and development, one command launches both layers:
 
 ```bash
 npm run server
@@ -36,11 +36,21 @@ Default local addresses:
 ```text
 Booksmith App      http://localhost:3000
 Studio             http://localhost:3000/studio
+Model Studio       http://localhost:3000/studio/models
 Runtime Center     http://localhost:3000/studio/runtime
 Runtime API        http://127.0.0.1:8787
 ```
 
 On Android/Termux the Next.js application uses Webpack while the Runtime remains loopback-only by default.
+
+For a production Next.js build:
+
+```bash
+npm run build
+bash scripts/booksmith-start.sh
+```
+
+The production launcher starts the Runtime and Next.js together and cleans up the Runtime process when the UI stops.
 
 ## Static publishing remains separate
 
@@ -48,7 +58,7 @@ When `GITHUB_PAGES=true`, `next.config.ts` enables static export and the `/books
 
 This separation is intentional:
 
-- GitHub Pages may display books, registries, production state, and the Studio shell.
+- GitHub Pages may display books, registries, production state, and the Studio shell;
 - browser-local drafts may still work as private local browser state;
 - canonical saves, source ingestion, model execution, Git, proofing, and publishing require the local/private Runtime.
 
@@ -69,11 +79,13 @@ npm run server
 
 The browser stores the Runtime URL and optional token locally through **Studio → Runtime**.
 
-Runtime mutation routes validate both origin policy and authorization. Consequential job types require an additional explicit confirmation string.
+When Booksmith is deliberately bound beyond loopback, **every Runtime route is token-protected**, including manuscript reads, search, graph data, jobs, provider state, Git state, and health information. Browser origins remain constrained separately. On loopback, the Runtime remains usable without a token because the operating-system network boundary keeps it local to the machine.
+
+Consequential job types require an additional explicit confirmation string even after Runtime authorization.
 
 ## Canonical manuscript lifecycle
 
-The Living Manuscript Studio now uses this sequence:
+The Living Manuscript Studio uses this sequence:
 
 ```text
 repository canon
@@ -93,7 +105,7 @@ provenance event
 optional local Git commit
 ```
 
-A stale working copy cannot silently overwrite a manuscript that changed after it was loaded. The Runtime returns a conflict and requires the author to reload/review canon.
+A stale working copy cannot silently overwrite a manuscript that changed after it was loaded. The Runtime returns a conflict and requires the author to reload and review canon.
 
 Canonical files remain under:
 
@@ -103,11 +115,11 @@ books/<book-slug>/manuscript/chapters/<chapter-slug>.md
 
 Runtime operational provenance is stored under `.booksmith/provenance/` and intentionally ignored by Git unless the author deliberately exports it into a governed artifact.
 
-## Booksmith Intelligence
+## Booksmith Intelligence and Model Studio
 
-The writing surface now calls the existing governed provider service rather than copying a prompt packet.
+The writing surface calls the governed provider service rather than calling model runtimes directly from UI components.
 
-The Runtime exposes both a JSON task route and an SSE task-event route. The Studio uses the stream route to report task progress and receives output into **Proposal Staging**.
+The Runtime exposes both a JSON task route and an SSE task-event route. The Studio uses the event stream to report task progress and receives output into **Proposal Staging**.
 
 Provider output never writes manuscript canon directly.
 
@@ -135,7 +147,17 @@ Supported provider kinds remain the existing Booksmith interfaces:
 - llama.cpp local server;
 - vLLM self-hosted server.
 
-Providers are enabled through the existing environment configuration. If no provider is enabled, the UI says so rather than simulating AI output.
+**Studio → Models** is the author-facing configuration surface. It can enable a provider, set its OpenAI-compatible base URL, select a default model, save the configuration, and run a provider health/model-list test.
+
+Those settings are written only to:
+
+```text
+.booksmith/providers.json
+```
+
+The file is ignored by Git. Environment variables remain valid defaults, while Model Studio provides private Runtime overrides. If no provider is enabled, Booksmith says so rather than simulating model output.
+
+The current provider adapter is deliberately aimed at user-managed local/self-hosted endpoints. It does not claim hosted API-key support that has not been implemented in the adapter.
 
 ## SQLite Book Memory
 
@@ -162,7 +184,7 @@ The database is disposable. **Deleting it cannot delete a book.** Rebuild it fro
 
 ## Research intake
 
-**Studio → Library** now accepts three governed intake modes:
+**Studio → Library** accepts three governed intake modes:
 
 1. local file;
 2. HTTPS source URL;
@@ -186,7 +208,7 @@ preserves original
 → rebuilds SQLite memory when available
 ```
 
-Direct web imports accept HTTPS only and reject credential-bearing, local/private-network, and unsafe redirect targets.
+Direct web imports accept HTTPS only and reject credential-bearing URLs, local/private-network destinations, and unsafe redirects. Redirect targets are revalidated before they are fetched.
 
 ## Semantic memory graph
 
@@ -200,7 +222,7 @@ The visualization is a view of the SQLite relationship index, never a competing 
 
 ## Governed production jobs
 
-Booksmith Runtime exposes only an allowlist of known Booksmith engines.
+Booksmith Runtime exposes only an allowlist of known Booksmith engines. There is no arbitrary shell endpoint.
 
 Current job classes include:
 
@@ -213,7 +235,7 @@ Current job classes include:
 - publishing packet;
 - managed publish.
 
-The Production Studio can launch non-publishing jobs for each real book. Runtime Center shows persistent job state and logs from `.booksmith/jobs/`.
+The Production Studio can launch proof, visual-proof, figure, publication-gate, and packet jobs for each real book. Runtime Center shows persistent job state and logs from `.booksmith/jobs/`.
 
 Managed publication requires the explicit `publish` confirmation string before the Runtime starts it.
 
@@ -221,11 +243,11 @@ Managed publication requires the explicit `publish` confirmation string before t
 
 A canonical manuscript save can optionally create a **local Git commit** after the file has been written and provenance recorded.
 
-Booksmith Runtime does not silently push to a remote. Remote publication/synchronization remains an explicit user-controlled operation.
+Booksmith Runtime does not silently push to a remote. Remote publication and synchronization remain explicit user-controlled operations.
 
 ## PWA / installable application
 
-Booksmith now includes:
+Booksmith includes:
 
 ```text
 public/manifest.webmanifest
@@ -240,10 +262,13 @@ Offline UI availability does not imply that Runtime powers are available: canoni
 
 ## Runtime API
 
-The initial local API is intentionally narrow:
+The local API is intentionally narrow:
 
 ```text
 GET  /v1/health
+GET  /v1/providers
+POST /v1/providers
+POST /v1/providers/health
 GET  /v1/manuscript
 POST /v1/manuscript/diff
 POST /v1/manuscript/save
@@ -261,7 +286,7 @@ GET  /v1/jobs/:id
 GET  /v1/provenance
 ```
 
-No generic shell endpoint exists. The browser cannot ask the Runtime to execute arbitrary commands or arbitrary filesystem paths.
+The browser cannot ask the Runtime to execute arbitrary commands or arbitrary filesystem paths.
 
 ## Private state
 
