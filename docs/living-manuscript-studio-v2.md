@@ -1,127 +1,162 @@
-# Living Manuscript Studio v2 — Author Workspace
+# Booksmith Author Portal — Living Manuscript Studio v2
 
 ## Purpose
 
-Living Manuscript Studio v2 turns Booksmith AI from a registry-and-production dashboard into a real author-facing writing surface while preserving the repository's author-sovereignty rules.
+Booksmith now presents one coherent author-facing portal over the repository's manuscript, library, figure, proof, provenance, and publishing systems. It is no longer organized as a collection of unrelated diagnostic pages.
 
-The interface is built around one operational relationship:
+The authoring center remains:
 
 ```text
 Book Tree → Working Manuscript → Booksmith Intelligence
 ```
 
-The repository manuscript remains canonical human work. Browser editing is deliberately treated as a local working draft until a governed persistence path is connected. AI or editorial language remains a proposal until the author intentionally moves it into the working draft and later approves a repository change.
+Around that center, the portal now connects:
+
+```text
+Studio
+├── Bookshelf and real capability state
+├── Book Cockpit
+│   ├── Living Manuscript
+│   ├── Library & Sources
+│   ├── Figure Studio
+│   └── Proof & Publish
+├── Federated Library
+├── Production Studio
+├── Figure Studio
+└── System Health
+```
+
+## Author-sovereignty boundary
+
+The repository manuscript remains canonical human work. Browser editing is deliberately treated as local working-draft state until a governed persistence adapter is connected. AI or editorial language remains a proposal until the author intentionally accepts it.
+
+The portal must never imply that a browser edit, generated passage, proof command, or publication command has changed repository canon when it has not.
 
 ## Real-data boundary
 
-The Studio reads only real Booksmith state:
+Booksmith reads real repository state, including:
 
-- `books/<slug>/writing/chapter-plan.json`
-- `books/<slug>/manuscript/chapters/*.md`
-- `books/<slug>/sources/claim-ledger.json`
-- `books/<slug>/sources/provenance-log.json`
-- `books/<slug>/figures/studio/figure-studio-index.json`
+- `library/book-registry.json`
+- `library/source-registry.json`
 - `library/concept-registry.json`
+- `library/thinker-registry.json`
+- `library/reference-registry.json`
+- `library/citation-registry.json`
+- `books/<slug>/book.config.json`
+- `books/<slug>/writing/chapter-plan.json`
+- `books/<slug>/manuscript/`
+- `books/<slug>/sources/`
+- `books/<slug>/figures/`
+- `books/<slug>/assets/`
+- `books/<slug>/latex/`
+- `books/<slug>/publishing/`
+- `books/<slug>/exports/`
 
-A chapter without a manuscript file is shown as not drafted. The UI does not invent manuscript text, progress, citations, source verification, or AI output.
+A missing manuscript, source, asset, proof artifact, metadata file, or export is shown as missing. The portal does not fabricate progress.
 
-## Writing workspace
+## Public portal
 
-The primary `Write` mode uses three responsive panes.
+The root Booksmith page now presents the product around the actual system: registered books, active/drafting books, Living Manuscript eligibility, production-rich books, concepts, and thinkers. It routes directly into the Studio, Living Manuscript, Library, Figures, Production, and System Health surfaces.
+
+## Studio
+
+`/studio` is the central bookshelf and operating surface. Each registered book receives a capability snapshot derived from actual repository files rather than static product labels.
+
+The snapshot reports manuscript, sources, Claim Ledger, provenance, figures, LaTeX, publishing state, proof/report artifacts, and exports. A production-surface percentage is an index of those observable capabilities, not a claim that a book is percentage-complete as a manuscript.
+
+## Book Cockpit
+
+Every registered book receives `/studio/books/<slug>`. The cockpit shows the real book configuration, canonical terms, publishing targets, related books, repository manuscript files, source files, integrity issues, and available workflow surfaces.
+
+A Living Manuscript link appears only when the book satisfies the current structured data contract.
+
+## Living Manuscript
+
+The Living Manuscript route is generated for every book that actually provides the required structured files rather than being hardcoded to one slug.
 
 ### Book Tree
 
-The Book Tree shows the real part and chapter plan, canonical manuscript availability, canonical word counts, and writing-queue readiness. Selecting a chapter changes the full author context without duplicating graph data in the UI.
+The Book Tree shows the real part and chapter plan, canonical manuscript availability, canonical word counts, and writing-queue readiness.
 
 ### Working Manuscript
 
-When a canonical chapter file exists, its Markdown source is loaded into the writing surface. The browser-local working draft is stored under a namespaced `localStorage` key:
+When a canonical Markdown chapter exists, its source is loaded into the writing surface. Browser-local working state uses:
 
 ```text
 booksmith:<book-slug>:draft:<chapter-slug>
 ```
 
-This is intentionally not represented as a repository save. The UI distinguishes:
-
-- canonical repository text;
-- browser-local changes;
-- chapters with no canonical manuscript yet.
-
-The author can restore the local draft to repository canon at any time. Write and Preview modes operate on the same working draft.
+The editor distinguishes canonical repository text from local changes and can restore the browser draft to canon. Write and Preview modes use the same local working state.
 
 ### Booksmith Intelligence
 
-The intelligence panel does not call a model runtime directly. It assembles a deterministic provider context containing:
+The intelligence panel does not call a model runtime from the browser. It assembles deterministic provider context containing book and chapter identity, manuscript state, writing queue, editorial target, primary texts, author-canon rule, required movement, Claim Ledger entries, local working draft, and the author's instruction.
 
-- book and chapter identity;
-- canonical manuscript state;
-- writing queue state;
-- editorial target;
-- primary texts;
-- author-canon rule;
-- required chapter movement;
-- Claim Ledger entries in scope;
-- the current browser-local working draft;
-- the author's explicit request.
+This preserves the existing provider boundary and keeps a future `runAiTask` integration server/local-runtime governed.
 
-The context can be copied into a configured provider workflow today and is structured so a governed provider adapter can replace that bridge later.
+### Proposal staging
 
-## Proposal staging
+AI and editorial language is staged separately. Applying a proposal modifies browser-local working state only. It does not write repository canon or claim author approval.
 
-AI and editorial language is staged separately from the manuscript. Applying a proposal changes only the browser-local working draft. It does not write the repository manuscript or claim author approval.
+### Claim Ledger
 
-The intended future persistence sequence is:
+Claim Ledger remains first-class and preserves distinctions among author canon, constructive theology, philosophical inference, theological hypothesis, editorial safeguards, support state, source references, and chapter scope.
 
-```text
-Proposal
-  ↓
-Author review
-  ↓
-Local working draft
-  ↓
-Diff / provenance review
-  ↓
-Explicit approval
-  ↓
-Governed repository save
-  ↓
-Verification and record
-```
+### Chapter Forge
 
-## Claim Ledger
+Chapter Forge remains deterministic and generates a real chapter context packet from the current plan, canon boundary, source state, and claims.
 
-Claim Ledger remains a first-class mode. It preserves distinctions among author canon, constructive theology, philosophical inference, theological hypothesis, editorial safeguards, support status, source references, and chapter scope.
+### Book Memory
 
-## Chapter Forge
-
-Chapter Forge remains deterministic. It assembles the real chapter requirements and Claim Ledger state into an author context packet. It does not present a copied prompt as a completed draft or confuse a model proposal with canonical manuscript progress.
-
-## Book Memory
-
-Book Memory now exposes the concepts already connected to the active book through `library/concept-registry.json`, including their domains and reference keys. This is the first author-facing projection of the future semantic Book Memory Graph.
-
-The next graph phase should add relationships among:
+Book Memory exposes concepts already connected to the active book through the federation concept registry, including domain and reference keys. It is the first interactive projection of a larger semantic graph:
 
 ```text
 Concept ↔ Book ↔ Chapter ↔ Claim ↔ Source ↔ Reference ↔ Figure
 ```
 
-The graph must remain a projection of structured Booksmith data rather than a second source of truth.
+The graph remains a projection of structured Booksmith data rather than a competing source of truth.
 
-## Next implementation layer
+## Federated Library
 
-The next technological layer should connect governed local persistence and AI providers without weakening the current boundaries:
+`/studio/library` provides searchable client-side exploration across the registry data already shipped with Booksmith:
 
-1. Add a server/local-runtime save adapter that writes manuscript changes only after explicit author approval.
-2. Generate a structured diff between repository canon and the working draft.
-3. Record accepted revisions in provenance.
-4. Connect `runAiTask` or the governed provider interface to the existing context packet.
-5. Return provider output into Proposal Staging rather than directly into manuscript canon.
-6. Add retrieval across the federated library, sources, claims, concepts, thinkers, and references.
-7. Add Proof Studio and publishing actions as downstream surfaces of the same author workspace.
+- books;
+- concepts;
+- thinkers;
+- reference keys;
+- connected source records.
+
+This is structured retrieval over indexed Booksmith state, not a claim that full semantic/vector retrieval or external-source ingestion is already running in the static portal.
+
+## Figure Studio
+
+Figure Studio now discovers every registered book with a real Figure Studio index instead of being hardcoded to FHQCM. Detail routes carry the owning book and figure ID together, allowing manuscript context, art direction, provider-agnostic prompt, asset state, checksum, required/forbidden objects, and QA state to remain book-aware.
+
+Print approval remains an explicit human decision.
+
+## Production Studio
+
+`/studio/production` indexes real manuscript, bibliography, figure, LaTeX, proof/report, publishing, and export files by book. It also surfaces the existing local production commands without pretending the static website executed them.
+
+Booksmith's local-first production engines remain responsible for actual rendering, proof inspection, publication gates, publishing packets, and managed publication.
+
+## System Health
+
+`/studio/system` reports a generated `.booksmith-build/system-health/system-health-v1.json` snapshot when one exists. If it does not exist, the portal shows an honest command to generate it rather than assuming provider, LaTeX, or system availability.
+
+## Remaining runtime boundary
+
+The visual portal is integrated. The remaining work is runtime plumbing that cannot truthfully be simulated by static GitHub Pages:
+
+1. a governed local/server manuscript-save adapter;
+2. canonical-vs-working-draft diff review before persistence;
+3. accepted-revision provenance recording;
+4. `runAiTask` provider execution returning into Proposal Staging;
+5. full semantic/vector retrieval and source ingestion;
+6. browser controls that invoke the existing proof/publish engines through an authorized local runtime.
+
+These are execution boundaries, not missing portal concepts. The UI now exposes where they belong without claiming they are already active.
 
 ## Invariant
-
-The interface may become more intelligent, immersive, and automated, but one rule remains fixed:
 
 **The author writes the book. Intelligence serves the book. Canon changes only through an intentional author-governed act.**
