@@ -3,6 +3,7 @@ import concepts from "../../../../library/concept-registry.json";
 import references from "../../../../library/reference-registry.json";
 import thinkers from "../../../../library/thinker-registry.json";
 import { LibraryExplorer } from "@/app/studio/components/library-explorer";
+import { SourceImporter } from "@/app/studio/components/source-importer";
 import { loadFederatedLibrary } from "@/lib/library/load-library";
 
 export default async function LibraryPage() {
@@ -15,7 +16,7 @@ export default async function LibraryPage() {
           <p className="text-[11px] font-black uppercase tracking-[0.3em] text-[#d4a85f]">Federated Library</p>
           <h1 className="mt-4 max-w-5xl text-4xl font-black tracking-[-0.03em] sm:text-6xl">The memory around the manuscript.</h1>
           <p className="mt-5 max-w-4xl text-base leading-8 text-[#9eb2a2]">
-            Search the real Booksmith registries across books, concepts, intellectual genealogy, references, and connected source records. The library is not a second manuscript: it is the structured memory that helps every sovereign book remain coherent with itself and related work.
+            Search the real Booksmith registries across books, concepts, intellectual genealogy, references, and connected source records. With the local Runtime connected, this is also the research intake surface: originals are preserved, provenance is recorded, readable text is extracted where local tools support it, and SQLite memory is rebuilt from the canonical library.
           </p>
           <div className="mt-6 flex flex-wrap gap-2 text-[10px] font-black uppercase tracking-[0.13em] text-[#9eb2a2]">
             <span className="rounded-full border border-[#31523b] bg-[#102219] px-3 py-1.5">{library.books.length} books</span>
@@ -26,6 +27,10 @@ export default async function LibraryPage() {
             <span className="rounded-full border border-[#31523b] bg-[#102219] px-3 py-1.5">{library.sources.sources.length} source records</span>
           </div>
         </header>
+
+        <div className="mt-6">
+          <SourceImporter books={library.books.map((book) => ({ slug: book.registry.slug, title: (book.config ?? book.registry).title }))} />
+        </div>
 
         <div className="mt-6">
           <LibraryExplorer
