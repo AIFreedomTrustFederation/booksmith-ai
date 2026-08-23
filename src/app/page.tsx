@@ -1,229 +1,131 @@
 import Link from "next/link";
 
+import concepts from "../../library/concept-registry.json";
+import thinkers from "../../library/thinker-registry.json";
 import { loadFederatedLibrary } from "@/lib/library/load-library";
-
-const pillars = [
-  {
-    title: "Author sovereignty",
-    body: "Human authors keep creative control, approval authority, manuscripts, exports, and final publishing decisions.",
-  },
-  {
-    title: "Local-first AI",
-    body: "Core workflows are designed for self-hosted, inspectable, open-source, and open-weight AI paths without required paid APIs.",
-  },
-  {
-    title: "Federated library",
-    body: "Books remain sovereign projects while sharing canon, glossary terms, citations, cross-references, and provenance.",
-  },
-];
-
-const workflow = [
-  "Create or import a real manuscript or source packet",
-  "Connect the book to shared canon, references, and concepts",
-  "Revise chapters with continuity and provenance checks",
-  "Typeset proofs with local LaTeX and open fonts",
-  "Export the publishing packet for AI Freedom Trust Publishing",
-  "Launch with metadata, blurbs, campaign assets, and approval records",
-];
+import { getLibraryCapabilitySnapshots } from "@/lib/studio/studio-capabilities";
 
 export default async function Home() {
   const library = await loadFederatedLibrary();
-  const bookCount = library.books.length;
-  const seriesCount = library.series.length;
-  const configuredBooks = library.books.filter((book) => book.config).length;
+  const indexed = getLibraryCapabilitySnapshots(library.books);
+  const activeBooks = library.books.filter((book) => ["active", "drafting"].includes((book.config ?? book.registry).status)).length;
+  const livingBooks = indexed.filter(({ snapshot }) => snapshot.hasLivingManuscript).length;
+  const productionBooks = indexed.filter(({ snapshot }) => snapshot.capabilityScore >= 50).length;
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#101811] text-[#f8fbf4]">
-      <section className="relative isolate">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(139,190,122,0.35),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(233,214,154,0.22),transparent_30%),linear-gradient(135deg,#101811_0%,#173322_44%,#f4f8f1_220%)]" />
-        <div className="absolute inset-x-0 top-0 -z-10 h-32 bg-gradient-to-b from-black/35 to-transparent" />
+    <main className="min-h-screen overflow-hidden bg-[#06110b] text-[#eef7ea]">
+      <section className="relative isolate min-h-[92vh] border-b border-[#213b2b]">
+        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_18%_15%,rgba(62,105,77,0.34),transparent_32%),radial-gradient(circle_at_78%_10%,rgba(180,141,77,0.18),transparent_30%),linear-gradient(145deg,#06110b_0%,#0b1d13_52%,#07120c_100%)]" />
+        <div className="absolute left-[12%] top-[15%] -z-10 h-72 w-72 rounded-full border border-[#65724e]/20" />
+        <div className="absolute left-[18%] top-[21%] -z-10 h-48 w-48 rounded-full border border-[#ad8849]/20" />
 
-        <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8">
-          <Link className="group flex items-center gap-3" href="/">
-            <span className="grid h-11 w-11 place-items-center rounded-2xl border border-white/15 bg-white/10 text-lg font-black shadow-2xl backdrop-blur">
-              B
-            </span>
-            <span>
-              <span className="block text-sm font-semibold uppercase tracking-[0.28em] text-[#bde8bd]">
-                Booksmith AI
-              </span>
-              <span className="block text-xs text-[#dbe9d7]">
-                Federated publishing studio
-              </span>
-            </span>
-          </Link>
-          <nav className="hidden items-center gap-6 text-sm font-semibold text-[#dbe9d7] md:flex">
-            <a className="transition hover:text-white" href="#platform">
-              Platform
-            </a>
-            <a className="transition hover:text-white" href="#workflow">
-              Workflow
-            </a>
-            <a className="transition hover:text-white" href="#library">
-              Library
-            </a>
-          </nav>
-          <Link
-            className="rounded-full border border-white/15 bg-white px-4 py-2 text-sm font-bold text-[#173322] shadow-xl transition hover:bg-[#e8f5e2]"
-            href="/studio"
-          >
-            Open Studio
-          </Link>
+        <header className="mx-auto flex max-w-[1650px] items-center justify-between gap-4 px-5 py-5 sm:px-8">
+          <div className="flex items-center gap-3">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#6d5a37] bg-[#1c190f] font-serif text-xl font-black text-[#deb970]">B</span>
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.26em] text-[#d4a85f]">Booksmith AI</p>
+              <p className="text-[10px] font-semibold text-[#718978]">AI Freedom Trust Publishing</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <Link className="hidden rounded-xl border border-[#314d39] px-4 py-2 text-xs font-bold text-[#b8cbbd] transition hover:bg-[#102219] hover:text-white sm:block" href="/studio/library">Library</Link>
+            <Link className="rounded-xl bg-[#d4a85f] px-4 py-2 text-xs font-black text-[#172015] transition hover:bg-[#e9bf77]" href="/studio">Enter Studio</Link>
+          </div>
         </header>
 
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-14 lg:grid-cols-[minmax(0,1fr)_480px] lg:px-8 lg:pb-28 lg:pt-20">
+        <div className="mx-auto grid max-w-[1650px] gap-12 px-5 pb-20 pt-16 sm:px-8 lg:grid-cols-[minmax(0,1fr)_500px] lg:items-center lg:pb-28 lg:pt-24">
           <div>
-            <p className="inline-flex rounded-full border border-[#bde8bd]/30 bg-white/10 px-4 py-2 text-sm font-semibold text-[#d7f5d4] shadow-2xl backdrop-blur">
-              {library.registry.title} · {bookCount} books · {configuredBooks} configs · {seriesCount} series
-            </p>
-            <h1 className="mt-8 max-w-5xl text-5xl font-black tracking-[-0.04em] text-white sm:text-7xl lg:text-8xl">
-              Forge books without surrendering the soul of the manuscript.
+            <p className="text-[11px] font-black uppercase tracking-[0.36em] text-[#d4a85f]">The author writes the book.</p>
+            <h1 className="mt-5 max-w-5xl text-5xl font-black tracking-[-0.055em] text-[#f4f1e9] sm:text-7xl lg:text-[5.5rem] lg:leading-[0.96]">
+              Intelligence should remember everything around the words without taking the words away from you.
             </h1>
-            <p className="mt-7 max-w-3xl text-lg leading-8 text-[#dbe9d7] sm:text-xl">
-              Booksmith AI is the creative foundry and library operating system for
-              AI Freedom Trust Publishing: a local-first studio where real books,
-              manuals, doctrines, theories, source lineages, citations, and publishing
-              packets share one inspectable source of truth.
+            <p className="mt-7 max-w-3xl text-base leading-8 text-[#9eb2a2] sm:text-lg sm:leading-9">
+              Booksmith is a sovereign manuscript and publishing studio where chapters remain connected to canon, claims, sources, figures, references, provenance, proof, and publication state. AI enters as an inspectable proposal—not a hidden author.
             </p>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <Link
-                className="rounded-full bg-[#d9f4cc] px-6 py-3 text-center text-sm font-black text-[#132018] shadow-2xl transition hover:bg-white"
-                href="/studio"
-              >
-                Enter the federated studio
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link className="rounded-xl bg-[#d4a85f] px-6 py-3.5 text-sm font-black text-[#172015] shadow-[0_10px_40px_rgba(212,168,95,0.12)] transition hover:bg-[#e9bf77]" href="/studio/books/energence/living-manuscript">
+                Open Living Manuscript
               </Link>
-              <a
-                className="rounded-full border border-white/20 px-6 py-3 text-center text-sm font-bold text-white transition hover:border-white/50 hover:bg-white/10"
-                href="https://github.com/AIFreedomTrustFederation/booksmith-ai"
-              >
-                View the repository
-              </a>
+              <Link className="rounded-xl border border-[#46604d] bg-[#09170f]/70 px-6 py-3.5 text-sm font-black text-[#d8e7da] transition hover:bg-[#13271a]" href="/studio">
+                Explore Booksmith
+              </Link>
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-white/15 bg-white/10 p-4 shadow-2xl backdrop-blur">
-            <div className="rounded-[1.5rem] border border-[#d8e1d1] bg-[#f7fbf4] p-5 text-[#17201a]">
-              <div className="flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#48725b]">
-                    Live registry
-                  </p>
-                  <h2 className="mt-2 text-2xl font-black tracking-tight">
-                    Federated library online
-                  </h2>
-                </div>
-                <span className="rounded-full bg-[#173322] px-3 py-1 text-xs font-bold text-white">
-                  Main
-                </span>
-              </div>
-
-              <div className="mt-6 space-y-3">
-                {library.books.slice(0, 6).map((book) => {
-                  const display = book.config ?? book.registry;
-
-                  return (
-                    <div
-                      className="rounded-2xl border border-[#dfe8da] bg-white px-4 py-3 shadow-sm"
-                      key={book.registry.slug}
-                    >
-                      <div className="flex items-center justify-between gap-3">
-                        <span className="font-semibold">{display.title}</span>
-                        <span className="rounded-full bg-[#eef7ea] px-2.5 py-1 text-xs font-bold text-[#3f674b]">
-                          {display.status}
-                        </span>
-                      </div>
-                      <p className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#607064]">
-                        {display.series}
-                      </p>
-                      <p className="mt-2 text-xs text-[#607064]">
-                        {book.config ? book.configPath : "Missing book.config.json"} · {book.connectedSources.length} sources
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="mt-6 rounded-2xl bg-[#173322] p-5 text-white">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9cd4aa]">
-                  Library equation
-                </p>
-                <p className="mt-3 text-2xl font-black leading-tight">
-                  Sovereign Books + Shared Canon + Provenance + Cross-References.
-                </p>
-              </div>
+          <div className="rounded-[2rem] border border-[#334f3b] bg-[#09170f]/85 p-5 shadow-[0_35px_100px_rgba(0,0,0,0.28)] sm:p-6">
+            <p className="text-[10px] font-black uppercase tracking-[0.24em] text-[#718978]">Live federation state</p>
+            <div className="mt-4 grid grid-cols-2 gap-3">
+              <Metric value={library.books.length} label="registered books" />
+              <Metric value={activeBooks} label="active / drafting" />
+              <Metric value={livingBooks} label="living manuscripts" />
+              <Metric value={productionBooks} label="production-rich" />
+              <Metric value={concepts.concepts.length} label="shared concepts" />
+              <Metric value={thinkers.thinkers.length} label="indexed thinkers" />
+            </div>
+            <div className="mt-4 rounded-2xl border border-[#4d432b] bg-[#17150d] p-4">
+              <p className="text-[10px] font-black uppercase tracking-[0.16em] text-[#b49358]">Author sovereignty</p>
+              <p className="mt-2 text-sm leading-7 text-[#b7aa8b]">Repository manuscript is canon. Browser work remains local draft state. Generated language remains proposal until the author deliberately accepts and later persists it through a governed save path.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f4f8f1] px-6 py-20 text-[#17201a] lg:px-8" id="platform">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-sm font-black uppercase tracking-[0.24em] text-[#48725b]">
-            Platform principles
-          </p>
-          <h2 className="mt-4 max-w-3xl text-4xl font-black tracking-tight sm:text-5xl">
-            A beautiful front door for sovereign authorship.
-          </h2>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {pillars.map((pillar) => (
-              <article
-                className="rounded-3xl border border-[#d8e1d1] bg-white p-6 shadow-sm"
-                key={pillar.title}
-              >
-                <h3 className="text-xl font-black">{pillar.title}</h3>
-                <p className="mt-4 leading-7 text-[#607064]">{pillar.body}</p>
-              </article>
-            ))}
-          </div>
+      <section className="mx-auto max-w-[1650px] px-5 py-16 sm:px-8 lg:py-24">
+        <div className="max-w-4xl">
+          <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#d4a85f]">One continuous workspace</p>
+          <h2 className="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-6xl">The manuscript is the center. Everything else knows where it belongs.</h2>
+        </div>
+
+        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <PortalCard eyebrow="Write" title="Living Manuscript" body="Navigate the Book Tree, write against canonical source, keep browser-local working drafts, preview Markdown, stage proposals, and carry chapter-aware context into Booksmith Intelligence." href="/studio/books/energence/living-manuscript" />
+          <PortalCard eyebrow="Remember" title="Federated Library" body="Search books, concepts, intellectual genealogy, reference keys, and explicit source records without collapsing independent books into one undifferentiated context window." href="/studio/library" />
+          <PortalCard eyebrow="Visualize" title="Figure Studio" body="Keep illustration intent connected to manuscript context, art direction, prompts, asset status, checksums, QA, and explicit print approval." href="/studio/figures" />
+          <PortalCard eyebrow="Finish" title="Proof & Publish" body="See the real LaTeX, bibliography, proof/report, publishing metadata, checklist, and export state that feeds Booksmith's existing local-first production engines." href="/studio/production" />
         </div>
       </section>
 
-      <section className="bg-white px-6 py-20 text-[#17201a] lg:px-8" id="workflow">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[420px_minmax(0,1fr)]">
+      <section className="border-y border-[#213b2b] bg-[#08160e]">
+        <div className="mx-auto grid max-w-[1650px] gap-8 px-5 py-16 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:py-20">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.24em] text-[#48725b]">
-              Workflow
-            </p>
-            <h2 className="mt-4 text-4xl font-black tracking-tight">
-              From source packet to launch packet.
-            </h2>
-            <p className="mt-5 leading-8 text-[#607064]">
-              Booksmith connects manuscript, story bible, editorial logic,
-              citation canon, typesetting source, launch campaign, imprint metadata,
-              and approval records into one traceable production system.
-            </p>
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#d4a85f]">The Booksmith covenant</p>
+            <h2 className="mt-4 text-4xl font-black tracking-[-0.04em]">Human canon stays human.</h2>
           </div>
-          <ol className="grid gap-4 md:grid-cols-2">
-            {workflow.map((step, index) => (
-              <li
-                className="rounded-3xl border border-[#d8e1d1] bg-[#f8fbf5] p-5"
-                key={step}
-              >
-                <span className="text-sm font-black text-[#48725b]">
-                  0{index + 1}
-                </span>
-                <p className="mt-3 text-lg font-bold">{step}</p>
-              </li>
-            ))}
-          </ol>
+          <div className="grid gap-3 sm:grid-cols-3">
+            <Principle title="Canon" body="User-authored or explicitly approved text remains authoritative source, not disposable prompt history." />
+            <Principle title="Proposal" body="AI can draft, revise, analyze, and assemble context, but generated language stays visibly unapproved until accepted." />
+            <Principle title="Provenance" body="Sources, claims, figures, revisions, model choices, and publication state remain inspectable around the work." />
+          </div>
         </div>
       </section>
 
-      <section className="bg-[#17201a] px-6 py-20 text-white lg:px-8" id="library">
-        <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl lg:p-12">
-          <p className="text-sm font-black uppercase tracking-[0.24em] text-[#9cd4aa]">
-            Federation ready
-          </p>
-          <h2 className="mt-4 max-w-4xl text-4xl font-black tracking-tight sm:text-5xl">
-            Booksmith AI is now the authoring studio and the federated library map.
-          </h2>
-          <p className="mt-6 max-w-3xl leading-8 text-[#cfe7d4]">
-            Every seed book can grow independently while remaining recursively linked
-            through the shared canon, references, concepts, glossary, provenance,
-            and publishing packet rules.
-          </p>
+      <section className="mx-auto max-w-[1650px] px-5 py-16 sm:px-8 lg:py-24">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-end">
+          <div>
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#d4a85f]">Begin inside the work</p>
+            <h2 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.04em] sm:text-6xl">Not another blank chat box. A place where a book can remember itself.</h2>
+          </div>
+          <div className="flex flex-col gap-3">
+            <Link className="rounded-xl bg-[#d4a85f] px-6 py-4 text-center text-sm font-black text-[#172015] transition hover:bg-[#e9bf77]" href="/studio">Enter Booksmith Studio</Link>
+            <Link className="rounded-xl border border-[#46604d] px-6 py-4 text-center text-sm font-black text-[#d8e7da] transition hover:bg-[#13271a]" href="/studio/system">Inspect local system readiness</Link>
+          </div>
         </div>
       </section>
+
+      <footer className="border-t border-[#213b2b] px-5 py-7 text-center text-xs leading-6 text-[#607765] sm:px-8">
+        Booksmith AI · Author-first manuscript intelligence and publishing infrastructure · AI Freedom Trust Federation
+      </footer>
     </main>
   );
+}
+
+function Metric({ value, label }: { value: number; label: string }) {
+  return <div className="rounded-2xl border border-[#294735] bg-[#07120c] p-4"><p className="text-3xl font-black text-[#f1dfb7]">{value}</p><p className="mt-1 text-[9px] font-black uppercase tracking-[0.13em] text-[#718978]">{label}</p></div>;
+}
+
+function PortalCard({ eyebrow, title, body, href }: { eyebrow: string; title: string; body: string; href: string }) {
+  return <Link className="rounded-3xl border border-[#294735] bg-[#0b1a11] p-6 transition hover:-translate-y-1 hover:border-[#6d5a37] hover:bg-[#15180f]" href={href}><p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#d4a85f]">{eyebrow}</p><h3 className="mt-2 text-2xl font-black">{title}</h3><p className="mt-4 text-sm leading-7 text-[#91a997]">{body}</p><p className="mt-6 text-xs font-black uppercase tracking-[0.12em] text-[#b8cbbd]">Open →</p></Link>;
+}
+
+function Principle({ title, body }: { title: string; body: string }) {
+  return <div className="rounded-2xl border border-[#294735] bg-[#0b1a11] p-5"><h3 className="text-lg font-black text-[#f1dfb7]">{title}</h3><p className="mt-2 text-sm leading-7 text-[#91a997]">{body}</p></div>;
 }
