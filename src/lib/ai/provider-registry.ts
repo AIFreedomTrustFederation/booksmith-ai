@@ -1,3 +1,6 @@
+import fs from "node:fs";
+import path from "node:path";
+
 import { ModelProvider, ModelProviderConfig, ModelProviderNotConfiguredError } from "./model-provider";
 import { OpenAICompatibleProvider } from "./providers/openai-compatible-provider";
 
@@ -37,19 +40,53 @@ export const defaultModelProviderConfigs: ModelProviderConfig[] = [
   },
 ];
 
+type ProviderOverride = {
+  id: string;
+  enabled?: boolean;
+  baseUrl?: string;
+  defaultModel?: string;
+};
+
+type ProviderOverrideFile = { providers?: ProviderOverride[] };
+
+function loadRuntimeOverrides(): ProviderOverride[] {
+  const file = path.join(process.cwd(), ".booksmith", "providers.json");
+  try {
+    if (!fs.existsSync(file)) return [];
+    const parsed = JSON.parse(fs.readFileSync(file, "utf8")) as ProviderOverrideFile;
+    return Array.isArray(parsed.providers) ? parsed.providers : [];
+  } catch {
+    return [];
+  }
+}
+
+export function getModelProviderConfigs(): ModelProviderConfig[] {
+  const overrides = new Map(loadRuntimeOverrides().map((provider) => [provider.id, provider]));
+  return defaultModelProviderConfigs.map((base) => {
+    const override = overrides.get(base.id);
+    if (!override) return { ...base };
+    return {
+      ...base,
+      enabled: typeof override.enabled === "boolean" ? override.enabled : base.enabled,
+      baseUrl: override.baseUrl?.trim() || base.baseUrl,
+      defaultModel: override.defaultModel?.trim() || base.defaultModel,
+    };
+  });
+}
+
 export function createModelProvider(config: ModelProviderConfig): ModelProvider {
   return new OpenAICompatibleProvider(config);
 }
 
 export function getEnabledModelProviders(
-  configs: ModelProviderConfig[] = defaultModelProviderConfigs,
+  configs: ModelProviderConfig[] = getModelProviderConfigs(),
 ): ModelProvider[] {
   return configs.filter((config) => config.enabled).map(createModelProvider);
 }
 
 export function getModelProvider(
   providerId: string,
-  configs: ModelProviderConfig[] = defaultModelProviderConfigs,
+  configs: ModelProviderConfig[] = getModelProviderConfigs(),
 ): ModelProvider {
   const config = configs.find((candidate) => candidate.id === providerId && candidate.enabled);
 
