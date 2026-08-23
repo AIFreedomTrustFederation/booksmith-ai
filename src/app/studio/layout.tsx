@@ -6,6 +6,7 @@ const navItems = [
   { href: "/studio/library", label: "Library" },
   { href: "/studio/production", label: "Production" },
   { href: "/studio/figures", label: "Figures" },
+  { href: "/studio/runtime", label: "Runtime" },
   { href: "/studio/system", label: "System" },
 ];
 
@@ -22,7 +23,7 @@ export default function StudioLayout({ children }: Readonly<{ children: React.Re
             </span>
           </Link>
 
-          <nav aria-label="Booksmith Studio" className="hidden items-center gap-1 rounded-xl border border-[#20382a] bg-[#09170f] p-1 md:flex">
+          <nav aria-label="Booksmith Studio" className="hidden items-center gap-1 rounded-xl border border-[#20382a] bg-[#09170f] p-1 lg:flex">
             {navItems.map((item) => (
               <Link className="rounded-lg px-3 py-2 text-xs font-bold text-[#91a997] transition hover:bg-[#13271a] hover:text-white" href={item.href} key={item.href}>
                 {item.label}
@@ -36,7 +37,7 @@ export default function StudioLayout({ children }: Readonly<{ children: React.Re
             </Link>
           </div>
         </div>
-        <nav aria-label="Booksmith Studio mobile" className="flex gap-1 overflow-x-auto border-t border-[#172a1f] px-4 py-2 md:hidden">
+        <nav aria-label="Booksmith Studio mobile" className="flex gap-1 overflow-x-auto border-t border-[#172a1f] px-4 py-2 lg:hidden">
           {navItems.map((item) => (
             <Link className="whitespace-nowrap rounded-lg px-3 py-2 text-xs font-bold text-[#91a997] transition hover:bg-[#13271a] hover:text-white" href={item.href} key={item.href}>
               {item.label}
