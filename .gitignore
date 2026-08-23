@@ -41,6 +41,8 @@
 .aift/repos.json
 .aift/workflows.json
 .booksmith-build/
+.booksmith/
+data/provenance/*.jsonl
 .env*
 .pnp.*
 .pnpm-debug.log*
