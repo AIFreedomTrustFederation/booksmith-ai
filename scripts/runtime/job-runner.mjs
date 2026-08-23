@@ -9,7 +9,6 @@ const jobsDir = path.join(root, ".booksmith", "jobs");
 const jobs = new Map();
 
 const definitions = {
-  "library-index": { command: ["node", "-e", "console.log('Booksmith index is handled by the runtime SQLite index endpoint.')"] },
   "library-validate": { npmScript: "validate:library:v2" },
   "system-health": { npmScript: "system:health" },
   "proof": { npmScript: "proof:v3" },
@@ -30,7 +29,6 @@ async function persist(job) {
 }
 
 function commandFor(definition, bookSlug) {
-  if (definition.command) return definition.command;
   const npm = process.platform === "win32" ? "npm.cmd" : "npm";
   const args = ["run", definition.npmScript];
   if (bookSlug) args.push("--", bookSlug);
