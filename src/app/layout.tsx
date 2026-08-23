@@ -13,22 +13,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Booksmith AI",
+  title: {
+    default: "Booksmith AI — Living Manuscript Studio",
+    template: "%s · Booksmith AI",
+  },
   description:
-    "An AI-powered book writing, editing, publishing, and launch studio for authors.",
+    "Author-first manuscript intelligence, federated research memory, figures, provenance, proof, and publishing workflows for sovereign books.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      <body className="min-h-full">{children}</body>
     </html>
   );
 }
