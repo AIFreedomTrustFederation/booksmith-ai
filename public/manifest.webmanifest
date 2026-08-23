@@ -1,0 +1,20 @@
+{
+  "name": "Booksmith AI — Sovereign Writing Studio",
+  "short_name": "Booksmith",
+  "description": "Author-first manuscript intelligence, research, proofing and publishing.",
+  "start_url": "./studio",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#06110b",
+  "theme_color": "#06110b",
+  "orientation": "any",
+  "categories": ["productivity", "books", "education"],
+  "icons": [
+    {
+      "src": "./booksmith-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
