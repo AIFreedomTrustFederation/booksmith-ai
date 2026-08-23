@@ -7,6 +7,7 @@ import { defaultModelProviderConfigs, getEnabledModelProviders } from "../src/li
 import { booksmithGraph, indexStatus, rebuildBooksmithIndex, searchBooksmithIndex } from "./runtime/sqlite-index.mjs";
 import { diffManuscript, gitStatus, readManuscript, recentManuscriptProvenance, saveManuscript } from "./runtime/manuscript-store.mjs";
 import { getJob, listJobKinds, recentJobs, startJob } from "./runtime/job-runner.mjs";
+import { importSource } from "./runtime/source-importer.mjs";
 
 const root = process.cwd();
 const host = process.env.BOOKSMITH_RUNTIME_HOST ?? "127.0.0.1";
@@ -69,7 +70,7 @@ async function body(request: IncomingMessage) {
   for await (const chunk of request) {
     const buffer = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk);
     bytes += buffer.length;
-    if (bytes > 8 * 1024 * 1024) throw new Error("Request body exceeds 8 MiB.");
+    if (bytes > 40 * 1024 * 1024) throw new Error("Request body exceeds 40 MiB.");
     chunks.push(buffer);
   }
   const raw = Buffer.concat(chunks).toString("utf8");
@@ -120,6 +121,7 @@ async function health() {
     repository: root,
     node: process.version,
     sqlite,
+    importMaxBytes: Number(process.env.BOOKSMITH_IMPORT_MAX_BYTES ?? 25 * 1024 * 1024),
     providers: defaultModelProviderConfigs.map((provider) => ({
       id: provider.id,
       label: provider.label,
@@ -190,6 +192,14 @@ const server = createServer(async (request, response) => {
       return streamAi(request, response);
     }
 
+    if (request.method === "POST" && route === "/v1/sources/import") {
+      requireMutationAccess(request);
+      const imported = await importSource(await body(request));
+      let index = null;
+      try { index = await rebuildBooksmithIndex(); } catch { /* source remains safely imported even if local SQLite is unavailable */ }
+      return json(response, 201, { ...imported, index });
+    }
+
     if (request.method === "POST" && route === "/v1/index/rebuild") {
       requireMutationAccess(request);
       return json(response, 200, await rebuildBooksmithIndex());
@@ -224,11 +234,12 @@ const server = createServer(async (request, response) => {
 
     if (request.method === "GET" && route === "/v1/provenance") {
       const limit = safeLimit(url.searchParams.get("limit"), 100);
-      const [manuscript, ai] = await Promise.all([
+      const [manuscript, ai, sources] = await Promise.all([
         recentManuscriptProvenance(limit),
         readJsonLines(path.join(root, "data", "provenance", "ai-tasks.jsonl"), limit),
+        readJsonLines(path.join(root, ".booksmith", "provenance", "source-events.jsonl"), limit),
       ]);
-      return json(response, 200, { manuscript, ai });
+      return json(response, 200, { manuscript, ai, sources });
     }
 
     return json(response, 404, { error: "Booksmith Runtime route not found.", route });
