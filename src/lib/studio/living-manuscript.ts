@@ -34,6 +34,10 @@ export type LivingChapter = {
   requiredSections: string[];
   queuePath: string;
   queueReady: boolean;
+  manuscriptPath: string;
+  manuscriptReady: boolean;
+  manuscriptText: string;
+  manuscriptWords: number;
 };
 
 export type LivingFigure = {
@@ -51,6 +55,13 @@ export type LivingPart = {
   chapterSlugs: string[];
 };
 
+export type LivingConcept = {
+  id: string;
+  label: string;
+  domain: string;
+  referenceKeys: string[];
+};
+
 export type LivingManuscriptData = {
   slug: string;
   title: string;
@@ -62,15 +73,23 @@ export type LivingManuscriptData = {
   chapters: LivingChapter[];
   claims: LivingClaim[];
   figures: LivingFigure[];
+  relatedConcepts: LivingConcept[];
   provenance: {
     entries: Array<{ id: string; type: string; author: string; status: string; notes: string }>;
     rules: Record<string, string>;
   };
 };
 
-type ChapterPlan = { chapters: Omit<LivingChapter, "queuePath" | "queueReady">[] };
+type PlannedChapter = Omit<
+  LivingChapter,
+  "queuePath" | "queueReady" | "manuscriptPath" | "manuscriptReady" | "manuscriptText" | "manuscriptWords"
+>;
+type ChapterPlan = { chapters: PlannedChapter[] };
 type ClaimLedger = { claims: LivingClaim[] };
 type FigureIndex = { cards: LivingFigure[] };
+type ConceptRegistry = {
+  concepts: Array<LivingConcept & { relatedBooks: string[] }>;
+};
 type BookConfig = {
   slug: string;
   title: string;
@@ -92,6 +111,15 @@ function readJson<T>(relativePath: string): T {
   return JSON.parse(fs.readFileSync(path.join(root, relativePath), "utf8")) as T;
 }
 
+function readText(relativePath: string) {
+  return fs.readFileSync(path.join(root, relativePath), "utf8");
+}
+
+function countWords(value: string) {
+  const normalized = value.trim();
+  return normalized ? normalized.split(/\s+/).length : 0;
+}
+
 export function getLivingManuscript(slug: string): LivingManuscriptData | null {
   const base = path.join("books", slug);
   const required = [
@@ -109,10 +137,23 @@ export function getLivingManuscript(slug: string): LivingManuscriptData | null {
   const ledger = readJson<ClaimLedger>(`${base}/sources/claim-ledger.json`);
   const figureIndex = readJson<FigureIndex>(`${base}/figures/studio/figure-studio-index.json`);
   const provenance = readJson<LivingManuscriptData["provenance"]>(`${base}/sources/provenance-log.json`);
+  const conceptRegistry = readJson<ConceptRegistry>("library/concept-registry.json");
 
   const chapters = plan.chapters.map((chapter) => {
     const queuePath = `${base}/writing/queue/${chapter.slug}.md`;
-    return { ...chapter, queuePath, queueReady: fs.existsSync(path.join(root, queuePath)) };
+    const manuscriptPath = `${base}/manuscript/chapters/${chapter.slug}.md`;
+    const manuscriptReady = fs.existsSync(path.join(root, manuscriptPath));
+    const manuscriptText = manuscriptReady ? readText(manuscriptPath) : "";
+
+    return {
+      ...chapter,
+      queuePath,
+      queueReady: fs.existsSync(path.join(root, queuePath)),
+      manuscriptPath,
+      manuscriptReady,
+      manuscriptText,
+      manuscriptWords: countWords(manuscriptText),
+    };
   });
 
   const parts = partDefinitions.map((part) => ({
@@ -131,6 +172,9 @@ export function getLivingManuscript(slug: string): LivingManuscriptData | null {
     chapters,
     claims: ledger.claims,
     figures: figureIndex.cards,
+    relatedConcepts: conceptRegistry.concepts
+      .filter((concept) => concept.relatedBooks.includes(slug))
+      .map(({ id, label, domain, referenceKeys }) => ({ id, label, domain, referenceKeys })),
     provenance,
   };
 }
