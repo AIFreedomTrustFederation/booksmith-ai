@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { ProductionActions } from "@/app/studio/components/production-actions";
 import { loadFederatedLibrary } from "@/lib/library/load-library";
 import { getLibraryCapabilitySnapshots, listBookFiles } from "@/lib/studio/studio-capabilities";
 
@@ -19,11 +20,14 @@ export default async function ProductionPage() {
     <main className="px-4 py-6 sm:px-6 lg:px-8">
       <section className="mx-auto max-w-[1600px]">
         <header className="rounded-[2rem] border border-[#2e4b37] bg-[#0a1a11] p-6 sm:p-8 lg:p-10">
-          <p className="text-[11px] font-black uppercase tracking-[0.3em] text-[#d4a85f]">Production Studio</p>
-          <h1 className="mt-4 max-w-5xl text-4xl font-black tracking-[-0.03em] sm:text-6xl">From manuscript to proof to publication.</h1>
-          <p className="mt-5 max-w-4xl text-base leading-8 text-[#9eb2a2]">
-            This surface reports the production state already present in each book project: manuscript source, bibliography, figures, LaTeX, proof/report artifacts, publishing metadata, and exports. Execution remains in Booksmith's existing local-first engines and scripts; the portal does not claim a build or publication occurred when it has not.
-          </p>
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <p className="text-[11px] font-black uppercase tracking-[0.3em] text-[#d4a85f]">Production Studio</p>
+              <h1 className="mt-4 max-w-5xl text-4xl font-black tracking-[-0.03em] sm:text-6xl">From manuscript to proof to publication.</h1>
+              <p className="mt-5 max-w-4xl text-base leading-8 text-[#9eb2a2]">Booksmith now reports the real production state present in each book and can launch the existing proof, figure, publication-gate and packet engines when the local/private Runtime is connected. GitHub Pages remains an honest read-only view.</p>
+            </div>
+            <Link className="rounded-xl bg-[#d4a85f] px-4 py-2.5 text-sm font-black text-[#172015]" href="/studio/runtime">Open Runtime Center</Link>
+          </div>
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-2xl border border-[#294735] bg-[#07130d] p-4"><p className="text-2xl font-black text-[#f1dfb7]">{indexed.filter(({ snapshot }) => snapshot.hasLatexProject).length}</p><p className="mt-1 text-[10px] font-black uppercase tracking-[0.13em] text-[#718978]">LaTeX-capable books</p></div>
             <div className="rounded-2xl border border-[#294735] bg-[#07130d] p-4"><p className="text-2xl font-black text-[#f1dfb7]">{indexed.filter(({ snapshot }) => snapshot.proofArtifacts || snapshot.reportArtifacts).length}</p><p className="mt-1 text-[10px] font-black uppercase tracking-[0.13em] text-[#718978]">Proof/report-bearing books</p></div>
@@ -44,10 +48,7 @@ export default async function ProductionPage() {
                     <p className="text-[10px] font-black uppercase tracking-[0.16em] text-[#718978]">{display.series} · {display.status}</p>
                     <h2 className="mt-2 text-2xl font-black">{display.title}</h2>
                   </div>
-                  <div className="rounded-2xl border border-[#685632] bg-[#1f1a10] px-4 py-3 text-center">
-                    <p className="text-2xl font-black text-[#e3bc72]">{snapshot.capabilityScore}%</p>
-                    <p className="text-[9px] font-black uppercase tracking-[0.11em] text-[#927b50]">surface</p>
-                  </div>
+                  <div className="rounded-2xl border border-[#685632] bg-[#1f1a10] px-4 py-3 text-center"><p className="text-2xl font-black text-[#e3bc72]">{snapshot.capabilityScore}%</p><p className="text-[9px] font-black uppercase tracking-[0.11em] text-[#927b50]">surface</p></div>
                 </div>
 
                 <div className="mt-5 flex flex-wrap gap-2">
@@ -61,23 +62,21 @@ export default async function ProductionPage() {
                   <Flag ready={snapshot.exportFiles > 0}>exports {snapshot.exportFiles}</Flag>
                 </div>
 
+                <ProductionActions bookSlug={book.registry.slug} />
+
                 <div className="mt-5 grid gap-4 md:grid-cols-2">
                   <div className="rounded-2xl border border-[#213b2b] bg-[#08160e] p-4">
                     <p className="text-[10px] font-black uppercase tracking-[0.14em] text-[#718978]">Publishing assets</p>
-                    <div className="mt-3 space-y-2">
-                      {publishingFiles.length ? publishingFiles.map((file) => <p className="break-all font-mono text-[10px] leading-5 text-[#9caf9f]" key={file}>{file}</p>) : <p className="text-xs leading-6 text-[#607765]">No publishing files detected.</p>}
-                    </div>
+                    <div className="mt-3 space-y-2">{publishingFiles.length ? publishingFiles.map((file) => <p className="break-all font-mono text-[10px] leading-5 text-[#9caf9f]" key={file}>{file}</p>) : <p className="text-xs leading-6 text-[#607765]">No publishing files detected.</p>}</div>
                   </div>
                   <div className="rounded-2xl border border-[#213b2b] bg-[#08160e] p-4">
                     <p className="text-[10px] font-black uppercase tracking-[0.14em] text-[#718978]">Exports</p>
-                    <div className="mt-3 space-y-2">
-                      {exportFiles.length ? exportFiles.map((file) => <p className="break-all font-mono text-[10px] leading-5 text-[#9caf9f]" key={file}>{file}</p>) : <p className="text-xs leading-6 text-[#607765]">No committed export files detected.</p>}
-                    </div>
+                    <div className="mt-3 space-y-2">{exportFiles.length ? exportFiles.map((file) => <p className="break-all font-mono text-[10px] leading-5 text-[#9caf9f]" key={file}>{file}</p>) : <p className="text-xs leading-6 text-[#607765]">No committed export files detected.</p>}</div>
                   </div>
                 </div>
 
                 <div className="mt-5 rounded-2xl border border-[#3b482d] bg-[#15170e] p-4">
-                  <p className="text-[10px] font-black uppercase tracking-[0.14em] text-[#b49358]">Local production commands</p>
+                  <p className="text-[10px] font-black uppercase tracking-[0.14em] text-[#b49358]">Equivalent local commands</p>
                   <div className="mt-3 grid gap-2 sm:grid-cols-2">
                     <code className="rounded-lg bg-[#070c08] px-3 py-2 text-[10px] text-[#b8cbbd]">node scripts/render-latex.mjs {book.registry.slug}</code>
                     <code className="rounded-lg bg-[#070c08] px-3 py-2 text-[10px] text-[#b8cbbd]">node scripts/proof-report.mjs {book.registry.slug}</code>
