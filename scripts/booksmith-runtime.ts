@@ -71,12 +71,24 @@ async function body(request: IncomingMessage) {
   return raw ? JSON.parse(raw) : {};
 }
 
-function requireMutationAccess(request: IncomingMessage) {
+function requireOrigin(request: IncomingMessage) {
   if (!originAllowed(request.headers.origin)) {
     const error = new Error("Origin is not allowed by Booksmith Runtime.");
     (error as Error & { status?: number }).status = 403;
     throw error;
   }
+}
+
+function requireRemoteAuthorization(request: IncomingMessage) {
+  if (remoteBinding && !authorized(request)) {
+    const error = new Error("Booksmith Runtime authorization failed.");
+    (error as Error & { status?: number }).status = 401;
+    throw error;
+  }
+}
+
+function requireMutationAccess(request: IncomingMessage) {
+  requireOrigin(request);
   if (!authorized(request)) {
     const error = new Error("Booksmith Runtime authorization failed.");
     (error as Error & { status?: number }).status = 401;
@@ -160,6 +172,9 @@ const server = createServer(async (request, response) => {
   }
 
   try {
+    requireOrigin(request);
+    requireRemoteAuthorization(request);
+
     const url = new URL(request.url ?? "/", `http://${request.headers.host ?? `${host}:${port}`}`);
     const route = url.pathname;
 
@@ -263,7 +278,7 @@ const server = createServer(async (request, response) => {
 
 server.listen(port, host, async () => {
   console.log(`Booksmith Runtime v1 listening on http://${host}:${port}`);
-  console.log(remoteBinding ? "Remote binding enabled with token protection." : "Loopback-only mode enabled.");
+  console.log(remoteBinding ? "Remote binding enabled: every route requires the Runtime token and allowed browser origins remain enforced." : "Loopback-only mode enabled.");
   if (process.env.BOOKSMITH_INDEX_ON_START !== "false") {
     try {
       const result = await rebuildBooksmithIndex();
