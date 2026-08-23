@@ -3,6 +3,18 @@ export type RuntimeConfig = {
   token: string;
 };
 
+export type RuntimeProviderConfig = {
+  id: string;
+  label: string;
+  kind: string;
+  enabled: boolean;
+  localFirst: boolean;
+  userManaged?: boolean;
+  baseUrl: string;
+  defaultModel: string | null;
+  notes?: string | null;
+};
+
 export type RuntimeHealth = {
   ok: boolean;
   runtime: string;
@@ -13,7 +25,7 @@ export type RuntimeHealth = {
   node: string;
   importMaxBytes?: number;
   sqlite: { ready: boolean; metadata?: Record<string, string>; error?: string };
-  providers: Array<{ id: string; label: string; kind: string; enabled: boolean; localFirst: boolean; defaultModel: string | null }>;
+  providers: RuntimeProviderConfig[];
   enabledProviders: string[];
   jobs: Array<{ kind: string; consequential: boolean }>;
 };
@@ -112,6 +124,24 @@ async function request<T>(pathname: string, init: RequestInit = {}): Promise<T> 
 
 export function runtimeHealth() {
   return request<RuntimeHealth>("/v1/health", { method: "GET" });
+}
+
+export function runtimeProviders() {
+  return request<{ providers: RuntimeProviderConfig[]; overrides: Array<Record<string, unknown>> }>("/v1/providers", { method: "GET" });
+}
+
+export function runtimeSaveProviders(providers: Array<{ id: string; enabled: boolean; baseUrl: string; defaultModel?: string }>) {
+  return request<{ providers: RuntimeProviderConfig[] }>("/v1/providers", {
+    method: "POST",
+    body: JSON.stringify({ providers }),
+  });
+}
+
+export function runtimeProviderHealth(providerId?: string) {
+  return request<{ providerId: string; ok: boolean; checkedAt: string; message: string; models?: string[] } | Array<{ providerId: string; ok: boolean; checkedAt: string; message: string; models?: string[] }>>("/v1/providers/health", {
+    method: "POST",
+    body: JSON.stringify(providerId ? { providerId } : {}),
+  });
 }
 
 export function runtimeManuscript(bookSlug: string, chapterSlug: string) {
