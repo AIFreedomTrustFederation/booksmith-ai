@@ -3,11 +3,13 @@ import concepts from "../../../../library/concept-registry.json";
 import references from "../../../../library/reference-registry.json";
 import thinkers from "../../../../library/thinker-registry.json";
 import { LibraryExplorer } from "@/app/studio/components/library-explorer";
+import { RuntimeMemoryGraph } from "@/app/studio/components/runtime-memory-graph";
 import { SourceImporter } from "@/app/studio/components/source-importer";
 import { loadFederatedLibrary } from "@/lib/library/load-library";
 
 export default async function LibraryPage() {
   const library = await loadFederatedLibrary();
+  const bookOptions = library.books.map((book) => ({ slug: book.registry.slug, title: (book.config ?? book.registry).title }));
 
   return (
     <main className="px-4 py-6 sm:px-6 lg:px-8">
@@ -28,9 +30,8 @@ export default async function LibraryPage() {
           </div>
         </header>
 
-        <div className="mt-6">
-          <SourceImporter books={library.books.map((book) => ({ slug: book.registry.slug, title: (book.config ?? book.registry).title }))} />
-        </div>
+        <div className="mt-6"><SourceImporter books={bookOptions} /></div>
+        <div className="mt-6"><RuntimeMemoryGraph books={bookOptions} /></div>
 
         <div className="mt-6">
           <LibraryExplorer
