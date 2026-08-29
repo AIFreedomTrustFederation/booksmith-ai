@@ -5,7 +5,7 @@ SLUG="${1:-fhqcm}"
 
 npm run render:latex -- "$SLUG"
 node scripts/validate-latex-integrity.mjs "$SLUG"
-./scripts/build-fhqcm-export.sh
+./scripts/build-fhqcm-export.sh "$SLUG"
 node scripts/proof-report.mjs "$SLUG"
 node scripts/quality-gate.mjs "$SLUG" || true
 node scripts/build-publishing-packet.mjs "$SLUG"
