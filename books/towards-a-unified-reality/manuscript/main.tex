@@ -1,0 +1,83 @@
+\documentclass[11pt,oneside]{book}
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{microtype}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{csquotes}
+
+\geometry{paperwidth=6in,paperheight=9in,inner=0.78in,outer=0.72in,top=0.72in,bottom=0.82in}
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}
+\setstretch{1.08}
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{18pt}{\Huge}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{principle}[theorem]{Principle}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{warning}[theorem]{Boundary}
+
+\begin{document}
+\frontmatter
+
+\begin{titlepage}
+\centering
+\vspace*{1.0in}
+{\Huge\bfseries Relational Coherence\\and the Languages of Reality\par}
+\vspace{0.28in}
+{\Large Invariant Form, Wave Dynamics, Descriptive Resolution,\\and the Physical--Experiential Boundary\par}
+\vspace{0.6in}
+{\large AI Freedom Trust Federation\par}
+\vfill
+{\large AI Freedom Trust Publishing\par}
+{\small Prepared with Booksmith AI\par}
+{\small Canonical project: \texttt{towards-a-unified-reality}\par}
+\end{titlepage}
+
+\input{frontmatter/publisher.tex}
+\input{frontmatter/abstract.tex}
+\input{frontmatter/reader-map.tex}
+\tableofcontents
+
+\mainmatter
+\input{chapters/00-preface.tex}
+\input{chapters/01-languages-of-reality.tex}
+\input{chapters/02-relational-persistence.tex}
+\input{chapters/03-dynamical-coherence.tex}
+\input{chapters/04-platonic-symmetry.tex}
+\input{chapters/05-ell5-quartic.tex}
+\input{chapters/06-sextic-resolution.tex}
+\input{chapters/07-waves-conjugation.tex}
+\input{chapters/08-descriptive-adequacy-ontology.tex}
+\input{chapters/09-materialism-idealism-relational.tex}
+\input{chapters/10-consciousness-admissibility-occupancy.tex}
+\input{chapters/11-empirical-program.tex}
+\input{chapters/12-conclusion.tex}
+
+\appendix
+\input{appendices/A-notation-and-claim-status.tex}
+\input{appendices/B-ell5-technical-ledger.tex}
+\input{appendices/C-conditional-antiunitary.tex}
+\input{appendices/D-defeaters-limitations.tex}
+\input{appendices/E-related-work.tex}
+
+\backmatter
+\bibliographystyle{plain}
+\bibliography{../bibliography/references,../../../library/references/federation-canon,../../../library/references/physics,../../../library/references/mathematics,../../../library/references/biology,../../../library/references/consciousness,../../../library/references/philosophy,../../../library/references/process-theology,../../../library/references/ai}
+\end{document}

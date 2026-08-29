@@ -1,0 +1,167 @@
+\chapter{Platonic Symmetry: Admissible Form and Nonlinear Selection}
+
+\section{Projectors as a Language of Form}
+
+The sphere provides a setting in which the concept of invariant form can be made exact without pretending that the geometry alone supplies the dynamics. Let
+
+\[
+\mathcal H=L^2(S^2)
+\]
+
+or, when complex amplitudes are required, $\mathcal H_{\mathbb C}=L^2(S^2,\mathbb C)$. A rotation $g$ acts through
+
+\[
+(U_g\Psi)(\hat n)=\Psi(g^{-1}\hat n).
+\]
+
+For a finite rotation group $G$, the Reynolds projector is
+
+\[
+P_G=\frac1{|G|}\sum_{g\in G}U_g.
+\]
+
+Because $P_G$ averages over the group action, it is an orthogonal projector onto the $G$-fixed subspace:
+
+\[
+P_G^2=P_G,\qquad P_G^\dagger=P_G.
+\]
+
+This allows symmetry to be measured rather than inferred from visual resemblance. Define
+
+\[
+\mathscr C_G(\Psi)=\frac{\|P_G\Psi\|^2}{\|\Psi\|^2}
+\]
+
+and
+
+\[
+\mathscr E_G(\Psi)=\frac{\|(I-P_G)\Psi\|^2}{\|\Psi\|^2}.
+\]
+
+Orthogonality yields the exact decomposition
+
+\[
+\mathscr C_G+\mathscr E_G=1.
+\]
+
+The identity is elementary but conceptually decisive. A field can be decomposed into the portion that belongs to the chosen invariant form and the portion that violates it. In this context ``Platonic form'' does not mean a mystical geometric substance. It means membership, exact or approximate, in a fixed subspace under a finite rotation group.
+
+The same structure supplies a hierarchy under nested groups. If $H\subset G$, then every $G$-invariant state is automatically $H$-invariant, so
+
+\[
+\operatorname{Fix}(G)\subseteq\operatorname{Fix}(H).
+\]
+
+For aligned orthogonal projectors,
+
+\[
+P_HP_G=P_G
+\]
+
+and therefore
+
+\[
+\mathscr C_H\ge \mathscr C_G.
+\]
+
+A state can possess a weaker symmetry without possessing a stronger one. The mathematics again replaces a vague word such as ``symmetric'' with an ordered family of precisely defined claims.
+
+\section{Character Multiplicity and Admissibility}
+
+At a fixed spherical-harmonic degree $\ell$, the question of whether $G$-invariant form is possible is answered by character theory. Let $V_\ell$ be the irreducible $SO(3)$ representation of degree $\ell$. The multiplicity of the trivial representation after restriction to the finite group $G$ is
+
+\[
+d_\ell^G=\frac1{|G|}\sum_{g\in G}\chi_\ell(g),
+\]
+
+with the $SO(3)$ character for a rotation by angle $\theta$ given by
+
+\[
+\chi_\ell(\theta)=\frac{\sin[(\ell+\frac12)\theta]}{\sin(\theta/2)}.
+\]
+
+For the chiral tetrahedral, octahedral, and icosahedral groups, the first nonconstant invariant degrees are $\ell=3$, $\ell=4$, and $\ell=6$ respectively. Through $\ell=6$, the invariant multiplicities are
+
+\begin{center}
+\begin{tabular}{c c c c}
+\toprule
+$\ell$ & $d_\ell^T$ & $d_\ell^O$ & $d_\ell^I$ \\
+\midrule
+0 & 1 & 1 & 1 \\
+1 & 0 & 0 & 0 \\
+2 & 0 & 0 & 0 \\
+3 & 1 & 0 & 0 \\
+4 & 1 & 1 & 0 \\
+5 & 0 & 0 & 0 \\
+6 & 2 & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The zero entries are more powerful than the nonzero entries. If $d_\ell^G=0$, a nonzero degree-$\ell$ field cannot possess $G$ symmetry. The mathematics excludes the form. If $d_\ell^G>0$, the representation merely contains room for such a form. A two-dimensional invariant subspace, as occurs for tetrahedral symmetry at $\ell=6$, does not identify one unique ``tetrahedral shape''; it identifies a space of invariant states. Mathematical admissibility is therefore weaker than dynamical selection even before nonlinear stability is considered.
+
+This asymmetry is one of the structural themes of the book. Formal mathematics often has extraordinary power to rule out a proposal whose required representation does not exist, but the existence of a representation is only the beginning of evidence. The same logic later governs consciousness: a theory whose mathematics cannot represent a claimed phenomenal property can fail at the level of admissibility, while a theory whose mathematics can represent it has only survived the first gate.
+
+\section{$SO(3)$, $O(3)$, and Nonlinear Order}
+
+The nonlinear language depends on the symmetry group. For real spherical harmonics,
+
+\[
+A(-\hat n)=(-1)^\ell A(\hat n).
+\]
+
+The symmetric square decomposes as
+
+\[
+\operatorname{Sym}^2(V_\ell)=V_0\oplus V_2\oplus\cdots\oplus V_{2\ell}.
+\]
+
+It follows that
+
+\[
+V_\ell\subset\operatorname{Sym}^2(V_\ell)
+\quad\Longleftrightarrow\quad
+\ell\ \text{is even}.
+\]
+
+For odd $\ell$,
+
+\[
+[\operatorname{Sym}^3(V_\ell)]^{SO(3)}=0,
+\]
+
+so there is no scalar cubic invariant under $SO(3)$. If inversion is included and the full group is $O(3)$, odd $\ell$ additionally satisfies $F(A)=F(-A)$, which removes every odd order from an invariant reduced energy. These two statements must remain distinct: $SO(3)$ eliminates the cubic scalar invariant in odd degree, while $O(3)$ imposes the stronger parity condition on all odd orders.
+
+The distinction matters because the symmetry assumption controls the terms available to the reduced dynamics. A mathematical language does not merely record structure after the fact; its group action determines which nonlinear couplings can even appear.
+
+\section{From Admissibility to Selection}
+
+Consider the real rotationally equivariant equation
+
+\[
+\partial_t\Psi=\mu\Psi-\xi[\Delta_{S^2}+\ell_0(\ell_0+1)]^2\Psi+\nu\Psi^2-g\Psi^3.
+\]
+
+It is gradient flow for the energy
+
+\[
+\mathcal F[\psi]=\int_{S^2}\left[-\frac\mu2\psi^2+\frac\xi2\left([\Delta+\ell_0(\ell_0+1)]\psi\right)^2-\frac\nu3\psi^3+\frac g4\psi^4\right]d\Omega,
+\]
+
+and hence
+
+\[
+\frac{d\mathcal F}{dt}=-\int_{S^2}|\partial_t\psi|^2d\Omega\le0.
+\]
+
+For the baseline model $\mu=1/5$, $\xi=1/50$, $\nu=g=1$, repeated computations in the tested parameter regime produce an octahedral branch in the $\ell=4$ sector and an icosahedral branch in the $\ell=6$ sector. The measured positive transverse Hessian gaps are approximately
+
+\[
+\gamma_4\approx0.26207684,
+\qquad
+\gamma_6\approx0.55644312.
+\]
+
+These results are evidence for local stability modulo rotations in that model. They are not universal Platonic laws. A local branch must still be distinguished from a global minimum and from the probability of actualization under a distribution of initial conditions. The correct hierarchy is therefore admissibility, stationarity, local persistence, global preference, basin structure, and actualization frequency. Once stated, the hierarchy need not be repeated as a disclaimer after every calculation; it is the standing rule under which the calculations are interpreted.
+
+The $\ell=5$ sector becomes especially informative because quartic order does not isolate a unique intrinsic shape. Instead of treating that as a failed selection, the next two chapters use it to expose a mathematically exact limit of descriptive resolution.

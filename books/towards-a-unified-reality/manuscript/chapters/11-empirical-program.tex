@@ -1,0 +1,93 @@
+\chapter{An Empirical Program for Physical Sufficiency}
+
+\section{Nested Physical Description}
+
+The materialism--dual-aspect dispute becomes scientifically meaningful only when physical sufficiency can be tested against progressively richer physical descriptions rather than against one arbitrarily incomplete measurement set. Let
+
+\[
+P_{\mathrm{phys}}^{(1)}\subset P_{\mathrm{phys}}^{(2)}\subset\cdots\subset P_{\mathrm{phys}}^{(k)}
+\]
+
+represent nested physical state descriptions. An empirical implementation might begin with behavioral responsiveness, add autonomic and ocular measurements, add high-density electrophysiology, add source-resolved dynamics, and finally add effective-connectivity or perturbational-response parameters. Other enrichment sequences are possible. The important rule is that the sequence and stopping criteria must be specified before the residual phenomenological contribution is interpreted.
+
+For a held-out target $Y$, context $\mathcal C$, and intervention $u$, define
+
+\[
+\Delta_\varphi(k)=I\!\left(Y;Z_\varphi\mid P_{\mathrm{phys}}^{(k)},\mathcal C,do(u)\right).
+\]
+
+The quantity asks how much predictive information the phenomenological-evidence structure contributes after conditioning on the $k$th physical description. The conceptual ideal is
+
+\[
+\delta_\varphi=\lim_{k\to \text{physical adequacy}}\Delta_\varphi(k).
+\]
+
+The phrase ``physical adequacy'' is used deliberately instead of pretending that experiments can operationalize metaphysically complete physics. In practice the enrichment process must stop according to preregistered criteria such as diminishing held-out predictive improvement from added physical channels, stability of the residual across multiple enrichment orders, robustness to model class, and absence of obvious unmodeled structure in residual diagnostics.
+
+A strong physical-sufficiency program predicts that the phenomenological residual will approach zero as the physical representation improves:
+
+\[
+\delta_\varphi=0.
+\]
+
+If a robust positive residual survives, the tested physical descriptions have failed to become sufficient. That is a real empirical result, but it is not yet a refutation of physicalism because the missing variable may remain physical. The next tests are designed to reduce that ambiguity.
+
+\section{Partial Information Decomposition}
+
+Conditional mutual information can hide whether two sources contribute redundantly, uniquely, or synergistically. A partial information decomposition can therefore be applied schematically to
+
+\[
+I(Y;P_{\mathrm{phys}},Z_\varphi)=R+U_P+U_\varphi+S,
+\]
+
+where $R$ is redundant information, $U_P$ information unique to the physical description, $U_\varphi$ information unique to the phenomenological-evidence structure, and $S$ information available only from their joint relation. A pattern in which
+
+\[
+U_P>0,\qquad U_\varphi>0,\qquad S>0
+\]
+
+persists across richer physical descriptions, subjects, tasks, and interventions would provide evidence for informational complementarity. It would still not determine metaphysical category. The $Z_\varphi$ contribution could be a compressed proxy for omitted physical structure.
+
+The PID analysis therefore requires a preregistered estimator, explicit conditioning set, bias correction, and null procedures such as label shuffling or temporal circular shifts appropriate to the data. Different redundancy definitions can yield different decompositions, so robustness across defensible PID formulations should be reported rather than hidden.
+
+\section{Intervention, Transfer, and Approximate Closure}
+
+Prediction alone is insufficient for a strong bridge theory. A proposed relation between physical structure and phenomenological evidence should survive interventions and transfer. Suppose a candidate physical relational variable $Z$ is mapped to phenomenological evidence by
+
+\[
+Z_\varphi\approx f(Z).
+\]
+
+The function $f$ should be specified or learned under constrained conditions and then tested without refitting across new contexts. If every task, subject, modality, or pharmacological state requires a new unrelated map, the theory has not discovered an invariant bridge. Cross-context transfer is therefore a direct analogue of form persistence: what matters is not one successful fit but preservation of the defining relationship through variation in experimental realization.
+
+Intervention strengthens the claim. A perturbation that changes the proposed physical variable should alter the predicted phenomenological evidence in the preregistered direction. TMS--EEG perturbational paradigms are attractive because they probe the brain's response to controlled intervention rather than relying only on spontaneous correlation. Perturbational complexity measures can be combined with behavioral and phenomenological evidence across wakefulness, sleep, anesthesia, and disorders of consciousness. They remain physical measures, but they offer a strong test bed for asking whether richer physical dynamics absorb the explanatory contribution attributed to $Z_\varphi$.
+
+Approximate closure is more realistic than exact closure. Hidden variables may act slowly, measurement may be noisy, and reduced physical descriptions may be Markovian only after delay embedding or memory terms are included. The correct question is therefore whether a physically defined state can be made predictively closed within declared tolerance and horizon, not whether an idealized projection satisfies an exact autonomous differential equation in finite data.
+
+\section{One Primary Experimental Program}
+
+The highest-value first experiment is a consciousness-state perturbation study spanning graded anesthesia and recovery, with TMS--EEG or an equivalent perturbational protocol, dense physiological monitoring, and post-state phenomenological assessment where ethically and practically possible. The physical enrichment sequence should be fixed in advance. A minimal first level may include responsiveness and standard vital physiology; the next may add ocular and autonomic dynamics; subsequent levels may add sensor-level EEG, source-resolved activity, effective connectivity, and perturbational response features. $Z_\varphi$ should be estimated from multiple phenomenological indicators rather than a single report channel, with explicit separation between indicators available during the state and retrospective reports obtained after recovery.
+
+The experiment should compare at least three model families: a physical-only model $M_P$, a phenomenological-evidence model $M_Z$, and a constrained joint relational model $M_R$. A flexible latent physical model matched in parameter capacity to $M_R$ is essential as an adversarial control. Without that control, the relational model can win simply because it contains both sets of variables.
+
+Prequential predictive scoring provides a natural comparison because it evaluates sequential held-out performance rather than in-sample fit. Let
+
+\[
+S_{\mathrm{preq}}(M)=-\sum_b\log p_M(D_b\mid D_{<b},D_{\mathrm{train}},D_{\mathrm{val}}).
+\]
+
+Lower values indicate better predictive performance. A relational advantage should be declared only when the joint model improves out-of-sample performance beyond a complexity margin fixed before evaluating the final test data and when the improvement depends on the substantive cross-aspect structure rather than raw model capacity.
+
+Anesthesia is not treated as a magical solution to phenomenological access. Behavioral unresponsiveness does not guarantee absence of consciousness, and different anesthetics can alter conscious experience differently. That is precisely why the paradigm is useful: it creates dissociations among responsiveness, perturbational complexity, physiological state, and later-confirmed experience that challenge simple one-variable accounts. No-report rivalry, masking, blindsight, and subliminal priming can be used as secondary stress tests rather than foundational cases because their interpretation with respect to awareness remains contested.
+
+\section{Explicit Defeaters}
+
+The program must be able to lose. If systematic physical enrichment causes $\Delta_\varphi(k)$ to approach zero across tasks, subjects, and interventions, then the tested domain provides no empirical reason to posit irreducible cross-aspect structure. If $Z_\varphi$ is unstable when one indicator channel is removed, the phenomenological construct lacks independent anchoring. If the proposed bridge fails to transfer and every context requires a new fitted mapping, the model lacks invariant content. If a complexity-matched physical latent model predicts as well as the relational model, there is no empirical relational advantage. If an antiunitary bridge performs no better than unitary or generic nonlinear alternatives, the antiunitary subhypothesis fails even if a broader relational ontology remains logically possible.
+
+These defeat conditions prevent an occupancy escape hatch in which every positive result is counted as support while every negative result is reclassified as incomplete physical measurement. Physical models can indeed be incomplete, but the enrichment program must define in advance how much incompleteness is allowed before the preferred ontology stops receiving additional explanatory credit.
+
+\section{What Counts as Success}
+
+The program does not require final ontological victory to produce scientific progress. Demonstrating that one mathematical representation is inadequate, eliminating an antiunitary bridge, identifying a stable phenomenological latent structure, establishing approximate physical closure, or showing that a relational model offers no complexity-corrected advantage are all substantive outcomes. If $A_7$ remains underdetermined, the work can still narrow the space of viable theories and improve the experiments through which future ontological claims are evaluated.
+
+The broader methodological principle is therefore that mathematics constrains the admissible bridge while independent empirical evidence tests whether nature occupies it. A bridge theory earns significance not because its symbols resemble the concepts we care about, but because it survives increasingly hostile attempts to replace, perturb, and simplify it.

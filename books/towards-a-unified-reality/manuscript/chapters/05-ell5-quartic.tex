@@ -1,0 +1,203 @@
+\chapter{The $\ell=5$ Quartic Theorem: A Boundary of Relational Resolution}
+
+\section{Why $\ell=5$ Is Different}
+
+The $\ell=5$ representation is the clearest technical example in the book because its quartic energy develops a minimum manifold rather than an isolated shape. This is not a numerical accident and not a metaphor imported from the later consciousness discussion. It follows from the structure of the invariant algebra and can be demonstrated exactly at an explicit regular point.
+
+For $V_5$, the invariant dimensions through degree six are
+
+\[
+\dim\operatorname{Inv}_2(V_5)=1,
+\qquad
+\dim\operatorname{Inv}_3(V_5)=0,
+\]
+
+\[
+\dim\operatorname{Inv}_4(V_5)=2,
+\qquad
+\dim\operatorname{Inv}_5(V_5)=0,
+\qquad
+\dim\operatorname{Inv}_6(V_5)=6.
+\]
+
+The absence of cubic and quintic scalar invariants and the low dimension of the quartic invariant space make the quartic reduction unusually constrained. Let $K_L$ denote the even Clebsch--Gordan channels appearing in the quartic energy. They satisfy the exact relations
+
+\[
+K_4=\frac{18}{13}K_0,
+\]
+
+\[
+K_6=\frac{45}{17}K_0-\frac{143}{170}K_2,
+\]
+
+\[
+K_8=\frac{880}{247}K_0-\frac{117}{95}K_2,
+\]
+
+and
+
+\[
+K_{10}=\frac{777}{323}K_0+\frac{693}{646}K_2.
+\]
+
+All quartic channel information therefore collapses to two independent invariants, which may be chosen as $K_0$ and $K_2$.
+
+For the baseline reduced model the quartic energy is exactly
+
+\[
+F_4(A)=\alpha K_0(A)+\beta K_2(A),
+\]
+
+where
+
+\[
+\alpha=\frac{30241998291659}{24945292961264\pi}
+\]
+
+and
+
+\[
+\beta=\frac{503273130591}{3050785612808\pi}>0.
+\]
+
+Numerically these are approximately $0.3858975338207691$ and $0.05251001979464991$ respectively. On the unit sphere $\|A\|=1$, the scalar channel is fixed:
+
+\[
+K_0=\frac1{11}.
+\]
+
+The entire normalized quartic energy therefore reduces to
+
+\[
+F_4\big|_{S^{10}}=\frac\alpha{11}+\beta K_2(A).
+\]
+
+Let
+
+\[
+B_2(A)=P_2(A\otimes A).
+\]
+
+Since
+
+\[
+K_2(A)=\|B_2(A)\|^2\ge0,
+\]
+
+the complete quartic minimum set is
+
+\[
+\mathcal M_4=\{A\in S^{10}:B_2(A)=0\}.
+\]
+
+This is the first central theorem of the calculation. Quartic minimization is exactly equivalent to the vanishing of the degree-two quadratic covariant on the normalized representation sphere.
+
+\begin{theorem}[Quartic minimum set]
+For the stated $\ell=5$ baseline reduction with $\|A\|=1$ and $\beta>0$, the global quartic minimum set is precisely $\mathcal M_4=\{A\in S^{10}:B_2(A)=0\}$.
+\end{theorem}
+
+\section{An Explicit Regular Point}
+
+Choose
+
+\[
+A_\star=\sqrt{\frac35}\,Y_{50}+\sqrt{\frac25}\,Y^c_{55}.
+\]
+
+This state is normalized and satisfies
+
+\[
+B_2(A_\star)=0.
+\]
+
+The differential of the covariant is
+
+\[
+DB_2(A)[\delta A]=2P_2(A\otimes\delta A).
+\]
+
+At $A_\star$, an explicit $5\times5$ minor of the Jacobian has determinant
+
+\[
+\det M=\frac{224\sqrt{1430}}{2924207}\neq0.
+\]
+
+The determinant supplies an exact rank certificate:
+
+\[
+\operatorname{rank}DB_2(A_\star)=5.
+\]
+
+The radial direction lies in the kernel because
+
+\[
+DB_2(A_\star)[A_\star]=2B_2(A_\star)=0.
+\]
+
+Consequently restriction to the ten-dimensional tangent space of $S^{10}$ still has rank five. By the implicit-function theorem, the quartic minimum set is locally a smooth five-dimensional manifold at $A_\star$:
+
+\[
+\dim T_{A_\star}\mathcal M_4=10-5=5.
+\]
+
+This is what is meant here by a regular point. The constraint map has maximal rank compatible with its five-dimensional target, so the local dimension of the zero set is certified rather than guessed from numerical eigenvalues.
+
+\section{Three Rotations and Two Shapes}
+
+Rotational invariance guarantees that the $SO(3)$ orbit through a minimum remains inside the minimum set. The infinitesimal rotational tangent vectors at $A_\star$ have Gram matrix
+
+\[
+R^\top R=10I_3,
+\]
+
+so they are linearly independent and span a three-dimensional orbit tangent. Equivariance gives
+
+\[
+DB_2(A_\star)R=0,
+\]
+
+placing all three rotational directions inside the tangent kernel. Since the entire tangent kernel has dimension five, two dimensions remain after rotations are removed. Locally,
+
+\[
+T_{A_\star}\mathcal M_4=T_{A_\star}(SO(3)\cdot A_\star)\oplus N_{\mathrm{shape}},
+\]
+
+with
+
+\[
+\dim T_{A_\star}(SO(3)\cdot A_\star)=3,
+\qquad
+\dim N_{\mathrm{shape}}=2.
+\]
+
+Thus
+
+\[
+5=3_{\mathrm{rotation}}+2_{\mathrm{shape}}.
+\]
+
+The tangent Hessian of the quartic energy is
+
+\[
+H_4^{\mathrm{tan}}=2\beta(DB_2|_T)^*(DB_2|_T),
+\]
+
+which is positive semidefinite and has kernel equal to the tangent kernel of $DB_2$. Therefore
+
+\[
+\dim\ker H_4^{\mathrm{tan}}=5=3_{\mathrm{rotation}}+2_{\mathrm{shape}}.
+\]
+
+The distinction between the five flat directions is essential. Three are not new shapes at all; they are orientations of the same intrinsic form. Two are genuine physical shape variations that quartic energy cannot distinguish. Once the group orbit is quotiented out, a two-dimensional shape-flat quotient remains.
+
+\begin{warning}[No consciousness in the kernel]
+The two nonrotational flat directions are degeneracies of a truncated physical invariant energy. They are not proposed as hidden experiential dimensions, qualia coordinates, spiritual degrees of freedom, or places in which consciousness is concealed. Their role in this book is to prove a statement about the resolving power of a restricted invariant algebra.
+\end{warning}
+
+\section{What the Theorem Means}
+
+The quartic theorem changes the interpretation of degeneracy. One could say loosely that the dynamics ``has not chosen a shape,'' but the more precise statement is that the quartic descriptive language contains only enough independent invariant information to impose the five constraints represented by $B_2=0$. After normalization and rotational reduction, that information leaves two shape degrees of freedom energetically indistinguishable.
+
+This is a direct demonstration that identity claims depend on descriptive resolution. At quartic order, every point on the local shape-flat family has the same normalized quartic energy. If one mistook quartic invariants for a complete description of shape, those states would appear identical with respect to the available energy language. The states themselves need not be identical. The next question is therefore not metaphysical but mathematical: does a richer invariant algebra contain structure capable of distinguishing them?
+
+Degree six answers yes. That answer is the subject of the next chapter.

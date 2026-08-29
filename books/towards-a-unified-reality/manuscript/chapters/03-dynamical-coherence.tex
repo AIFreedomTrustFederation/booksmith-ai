@@ -1,0 +1,113 @@
+\chapter{Dynamical Coherence: Motion of the Whole and Motion Within the Whole}
+
+\section{Kuramoto Phase Relations}
+
+Coupled oscillators provide a minimal setting in which identity through transformation can be made quantitative. Consider the Kuramoto system
+
+\[
+\dot\phi_i=\omega_i+\frac{K}{N}\sum_j\sin(\phi_j-\phi_i).
+\]
+
+A simultaneous phase shift $\phi_i\mapsto\phi_i+\alpha$ changes every coordinate while preserving all pairwise phase differences, so absolute phase contains a global $U(1)$ redundancy. The relational state therefore belongs naturally to
+
+\[
+\mathcal R_N=\mathbb T^N/U(1).
+\]
+
+The familiar order parameter
+
+\[
+Z=\frac1N\sum_j e^{i\phi_j}
+\]
+
+captures collective phase concentration, and the synchronization coherence may be written
+
+\[
+\mathscr C_K=|Z|^2.
+\]
+
+For a specified reference relational pattern, define an error through pairwise deviations. With the normalization used in the present audit, pattern coherence and relational error satisfy
+
+\[
+\mathscr C_\star=1-\frac{N-1}{N}\mathcal E.
+\]
+
+The identity is useful because it makes explicit that the relevant error is relational. Two configurations with different global phases can have exactly the same pattern coherence. The state coordinates change, but the relation defining synchronization does not.
+
+The distinction becomes clearer when motion is separated into the motion of the whole and the motion internal to the whole. Let $\bar\omega$ denote the mean instantaneous angular velocity. Define
+
+\[
+\mathcal M=\bar\omega^2
+\]
+
+and
+
+\[
+\mathscr V_{\mathrm{rel}}=\frac1N\sum_i(\dot\phi_i-\bar\omega)^2.
+\]
+
+The first quantity measures collective rotation. The second measures residual motion relative to that collective motion. A phase-locked state can therefore rotate rapidly with large $\mathcal M$ while maintaining negligible $\mathscr V_{\mathrm{rel}}$. The whole is moving, yet the internal relation through which the whole is identified remains coherent. Ordinary language can call both quantities ``motion,'' but the mathematics reveals that they answer different questions.
+
+The same example prevents coherence from being confused with frozen equilibrium. A synchronized population is not coherent because its variables have stopped changing. It is coherent because their differences have become organized. The persistent object is therefore better represented by a relational pattern than by a fixed point in the unreduced coordinate system.
+
+\section{Stuart--Landau Amplitude and Phase}
+
+The Stuart--Landau system enriches the example by making amplitude physical rather than purely gauge. Let
+
+\[
+\dot z_j=\left[\lambda_j+i\omega_j-(1+ic_j)|z_j|^2\right]z_j+K(Z-z_j).
+\]
+
+Global phase remains a symmetry, but arbitrary global amplitude scaling does not. The relevant state space is therefore
+
+\[
+\mathscr R_N^{SL}=\mathbb C^N/U(1).
+\]
+
+For a reference state $z^\star$, a normalized orbit coherence can be defined by
+
+\[
+\mathscr C_\star^{SL}=\frac{4|\langle z^\star,z\rangle_w|^2}{(\|z\|_w^2+\|z^\star\|_w^2)^2}.
+\]
+
+After optimizing over the global phase orbit, define normalized orbit error $\mathcal E_\star$. The exact relation is
+
+\[
+\sqrt{\mathscr C_\star^{SL}}=1-\mathcal E_\star,
+\]
+
+hence
+
+\[
+\mathscr C_\star^{SL}=(1-\mathcal E_\star)^2.
+\]
+
+The same mathematical idea that appeared in the Kuramoto model now survives a richer state space. Form is measured relative to an orbit rather than to coordinate equality.
+
+Collective angular velocity can be extracted through
+
+\[
+\Omega=\frac{\operatorname{Im}\langle z,\dot z\rangle_w}{\|z\|_w^2},
+\]
+
+while residual internal variation becomes
+
+\[
+\mathscr V_{\mathrm{rel}}=\frac{\|\dot z-i\Omega z\|_w^2}{\|z\|_w^2}.
+\]
+
+Physical dilation is separately represented by
+
+\[
+\Gamma=\frac12\frac{d}{dt}\ln\|z\|_w^2.
+\]
+
+These quantities separate global phase motion, internal deformation, and amplitude change. A descriptive language that contains only one generic variable called ``change'' is therefore too coarse for the dynamics. The mathematics earns its complexity because the phenomenon itself distinguishes the transformations.
+
+\section{From Examples to a General Criterion}
+
+The oscillator models are not offered as universal models of persistence. Their value is that they show how a form criterion can be operationalized. Gauge must be specified. Collective motion must be separated from internal deformation. The form metric must be related to a scientifically meaningful orbit or invariant. Variation is then measured in the complementary directions rather than treated as evidence that identity has failed.
+
+This structure generalizes beyond oscillators. A translating vortex can preserve vorticity organization while changing position. A reaction--diffusion pattern can preserve a spot topology while molecular constituents turn over. A walking machine can maintain a gait attractor while individual contacts and joint trajectories vary. A biological system can preserve homeostatic and causal organization while replacing components. In each case the relevant question is not whether the coordinates are unchanged but which relations carry the persistence criterion.
+
+The difficulty increases when no single low-dimensional invariant captures the form. That problem motivates the move to symmetry and invariant theory on the sphere. There we can ask not only whether a form persists but how much relational information a chosen invariant algebra contains and whether a richer algebra resolves distinctions invisible to the lower-order description. The resulting $\ell=5$ calculation will become the most explicit demonstration that descriptive resolution has mathematical depth.

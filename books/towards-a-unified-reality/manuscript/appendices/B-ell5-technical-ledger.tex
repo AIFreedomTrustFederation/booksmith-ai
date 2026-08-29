@@ -1,0 +1,149 @@
+\chapter{Technical Ledger for the $\ell=5$ Calculation}
+
+This appendix collects the exact structure used in Chapters 5 and 6 in one place so that the long-form argument can remain readable without sacrificing the algebraic certificate. The representation is the real irreducible $SO(3)$ module $V_5^{\mathbb R}$ of dimension eleven, restricted to the unit sphere $S^{10}$. The baseline parameters used in the reduced-energy calculation are $\mu=1/5$, $\xi=1/50$, and $\nu=g=1$.
+
+The quartic channel identities are
+
+\[
+K_4=\frac{18}{13}K_0,
+\]
+
+\[
+K_6=\frac{45}{17}K_0-\frac{143}{170}K_2,
+\]
+
+\[
+K_8=\frac{880}{247}K_0-\frac{117}{95}K_2,
+\]
+
+\[
+K_{10}=\frac{777}{323}K_0+\frac{693}{646}K_2.
+\]
+
+Hence
+
+\[
+F_4(A)=\alpha K_0(A)+\beta K_2(A),
+\]
+
+with
+
+\[
+\alpha=\frac{30241998291659}{24945292961264\pi},
+\qquad
+\beta=\frac{503273130591}{3050785612808\pi}>0.
+\]
+
+On $S^{10}$, $K_0=1/11$, and with $B_2(A)=P_2(A\otimes A)$,
+
+\[
+F_4\big|_{S^{10}}=\frac\alpha{11}+\beta\|B_2(A)\|^2.
+\]
+
+Therefore
+
+\[
+\mathcal M_4=\{A\in S^{10}:B_2(A)=0\}.
+\]
+
+The explicit point
+
+\[
+A_\star=\sqrt{\frac35}Y_{50}+\sqrt{\frac25}Y^c_{55}
+\]
+
+satisfies $B_2(A_\star)=0$. The differential is
+
+\[
+DB_2(A)[\delta A]=2P_2(A\otimes\delta A).
+\]
+
+An explicit five-by-five minor of $DB_2(A_\star)$ has determinant
+
+\[
+\frac{224\sqrt{1430}}{2924207}\neq0,
+\]
+
+so the differential has rank five. Since the target $V_2$ is five-dimensional, this is maximal rank. The radial direction belongs to the kernel because $DB_2(A_\star)[A_\star]=2B_2(A_\star)=0$, hence the tangent restriction retains rank five and the implicit-function theorem yields
+
+\[
+\dim T_{A_\star}\mathcal M_4=5.
+\]
+
+Let $R_x,R_y,R_z$ denote the infinitesimal $SO(3)$ generators acting on $A_\star$. Their Gram matrix is
+
+\[
+R^\top R=10I_3,
+\]
+
+so the orbit tangent has dimension three. Equivariance of $B_2$ implies $DB_2(A_\star)R_i=0$. The residual tangent space
+
+\[
+N_{\mathrm{shape}}=\ker(DB_2|_T)\cap T_{A_\star}(SO(3)\cdot A_\star)^\perp
+\]
+
+therefore has dimension two. One convenient orthogonal spanning pair is
+
+\[
+U=-\frac{\sqrt{14}}{14}Y^c_{52}+Y^c_{53},
+\]
+
+\[
+V=\frac{\sqrt{14}}{14}Y^s_{52}+Y^s_{53},
+\]
+
+with $\|U\|^2=\|V\|^2=15/14$ and $\langle U,V\rangle=0$.
+
+For intrinsic second derivatives along the constrained quartic minimum manifold, a path through $A_\star$ in tangent direction $U$ may be written
+
+\[
+A(\epsilon)=A_\star+\epsilon U+\frac12\epsilon^2W_U+O(\epsilon^3).
+\]
+
+The unit-sphere condition gives
+
+\[
+\langle A_\star,W_U\rangle=-\|U\|^2,
+\]
+
+while the second-order $B_2=0$ condition gives
+
+\[
+DB_2(A_\star)[W_U]+2P_2(U\otimes U)=0.
+\]
+
+An analogous correction $W_V$ is used for $V$, and mixed constrained derivatives use the corresponding bilinear second-order correction. These equations make explicit what is meant in the main text by computing the sextic Hessian intrinsically rather than along straight ambient lines.
+
+At degree six, $\dim\operatorname{Inv}_6(V_5)=6$, whereas $\dim(I_2\operatorname{Inv}_4)=2$, leaving four primitive degree-six directions. Define
+
+\[
+B_4(A)=P_4(A\otimes A),
+\qquad
+C_8(A)=P_8(B_4(A)\otimes A),
+\]
+
+and
+
+\[
+J_{4,8}(A)=\|C_8(A)\|^2.
+\]
+
+On the constrained shape-flat directions,
+
+\[
+dJ_{4,8}(U)=dJ_{4,8}(V)=0,
+\]
+
+\[
+d^2J_{4,8}(U,U)=d^2J_{4,8}(V,V)=\frac{72}{143},
+\qquad
+d^2J_{4,8}(U,V)=0.
+\]
+
+With $e_1=\sqrt{14/15}\,U$ and $e_2=\sqrt{14/15}\,V$,
+
+\[
+H_{\mathrm{shape}}(J_{4,8})=\frac{336}{715}I_2\succ0.
+\]
+
+The missing dynamical step is the explicit sixth-order center-manifold/slaving reduction of the original PDE. That reduction must determine which primitive sextic invariants actually appear and with what coefficients. No claim in this book treats the existence of $J_{4,8}$ as a substitute for that calculation.
