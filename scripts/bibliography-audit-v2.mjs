@@ -6,7 +6,6 @@ const root = process.cwd();
 const bookDir = path.join(root, "books", slug);
 const exportLatexDir = path.join(bookDir, "exports", "latex");
 const exportPdfDir = path.join(bookDir, "exports", "pdf");
-const bibliographyDir = path.join(bookDir, "bibliography");
 
 const outJson = path.join(exportPdfDir, "booksmith-bibliography-audit-v2.json");
 const outMd = path.join(exportPdfDir, "booksmith-bibliography-audit-v2.md");
@@ -59,7 +58,11 @@ function collectBibEntries() {
   const entries = [];
   const duplicateKeys = new Map();
 
-  for (const file of walk(bibliographyDir).filter((f) => f.endsWith(".bib"))) {
+  // Audit the deterministic LaTeX export rather than only the book-local
+  // bibliography folder. Booksmith rewrites bibliography paths and copies both
+  // book-specific and shared Federation .bib files into this self-contained
+  // tree, so this is the bibliography universe the rendered book actually sees.
+  for (const file of walk(exportLatexDir).filter((f) => f.endsWith(".bib"))) {
     const content = read(file);
 
     for (const match of content.matchAll(/@\w+\s*\{\s*([^,\s]+)\s*,/g)) {
@@ -105,6 +108,7 @@ const unused = [...bibKeySet]
 const result = {
   slug,
   generatedAt: new Date().toISOString(),
+  auditedRoot: rel(exportLatexDir),
   status: missing.length === 0 && bib.duplicates.length === 0 ? "PASS" : "FAIL",
   counts: {
     citationOccurrences: citations.length,
@@ -126,6 +130,7 @@ fs.writeFileSync(outMd, [
   "# BookSmith Bibliography Audit v2",
   "",
   `Book slug: \`${slug}\``,
+  `Audited export: \`${result.auditedRoot}\``,
   `Generated: ${result.generatedAt}`,
   `Status: **${result.status}**`,
   "",
