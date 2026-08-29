@@ -8,6 +8,7 @@ const bookRoot = path.join(root, "books", slug);
 const packetDir = path.join(bookRoot, "exports", "publishing-packet");
 const latexDir = path.join(bookRoot, "exports", "latex");
 const pdfDir = path.join(bookRoot, "exports", "pdf");
+const figuresDir = path.join(bookRoot, "figures");
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
@@ -40,6 +41,7 @@ ensureDir(path.join(packetDir, "latex-source"));
 ensureDir(path.join(packetDir, "reports"));
 ensureDir(path.join(packetDir, "metadata"));
 ensureDir(path.join(packetDir, "provenance"));
+ensureDir(path.join(packetDir, "figures"));
 
 const copied = [];
 
@@ -55,10 +57,20 @@ const knownCopies = [
   ["print/main.pdf", path.join(pdfDir, "main.pdf")],
   ["reports/booksmith-proof-report.md", path.join(pdfDir, "booksmith-proof-report.md")],
   ["reports/booksmith-proof-report.json", path.join(pdfDir, "booksmith-proof-report.json")],
+  ["reports/booksmith-bibliography-audit-v2.md", path.join(pdfDir, "booksmith-bibliography-audit-v2.md")],
+  ["reports/booksmith-bibliography-audit-v2.json", path.join(pdfDir, "booksmith-bibliography-audit-v2.json")],
   ["reports/booksmith-quality-gate.md", path.join(pdfDir, "booksmith-quality-gate.md")],
   ["reports/booksmith-quality-gate.json", path.join(pdfDir, "booksmith-quality-gate.json")],
   ["reports/booksmith-integrity-report.md", path.join(latexDir, "booksmith-integrity-report.md")],
   ["reports/booksmith-integrity-report.json", path.join(latexDir, "booksmith-integrity-report.json")],
+  ["reports/booksmith-publication-gate-v2.md", path.join(pdfDir, "booksmith-publication-gate-v2.md")],
+  ["reports/booksmith-publication-gate-v2.json", path.join(pdfDir, "booksmith-publication-gate-v2.json")],
+  ["reports/booksmith-figure-intelligence-v1.md", path.join(pdfDir, "booksmith-figure-intelligence-v1.md")],
+  ["reports/booksmith-figure-intelligence-v1.json", path.join(pdfDir, "booksmith-figure-intelligence-v1.json")],
+  ["figures/figure-engine-report.md", path.join(figuresDir, "figure-engine-report.md")],
+  ["figures/figure-engine-report.json", path.join(figuresDir, "figure-engine-report.json")],
+  ["figures/figure-registry.json", path.join(figuresDir, "figure-registry.json")],
+  ["figures/asset-ledger.json", path.join(figuresDir, "asset-ledger.json")],
   ["metadata/book.config.json", path.join(bookRoot, "book.config.json")],
 ];
 
@@ -83,8 +95,12 @@ const manifest = {
     pdf: fs.existsSync(path.join(packetDir, "print", "main.pdf")),
     latexSource: fs.existsSync(path.join(packetDir, "latex-source", "main.tex")),
     proofReport: fs.existsSync(path.join(packetDir, "reports", "booksmith-proof-report.md")),
+    bibliographyAudit: fs.existsSync(path.join(packetDir, "reports", "booksmith-bibliography-audit-v2.md")),
     qualityGate: fs.existsSync(path.join(packetDir, "reports", "booksmith-quality-gate.md")),
     integrityReport: fs.existsSync(path.join(packetDir, "reports", "booksmith-integrity-report.md")),
+    publicationGate: fs.existsSync(path.join(packetDir, "reports", "booksmith-publication-gate-v2.md")),
+    figureIntelligence: fs.existsSync(path.join(packetDir, "reports", "booksmith-figure-intelligence-v1.md")),
+    figureRegistry: fs.existsSync(path.join(packetDir, "figures", "figure-registry.json")),
   },
 };
 
@@ -101,11 +117,15 @@ fs.writeFileSync(path.join(packetDir, "README.md"), [
   `- Print PDF: ${manifest.includes.pdf ? "yes" : "no"}`,
   `- LaTeX source: ${manifest.includes.latexSource ? "yes" : "no"}`,
   `- Proof report: ${manifest.includes.proofReport ? "yes" : "no"}`,
+  `- Bibliography audit: ${manifest.includes.bibliographyAudit ? "yes" : "no"}`,
   `- Quality gate: ${manifest.includes.qualityGate ? "yes" : "no"}`,
   `- Integrity report: ${manifest.includes.integrityReport ? "yes" : "no"}`,
+  `- Publication gate: ${manifest.includes.publicationGate ? "yes" : "no"}`,
+  `- Figure intelligence: ${manifest.includes.figureIntelligence ? "yes" : "no"}`,
+  `- Figure registry: ${manifest.includes.figureRegistry ? "yes" : "no"}`,
   `- Checksums: yes`,
   "",
-  "This packet is generated from local Booksmith project files for human review, proofing, and publishing operations.",
+  "This packet is generated from Booksmith project files for human review, proofing, reproducibility, and publishing operations.",
   "",
 ].join("\n"));
 
