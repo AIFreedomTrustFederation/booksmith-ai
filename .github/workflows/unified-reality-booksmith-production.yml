@@ -6,6 +6,7 @@ on:
       - 'books/towards-a-unified-reality/**'
       - 'library/references/**'
       - 'scripts/**'
+      - 'src/lib/publishing/**'
       - 'package.json'
       - '.github/workflows/unified-reality-booksmith-production.yml'
   workflow_dispatch:
