@@ -64,6 +64,9 @@ jobs:
       - name: Run figure registry and queue pipeline
         run: bash scripts/figure-pipeline-v1.sh towards-a-unified-reality
 
+      - name: Revalidate LaTeX integrity after figure pipeline
+        run: node scripts/validate-latex-integrity.mjs towards-a-unified-reality
+
       - name: Build publishing packet
         run: node scripts/build-publishing-packet.mjs towards-a-unified-reality
 
