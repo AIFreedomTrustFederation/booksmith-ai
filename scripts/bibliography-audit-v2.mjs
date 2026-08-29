@@ -54,15 +54,40 @@ function collectCitationsFromTex() {
   return citations;
 }
 
+function resolveDeclaredBibliographies() {
+  const declared = new Set();
+
+  for (const texFile of walk(exportLatexDir).filter((f) => f.endsWith(".tex"))) {
+    const content = read(texFile);
+    const texDir = path.dirname(texFile);
+
+    for (const match of content.matchAll(/\\bibliography\{([^}]+)\}/g)) {
+      for (const rawName of match[1].split(",")) {
+        const name = rawName.trim();
+        if (!name) continue;
+        const withExtension = name.endsWith(".bib") ? name : `${name}.bib`;
+        declared.add(path.resolve(texDir, withExtension));
+      }
+    }
+
+    for (const match of content.matchAll(/\\addbibresource(?:\[[^\]]*\])?\{([^}]+)\}/g)) {
+      const name = match[1].trim();
+      if (!name) continue;
+      const withExtension = name.endsWith(".bib") ? name : `${name}.bib`;
+      declared.add(path.resolve(texDir, withExtension));
+    }
+  }
+
+  return [...declared].sort();
+}
+
 function collectBibEntries() {
   const entries = [];
   const duplicateKeys = new Map();
+  const declaredFiles = resolveDeclaredBibliographies();
+  const missingBibliographyFiles = declaredFiles.filter((file) => !fs.existsSync(file));
 
-  // Audit the deterministic LaTeX export rather than only the book-local
-  // bibliography folder. Booksmith rewrites bibliography paths and copies both
-  // book-specific and shared Federation .bib files into this self-contained
-  // tree, so this is the bibliography universe the rendered book actually sees.
-  for (const file of walk(exportLatexDir).filter((f) => f.endsWith(".bib"))) {
+  for (const file of declaredFiles.filter((f) => fs.existsSync(f))) {
     const content = read(file);
 
     for (const match of content.matchAll(/@\w+\s*\{\s*([^,\s]+)\s*,/g)) {
@@ -80,6 +105,8 @@ function collectBibEntries() {
 
   return {
     entries,
+    declaredFiles,
+    missingBibliographyFiles,
     duplicates: [...duplicateKeys.entries()]
       .filter(([, items]) => items.length > 1)
       .map(([key, items]) => ({ key, entries: items })),
@@ -105,19 +132,30 @@ const unused = [...bibKeySet]
   .sort()
   .map((key) => bib.entries.find((entry) => entry.key === key));
 
+const status =
+  missing.length === 0 &&
+  bib.duplicates.length === 0 &&
+  bib.missingBibliographyFiles.length === 0
+    ? "PASS"
+    : "FAIL";
+
 const result = {
   slug,
   generatedAt: new Date().toISOString(),
   auditedRoot: rel(exportLatexDir),
-  status: missing.length === 0 && bib.duplicates.length === 0 ? "PASS" : "FAIL",
+  status,
   counts: {
     citationOccurrences: citations.length,
     uniqueCitationKeys: citationKeySet.size,
+    declaredBibliographyFiles: bib.declaredFiles.length,
+    missingBibliographyFiles: bib.missingBibliographyFiles.length,
     bibliographyEntries: bib.entries.length,
     missingCitationKeys: missing.length,
     duplicateBibKeys: bib.duplicates.length,
     unusedBibEntries: unused.length,
   },
+  declaredBibliographyFiles: bib.declaredFiles.map(rel),
+  missingBibliographyFiles: bib.missingBibliographyFiles.map(rel),
   missing,
   duplicateBibKeys: bib.duplicates,
   unused,
@@ -137,6 +175,16 @@ fs.writeFileSync(outMd, [
   "## Counts",
   "",
   ...Object.entries(result.counts).map(([key, value]) => `- ${key}: ${value}`),
+  "",
+  "## Declared Bibliography Files",
+  "",
+  ...result.declaredBibliographyFiles.map((file) => `- \`${file}\``),
+  "",
+  "## Missing Bibliography Files",
+  "",
+  result.missingBibliographyFiles.length
+    ? result.missingBibliographyFiles.map((file) => `- \`${file}\``).join("\n")
+    : "None.",
   "",
   "## Missing Citation Keys",
   "",
