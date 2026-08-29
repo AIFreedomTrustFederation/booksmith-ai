@@ -1,0 +1,81 @@
+name: Unified Reality Booksmith Production
+
+on:
+  push:
+    paths:
+      - 'books/towards-a-unified-reality/**'
+      - 'library/references/**'
+      - 'scripts/**'
+      - 'package.json'
+      - '.github/workflows/unified-reality-booksmith-production.yml'
+  workflow_dispatch:
+
+jobs:
+  produce-book:
+    name: Produce Relational Coherence Monograph
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate federated library
+        run: npm run validate:library
+
+      - name: Render deterministic Booksmith LaTeX export
+        run: node scripts/render-latex.mjs towards-a-unified-reality
+
+      - name: Validate LaTeX source integrity
+        run: node scripts/validate-latex-integrity.mjs towards-a-unified-reality
+
+      - name: Build PDF proof with XeLaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: books/towards-a-unified-reality/manuscript
+          root_file: main.tex
+          latexmk_use_xelatex: true
+          args: -pdf -xelatex -interaction=nonstopmode -halt-on-error -file-line-error
+
+      - name: Stage PDF and log for Booksmith proof engine
+        run: |
+          mkdir -p books/towards-a-unified-reality/exports/pdf
+          cp books/towards-a-unified-reality/manuscript/main.pdf books/towards-a-unified-reality/exports/pdf/main.pdf
+          cp books/towards-a-unified-reality/manuscript/main.log books/towards-a-unified-reality/exports/pdf/main.log
+
+      - name: Generate proof report
+        run: node scripts/proof-report.mjs towards-a-unified-reality
+
+      - name: Run bibliography audit
+        run: node scripts/bibliography-audit-v2.mjs towards-a-unified-reality
+
+      - name: Run quality gate
+        run: node scripts/quality-gate.mjs towards-a-unified-reality
+
+      - name: Run figure registry and queue pipeline
+        run: bash scripts/figure-pipeline-v1.sh towards-a-unified-reality
+
+      - name: Build publishing packet
+        run: node scripts/build-publishing-packet.mjs towards-a-unified-reality
+
+      - name: Collect production artifacts
+        run: |
+          mkdir -p dist/towards-a-unified-reality
+          cp books/towards-a-unified-reality/exports/pdf/main.pdf dist/towards-a-unified-reality/relational-coherence-and-the-languages-of-reality.pdf
+          cp -r books/towards-a-unified-reality/exports/pdf dist/towards-a-unified-reality/proof
+          cp -r books/towards-a-unified-reality/exports/publishing-packet dist/towards-a-unified-reality/publishing-packet
+          if [ -d books/towards-a-unified-reality/figures ]; then cp -r books/towards-a-unified-reality/figures dist/towards-a-unified-reality/figures; fi
+
+      - name: Upload complete Booksmith production artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: relational-coherence-booksmith-production
+          path: dist/towards-a-unified-reality
