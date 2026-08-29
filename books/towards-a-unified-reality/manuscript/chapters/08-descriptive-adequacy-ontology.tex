@@ -1,16 +1,88 @@
-\chapter{Descriptive Adequacy and Ontological Sufficiency}
+\chapter{Descriptive Adequacy, Directional Adequacy, and Ontological Sufficiency}
 
-The central argument now reaches a seam at which two questions must remain connected without being allowed to collapse into one another. The first asks which descriptive language preserves the structure of reality most faithfully. The second asks what reality is. Mathematics can improve upon ordinary language by separating distinctions that words routinely compress, and a richer mathematical formalism can resolve states that a poorer formalism treats as identical, but neither achievement is yet an ontological conclusion. A language may become more precise without thereby becoming reality itself, and a mathematical description may become more complete without demonstrating that the ontology suggested by that description is fundamental.
+\section{Three Questions at the Seam}
 
-This distinction can be stated as a standing principle:
+The mathematical audit has now reached a seam at which three questions must remain connected without being allowed to collapse into one another. The first asks whether a descriptive language has enough \emph{resolution} to distinguish states the phenomenon requires us to distinguish. The second asks whether that language has enough \emph{directional information} to determine which way a relevant relation, process, or dependency runs. The third asks what, once those descriptive questions have been answered as well as the evidence permits, reality is actually sufficient to be.
 
-\begin{principle}[Descriptive adequacy is not ontological sufficiency]
-A descriptive language may preserve more empirically relevant relational structure than a competing language without thereby establishing that the ontology naturally associated with that language is fundamental, complete, or uniquely true.
-\end{principle}
+These are different questions:
 
-The principle establishes the relationship between the two major levels of the inquiry. The descriptive-language analysis is logically upstream. It determines whether the mathematical vocabulary being used is sufficiently expressive to formulate the ontological problem without losing distinctions that matter. The physical--experiential analysis comes afterward and asks whether, once an adequate language has been chosen, the exterior physical description is sufficient or whether some irreducible experiential structure remains necessary. Success at the first level cannot count as evidence for a conclusion at the second. A mathematical language that resolves more distinctions than ordinary language has demonstrated greater resolving power, not a deeper ontology. A sixth-order invariant that distinguishes states quartic invariants cannot distinguish has demonstrated additional formal resolution, not an experiential dimension. A complex wave description that contains phase and directed current absent from bare geometry has demonstrated greater dynamical expressiveness, not idealism. The role of the first level is to make the second question precise enough to be tested.
+\[
+\boxed{
+\text{What can the language distinguish?}
+}
+\]
 
-The foundational persistence relation already illustrates the separation. Two reduced relational states may satisfy
+\[
+\boxed{
+\text{What direction can the evidence determine?}
+}
+\]
+
+\[
+\boxed{
+\text{What ontology is sufficient for what remains?}
+}
+\]
+
+The first concerns descriptive resolution. The second concerns orientation and predication. The third concerns ontology. A theory can succeed at one level and fail at the next. A richer invariant algebra may distinguish states a poorer algebra collapses while remaining silent about causal direction. A wave description may recover a directed current that invariant geometry cannot represent while still failing to identify which variable is ontologically prior. A causal model may earn one directed dependence without thereby proving that the variable upstream in that experiment is metaphysically fundamental.
+
+The order matters. Ontological arguments become unstable when they are asked before the descriptive language has shown that it can resolve the relevant distinctions and before the evidential structure has shown that it can orient the relevant arrows. The purpose of this chapter is therefore to establish the methodological hinge linking the exact mathematics to the later ontology audit:
+
+\[
+\boxed{
+\text{resolution}
+\longrightarrow
+\text{orientation}
+\longrightarrow
+\text{predication}
+\longrightarrow
+\text{ontology}
+}
+\]
+
+The arrows in this sequence indicate the order of audit. They do not assert that resolution causes orientation, that orientation causes predication, or that predication causes ontology. The sequence is epistemic and methodological: each stage determines whether the next question has been posed precisely enough to deserve an answer.
+
+\section{The First Gate: Descriptive Resolution}
+
+A descriptive language is adequate only relative to the distinctions a problem requires it to preserve. Let
+
+\[
+\Lambda:\mathscr R\longrightarrow\mathcal L
+\]
+
+be a descriptive map from a relational state space into some language of representation. The map induces an equivalence relation
+
+\[
+r_1\sim_{\Lambda}r_2
+\quad\Longleftrightarrow\quad
+\Lambda(r_1)=\Lambda(r_2).
+\]
+
+Every descriptive language therefore partitions reality into classes it can distinguish and classes it cannot. If a richer language \(\Lambda_2\) preserves distinctions absent from \(\Lambda_1\), then the corresponding equivalence classes may refine:
+
+\[
+[r]_{\Lambda_2}\subseteq[r]_{\Lambda_1}.
+\]
+
+Strict inclusion means that the poorer language identified states the richer language can separate. The states did not become different when the richer language was introduced. The language acquired enough resolving power to represent a difference that was already present in the modeled state space.
+
+This is the formal content of the descriptive-refinement principle:
+
+\[
+\boxed{
+\text{restricted descriptive indistinguishability}
+\not\Rightarrow
+\text{identity under every richer description}.
+}
+\]
+
+The \(\ell=5\) quartic/sextic calculation supplies the exact example. Quartic invariant structure leaves two genuine intrinsic shape directions unresolved on the local minimum manifold. Sixth-order invariant structure contains genuinely new directions and an explicit sextic invariant with positive intrinsic curvature along both quartic-flat shape directions. The sixth-order language does not create those physical shape differences; it resolves them.
+
+That result is powerful precisely because its inferential ceiling is clear. The two shape-flat directions are physical degeneracies of a truncated invariant energy. They are not hidden experiential dimensions, not locations where consciousness has been mathematically discovered, and not evidence for any preferred ontology. What the theorem establishes is methodological: a descriptive algebra can mistake unresolved difference for identity.
+
+\section{Persistence and the Ambiguity of ``Same''}
+
+The foundational persistence relation makes the same point in a more general form. Two reduced relational states can satisfy
 
 \[
 \bar q_t\neq\bar q_s
@@ -22,30 +94,304 @@ while
 \Phi(\bar q_t)=\Phi(\bar q_s).
 \]
 
-The mathematical language has separated two meanings of the ordinary word ``same.'' The states are not the same, while the form is. This is a genuine gain in descriptive precision because ordinary language can move between those meanings without noticing that it has done so. The result does not establish that relational form is metaphysically more fundamental than state. It establishes that a theory of persistence that identifies sameness of state with sameness of form is unnecessarily coarse. The formalism earns its place because it allows a distinction the phenomenon requires us to make.
+The states differ while the defining form persists. Ordinary language may call both conditions ``the same,'' but the mathematics forces the identity criterion into the open. State identity, orbit identity, form identity, and dynamical continuity are not interchangeable.
 
-The same discipline governs the comparison between Platonic form and wave dynamics. Platonic symmetry supplies a language for invariant relational structure. Its group actions, projectors, characters, fixed spaces, and orbit geometry answer questions about what remains unchanged under a specified family of transformations. Wave dynamics contains many of those structural relations while adding phase, current, interference, orientation, and temporal evolution. The graph-Laplacian result makes the difference exact: one geometry can support multiple inequivalent dynamical laws, so invariant geometry cannot in general reconstruct the process that realizes it. The conclusion is that a purely geometric language is insufficient whenever the empirical phenomenon depends on phase, flow, or dynamics. It is not that wave mathematics is ontologically more real than geometry, nor that one is secretly materialistic and the other idealistic. The language-level result determines what mathematics is required to ask the physical question correctly; ontology remains to be decided by a different evidential standard.
+This gain in precision does not establish that form is metaphysically more fundamental than state. It establishes that a theory of persistence that equates sameness of state with sameness of form is too coarse for the phenomenon being modeled. The formalism earns its place because it preserves a distinction that the scientific question requires.
 
-The $\ell=5$ calculation provides the clearest example of why this separation must remain explicit. Quartic invariant structure reduces the normalized energy to a minimum condition $B_2(A)=0$. At the explicit regular state $A_\star$, the local minimum manifold has five tangent dimensions. Three are generated by rotation and therefore represent the same intrinsic form under the chosen identity relation, while two remain as genuine physical shape directions. Quartic structure cannot distinguish those two directions energetically. Degree six introduces four invariant directions not inherited from quadratic multiples of quartic invariants, and the explicit sextic $J_{4,8}$ possesses positive curvature along both shape-flat directions. The mathematical conclusion is powerful precisely because it is limited: sixth-order invariant structure resolves distinctions quartic invariant structure cannot.
+The same reflexivity applies to every quotient and invariant used in the book. Declaring two states equivalent under a group action already asserts that the corresponding difference does not matter to the chosen question. If the quotient is too coarse, scientifically important differences disappear. If it is too fine, genuine persistence may be buried beneath irrelevant microscopic variation. Mathematics improves upon ordinary ambiguity only when the state space, metric, group action, quotient, and form map are themselves explicit enough to be inspected and contested.
 
-The ontology-level translation is weaker by design. The result establishes that formal descriptions possess levels of resolving power and that indistinguishability under a restricted invariant algebra does not entail identity under every richer invariant algebra. It does not establish that an analogous unresolved dimension exists between physics and experience, and it certainly does not establish that phenomenal consciousness occupies any such dimension. The two quartic shape-flat directions are physical degeneracies of a truncated invariant energy. Their philosophical importance lies in demonstrating how easily a descriptive limitation can masquerade as identity when the available formal language lacks the relations required to distinguish the states.
+\section{The Second Gate: Directional Adequacy}
 
-This separation prevents the language argument from becoming deflationary. If the materialism--idealism dispute were converted into a contest over which vocabulary is more efficient, the ontological question would have been dissolved rather than answered. The physicalist claim is not merely that physical vocabulary is convenient; it is that a complete physical state is sufficient. The idealist claim is not merely that experiential language captures meanings conventional physics overlooks; it assigns explanatory or ontological priority to experience, mind, or intelligible form. A relational dual-aspect proposal likewise makes a substantive claim only if the exterior physical and interior experiential structures cannot be reduced to one another without empirical loss. These are claims about sufficiency and reality, not preferences among vocabularies.
+Resolution is not the whole descriptive problem. A language may distinguish the states in play and still fail to determine the orientation of a directed quantity. Chapter 8 gave the exact wave example. For a complex state \(\Psi\) and its conjugate \(K\Psi\), a chosen coarse observation algebra may satisfy
 
-The descriptive-language analysis therefore has a strictly limited but indispensable function: it determines whether the mathematical apparatus is capable of expressing the distinctions required to test the ontological claims. Mathematics may show that ordinary language is too coarse. Higher-order mathematics may show that an earlier mathematical description is itself too coarse. None of these results is permitted to answer the ontology question by substitution. The rule at the seam is therefore simple: descriptive adequacy determines whether we possess a language precise enough to ask the physical--experiential question; the evidential hierarchy is the only mechanism permitted to answer it.
+\[
+\mathcal O[\Psi]=\mathcal O[K\Psi]
+\]
 
-The rule must also be applied reflexively to the present choice of relational states and invariant theory. The framework does not claim that $\mathscr R(t)$ is the uniquely correct mathematical primitive merely because relational mathematics has proven fruitful. A relational state is chosen because it is general enough to represent transformations, constraints, symmetries, dynamics, and invariant forms without assuming an object-first ontology. That is a methodological advantage, not a metaphysical proof. Category-theoretic process structures may emphasize composition rather than state identity. Causal process theories may privilege intervention and history. Measure-theoretic approaches may treat distributions rather than individual points as fundamental to prediction. Operator-algebraic approaches may encode observables without committing to a classical state ontology. The present framework earns priority only to the extent that it captures the relevant structure economically and remains testable against alternatives.
+while a directed observable satisfies
 
-Persistence itself illustrates the need for this reflexivity. The present account represents identity largely through invariants and equivalence classes, but causal-historical continuity provides another legitimate grammar. Two states may count as one continuing system not because every defining instantaneous invariant is preserved but because they belong to one causally connected self-maintaining trajectory. Biological organisms make this especially clear. Their matter changes, their morphology changes, and many measurable quantities drift, yet causal organization, repair, memory, and regenerative continuity can preserve an identity that no single low-order snapshot invariant captures. A complete theory should therefore allow form invariance and causal continuity to complement rather than exclude one another.
+\[
+J[K\Psi]=-J[\Psi].
+\]
 
-The same self-skepticism applies to quotienting. Declaring two states equivalent under a group action already asserts that the corresponding difference does not matter to the scientific question. If $\Phi$ is too coarse, radically different systems can be classified as one form. If it is too fine, genuine persistence disappears beneath microscopic variation. Every important quotient and invariant must therefore be tied to an explicit identity criterion. Mathematics cannot claim superiority over ordinary language by relocating ambiguity into an unstated choice of state space, metric, group action, or form map. Formalization improves the problem when those choices themselves become inspectable and contestable.
+In the standard current example,
 
-The result is stronger than the claim that mathematics simply describes reality better than words. Mathematics becomes superior for a domain when it preserves distinctions the evidence requires, supports predictions or interventions that a coarser vocabulary cannot formulate, and exposes its assumptions sufficiently clearly for alternative representations to be compared. Ordinary language remains indispensable because empirical interpretation, phenomenological meaning, and ontological claims cannot be obtained from symbols without conceptual translation. The task is not to replace one language with another but to determine the translation relations among them and prevent success at one descriptive level from being mistaken for the truth of an ontology.
+\[
+\mathbf j_{K\Psi}=-\mathbf j_{\Psi}.
+\]
 
-The physical--experiential question begins only after this methodological boundary has been established. Let $P_{\mathrm{phys}}$ represent an increasingly comprehensive physical state description and let $Z_\varphi$ represent a latent structure inferred from converging phenomenological evidence. The question is whether $Z_\varphi$ continues to provide predictive or interventional information after the physical description is systematically enriched. Once the relevant variables, null models, enrichment sequences, and model penalties have been preregistered, their outcomes are no longer subject to being reinterpreted away as merely another vocabulary whenever the result becomes inconvenient. The purpose of the language-level framework is precisely to construct empirical anchor points at which rival ontological programs can lose.
+The invariant description can therefore remain unchanged while directional structure reverses. This yields the second object-level boundary:
 
-The same discipline governs the antiunitary bridge developed conditionally in Appendix C. The exact conjugation theorem shows that a complex wave can preserve density and symmetry while reversing current. That is a mathematical example of form surviving a transformation that reverses dynamical orientation. It becomes relevant to consciousness only if independently established phenomenological relations require the same complex projective structure. Until then, antiunitarity is an admissible mathematical hypothesis, not evidence about experience.
+\[
+\boxed{
+\text{invariant observational equivalence}
+\not\Rightarrow
+\text{identity of directed relational structure}.
+}
+\]
 
-The governing principles can now be placed beside one another. Indistinguishability under a restricted descriptive algebra does not imply identity under every richer descriptive algebra. Descriptive-language adequacy does not imply ontological sufficiency. Mathematical admissibility does not imply phenomenal occupancy. These are not three unrelated warnings. They are the same structural discipline appearing at progressively deeper levels. A coarse invariant algebra may collapse distinctions a richer algebra resolves. An elegant mathematical language may preserve more structure without becoming an ontology. An admissible experiential representation may possess every formal property demanded of consciousness without thereby being occupied by experience. At every level, the capacity to draw a distinction must be separated from evidence that reality instantiates the thing described by that distinction.
+The failure is related to descriptive refinement but should not be flattened into it. Technically, one can enrich an observation algebra by adding a directed quantity such as \(J\), thereby refining the descriptive class. But the scientific meaning of the added information is different. The quartic/sextic problem asks whether a language can distinguish states. The conjugation problem asks whether a language that preserves the relevant coarse form has retained the orientation of a relation or flow. One is a loss of resolution; the other is a loss of direction.
 
-The hierarchy is therefore fixed. First we ask whether the descriptive language is adequate to formulate the distinction. Then we ask whether the proposed mathematical structure is admissible. Then we ask whether the data occupy that structure in a way that survives prediction, intervention, cross-context transfer, and comparison with simpler alternatives. Only then are we entitled to ask what ontology best explains the result. The language of relational invariants, dynamical flow, and descriptive resolution tells us how to formulate the physical--experiential question without collapsing important distinctions. It is not allowed to answer that question in place of the evidence.
+Thus the mathematical audit now contains two named descriptive failure modes:
+
+\[
+\boxed{
+\text{resolution can be lost}
+}
+\]
+
+and
+
+\[
+\boxed{
+\text{orientation can be lost}.
+}
+\]
+
+Neither failure by itself is ontological. Both are warnings about what a chosen language is unable to recover from the information it preserves.
+
+\section{Geometry, Dynamics, and Why Form Does Not Supply an Arrow}
+
+The distinction between form and direction appears even before conjugation. If \(L\) is a Laplacian or Laplacian-like operator and a symmetry representation satisfies
+
+\[
+[U_g,L]=0,
+\]
+
+then the same underlying symmetry geometry can support many inequivalent laws constructed from \(L\). Diffusion, classical wave dynamics, first-order unitary evolution, higher-order dispersive evolution, and massive wave dynamics can all respect the same symmetry structure. In compact form,
+
+\[
+\boxed{G\nRightarrow W}.
+\]
+
+A geometry can therefore constrain admissible process without uniquely determining process. Platonic symmetry answers questions about what remains invariant under specified transformations. Wave dynamics answers additional questions about phase, current, propagation, and temporal realization. Neither language subsumes the other merely because both can be defined on the same underlying state space.
+
+This is why the comparison between Platonic form and wave conjugation is methodologically useful but ontologically neutral. Platonic duality satisfies a structural transformation such as
+
+\[
+D:\{p,q\}\longmapsto\{q,p\},
+\]
+
+whereas complex conjugation acts on phase orientation. In general,
+
+\[
+\boxed{K\neq D}.
+\]
+
+A dual solid is not a conjugate wave, and a conjugate wave is not a physical/spiritual counterpart. The mathematics becomes useful to philosophy precisely when those operations are kept distinct enough that analogy cannot masquerade as derivation.
+
+\section{From Orientation to Predication}
+
+Directional adequacy becomes especially delicate when the directed quantity is not a current in a wave field but an explanatory or causal arrow between variables. The ordinary joint distribution
+
+\[
+p(X,Y)
+\]
+
+can be factorized as
+
+\[
+p(X,Y)=p(X)p(Y\mid X)=p(Y)p(X\mid Y).
+\]
+
+The factorization alone does not determine whether the causal structure is
+
+\[
+X\longrightarrow Y,
+\]
+
+\[
+Y\longrightarrow X,
+\]
+
+or whether both depend on a common source. This is where the cross-cutting rule introduced earlier becomes operative:
+
+\[
+\boxed{
+\textbf{Direction cannot be inferred merely from relation.}
+}
+\]
+
+Equivalently,
+
+\[
+p(X,Y)\nRightarrow X\longrightarrow Y,
+\qquad
+p(X,Y)\nRightarrow Y\longrightarrow X.
+\]
+
+This governing rule is not another object-level boundary beside the resolution and orientation principles. It explains why descriptive success at those levels does not automatically settle predication. Once the question changes from ``what directed quantity does this state carry?'' to ``which variable causally or ontologically predicates the other?'', observational equivalence must be supplemented by intervention, temporal structure, conditional independence, dynamical closure, invariance, and explicit causal assumptions.
+
+The physical--experiential problem therefore cannot begin from
+
+\[
+P\longrightarrow E
+\]
+
+as though the arrow were contained in the nouns \emph{physical} and \emph{experience}. Nor can reversing the grammar to
+
+\[
+E\longrightarrow P
+\]
+
+be justified merely because experience is epistemically immediate. The relational alternative
+
+\[
+P\longleftarrow R\longrightarrow E
+\]
+
+likewise earns nothing merely by drawing a common source. These are candidate predication structures. The next chapter asks what each must earn.
+
+\section{The Third Gate: Ontological Sufficiency}
+
+Only after resolution and directional adequacy have been separated can the ontology question be stated without allowing descriptive success to answer it by substitution. The governing boundary is
+
+\begin{principle}[Descriptive adequacy is not ontological sufficiency]
+A descriptive language may preserve more empirically relevant relational structure than a competing language without thereby establishing that the ontology naturally associated with that language is fundamental, complete, or uniquely true.
+\end{principle}
+
+The principle now has a more precise place in the architecture. Descriptive adequacy includes at least two questions: whether the representation has enough resolution to preserve relevant distinctions and whether it contains the directional information required by the problem. Even a language that passes both tests has not thereby become reality itself.
+
+A sixth-order invariant that resolves quartic degeneracy has demonstrated greater formal resolution, not a deeper ontology. A complex wave description that represents phase and current absent from bare geometry has demonstrated greater directional expressiveness, not idealism. A causal model that predicts the effect of an intervention has earned a directed dependence in the modeled domain, not automatic metaphysical priority for every variable upstream in that graph.
+
+Ontology begins where those descriptive achievements stop. The physicalist claim is substantive because it says that some appropriately complete physical-relational state is sufficient. The experiential-first claim is substantive because it assigns explanatory or generative priority to experiential structure. The relational claim is substantive only if a common structure contributes something not reducible to a convenient latent container. Those burdens cannot be discharged by choosing mathematically evocative vocabulary.
+
+\section{Why the Language Audit Does Not Deflate Ontology}
+
+The distinction between descriptive and ontological questions prevents two opposite mistakes. The first is inflation: an elegant mathematics is promoted into metaphysics because its symbols resemble a preferred philosophical story. The second is deflation: a genuine ontological disagreement is dismissed as though rival theories were merely choosing different words for the same data.
+
+Neither move is acceptable. If two vocabularies are related by a structure-preserving translation that preserves every empirically relevant invariant and every interventionally relevant prediction, then part of their disagreement may indeed be representational. But if no such translation exists, if the models posit different screening relations, if they respond differently under intervention, or if one requires latent structure that the other does not, then the disagreement is substantive.
+
+A useful comparison asks whether, for two descriptive systems \(\Lambda_A\) and \(\Lambda_B\), there exists a map \(T\) such that
+
+\[
+\Lambda_B(r)=T(\Lambda_A(r))
+\]
+
+while the empirically relevant invariants and directed consequences are preserved. Where such a translation exists, disagreement may be partly coordinate-like. Where it fails in a way that changes prediction, intervention, closure, or occupancy claims, the difference cannot be dissolved by saying that both sides are merely using different languages.
+
+\section{Relational Mathematics Must Pass Its Own Audit}
+
+The present framework does not claim that relational state space \(\mathscr R\) is the uniquely correct mathematical primitive merely because relational mathematics has proven productive. A relational state is chosen because it is general enough to represent constraints, transformations, symmetries, dynamics, equivalence relations, and invariant forms without assuming an object-first ontology at the outset. That is a methodological advantage, not a metaphysical proof.
+
+Other mathematical grammars may prove superior for particular domains. Category-theoretic process structures may emphasize composition rather than state identity. Causal process theories may privilege intervention and history. Measure-theoretic approaches may treat distributions as fundamental to prediction. Operator-algebraic descriptions may center observables without committing to a classical state ontology. Causal-historical continuity may capture forms of persistence that no instantaneous invariant represents economically.
+
+Biological identity makes the last point especially clear. Organisms replace matter, alter morphology, repair damage, preserve memory, and maintain causal organization across time. Their persistence may require both form invariance and causal continuity. A language that recognizes only snapshot invariants can therefore be as incomplete as a language that recognizes only material continuity.
+
+The same self-skepticism applies to the book's use of quotients, projectors, latent variables, and causal graphs. Every important formal choice must expose the distinctions it preserves and those it discards. Mathematics does not become superior to ordinary language by moving ambiguity into an unstated state space or an unexamined arrow.
+
+\section{The Physical--Experiential Test After the Three Gates}
+
+Once the descriptive and directional gates are explicit, the physical--experiential test can be stated more carefully. Let \(P_{\mathrm{phys}}^{(k)}\) denote a sequence of increasingly comprehensive physical descriptions and let \(Z_\varphi\) denote latent phenomenological-evidence structure inferred from converging observations. The notation must preserve the ceiling
+
+\[
+Z_\varphi\neq E_{\mathrm{exp}}.
+\]
+
+The question is not initially whether \(Z_\varphi\) is consciousness. The question is whether it contributes reproducible structure after physical description is progressively enriched, whether that contribution survives transfer and intervention, and whether the apparent residual can be reproduced by capacity-matched physical latent alternatives.
+
+One can write a residual quantity schematically as
+
+\[
+\Delta_\varphi(k)
+=
+I\!\left(Y;Z_\varphi\mid P_{\mathrm{phys}}^{(k)},\mathrm{Ctx},\operatorname{do}(u)\right).
+\]
+
+If
+
+\[
+\Delta_\varphi(k)\longrightarrow0
+\]
+
+under principled physical enrichment, then the tested additional structure loses its claim to nonredundancy in that domain. If a positive residual survives enrichment, transfer, matched-capacity controls, and intervention, the correct conclusion is still limited: the tested physical description was insufficient for the structure at issue. That result does not automatically establish experiential-first ontology or phenomenal occupancy.
+
+This is where the three-gate architecture prevents inferential shortcuts. A residual may reflect inadequate \emph{resolution} in the physical description. An apparent directional effect may reflect inadequate causal identification. A stable nonredundant variable may still fail to be phenomenally occupied. Each level has its own burden and its own defeat conditions.
+
+\section{The Conditional Antiunitary Bridge Remains Downstream}
+
+The same discipline governs the antiunitary hypothesis isolated in Appendix C. The exact conjugation theorem establishes that a complex wave can preserve selected invariant structure while reversing directed current. That is a theorem about the mathematical representation developed in Chapter 8.
+
+It becomes relevant to phenomenology only if independently established experiential relations require an appropriate complex projective geometry. Only then would a hypothesis of the form
+
+\[
+\Phi_E(E_{\mathrm{exp}})
+\approx
+\Gamma J\Phi_P(P_{\mathrm{phys}})
+\]
+
+with an antiunitary operator such as \(J=UK\) become empirically meaningful. Until those prerequisites are independently earned, antiunitarity remains an admissible bridge hypothesis. It is not evidence that experience is the conjugate of matter, not evidence that consciousness reverses a physical arrow, and not evidence that wave mathematics has already chosen among \(\mathcal M_P\), \(\mathcal M_E\), and \(\mathcal M_R\).
+
+\section{The Hierarchy of Boundaries}
+
+The architecture can now be stated without flattening unlike principles into one list. Above the inquiry sits the cross-cutting rule:
+
+\[
+\boxed{
+\textbf{Direction cannot be inferred merely from relation.}
+}
+\]
+
+Beneath it are the object-level boundaries established across the mathematical and ontological audit:
+
+\[
+\boxed{
+\text{restricted descriptive indistinguishability}
+\not\Rightarrow
+\text{identity under every richer description}
+}
+\]
+
+\[
+\boxed{
+\text{invariant observational equivalence}
+\not\Rightarrow
+\text{identity of directed relational structure}
+}
+\]
+
+\[
+\boxed{
+\text{descriptive adequacy}
+\not\Rightarrow
+\text{ontological sufficiency}
+}
+\]
+
+and, downstream in the consciousness audit,
+
+\[
+\boxed{
+\text{mathematical admissibility}
+\not\Rightarrow
+\text{phenomenal occupancy}.
+}
+\]
+
+These are not redundant cautions. They mark different places at which a successful representation can be asked to do more than it has earned. The first prevents coarse resolution from becoming identity. The second prevents invariant appearance from becoming directional identity. The third prevents a superior description from becoming a metaphysical conclusion. The fourth prevents a formally admissible consciousness model from becoming an assertion that experience is actually present.
+
+\section{The Hinge Into Ontology}
+
+The sequence is therefore fixed. First ask whether the language can resolve the distinctions the phenomenon requires. Then ask whether it preserves or identifies the direction of the relevant process. If the question concerns causal or explanatory predication, require the additional evidence needed to orient that arrow rather than reading direction from covariance or grammar. Only then ask whether the resulting description is ontologically sufficient.
+
+In compact form,
+
+\[
+\boxed{
+\text{Form}
+\rightarrow
+\text{Resolution}
+\rightarrow
+\text{Orientation}
+\rightarrow
+\text{Predication}
+\rightarrow
+\text{Ontology}.
+}
+\]
+
+Again, these arrows describe the order of the audit, not a chain of metaphysical production.
+
+The mathematical work has now done everything it is entitled to do upstream of the ontology question. It has shown that form can persist through state change, that one descriptive algebra can collapse distinctions a richer algebra resolves, that one geometry can support inequivalent dynamics, and that invariant appearance can survive reversal of a directed quantity. Those results discipline the question of consciousness without answering it.
+
+The next chapter therefore does not begin by asking whether materialism, idealism, or relational ontology sounds most persuasive. It asks what each candidate direction of predication must earn once resolution and orientation have already been placed under audit.
