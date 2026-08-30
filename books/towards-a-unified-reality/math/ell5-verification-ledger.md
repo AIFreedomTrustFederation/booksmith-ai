@@ -1,14 +1,31 @@
 # ℓ = 5 Verification Ledger
 
-This file is the reproducibility target for the exact invariant-theory claims used in the monograph. It is deliberately a ledger rather than a fabricated computer-algebra transcript. A future CAS notebook must reproduce these identities from the declared real spherical-harmonic and Clebsch–Gordan conventions before publication proof is frozen.
+This file is the reproducibility target for the exact invariant-theory claims used in the monograph. The exact values below have now been independently reproduced through a separate Molien/invariant-count implementation and a separate Clebsch–Gordan construction of the sextic witness. A publication-grade machine-readable notebook is still desirable and remains a provenance task; this ledger does not pretend that such an artifact already exists in the repository.
 
 ## Frozen exact claims
 
+Invariant multiplicities:
+
+- `dim Inv_0(V_5) = 1`
+- `dim Inv_1(V_5) = 0`
 - `dim Inv_2(V_5) = 1`
 - `dim Inv_3(V_5) = 0`
 - `dim Inv_4(V_5) = 2`
 - `dim Inv_5(V_5) = 0`
 - `dim Inv_6(V_5) = 6`
+
+Raw symmetric-power sanity check:
+
+- `dim Sym^d(V_5) = C(d+10,10)` for `d = 0,...,6`.
+
+The vanishing odd-degree multiplicities at `d=3,5` are representation-specific facts for `V_5`, not a universal theorem that odd-degree `SO(3)` invariants vanish.
+
+Primitive sextic count:
+
+- `dim Inv_4(V_5) = 2`
+- multiplication by `I_2 = ||A||^2` is injective
+- `dim(I_2 Inv_4) = 2`
+- `dim(Inv_6 / I_2 Inv_4) = 4`.
 
 Quartic channel relations:
 
@@ -57,19 +74,25 @@ Sextic invariant:
 
 `J_{4,8}(A) = || P_8( P_4(A tensor A) tensor A ) ||^2`.
 
-Intrinsic derivatives on the quartic constrained manifold:
+Independent reconstruction reproduces
 
-`dJ(U) = dJ(V) = 0`
+`J_{4,8}(A_*) = 1/143`.
 
-`d^2J(U,U) = d^2J(V,V) = 72/143`
+First derivatives on the quartic constrained manifold:
 
-`d^2J(U,V) = 0`.
+`dJ(U) = dJ(V) = 0`.
 
-For normalized shape directions, the Hessian is
+## Ambient versus intrinsic Hessian
 
-`H_shape(J_{4,8}) = (336/715) I_2 > 0`.
+The ambient straight-line second derivative is
 
-## Second-order constraint correction to reproduce
+`D^2 J(A_*)[U,U] = 547/1001`.
+
+After normalizing `U`, the straight-line tangent contribution is
+
+`(14/15)*(547/1001) = 1094/2145`.
+
+This is **not** the intrinsic Hessian on `M_4`.
 
 For a constrained path in tangent direction `U`, use
 
@@ -83,23 +106,71 @@ The quartic-minimum constraint requires
 
 `DB_2(A_*)[W_U] + 2 P_2(U tensor U) = 0`.
 
-Repeat for `V` and for the mixed bilinear correction used to recover the intrinsic mixed Hessian.
+One exact solution is
 
-## Required future CAS artifact
+`W_U = -(7 sqrt(15)/30)Y_50 + (sqrt(21)/21)Y^c_51 + (sqrt(21)/7)Y^c_54 - (13 sqrt(10)/70)Y^c_55`.
 
-The publication-ready verification notebook should:
+For `V`, one exact correction is
 
-1. declare the real tesseral harmonic basis and normalization;
-2. declare the Clebsch–Gordan coefficient convention;
-3. reconstruct every quartic channel relation exactly;
-4. construct `B_2`, evaluate `B_2(A_*)`, and print the Jacobian;
-5. identify and print the exact nonzero 5×5 minor;
-6. construct the rotational tangent generators and verify `R^T R = 10 I_3`;
-7. compute the orthogonal two-dimensional shape kernel and recover `U,V` up to basis rotation/sign;
-8. construct `J_{4,8}` and solve the second-order constrained-path corrections;
-9. recover the exact intrinsic derivatives `72/143` and `336/715`;
-10. emit a machine-readable result file whose hashes can be cited from the manuscript provenance record.
+`W_V = -(7 sqrt(15)/30)Y_50 - (sqrt(21)/21)Y^c_51 - (sqrt(21)/7)Y^c_54 - (13 sqrt(10)/70)Y^c_55`.
+
+A valid mixed correction is
+
+`W_UV = (sqrt(21)/21)Y^s_51 - (sqrt(21)/7)Y^s_54`.
+
+The second-fundamental-form correction is
+
+`dJ(A_*)[W_U] = -43/1001`.
+
+Therefore
+
+`547/1001 - 43/1001 = 72/143`.
+
+The exact intrinsic derivatives are
+
+`d^2_M4 J(U,U) = d^2_M4 J(V,V) = 72/143`
+
+`d^2_M4 J(U,V) = 0`.
+
+For normalized shape directions
+
+`e_1 = sqrt(14/15) U`
+
+`e_2 = sqrt(14/15) V`,
+
+we obtain
+
+`H_shape(J_{4,8}) = (336/715) I_2 > 0`.
+
+The difference between `1094/2145` and `336/715` is therefore geometric, not an inconsistency between two definitions of `J_{4,8}`: the former omits the curvature correction required to stay on `S^10 ∩ {B_2=0}`.
+
+## Verification status
+
+Independently reproduced exactly:
+
+1. the Molien multiplicity sequence through degree six;
+2. the raw symmetric-power dimension sanity checks;
+3. `dim Inv_6 = 6`;
+4. the primitive quotient dimension `4`;
+5. the Clebsch–Gordan construction of `J_{4,8}`;
+6. `J_{4,8}(A_*) = 1/143`;
+7. the ambient value `547/1001`;
+8. the curvature correction `-43/1001`;
+9. the intrinsic values `72/143` and mixed value `0`;
+10. the normalized shape Hessian `(336/715) I_2`.
+
+Still desired for repository-level reproducibility:
+
+1. a committed exact CAS notebook or script declaring the basis and Clebsch–Gordan convention;
+2. machine-readable output for every frozen identity;
+3. hashes cited by the publication provenance record.
 
 ## Deliberately open
 
-The ledger does **not** assert the PDE-specific sixth-order reduced energy. The center-manifold/slaving calculation through the needed order remains to be derived. Algebraic resolving capability is frozen; dynamical realization is open.
+The ledger does **not** assert the PDE-specific sixth-order reduced energy. The fifth-order amplitude / sixth-order energy reduction remains to be derived, including the required `w^(3)`, `w^(4)`, quadratic-feedback, cubic-feedback, and recoupling terms.
+
+The first sharp dynamical target is the restricted intrinsic matrix
+
+`H_6,shape^PDE = [[d^2H_6(e1,e1), d^2H_6(e1,e2)], [d^2H_6(e2,e1), d^2H_6(e2,e2)]]_M4`.
+
+Algebraic resolving capability is closed. PDE dynamical selection remains open.

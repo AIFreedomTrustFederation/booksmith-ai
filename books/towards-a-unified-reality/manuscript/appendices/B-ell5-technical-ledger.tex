@@ -1,6 +1,49 @@
 \chapter[Degree-Five Technical Ledger]{Technical Ledger for the Degree-Five Calculation}
 
-This appendix collects the exact structure used in Chapters 5 and 6 in one place so that the long-form argument can remain readable without sacrificing the algebraic certificate. The representation is the real irreducible $SO(3)$ module $V_5^{\mathbb R}$ of dimension eleven, restricted to the unit sphere $S^{10}$. The baseline parameters used in the reduced-energy calculation are $\mu=1/5$, $\xi=1/50$, and $\nu=g=1$.
+This appendix collects the exact structure used in Chapters 5 and 6 so that the long-form argument can remain readable without sacrificing the algebraic certificate. The representation is the real irreducible $SO(3)$ module $V_5^{\mathbb R}$ of dimension eleven, restricted to the unit sphere $S^{10}$. The baseline parameters used in the quartic reduced-energy calculation are $\mu=1/5$, $\xi=1/50$, and $\nu=g=1$.
+
+\section*{Invariant multiplicities through degree six}
+
+An independent exact Molien computation reproduces
+
+\[
+\dim\operatorname{Inv}_d(V_5)=1,0,1,0,2,0,6
+\qquad(d=0,\ldots,6),
+\]
+
+with the raw symmetric-power dimensions satisfying
+
+\[
+\dim\operatorname{Sym}^d(V_5)=\binom{d+10}{10}.
+\]
+
+Thus
+
+\[
+\dim\operatorname{Inv}_2=1,
+\qquad
+\dim\operatorname{Inv}_4=2,
+\qquad
+\dim\operatorname{Inv}_6=6.
+\]
+
+The zero multiplicities at degrees three and five are specific to $V_5$ and must not be read as a universal odd-degree rule for $SO(3)$ invariants.
+
+If $I_2(A)=\|A\|^2$, multiplication by $I_2$ is injective, so
+
+\[
+\dim(I_2\operatorname{Inv}_4)=2,
+\]
+
+and therefore
+
+\[
+\boxed{
+\dim\left(\operatorname{Inv}_6/I_2\operatorname{Inv}_4\right)=4.
+}
+\]
+
+\section*{Quartic channel relations and reduced energy}
 
 The quartic channel identities are
 
@@ -92,9 +135,43 @@ U=-\frac{\sqrt{14}}{14}Y^c_{52}+Y^c_{53},
 V=\frac{\sqrt{14}}{14}Y^s_{52}+Y^s_{53},
 \]
 
-with $\|U\|^2=\|V\|^2=15/14$ and $\langle U,V\rangle=0$.
+with
 
-For intrinsic second derivatives along the constrained quartic minimum manifold, a path through $A_\star$ in tangent direction $U$ may be written
+\[
+\|U\|^2=\|V\|^2=\frac{15}{14},
+\qquad
+\langle U,V\rangle=0.
+\]
+
+\section*{Explicit sextic witness}
+
+Define
+
+\[
+B_4(A)=P_4(A\otimes A),
+\qquad
+C_8(A)=P_8(B_4(A)\otimes A),
+\]
+
+and
+
+\[
+J_{4,8}(A)=\|C_8(A)\|^2.
+\]
+
+An independent construction from the same spherical-harmonic and Clebsch--Gordan conventions reproduces
+
+\[
+J_{4,8}(A_\star)=\frac1{143},
+\]
+
+\[
+DJ_{4,8}(A_\star)[U]=DJ_{4,8}(A_\star)[V]=0.
+\]
+
+\section*{Intrinsic versus ambient second derivatives}
+
+For intrinsic second derivatives along the constrained quartic minimum manifold, a path through $A_\star$ in tangent direction $U$ is written
 
 \[
 A(\epsilon)=A_\star+\epsilon U+\frac12\epsilon^2W_U+O(\epsilon^3).
@@ -112,38 +189,99 @@ while the second-order $B_2=0$ condition gives
 DB_2(A_\star)[W_U]+2P_2(U\otimes U)=0.
 \]
 
-An analogous correction $W_V$ is used for $V$, and mixed constrained derivatives use the corresponding bilinear second-order correction. These equations make explicit what is meant in the main text by computing the sextic Hessian intrinsically rather than along straight ambient lines.
+One exact pair of corrections is
 
-At degree six, $\dim\operatorname{Inv}_6(V_5)=6$, whereas $\dim(I_2\operatorname{Inv}_4)=2$, leaving four primitive degree-six directions. Define
+\begin{align*}
+W_U={}&-\frac{7\sqrt{15}}{30}Y_{50}
++\frac{\sqrt{21}}{21}Y^c_{51}
++\frac{\sqrt{21}}7Y^c_{54}
+-\frac{13\sqrt{10}}{70}Y^c_{55},\\
+W_V={}&-\frac{7\sqrt{15}}{30}Y_{50}
+-\frac{\sqrt{21}}{21}Y^c_{51}
+-\frac{\sqrt{21}}7Y^c_{54}
+-\frac{13\sqrt{10}}{70}Y^c_{55}.
+\end{align*}
+
+A valid mixed correction is
 
 \[
-B_4(A)=P_4(A\otimes A),
+W_{UV}=\frac{\sqrt{21}}{21}Y^s_{51}-\frac{\sqrt{21}}7Y^s_{54}.
+\]
+
+The ambient second derivative is
+
+\[
+D^2J_{4,8}(A_\star)[U,U]=\frac{547}{1001},
+\]
+
+so the normalized straight-line tangent contribution is
+
+\[
+\frac{14}{15}\frac{547}{1001}=\frac{1094}{2145}.
+\]
+
+This is not the constrained Hessian. The intrinsic second derivative is
+
+\[
+\frac{d^2}{d\epsilon^2}J(A(\epsilon))\Big|_0
+=D^2J(A_\star)[U,U]+DJ(A_\star)[W_U],
+\]
+
+with
+
+\[
+DJ_{4,8}(A_\star)[W_U]=-\frac{43}{1001}.
+\]
+
+Hence
+
+\[
+\frac{547}{1001}-\frac{43}{1001}=\frac{72}{143}.
+\]
+
+The exact intrinsic derivatives are therefore
+
+\[
+d^2_{\mathcal M_4}J_{4,8}(U,U)
+=d^2_{\mathcal M_4}J_{4,8}(V,V)
+=\frac{72}{143},
+\]
+
+\[
+d^2_{\mathcal M_4}J_{4,8}(U,V)=0.
+\]
+
+With
+
+\[
+e_1=\sqrt{\frac{14}{15}}U,
 \qquad
-C_8(A)=P_8(B_4(A)\otimes A),
+e_2=\sqrt{\frac{14}{15}}V,
 \]
 
-and
+one obtains
 
 \[
-J_{4,8}(A)=\|C_8(A)\|^2.
-\]
-
-On the constrained shape-flat directions,
-
-\[
-dJ_{4,8}(U)=dJ_{4,8}(V)=0,
-\]
-
-\[
-d^2J_{4,8}(U,U)=d^2J_{4,8}(V,V)=\frac{72}{143},
-\qquad
-d^2J_{4,8}(U,V)=0.
-\]
-
-With $e_1=\sqrt{14/15}\,U$ and $e_2=\sqrt{14/15}\,V$,
-
-\[
+\boxed{
 H_{\mathrm{shape}}(J_{4,8})=\frac{336}{715}I_2\succ0.
+}
 \]
 
-The missing dynamical step is the explicit sixth-order center-manifold/slaving reduction of the original PDE. That reduction must determine which primitive sextic invariants actually appear and with what coefficients. No claim in this book treats the existence of $J_{4,8}$ as a substitute for that calculation.
+The difference between $1094/2145$ and $336/715$ is therefore geometric: the first is the normalized ambient-Hessian contribution, while the second includes the second-fundamental-form correction required to stay on $S^{10}\cap\{B_2=0\}$.
+
+\section*{Frozen theorem and open dynamical step}
+
+The degree-six algebra contains four primitive directions, and the explicit sextic invariant $J_{4,8}$ resolves both nonrotational quartic-flat directions with positive intrinsic curvature. This is an exact algebraic resolving-capability theorem.
+
+The missing dynamical step is the fifth-order amplitude or equivalent sixth-order reduced-energy calculation for the original nonlinear PDE. That reduction must determine which primitive sextic invariants actually appear and with what coefficients. In particular, it must decide the restricted matrix
+
+\[
+H_{6,\mathrm{shape}}^{\mathrm{PDE}}
+=
+\begin{pmatrix}
+ d^2H_6(e_1,e_1) & d^2H_6(e_1,e_2)\\
+ d^2H_6(e_2,e_1) & d^2H_6(e_2,e_2)
+\end{pmatrix}_{\mathcal M_4}.
+\]
+
+No claim in this book treats the existence or verified curvature of $J_{4,8}$ as a substitute for that PDE calculation.

@@ -4,16 +4,88 @@ This appendix freezes the notation used throughout the book so that one symbol d
 
 The symbols $\mathscr C$ and $\mathscr V$ are reserved for coherence and relational variation. $\mathcal M$ denotes a constraint manifold and $\mathcal A$ an attractor. $\mathrm{Poss}$ denotes an admissible possibility space and $\mathcal K_{\mathrm{act}}$ an actualization kernel. $U_g$ denotes a representation of a group element and $P_G$ the Reynolds projector. $\mathscr C_G$ denotes finite-group symmetry coherence. The symbol $K$ is reserved for complex conjugation in the wave chapters and $D$ for Platonic duality. $V_\ell^{\mathbb R}$ denotes the real spherical-harmonic representation and $\mathcal H_{\mathbb C}$ the complex wave Hilbert space.
 
-In the ontology chapters, $P_{\mathrm{phys}}$ denotes a candidate physical state description, $E_{\mathrm{exp}}$ the experiential state posited by an ontology, and $Z_\varphi$ the empirically inferred phenomenological-evidence latent. These three symbols are not interchangeable. $\Pi_{\mathrm{ext}}$ and $\Pi_{\mathrm{int}}$ denote exterior and interior projections in a dual-aspect model. The model families $M_P$, $M_Z$, and $M_R$ denote physical-only, phenomenological-evidence, and constrained relational models respectively.
+In the ontology chapters, $P_{\mathrm{phys}}$ denotes a candidate physical state description, $E_{\mathrm{exp}}$ the experiential state posited by an ontology, and $Z_\varphi$ the empirically inferred phenomenological-evidence latent. These three symbols are not interchangeable. The canonical predication families are
 
-\section*{Claim ledger}
+\[
+\mathcal M_P:\ P\longrightarrow E,
+\qquad
+\mathcal M_E:\ E\longrightarrow P,
+\qquad
+\mathcal M_R:\ P\longleftarrow R\longrightarrow E.
+\]
 
-The exact mathematical results include the projector identities $P_G^2=P_G$ and $P_G^\dagger=P_G$; the orthogonal coherence decomposition $\mathscr C_G+\mathscr E_G=1$; character multiplicity as the dimension of the finite-group fixed space; the parity statements separating $SO(3)$ and $O(3)$ invariants; the fact that geometry does not determine a unique dynamics; commutation of scalar conjugation with rotations and group projection; preservation of density and symmetry coherence under conjugation together with reversal of the standard phase current; the general non-equivalence of conjugation and Platonic duality; the exact quartic channel relations in $V_5$; the reduction $F_4=\alpha K_0+\beta K_2$; the quartic minimum set $\mathcal M_4=\{B_2=0\}\cap S^{10}$; the rank-five certificate at $A_\star$; the local five-dimensional minimum manifold; its decomposition into three rotational and two shape directions; the dimension count showing four primitive sixth-order invariant directions beyond $I_2\operatorname{Inv}_4$; and the positive-definite shape Hessian of the explicit sextic invariant $J_{4,8}$ at $A_\star$.
+More elaborate reciprocal or feedback models may be introduced when evidence requires additional arrows. $M_P$, $M_Z$, and $M_R$ in the empirical model-comparison chapter denote statistical model classes and should not be confused with the ontological-predication notation above.
+
+\section*{Claim classes}
+
+The book distinguishes four kinds of statements that must not acquire evidential weight merely because they share mathematical typography.
+
+\begin{enumerate}[label=\arabic*.]
+\item \textbf{Exact theorem or algebraic result.} A statement proved from the declared mathematical assumptions and conventions.
+\item \textbf{Model-specific numerical or computational result.} A result established for the specified equations, parameters, discretization, or numerical procedure, without universal promotion.
+\item \textbf{Framework definition or methodological proposal.} A chosen formal vocabulary, diagnostic, or empirical protocol whose usefulness must be evaluated rather than inferred from notation alone.
+\item \textbf{Interpretive or ontological proposition.} A philosophical reading that may organize inquiry but is not established by the mathematical formalism that motivates it.
+\end{enumerate}
+
+Appendix G deliberately uses these distinctions on the page: Descartes' Circle Theorem is an established mathematical result; the recursive-relational state $\mathcal X$ is a framework definition; claims about whole/part relativity and scale are interpretive propositions. Recursive packing is not presented as evidence that reality is ontologically recursive.
+
+\section*{Exact mathematical claim ledger}
+
+The exact mathematical results include the projector identities $P_G^2=P_G$ and $P_G^\dagger=P_G$; the orthogonal coherence decomposition $\mathscr C_G+\mathscr E_G=1$; character multiplicity as the dimension of the finite-group fixed space; the parity statements separating $SO(3)$ and $O(3)$ invariants; the fact that geometry does not determine a unique dynamics; commutation of scalar conjugation with rotations and group projection; preservation of density and symmetry coherence under conjugation together with reversal of the standard phase current; the general non-equivalence of conjugation and Platonic duality; the exact quartic channel relations in $V_5$; the reduction $F_4=\alpha K_0+\beta K_2$; the quartic minimum set $\mathcal M_4=\{B_2=0\}\cap S^{10}$; the rank-five certificate at $A_\star$; the local five-dimensional minimum manifold; and its decomposition into three rotational and two shape directions.
+
+The sixth-order invariant count is now independently reproduced exactly:
+
+\[
+\dim\operatorname{Inv}_d(V_5)=1,0,1,0,2,0,6
+\qquad(d=0,\ldots,6).
+\]
+
+Hence
+
+\[
+\dim\operatorname{Inv}_6(V_5)=6,
+\qquad
+\dim(I_2\operatorname{Inv}_4)=2,
+\]
+
+and
+
+\[
+\dim\left(\operatorname{Inv}_6/I_2\operatorname{Inv}_4\right)=4.
+\]
+
+The explicit sextic witness
+
+\[
+J_{4,8}(A)=\left\|P_8\left(P_4(A\otimes A)\otimes A\right)\right\|^2
+\]
+
+has also been independently reconstructed from the declared Clebsch--Gordan conventions. Its constrained shape Hessian at $A_\star$ is
+
+\[
+H_{\mathrm{shape}}(J_{4,8})=\frac{336}{715}I_2\succ0.
+\]
+
+The intrinsic value must not be confused with the normalized ambient straight-line Hessian contribution
+
+\[
+\frac{1094}{2145},
+\]
+
+which omits the second-fundamental-form correction required to remain on $S^{10}\cap\{B_2=0\}$. The exact constrained calculation and correction vectors are recorded in Chapter 6 and Appendix B.
+
+\section*{Model-specific and open claims}
 
 The model-specific results include the observed octahedral $\ell=4$ and icosahedral $\ell=6$ asymptotic branches in the stated nonlinear spherical PDE and parameter regime, the associated approximate transverse Hessian gaps, and the observed sensitivity of relaxation time to quadratic coupling. These are not promoted to universal theorems.
 
-The sixth-order $V_5$ result is an algebraic capability result. It proves that the invariant algebra contains structure able to resolve the quartic shape-flat plane. It does not yet prove the coefficient with which that structure appears in the complete sixth-order center-manifold reduction of the chosen PDE.
+The sixth-order $V_5$ theorem is an algebraic resolving-capability result. It proves both that four primitive sextic directions exist and that at least one explicit primitive sextic resolves both quartic shape-flat directions. It still does \emph{not} prove the coefficient with which such structure appears in the complete sixth-order center-manifold reduction of the chosen PDE. The PDE-specific restricted curvature
+
+\[
+H_{6,\mathrm{shape}}^{\mathrm{PDE}}
+\]
+
+remains open.
 
 The A0--A7 ladder, nested physical sufficiency test, partial information decomposition protocol, complexity-controlled prequential comparison, and defeater rules are methodological proposals. They are not empirical results until applied to data.
 
-Relational physicalism, relational idealism, and relational dual-aspect realism are ontological hypotheses. None is presented as a theorem forced by the mathematical work.
+Physical-first, experiential-first, and relational dual-aspect ontologies are competing hypotheses whose burdens are formalized by $\mathcal M_P$, $\mathcal M_E$, and $\mathcal M_R$. None is presented as a theorem forced by the mathematical work.

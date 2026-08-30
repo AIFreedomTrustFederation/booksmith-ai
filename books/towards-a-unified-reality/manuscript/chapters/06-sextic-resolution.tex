@@ -1,38 +1,87 @@
-\chapter{Sixth-Order Resolution: What the Richer Algebra Can See}
+\chapter{Sixth-Order Resolution: Exact Capability and the Remaining Dynamical Question}
 
-\section{New Invariant Information}
+\section{Exact Invariant Count}
 
-The sixth-order invariant space for $V_5$ has dimension six:
-
-\[
-\dim\operatorname{Inv}_6(V_5)=6.
-\]
-
-The unique quadratic invariant can multiply each of the two quartic invariants, producing a two-dimensional inherited subspace $I_2\operatorname{Inv}_4$. Thus
+For the real irreducible $SO(3)$ representation $V_5$ of dimension eleven, the degree-$d$ invariant space is
 
 \[
-\dim(I_2\operatorname{Inv}_4)=2,
+\operatorname{Inv}_d(V_5)=\left[\operatorname{Sym}^d(V_5)\right]^{SO(3)}.
 \]
 
-leaving
+An independent exact Molien calculation reproduces the scalar multiplicities
 
 \[
-6-2=4
+\dim\operatorname{Inv}_d(V_5)=1,0,1,0,2,0,6
+\qquad(d=0,\ldots,6).
 \]
 
-genuinely new degree-six invariant directions. The dimension count already proves that sixth order contains relational information not recoverable merely by multiplying lower-order invariants. The remaining question is whether any of that new information is sensitive to the two physical shape directions left flat by quartic order.
+The same combinatorial construction passes the raw-dimension sanity check
 
-An exact basis for the nonrotational quartic-flat tangent space at $A_\star$ can be chosen as
+\[
+\dim\operatorname{Sym}^d(V_5)=\binom{d+10}{10}
+\]
+
+at each degree before group averaging is applied. In particular,
+
+\[
+\dim\operatorname{Inv}_2=1,
+\qquad
+\dim\operatorname{Inv}_4=2,
+\qquad
+\boxed{\dim\operatorname{Inv}_6=6}.
+\]
+
+The vanishing values at degrees three and five are facts about this specific representation $V_5$. They must not be promoted into a general rule that odd-degree $SO(3)$ invariants always vanish; even-$\ell$ representations can admit scalar cubic invariants.
+
+Let
+
+\[
+I_2(A)=\|A\|^2
+\]
+
+be the unique quadratic invariant. Multiplication by the nonzero polynomial $I_2$ is injective in the polynomial invariant ring, so the two-dimensional quartic invariant space generates a two-dimensional inherited sextic subspace:
+
+\[
+I_2\operatorname{Inv}_4\subset\operatorname{Inv}_6,
+\qquad
+\dim(I_2\operatorname{Inv}_4)=2.
+\]
+
+Therefore
+
+\[
+\boxed{
+\dim\left(\operatorname{Inv}_6/I_2\operatorname{Inv}_4\right)=6-2=4.
+}
+\]
+
+Degree six thus contains four genuinely new invariant directions beyond multiplication of the quartic algebra by the norm. On the unit sphere $I_2=1$, the inherited sector reduces to the same quartic information, so all genuinely new sixth-order shape resolution lies in those four primitive directions.
+
+\begin{theorem}[Primitive sextic dimension]
+For $V_5$, the degree-six invariant algebra has dimension six, while the inherited subspace $I_2\operatorname{Inv}_4$ has dimension two. Hence the primitive sextic quotient has dimension four.
+\end{theorem}
+
+This theorem is a dimension statement. By itself it proves that new sixth-order information exists; it does not yet prove that any particular new invariant resolves the two physical shape directions left flat at quartic order.
+
+\section{The Quartic-Flat Shape Plane}
+
+At the regular quartic minimum
+
+\[
+A_\star=\sqrt{\frac35}Y_{50}+\sqrt{\frac25}Y^c_{55},
+\]
+
+the five-dimensional tangent kernel decomposes into three infinitesimal rotations and two genuine shape directions. A convenient orthogonal basis of the nonrotational shape-flat plane is
 
 \[
 U=-\frac{\sqrt{14}}{14}Y^c_{52}+Y^c_{53},
 \]
 
 \[
-V=\frac{\sqrt{14}}{14}Y^s_{52}+Y^s_{53}.
+V=\frac{\sqrt{14}}{14}Y^s_{52}+Y^s_{53},
 \]
 
-These satisfy
+with
 
 \[
 \|U\|^2=\|V\|^2=\frac{15}{14},
@@ -40,57 +89,7 @@ These satisfy
 \langle U,V\rangle=0.
 \]
 
-They span the orthogonal complement of the rotational orbit within the five-dimensional quartic tangent kernel. In this sense the shape-flat plane is not chosen arbitrarily after the fact; it is the residual physical tangent subspace once normalization, the quartic constraint, and infinitesimal rotations have been accounted for.
-
-\section{An Explicit Sextic Invariant}
-
-Define the degree-four covariant
-
-\[
-B_4(A)=P_4(A\otimes A),
-\]
-
-then couple it once more with $A$ and project to degree eight:
-
-\[
-C_8(A)=P_8(B_4(A)\otimes A).
-\]
-
-The squared norm
-
-\[
-J_{4,8}(A)=\|C_8(A)\|^2
-\]
-
-is a scalar invariant of total degree six. Equivalently,
-
-\[
-J_{4,8}(A)=\left\|P_8\left(P_4(A\otimes A)\otimes A\right)\right\|^2.
-\]
-
-Because the quartic minimum set is constrained by both normalization and $B_2(A)=0$, second derivatives along $U$ and $V$ must be computed intrinsically rather than by simply taking straight lines in the ambient representation space. The corrected paths include second-order components chosen so that the unit-sphere condition and the quartic constraint continue to hold through second order. With that correction included, the first derivatives vanish:
-
-\[
-dJ_{4,8}(U)=dJ_{4,8}(V)=0.
-\]
-
-The intrinsic second derivatives are
-
-\[
-d^2J_{4,8}(U,U)=\frac{72}{143},
-\]
-
-\[
-d^2J_{4,8}(V,V)=\frac{72}{143},
-\]
-
-and
-
-\[
-d^2J_{4,8}(U,V)=0.
-\]
-
-Normalize the shape directions by
+The normalized directions are
 
 \[
 e_1=\sqrt{\frac{14}{15}}U,
@@ -98,27 +97,219 @@ e_1=\sqrt{\frac{14}{15}}U,
 e_2=\sqrt{\frac{14}{15}}V.
 \]
 
-The intrinsic shape Hessian becomes
+These vectors lie in the tangent space of the constrained quartic minimum manifold
 
+\[
+\mathcal M_4=S^{10}\cap\{A:B_2(A)=0\},
+\qquad
+B_2(A)=P_2(A\otimes A).
+\]
+
+\section{An Explicit Primitive Sextic Witness}
+
+Define
+
+\[
+B_4(A)=P_4(A\otimes A),
+\]
+
+\[
+C_8(A)=P_8(B_4(A)\otimes A),
+\]
+
+and the scalar degree-six invariant
+
+\[
+\boxed{
+J_{4,8}(A)=\|C_8(A)\|^2
+=\left\|P_8\left(P_4(A\otimes A)\otimes A\right)\right\|^2.
+}
+\]
+
+Using the standard orthonormal complex spherical-harmonic convention and the corresponding real tesseral basis, an independent reconstruction from raw Clebsch--Gordan coefficients reproduces the same polynomial. At $A_\star$,
+
+\[
+J_{4,8}(A_\star)=\frac1{143},
+\]
+
+and the first derivatives along both shape-flat directions vanish:
+
+\[
+DJ_{4,8}(A_\star)[U]=DJ_{4,8}(A_\star)[V]=0.
+\]
+
+The remaining issue is not whether $J_{4,8}$ is stationary on the shape plane, but what its \emph{intrinsic} second derivative is on the curved manifold $\mathcal M_4$.
+
+\section{Why the Ambient Hessian Is Not the Intrinsic Hessian}
+
+A straight-line calculation through the ambient representation space answers a different question from the constrained calculation. For a tangent direction $U$, the ambient second derivative is
+
+\[
+D^2J_{4,8}(A_\star)[U,U]=\frac{547}{1001}.
+\]
+
+After normalizing $U$, this straight-line contribution becomes
+
+\[
+\frac{14}{15}\frac{547}{1001}=\frac{1094}{2145}.
+\]
+
+That number is correct as an ambient-Hessian restriction. It is not the intrinsic Hessian on $\mathcal M_4$, because a straight line immediately leaves the curved intersection of the sphere with $B_2=0$.
+
+A constrained path must instead have the form
+
+\[
+A(\epsilon)=A_\star+\epsilon U+\frac12\epsilon^2W_U+O(\epsilon^3).
+\]
+
+The unit-sphere condition requires
+
+\[
+\langle A_\star,W_U\rangle=-\|U\|^2,
+\]
+
+while the quartic constraint requires
+
+\[
+DB_2(A_\star)[W_U]+2P_2(U\otimes U)=0.
+\]
+
+One exact solution is
+
+\begin{align*}
+W_U={}&-\frac{7\sqrt{15}}{30}Y_{50}
++\frac{\sqrt{21}}{21}Y^c_{51}
++\frac{\sqrt{21}}7Y^c_{54}
+-\frac{13\sqrt{10}}{70}Y^c_{55},\\
+W_V={}&-\frac{7\sqrt{15}}{30}Y_{50}
+-\frac{\sqrt{21}}{21}Y^c_{51}
+-\frac{\sqrt{21}}7Y^c_{54}
+-\frac{13\sqrt{10}}{70}Y^c_{55}.
+\end{align*}
+
+For the mixed derivative, an exact second-order correction may be chosen as
+
+\[
+W_{UV}=\frac{\sqrt{21}}{21}Y^s_{51}-\frac{\sqrt{21}}7Y^s_{54},
+\]
+
+with
+
+\[
+\langle A_\star,W_{UV}\rangle=0,
+\qquad
+P_2(A_\star\otimes W_{UV})=-P_2(U\otimes V).
+\]
+
+For any such constrained path, the second derivative contains the second-fundamental-form correction:
+
+\[
+\boxed{
+\frac{d^2}{d\epsilon^2}J(A(\epsilon))\Big|_{0}
+=D^2J(A_\star)[U,U]+DJ(A_\star)[W_U].
+}
+\]
+
+The independently reproduced correction is
+
+\[
+DJ_{4,8}(A_\star)[W_U]=-\frac{43}{1001}.
+\]
+
+Therefore
+
+\[
+\frac{547}{1001}-\frac{43}{1001}
+=\frac{504}{1001}
+=\boxed{\frac{72}{143}}.
+\]
+
+The same calculation gives
+
+\[
+d^2_{\mathcal M_4}J_{4,8}(V,V)=\frac{72}{143},
+\qquad
+d^2_{\mathcal M_4}J_{4,8}(U,V)=0.
+\]
+
+After normalizing the shape basis,
+
+\[
+\boxed{
+H_{\mathrm{shape}}(J_{4,8})
+=\frac{336}{715}I_2\succ0.
+}
+\]
+
+The distinction between $1094/2145$ and $336/715$ is therefore not a discrepancy between two constructions of $J_{4,8}$. The first is the normalized ambient straight-line Hessian contribution. The second is the true constrained Hessian after the curvature of $\mathcal M_4$ is included.
+
+\begin{theorem}[Sextic resolving-capability theorem]
+For the $\ell=5$ representation, degree six introduces four primitive invariant directions beyond $I_2\operatorname{Inv}_4$. Moreover, the explicit invariant $J_{4,8}$ has positive-definite intrinsic Hessian on the two-dimensional nonrotational quartic-flat tangent space at $A_\star$:
 \[
 H_{\mathrm{shape}}(J_{4,8})=\frac{336}{715}I_2\succ0.
 \]
+Hence sixth-order invariant structure is not merely dimensionally capable of resolving the quartic degeneracy; an explicit sextic invariant resolves both physical shape-flat directions.
+\end{theorem}
 
-The result is exact at $A_\star$: this sextic invariant supplies positive curvature in both shape directions that quartic order leaves flat.
+\section{What This Theorem Does Not Prove}
 
-\begin{proposition}[Sixth-order resolving capability]
-The $SO(3)$-invariant degree-six algebra on $V_5$ contains invariant structure whose intrinsic Hessian is positive definite on the two-dimensional nonrotational quartic-flat tangent space at $A_\star$. Hence sixth-order invariant theory is algebraically capable of resolving both quartic shape directions.
-\end{proposition}
+The theorem concerns the invariant algebra. It does not establish that the specific nonlinear PDE studied earlier generates a nonzero coefficient along this resolving primitive sextic direction. That is a separate center-manifold and dynamical-selection calculation.
 
-\section{Capability Is Not Yet PDE Realization}
+A complete fifth-order amplitude reduction requires the higher slaved-mode corrections conventionally denoted $w^{(3)}$ and $w^{(4)}$, together with all contributions produced when those corrections are fed through the quadratic term $\nu\psi^2$ and cubic term $-g\psi^3$. It also requires the corresponding Clebsch--Gordan recouplings through intermediate channels. Those coefficients have not yet been derived in the canonical source.
 
-The result does not yet establish the complete sixth-order reduced energy of the original nonlinear PDE. That calculation requires the center-manifold or slaving expansion through the required orders, including contributions from higher harmonics, the terms conventionally denoted $w^{(3)}$ and $w^{(4)}$, and the relevant Clebsch--Gordan recouplings. The PDE-derived coefficient multiplying $J_{4,8}$ or any equivalent primitive sextic invariant must be computed rather than assumed. A positive-definite invariant exists; the specific dynamics must still be shown to use it with the sign and magnitude required for stabilization.
+The inferential boundary is therefore
 
-This boundary is important because it illustrates the book's central distinction in miniature. The invariant algebra establishes admissibility and resolving capacity. The PDE decides occupancy of that algebraic possibility within the actual reduced energy. One should not infer the latter from the former.
+\[
+\boxed{
+\text{algebraic resolving capability}
+\not\Rightarrow
+\text{PDE dynamical selection}.
+}
+\]
+
+The exact status is now:
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Claim & Status\\
+\midrule
+Quartic two-shape degeneracy & proved\\
+$\dim\operatorname{Inv}_6(V_5)=6$ & independently reproduced exactly\\
+$\dim(\operatorname{Inv}_6/I_2\operatorname{Inv}_4)=4$ & proved\\
+Construction of $J_{4,8}$ & independently reconstructed\\
+$H_{\mathrm{shape}}(J_{4,8})=\frac{336}{715}I_2$ & independently reproduced exactly\\
+PDE selects a resolving sextic component & open\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{The Sharper PDE Target}
+
+The next dynamical calculation need not begin by demanding a closed-form expression for every coefficient of the full sixth-order invariant energy. The immediate scientific question is whether the PDE lifts the two-dimensional quartic degeneracy. That question is controlled by the intrinsic sextic curvature restricted to the shape-flat plane:
+
+\[
+H_{6,\mathrm{shape}}^{\mathrm{PDE}}
+=
+\begin{pmatrix}
+ d^2H_6(e_1,e_1) & d^2H_6(e_1,e_2)\\
+ d^2H_6(e_2,e_1) & d^2H_6(e_2,e_2)
+\end{pmatrix}_{\mathcal M_4}.
+\]
+
+The first target is therefore
+
+\[
+\boxed{
+H_{6,\mathrm{shape}}^{\mathrm{PDE}}\stackrel{?}{=}0.
+}
+\]
+
+If the matrix vanishes, the quartic degeneracy survives to that order. If it is positive definite, sixth order locally lifts the degeneracy toward $A_\star$; if negative definite, it lifts it away; if indefinite, the two shape directions split differently. This restricted target does not eliminate the need for the higher-order slaving calculation, but it prevents the derivation from computing coefficients irrelevant to the first falsifiable question.
 
 \section{A General Resolution Principle}
 
-The $\ell=5$ calculation suggests a general theorem about descriptive algebras. Let $\mathcal I_p$ be a family of invariants available at descriptive order $p$, and define
+Let $\mathcal I_p$ be a family of invariants available at descriptive order $p$, and define
 
 \[
 x\sim_p y
@@ -138,12 +329,10 @@ then
 [x]_q\subseteq[x]_p.
 \]
 
-A richer invariant language can leave an equivalence class unchanged or refine it. If some $g\in\mathcal I_q$ distinguishes two states that every element of $\mathcal I_p$ identifies, then the inclusion is strict. The conclusion is therefore
+A richer invariant language can leave an equivalence class unchanged or refine it. If some $g\in\mathcal I_q$ distinguishes two states that every element of $\mathcal I_p$ identifies, then the inclusion is strict.
 
 \begin{principle}[Relational resolution]
 Indistinguishability under one restricted descriptive algebra does not imply identity under every richer descriptive algebra.
 \end{principle}
 
-The principle does not imply an infinite regress in which every apparent identity hides an unknowable difference. For compact group actions, sufficiently rich invariant algebras can separate distinct orbits under standard hypotheses. The point is instead that claims of completeness must be earned relative to a demonstrated separating structure. A finite truncation should not be treated as complete merely because no distinction is visible inside that truncation.
-
-This becomes important when physical sufficiency is discussed later. The $\ell=5$ result does not provide an analogue of consciousness, but it does provide a warning against confusing the resolving power of the current physical description with the total structure of the physical state. A physicalist test must therefore enrich the physical description systematically before interpreting a residual as evidence of nonphysical structure.
+The $\ell=5$ theorem supplies an exact example of this principle, but it does not provide an analogue of consciousness. Its quartic-flat directions are physical degeneracies of a truncated invariant energy, and its sextic witness resolves physical shape information. The broader use of the theorem is methodological: a finite descriptive truncation must not be treated as complete merely because no distinction is visible inside that truncation.

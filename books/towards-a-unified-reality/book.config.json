@@ -1,13 +1,13 @@
 {
   "slug": "towards-a-unified-reality",
   "title": "Relational Coherence and the Languages of Reality",
-  "subtitle": "Invariant Form, Wave Dynamics, Descriptive Resolution, and the Physical–Experiential Boundary",
+  "subtitle": "Invariant Form, Descriptive Resolution, Directional Structure, and the Physical–Experiential Boundary",
   "series": "Foundational Research",
   "status": "active",
-  "version": "0.2.0",
-  "purpose": "Full mathematical and philosophical monograph on relational persistence, descriptive adequacy, Platonic symmetry, wave dynamics, invariant resolution, physical sufficiency, and the admissibility–occupancy boundary in consciousness science.",
+  "version": "0.3.0",
+  "purpose": "Full mathematical and philosophical monograph on relational persistence, Platonic symmetry, invariant resolution, wave directionality, predication, ontological sufficiency, and the admissibility–occupancy boundary in consciousness science, with a separate expository track for recursive relational models.",
   "relatedBooks": ["fhqcm", "universal-process-theosophy", "panentheism", "energence", "coincidence-and-the-eternal-now", "krystal-spiral"],
-  "canonicalTerms": ["Relational Coherence", "Descriptive Adequacy", "Ontological Sufficiency", "Invariant Form", "Relational Resolution", "Platonic Symmetry", "Wave Conjugation", "Admissibility", "Occupancy", "Physical Sufficiency"],
+  "canonicalTerms": ["Relational Coherence", "Descriptive Adequacy", "Directional Adequacy", "Ontological Sufficiency", "Invariant Form", "Relational Resolution", "Platonic Symmetry", "Wave Conjugation", "Direction of Predication", "Admissibility", "Occupancy", "Physical Sufficiency", "Recursive Relational Coherence"],
   "publishingTargets": ["markdown", "latex", "pdf", "epub", "web", "publishing-packet"],
   "provenanceRequired": true
 }
