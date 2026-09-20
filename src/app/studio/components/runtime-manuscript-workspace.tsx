@@ -145,9 +145,12 @@ export function RuntimeManuscriptWorkspace({ data }: { data: LivingManuscriptDat
   }, [data]);
 
   useEffect(() => {
-    void refreshHealth().then((connected) => {
-      if (connected) void refreshCanonical(selected);
-    });
+    const timer = window.setTimeout(() => {
+      void refreshHealth().then((connected) => {
+        if (connected) void refreshCanonical(selected);
+      });
+    }, 0);
+    return () => window.clearTimeout(timer);
   }, [refreshCanonical, refreshHealth, selected]);
 
   function chooseChapter(chapter: LivingChapter) {

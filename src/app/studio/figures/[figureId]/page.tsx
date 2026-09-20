@@ -90,7 +90,7 @@ export default async function FigureDetailPage({ params }: { params: Promise<{ f
             <Panel title="Forbidden objects" eyebrow="Guardrails"><List items={art?.knowledge?.forbiddenObjects ?? []} /></Panel>
             <Panel title="QA checklist" eyebrow="Verification"><List items={art?.qaChecklist ?? []} /></Panel>
             <Panel title="Revision boundary" eyebrow="Author control">
-              <p className="text-sm leading-7 text-[#91a997]">The figure specification and prompt can be revised through Booksmith's figure pipeline, but print approval remains an explicit human decision. This web surface reports that state rather than auto-approving generated assets.</p>
+              <p className="text-sm leading-7 text-[#91a997]">The figure specification and prompt can be revised through Booksmith&apos;s figure pipeline, but print approval remains an explicit human decision. This web surface reports that state rather than auto-approving generated assets.</p>
             </Panel>
           </aside>
         </div>

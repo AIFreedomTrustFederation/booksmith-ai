@@ -61,9 +61,12 @@ export default function RuntimeCenterPage() {
   }, []);
 
   useEffect(() => {
-    void refresh();
+    const initialRefresh = window.setTimeout(() => { void refresh(); }, 0);
     const timer = window.setInterval(() => { void refresh(); }, 5000);
-    return () => window.clearInterval(timer);
+    return () => {
+      window.clearTimeout(initialRefresh);
+      window.clearInterval(timer);
+    };
   }, [refresh]);
 
   const activeJobs = useMemo(() => jobs.filter((job) => job.status === "queued" || job.status === "running").length, [jobs]);
