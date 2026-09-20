@@ -10,17 +10,27 @@ on:
       - '.github/workflows/fhqcm-pdf-proof.yml'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: fhqcm-pdf-proof-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-fhqcm-pdf:
     name: Build FHQCM PDF Proof
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '20'
 
@@ -28,7 +38,7 @@ jobs:
         run: npm run fhqcm:polish
 
       - name: Build PDF with XeLaTeX
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@e2f99d4b3685b0da93f97e1b86ad8fab81105098 # v3
         with:
           working_directory: books/fhqcm/manuscript
           root_file: main.tex
@@ -42,7 +52,7 @@ jobs:
           cp books/fhqcm/reports/polish-validation-report.md dist/fhqcm/polish-validation-report.md
 
       - name: Upload PDF proof artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: fhqcm-first-proof
           path: dist/fhqcm
