@@ -99,6 +99,14 @@ Runtime Center     http://localhost:3000/studio/runtime
 Runtime API        http://127.0.0.1:8787
 ```
 
+**Network exposure and startup checks:** `npm run server` launches the Next.js application on `0.0.0.0:3000` by default (`BOOKSMITH_HOST`), making the web UI reachable from other devices when firewall and network rules permit. The separate Runtime API defaults to `127.0.0.1:8787`; a loopback Runtime does **not** make the web UI loopback-only. For local-only authoring, launch with:
+
+```bash
+BOOKSMITH_HOST=127.0.0.1 npm run server
+```
+
+The launcher runs several health, registry, figure, bibliography, and publication diagnostics with `|| true`; failures in those preparatory checks do not necessarily stop the server. Review their output and run the relevant checks separately before relying on readiness or publishing. `npm run server` starts a Next.js **development** server, not a hardened production deployment.
+
 The Runtime stays on loopback by default. Binding it to a LAN address requires `BOOKSMITH_RUNTIME_TOKEN`; allowed browser origins can be declared through `BOOKSMITH_ALLOWED_ORIGINS`. The Runtime exposes narrow manuscript, AI, source, index, Git, job, and provenance routes rather than a generic shell or arbitrary filesystem API.
 
 The same Studio is also an installable Progressive Web App through `manifest.webmanifest` and the Booksmith service worker. Previously visited application surfaces and static assets can remain available offline; canonical writes and model execution still require the private Runtime process.
