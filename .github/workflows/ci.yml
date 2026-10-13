@@ -41,6 +41,9 @@ jobs:
       - name: Validate federated library
         run: npm run validate:library
 
+      - name: Verify strict proof gate exit statuses
+        run: node --test tests/phase1-strict-proof.test.mjs
+
       - name: Lint
         run: npm run lint
 

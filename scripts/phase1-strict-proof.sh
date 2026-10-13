@@ -15,8 +15,8 @@ node scripts/booksmith-proof-autofix.mjs "$SLUG"
 ./scripts/build-fhqcm-export.sh "$SLUG"
 
 node scripts/proof-report.mjs "$SLUG"
-node scripts/quality-gate.mjs "$SLUG" || true
-node scripts/booksmith-proof-limit-gate.mjs "$SLUG" || true
+node scripts/quality-gate.mjs "$SLUG"
+node scripts/booksmith-proof-limit-gate.mjs "$SLUG"
 node scripts/build-publishing-packet.mjs "$SLUG"
 
 echo

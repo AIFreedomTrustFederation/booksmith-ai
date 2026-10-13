@@ -83,6 +83,10 @@ Production uses the engines already carried by this repository. The Studio and R
 
 A canonical manuscript save may create a local Git commit when requested, but Booksmith does not silently push to a remote. Remote synchronization remains an explicit human-controlled operation.
 
+### Strict proof verification
+
+For a book with the required LaTeX toolchain installed, run `npm run phase1:strict-proof -- <book-slug>` (or omit the slug to use `fhqcm`). This pipeline renders and rebuilds the PDF, generates a proof report, then enforces both the quality gate and the zero-tolerance proof-limit gate **before** creating a publishing packet. If either gate fails, the command now exits nonzero and does not generate a new packet; inspect `books/<book-slug>/exports/pdf/` for diagnostic reports. Previously generated packets may still exist and must not be mistaken for a newly approved build. The command does not independently establish copyright clearance, citation accuracy, or final publication approval.
+
 ### Run the complete application
 
 ```bash
