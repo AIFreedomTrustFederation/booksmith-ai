@@ -183,6 +183,17 @@ const requiredChapters = [
   '11-coincidence-coherence-eternal-now.tex',
 ];
 
+// Generate figures before validating the output; do not mask generator errors.
+const imageScript = 'scripts/generate-fhqcm-images.mjs';
+if (!existsSync(imageScript)) {
+  throw new Error(`Missing FHQCM image generator: ${imageScript}`);
+}
+const generation = spawnSync(process.execPath, [imageScript], { stdio: 'inherit' });
+if (generation.error) throw generation.error;
+if (generation.status !== 0) {
+  throw new Error(`FHQCM image generation failed (status: ${generation.status})`);
+}
+
 const report = [];
 report.push('# FHQCM Polish and Validation Report');
 report.push('');
@@ -235,6 +246,9 @@ const imageDir = join(ROOT, 'assets/images/source');
 let figureCount = 0;
 if (existsSync(imageDir)) figureCount = readdirSync(imageDir).filter((name) => name.endsWith('.svg')).length;
 report.push(`- SVG figures in source folder: ${figureCount}`);
+if (figureCount !== 50) {
+  throw new Error(`Expected 50 FHQCM SVG drafts, found ${figureCount}.`);
+}
 
 report.push('');
 report.push('## Build Notes');
@@ -243,13 +257,5 @@ report.push('- Compile from `books/fhqcm/manuscript` with XeLaTeX or LuaLaTeX.')
 report.push('- If bibliography is incomplete, run LaTeX first without final bibliography expectations.');
 
 write(join(REPORTS, 'polish-validation-report.md'), report.join('\n'));
-
-const imageScript = existsSync('scripts/generate-fhqcm-images.mjs');
-if (imageScript) {
-  const result = spawnSync('node', ['scripts/generate-fhqcm-images.mjs'], { stdio: 'inherit' });
-  if (result.status !== 0) {
-    console.warn('Image generation failed. See output above.');
-  }
-}
 
 console.log('FHQCM polish and validation complete. See books/fhqcm/reports/polish-validation-report.md');
