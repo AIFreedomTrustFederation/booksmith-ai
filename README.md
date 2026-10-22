@@ -83,6 +83,17 @@ Production uses the engines already carried by this repository. The Studio and R
 
 A canonical manuscript save may create a local Git commit when requested, but Booksmith does not silently push to a remote. Remote synchronization remains an explicit human-controlled operation.
 
+### Verify FHQCM PDF export
+
+After generating the LaTeX export, the PDF builder must create a **fresh, nonempty** `books/fhqcm/exports/pdf/main.pdf`. A TeX process can exit successfully without emitting pages, so exit status alone is not proof that a PDF was built.
+
+```bash
+npm run render:latex:fhqcm
+bash scripts/build-fhqcm-export.sh fhqcm
+```
+
+The builder now exits nonzero if no new nonempty PDF was produced, including when an older `main.pdf` exists. Existing proof files are left in place on failure but **must not** be treated as the result of the failed run. The check establishes artifact creation, not typography, bibliography correctness, or publishing readiness; run the separate proof and publication gates for those assurances.
+
 ### Run the complete application
 
 ```bash

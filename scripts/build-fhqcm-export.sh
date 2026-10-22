@@ -14,6 +14,11 @@ echo "  out:  $OUT_DIR"
 
 cd "$EXPORT_DIR"
 
+# A successful TeX exit does not guarantee that any pages were emitted.
+# Keep previous proofs intact, but never count an old PDF as this build's output.
+BUILD_MARKER="$(mktemp "$OUT_DIR/.booksmith-pdf-build.XXXXXXXX")"
+trap 'rm -f "$BUILD_MARKER"' EXIT
+
 run_engine() {
   "$1" -interaction=nonstopmode -halt-on-error -output-directory="$OUT_DIR" main.tex
 }
@@ -58,6 +63,14 @@ else
   echo "No TeX engine found."
   exit 1
 fi
+
+if [ ! -s "$OUT_DIR/main.pdf" ] || [ ! "$OUT_DIR/main.pdf" -nt "$BUILD_MARKER" ]; then
+  echo "ERROR: TeX finished without creating a fresh, nonempty main.pdf in $OUT_DIR" >&2
+  exit 1
+fi
+
+rm -f "$BUILD_MARKER"
+trap - EXIT
 
 echo
 echo "PDF build files:"

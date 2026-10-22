@@ -41,6 +41,9 @@ jobs:
       - name: Validate federated library
         run: npm run validate:library
 
+      - name: Verify PDF export success contract
+        run: python3 -m unittest discover -s tests -p 'test_pdf_export_freshness.py'
+
       - name: Lint
         run: npm run lint
 
