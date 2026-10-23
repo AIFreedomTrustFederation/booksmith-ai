@@ -50,6 +50,9 @@ jobs:
       - name: Smoke test Booksmith Runtime
         run: node scripts/runtime/smoke-test.mjs
 
+      - name: Regression-test manuscript commit scope
+        run: node --test tests/manuscript-commit-scope.test.mjs
+
       - name: Build static GitHub Pages mode
         run: |
           rm -rf .next out

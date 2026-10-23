@@ -81,7 +81,7 @@ Booksmith Intelligence now operates through the existing provider abstraction ra
 
 Production uses the engines already carried by this repository. The Studio and Runtime can launch allowlisted jobs for library validation, system health, proof generation, visual proof inspection, figure preparation, publication gates, publishing packets, and managed publication. Job state and logs are persisted locally. Publication is treated as consequential and requires a separate explicit confirmation instead of being hidden behind an ordinary button.
 
-A canonical manuscript save may create a local Git commit when requested, but Booksmith does not silently push to a remote. Remote synchronization remains an explicit human-controlled operation.
+A canonical manuscript save may create a local Git commit when requested. That commit includes only the approved manuscript file; other staged changes remain staged and are not included. Booksmith does not silently push to a remote. Remote synchronization remains an explicit human-controlled operation.
 
 ### Run the complete application
 

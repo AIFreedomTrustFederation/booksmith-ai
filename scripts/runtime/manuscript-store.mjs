@@ -108,7 +108,7 @@ async function gitCommit(relativePath, message) {
   if (!fs.existsSync(gitDirectory)) return { committed: false, reason: "Repository has no local .git directory." };
   await execFileAsync("git", ["add", "--", relativePath], { cwd: root });
   try {
-    const { stdout } = await execFileAsync("git", ["commit", "-m", message], { cwd: root, maxBuffer: 2 * 1024 * 1024 });
+    const { stdout } = await execFileAsync("git", ["commit", "--only", "-m", message, "--", relativePath], { cwd: root, maxBuffer: 2 * 1024 * 1024 });
     const { stdout: head } = await execFileAsync("git", ["rev-parse", "HEAD"], { cwd: root });
     return { committed: true, sha: head.trim(), output: stdout.trim() };
   } catch (error) {
