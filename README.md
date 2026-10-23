@@ -121,6 +121,12 @@ This repository owns the **authoring and production studio**, not the entire pub
 
 Its relationship to neighboring projects remains explicit. **AI-Freedom-Trust** supplies doctrine and publications without making Booksmith the authority over doctrine. **AIFT-Genesis** supplies constitutional identity, trust, permission, and governance patterns. **AIFT-Forge** supplies reusable technical and provider patterns. **AIFT-OS / Runtime** can discover and coordinate local capabilities without becoming editorial truth. **BookSmith-Federation-OS** can eventually provide broader federation, identity, collaboration, sync, and marketplace surfaces around the authoring engine. **Aetherion** may eventually carry governed economic relationships such as licensing, royalties, or settlement without gaining authority over authorship or release approval.
 
+### FHQCM PDF proof: build artifact versus publication
+
+The [FHQCM PDF Proof workflow](.github/workflows/fhqcm-pdf-proof.yml) runs on its configured FHQCM file changes or manual dispatch. It invokes `npm run fhqcm:polish` (which generates draft SVG figures and a validation report), compiles [the FHQCM LaTeX manuscript](books/fhqcm/manuscript/main.tex) with XeLaTeX, and uploads the `fhqcm-first-proof` Actions artifact containing `fhqcm-first-proof.pdf` and `polish-validation-report.md`. For a local preflight, run `npm run fhqcm:polish` from the repository root; local PDF compilation additionally requires XeLaTeX and the necessary TeX packages. Download the proof from the successful workflow run's **Artifacts** section, not from the public Pages site.
+
+A passing PDF build verifies the configured proof pipeline, **not** final artwork, editorial approval, scientific validation, or publication. The introduction still uses [draft figure placeholders](books/fhqcm/assets/images/latex/figure-includes.tex); [FHQCM proof issue #4](https://github.com/AIFreedomTrustFederation/booksmith-ai/issues/4) tracks outstanding figure and proof acceptance work.
+
 The federated library principle remains:
 
 ```text
