@@ -53,6 +53,9 @@ jobs:
       - name: Regression-test manuscript commit scope
         run: node --test tests/manuscript-commit-scope.test.mjs
 
+      - name: Regression-test manual sync validation gate
+        run: python3 -m unittest discover -s tests -p 'test_git_sync_validation.py' -v
+
       - name: Build static GitHub Pages mode
         run: |
           rm -rf .next out
