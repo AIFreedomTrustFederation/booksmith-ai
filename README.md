@@ -83,6 +83,8 @@ Production uses the engines already carried by this repository. The Studio and R
 
 A canonical manuscript save may create a local Git commit when requested. That commit includes only the approved manuscript file; other staged changes remain staged and are not included. Booksmith does not silently push to a remote. Remote synchronization remains an explicit human-controlled operation.
 
+**Manuscript filesystem boundary:** the Runtime resolves existing filesystem links before manuscript reads and saves and rejects paths that resolve outside the selected `books/<slug>` directory. Symlinks remaining inside the selected book are supported. This is a pre-access check, not protection against another local process replacing filesystem links concurrently; keep the authoring workspace under trusted local control.
+
 ### Run the complete application
 
 ```bash

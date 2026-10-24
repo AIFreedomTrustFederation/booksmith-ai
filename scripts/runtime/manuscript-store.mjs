@@ -19,11 +19,33 @@ function validChapter(value) {
   return typeof value === "string" && /^[a-z0-9][a-z0-9-]*$/.test(value);
 }
 
+// Resolve existing path components before reading or writing. A missing chapter
+// still needs its existing parent symlinks checked against the selected book.
+function resolvedTargetPath(file) {
+  let existing = file;
+  while (true) {
+    try {
+      return path.resolve(fs.realpathSync(existing), path.relative(existing, file));
+    } catch (error) {
+      if (error?.code !== "ENOENT") throw error;
+      const parent = path.dirname(existing);
+      if (parent === existing) throw error;
+      existing = parent;
+    }
+  }
+}
+
 function chapterPath(bookSlug, chapterSlug) {
   if (!validSlug(bookSlug) || !validChapter(chapterSlug)) throw new Error("Invalid book or chapter identifier.");
   const file = path.join(root, "books", bookSlug, "manuscript", "chapters", `${chapterSlug}.md`);
   const relative = path.relative(root, file);
   if (relative.startsWith("..") || path.isAbsolute(relative)) throw new Error("Resolved manuscript path escapes the repository.");
+  const bookRoot = path.join(fs.realpathSync(root), "books", bookSlug);
+  const resolved = resolvedTargetPath(file);
+  const withinBook = path.relative(bookRoot, resolved);
+  if (withinBook === ".." || withinBook.startsWith(`..${path.sep}`) || path.isAbsolute(withinBook)) {
+    throw new Error("Resolved manuscript path escapes the selected book.");
+  }
   return file;
 }
 
