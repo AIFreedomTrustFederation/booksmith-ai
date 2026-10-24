@@ -41,3 +41,56 @@ for (const newChapter of [false, true]) {
     assert.equal(git(cwd, 'show', 'HEAD:unrelated.txt'), 'Original unrelated');
   });
 }
+
+
+test('manuscript read rejects a chapter symlink outside the selected book', (t) => {
+  const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'booksmith-read-boundary-'));
+  const outside = fs.mkdtempSync(path.join(os.tmpdir(), 'booksmith-private-'));
+  t.after(() => { fs.rmSync(cwd, { recursive: true, force: true }); fs.rmSync(outside, { recursive: true, force: true }); });
+  const chapters = path.join(cwd, 'books/demo/manuscript/chapters');
+  fs.mkdirSync(chapters, { recursive: true });
+  fs.writeFileSync(path.join(outside, 'intro.md'), 'Private content outside the book\\n');
+  fs.symlinkSync(path.join(outside, 'intro.md'), path.join(chapters, 'intro.md'));
+  const code = 'import { readManuscript } from ' + JSON.stringify(source)
+    + '; await readManuscript("demo", "intro");';
+  const result = spawnSync(process.execPath, ['--input-type=module', '-e', code], {
+    cwd, encoding: 'utf8', timeout: 10000,
+  });
+  assert.notEqual(result.status, 0, 'external symlink must not be readable');
+  assert.match(result.stderr, /escapes the selected book/i);
+});
+
+test('manuscript save rejects a chapters-directory symlink outside the selected book', (t) => {
+  const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'booksmith-save-boundary-'));
+  const outside = fs.mkdtempSync(path.join(os.tmpdir(), 'booksmith-private-'));
+  t.after(() => { fs.rmSync(cwd, { recursive: true, force: true }); fs.rmSync(outside, { recursive: true, force: true }); });
+  const manuscript = path.join(cwd, 'books/demo/manuscript');
+  fs.mkdirSync(manuscript, { recursive: true });
+  fs.symlinkSync(outside, path.join(manuscript, 'chapters'), 'dir');
+  const code = 'import { readManuscript, saveManuscript } from ' + JSON.stringify(source)
+    + '; const current = await readManuscript("demo", "intro");'
+    + ' await saveManuscript({ bookSlug: "demo", chapterSlug: "intro", draft: "New canon", expectedHash: current.hash });';
+  const result = spawnSync(process.execPath, ['--input-type=module', '-e', code], {
+    cwd, encoding: 'utf8', timeout: 10000,
+  });
+  assert.notEqual(result.status, 0, 'external symlink must not be writable');
+  assert.match(result.stderr, /escapes the selected book/i);
+  assert.equal(fs.existsSync(path.join(outside, 'intro.md')), false);
+});
+
+test('in-book symlink to a chapters directory remains readable', (t) => {
+  const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'booksmith-local-symlink-'));
+  t.after(() => fs.rmSync(cwd, { recursive: true, force: true }));
+  const manuscript = path.join(cwd, 'books/demo/manuscript');
+  const actual = path.join(manuscript, 'actual-chapters');
+  fs.mkdirSync(actual, { recursive: true });
+  fs.writeFileSync(path.join(actual, 'intro.md'), 'Approved canon\\n');
+  fs.symlinkSync(actual, path.join(manuscript, 'chapters'), 'dir');
+  const code = 'import { readManuscript } from ' + JSON.stringify(source)
+    + '; console.log((await readManuscript("demo", "intro")).text);';
+  const result = spawnSync(process.execPath, ['--input-type=module', '-e', code], {
+    cwd, encoding: 'utf8', timeout: 10000,
+  });
+  assert.equal(result.status, 0, result.stderr);
+  assert.equal(result.stdout.trim(), 'Approved canon');
+});
