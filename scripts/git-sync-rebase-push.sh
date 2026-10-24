@@ -18,9 +18,9 @@ git rebase origin/main
 
 echo
 echo "Running quick validation after rebase..."
-npm run validate:library || true
-npm run proof:v2:fhqcm || true
-npm run json:validate || true
+npm run validate:library
+npm run proof:v2:fhqcm
+npm run json:validate
 
 echo
 echo "Pushing rebased commit..."
