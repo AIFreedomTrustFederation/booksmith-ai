@@ -84,7 +84,7 @@ test('in-book symlink to a chapters directory remains readable', (t) => {
   const manuscript = path.join(cwd, 'books/demo/manuscript');
   const actual = path.join(manuscript, 'actual-chapters');
   fs.mkdirSync(actual, { recursive: true });
-  fs.writeFileSync(path.join(actual, 'intro.md'), 'Approved canon\\n');
+  fs.writeFileSync(path.join(actual, 'intro.md'), 'Approved canon');
   fs.symlinkSync(actual, path.join(manuscript, 'chapters'), 'dir');
   const code = 'import { readManuscript } from ' + JSON.stringify(source)
     + '; console.log((await readManuscript("demo", "intro")).text);';
