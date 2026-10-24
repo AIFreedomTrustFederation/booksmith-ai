@@ -83,6 +83,8 @@ Production uses the engines already carried by this repository. The Studio and R
 
 A canonical manuscript save may create a local Git commit when requested. That commit includes only the approved manuscript file; other staged changes remain staged and are not included. Booksmith does not silently push to a remote. Remote synchronization remains an explicit human-controlled operation.
 
+**Manual Git sync verification:** `bash scripts/git-sync-rebase-push.sh` fetches `origin`, rebases the current branch onto `origin/main`, and attempts `git push origin HEAD:main` **only after** `npm run validate:library`, `npm run proof:v2:fhqcm`, and `npm run json:validate` all succeed. A failing command stops the script with a nonzero exit before pushing. Reproduce the failure-path checks with `python3 -m unittest discover -s tests -p 'test_git_sync_validation.py' -v`. This helper does not enforce that the current branch is `main`, check the entire application build, undo a completed local rebase, or guarantee a clean working tree; inspect `git status` and the intended commits before invoking it. A successful local check is not proof of hosted CI or production publishing readiness.
+
 **Manuscript filesystem boundary:** the Runtime resolves existing filesystem links before manuscript reads and saves and rejects paths that resolve outside the selected `books/<slug>` directory. Symlinks remaining inside the selected book are supported. This is a pre-access check, not protection against another local process replacing filesystem links concurrently; keep the authoring workspace under trusted local control.
 
 ### Run the complete application
