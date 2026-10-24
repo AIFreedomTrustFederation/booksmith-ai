@@ -137,6 +137,14 @@ The [FHQCM PDF Proof workflow](.github/workflows/fhqcm-pdf-proof.yml) runs on it
 
 A passing PDF build verifies the configured proof pipeline, **not** final artwork, editorial approval, scientific validation, or publication. The introduction still uses [draft figure placeholders](books/fhqcm/assets/images/latex/figure-includes.tex); [FHQCM proof issue #4](https://github.com/AIFreedomTrustFederation/booksmith-ai/issues/4) tracks outstanding figure and proof acceptance work.
 
+### Unified Reality proof workflow: verification versus release
+
+The [Unified Reality production workflow](.github/workflows/unified-reality-booksmith-production.yml) builds the `towards-a-unified-reality` LaTeX/PDF proof, runs bibliography and [quality checks](scripts/quality-gate.mjs), prepares figures and a publishing packet, and uploads the `relational-coherence-booksmith-production` Actions artifact. This is a downloadable **proof/production packet**, not an automatic GitHub Pages publication or an author-approved edition.
+
+A green workflow is not by itself a publication-ready verdict. The quality gate exits unsuccessfully for critical failures but can return success with warning statuses. The [figure pipeline](scripts/figure-pipeline-v1.sh) tolerates failures from its [publication gate](scripts/publication-gate-v2.mjs), whose draft-only and warning statuses also do not fail the command. Moreover, the figure pipeline re-renders LaTeX **after** the workflow has compiled the PDF, without a subsequent PDF rebuild; verify that the downloaded PDF corresponds to the final intended source and figures. The [publishing-packet builder](scripts/build-publishing-packet.mjs) records SHA-256 checksums for copied packet files, but checksums alone do not confer editorial approval or establish public release.
+
+Before promoting an edition, inspect the artifact's proof, bibliography, quality, figure, and publication-gate reports (including their status fields), confirm packet completeness and hashes, visually review the PDF, and rebuild from the approved source if the figure pipeline changed it.
+
 The federated library principle remains:
 
 ```text
