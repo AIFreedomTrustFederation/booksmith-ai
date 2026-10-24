@@ -22,6 +22,8 @@ jobs:
     name: Build FHQCM PDF Proof
     runs-on: ubuntu-24.04
     timeout-minutes: 20
+    permissions:
+      contents: write # Only this job can publish proof releases
 
     steps:
       - name: Checkout repository
@@ -51,8 +53,50 @@ jobs:
           cp books/fhqcm/manuscript/main.pdf dist/fhqcm/fhqcm-first-proof.pdf
           cp books/fhqcm/reports/polish-validation-report.md dist/fhqcm/polish-validation-report.md
 
+      - name: Verify compiled PDF
+        run: |
+          test -s dist/fhqcm/fhqcm-first-proof.pdf
+          python3 - <<'PY'
+          from pathlib import Path
+          pdf = Path('dist/fhqcm/fhqcm-first-proof.pdf').read_bytes()
+          assert pdf.startswith(b'%PDF-'), 'Missing PDF header'
+          assert b'%%EOF' in pdf[-2048:], 'Missing PDF EOF marker'
+          print(f'PDF proof verified: {len(pdf)} bytes')
+          PY
+
       - name: Upload PDF proof artifact
+        id: pdf_artifact
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: fhqcm-first-proof
           path: dist/fhqcm
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Publish download link in run summary
+        env:
+          ARTIFACT_URL: ${{ steps.pdf_artifact.outputs.artifact-url }}
+        run: |
+          echo '## FHQCM PDF proof ready' >> "$GITHUB_STEP_SUMMARY"
+          echo "[Download the compiled PDF proof and validation report]($ARTIFACT_URL)" >> "$GITHUB_STEP_SUMMARY"
+          echo '' >> "$GITHUB_STEP_SUMMARY"
+          echo 'GitHub downloads the artifact as a ZIP. Extract `fhqcm-first-proof.pdf`.' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Publish permanent versioned PDF proof release
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          tag="fhqcm-proof-${GITHUB_RUN_NUMBER}-${GITHUB_RUN_ATTEMPT}"
+          cd dist/fhqcm
+          sha256sum fhqcm-first-proof.pdf polish-validation-report.md > SHA256SUMS.txt
+          gh release create "$tag" \
+            fhqcm-first-proof.pdf polish-validation-report.md SHA256SUMS.txt \
+            --target "$GITHUB_SHA" \
+            --title "FHQCM PDF proof ${GITHUB_RUN_NUMBER}.${GITHUB_RUN_ATTEMPT}" \
+            --notes "Automated draft proof from commit $GITHUB_SHA. Not a final publication; inspect content and layout before distribution." \
+            --prerelease --latest=false
+          echo "[Permanent versioned PDF release](https://github.com/${GITHUB_REPOSITORY}/releases/tag/${tag})" >> "$GITHUB_STEP_SUMMARY"
+          echo '[Browse all versioned FHQCM proof releases](https://github.com/AIFreedomTrustFederation/booksmith-ai/releases?q=fhqcm-proof)' >> "$GITHUB_STEP_SUMMARY"
