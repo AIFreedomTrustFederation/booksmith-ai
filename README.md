@@ -151,6 +151,8 @@ Before promoting an edition, inspect the artifact's proof, bibliography, quality
 
 **Publication-gate missing-evidence boundary:** [`scripts/publication-gate-v2.mjs`](scripts/publication-gate-v2.mjs) substitutes empty objects when the proof, figure-audit, or quality JSON report is missing. Missing proof counts and figure placeholder counts then default to zero, while the upstream quality status may be `null`; with an existing `exports/pdf/main.pdf`, the gate can report `PASS_PUBLICATION_READY` without those inputs. The status is not evidence that the required reports were present, current for the source revision, or author-approved. Inspect all three reports and their provenance before treating the result as a publication-readiness claim. Missing-evidence enforcement belongs to the separate Verification & Repair task.
 
+**Publication-engine optional-step reporting boundary:** [`scripts/publication-engine-v1.mjs`](scripts/publication-engine-v1.mjs) treats bibliography audit, reference intelligence, figure asset audit, figure intelligence, quality gate, publication gate, and ZIP export as optional (`allowFailure`). Its recorded `ok` flag and Markdown `PASS` label remain true for those steps even when their commands exit nonzero; inspect each step's numeric `status` and underlying reports before relying on a publication-engine summary. The engine derives `PASS_PUBLICATION_READY` from the publication-gate report, not from successful execution of every optional check. This is not proof of author approval or permission to publish.
+
 The federated library principle remains:
 
 ```text
