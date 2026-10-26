@@ -149,6 +149,8 @@ A green workflow is not by itself a publication-ready verdict. The quality gate 
 
 Before promoting an edition, inspect the artifact's proof, bibliography, quality, figure, and publication-gate reports (including their status fields), confirm packet completeness and hashes, visually review the PDF, and rebuild from the approved source if the figure pipeline changed it.
 
+**Publication-gate missing-evidence boundary:** [`scripts/publication-gate-v2.mjs`](scripts/publication-gate-v2.mjs) substitutes empty objects when the proof, figure-audit, or quality JSON report is missing. Missing proof counts and figure placeholder counts then default to zero, while the upstream quality status may be `null`; with an existing `exports/pdf/main.pdf`, the gate can report `PASS_PUBLICATION_READY` without those inputs. The status is not evidence that the required reports were present, current for the source revision, or author-approved. Inspect all three reports and their provenance before treating the result as a publication-readiness claim. Missing-evidence enforcement belongs to the separate Verification & Repair task.
+
 The federated library principle remains:
 
 ```text
