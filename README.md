@@ -153,6 +153,8 @@ Before promoting an edition, inspect the artifact's proof, bibliography, quality
 
 **Publication-engine optional-step reporting boundary:** [`scripts/publication-engine-v1.mjs`](scripts/publication-engine-v1.mjs) treats bibliography audit, reference intelligence, figure asset audit, figure intelligence, quality gate, publication gate, and ZIP export as optional (`allowFailure`). Its recorded `ok` flag and Markdown `PASS` label remain true for those steps even when their commands exit nonzero; inspect each step's numeric `status` and underlying reports before relying on a publication-engine summary. The engine derives `PASS_PUBLICATION_READY` from the publication-gate report, not from successful execution of every optional check. This is not proof of author approval or permission to publish.
 
+**Publication-engine command-launch boundary:** [`scripts/publication-engine-v1.mjs`](scripts/publication-engine-v1.mjs) records `spawnSync` results using `result.status ?? 0` without checking `result.error`. If a required executable fails to launch (for example, a missing `npm` or `bash`), Node can return `status: null` with a process error, which the engine records as status `0` and `PASS`. Therefore a passing step record does not establish that its command actually started. Verify required commands and their generated artifacts independently; correcting failed-process handling belongs to Federation Verification & Repair.
+
 The federated library principle remains:
 
 ```text
