@@ -1,4 +1,4 @@
-# booksmith ai UNIX Manual Manual
+# booksmith ai UNIX Manual
 
 This directory contains the UNIX-style manual source for this repository.
 
