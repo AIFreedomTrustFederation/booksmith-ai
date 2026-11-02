@@ -39,7 +39,7 @@ This project converts the existing FHQCM white paper into a beautiful Unicode-fi
 
 ## Current Status
 
-This initial commit is a scaffold, not a final book.
+This project began as a scaffold and now has an automated draft PDF proof workflow. The [versioned FHQCM proof prerelease](https://github.com/AIFreedomTrustFederation/booksmith-ai/releases/tag/fhqcm-proof-26-1) contains `fhqcm-first-proof.pdf`, a polish validation report, and SHA-256 checksums. This is a draft proof, not an author-approved final publication; editorial, citation, and figure acceptance remain separate steps.
 
 Included now:
 
@@ -61,5 +61,5 @@ Included now:
 4. Verify all references.
 5. Add a glossary of terms.
 6. Add diagrams for the torus field, fractal time, holographic memory, and Christic equivalency.
-7. Build the first PDF proof through XeLaTeX or LuaLaTeX.
+7. Review the existing draft PDF proof and rebuild it with XeLaTeX or LuaLaTeX after source or figure changes.
 8. Publish a web/PDF preview through the Booksmith AI app or GitHub Pages workflow.
