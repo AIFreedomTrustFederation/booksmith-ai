@@ -176,3 +176,9 @@ Booksmith is designed for works that must remain readable long after the immedia
 ### The Return of the Word
 
 In Booksmith, the Word returns as a finished work whose voice still belongs to its author. Source becomes manuscript, manuscript becomes approved revision, revision becomes proof, proof becomes publication, and publication returns to the reader without dragging the workshop scaffolding onto the page. The intelligence that helped create the work remains present as service, not as an interruption of the voice.
+
+---
+
+## Optional AIFT Universal OS workspace integration
+
+[Booksmith application integration guidance](docs/aift-universal-os-alignment.md) explains the proposed native/hosted OS adapter while preserving authorship, the actual library registry, publishing rights and approvals. The shared architecture is an unmerged [AIFT-OS proposal](https://github.com/AIFreedomTrustFederation/AIFT-OS/pull/92), not a shipped Booksmith operating-system component.
